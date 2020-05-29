@@ -33,6 +33,3 @@ After a bit, on the right sidebar, your project should pop up. Open it, ignore t
 For password or token, put your access token. Don't touch anything else, and just name and create your secret.
 
 Go to Builds > Builds and select your build. On the top right click Action > Edit. Click advanced options in the Source Configuration, and select your newly made secret where it says Source Secret. Scroll to the bottom and save.
-
-
-
