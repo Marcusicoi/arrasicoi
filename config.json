@@ -22,11 +22,11 @@
     [ "bas4", "nest", "nest", "norm" ],
     [ "bas1", "norm", "norm", "norm" ]
     ],
-  "X_GRID": 6,
-  "Y_GRID": 6,
+  "X_GRID": 4,
+  "Y_GRID": 4,
   "DAMAGE_CONSTANT": 0.6,
   "KNOCKBACK_CONSTANT": 1,
-  "ROOM_BOUND_FORCE": 5,
+  "ROOM_BOUND_FORCE": 0.01,
   "FOOD": [
     0, 
     0.75,
