@@ -23,10 +23,10 @@
     [ "bas1", "norm", "norm", "norm" ]
     ],
   "X_GRID": 6,
-  "Y_GRID": 1,
+  "Y_GRID": 6,
   "DAMAGE_CONSTANT": 0.6,
   "KNOCKBACK_CONSTANT": 1,
-  "ROOM_BOUND_FORCE": 0.01,
+  "ROOM_BOUND_FORCE": 5,
   "FOOD": [
     0, 
     0.75,
