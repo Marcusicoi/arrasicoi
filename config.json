@@ -17,10 +17,10 @@
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [
-    [ "bas2", "norm", "nest", "norm" ],
-    [ "bas3", "nest", "nest", "norm" ],
-    [ "bas4", "nest", "nest", "norm" ],
-    [ "bas1", "norm", "norm", "norm" ]
+    [ "roid", "norm", "nest", "roid" ],
+    [ "norm", "nest", "nest", "norm" ],
+    [ "norm", "nest", "nest", "norm" ],
+    [ "roid", "norm", "norm", "roid" ]
     ],
   "X_GRID": 4,
   "Y_GRID": 4,
@@ -50,6 +50,8 @@
   "TIER_1": 10,
   "TIER_2": 25,
   "TIER_3": 45,
+  "TIER_4": 60,
+  "TIER_5": 75,
   "SKILL_CAP": 45,
   "SKILL_SOFT_CAP": 0,
   "SKILL_CHEAT_CAP": 45,
