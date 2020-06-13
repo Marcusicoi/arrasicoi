@@ -838,7 +838,8 @@ const levelers = [
     11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
     21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
     31, 32, 33, 34, 35, 36, 38, 40, 42, 44,
-    46, 48, 50, 52, 54, 56, 58, 60,62 
+    46, 48, 50, 52, 54, 56, 58, 60, 62, 64,
+    65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
 ];
 class Skill {
     constructor(inital = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) { // Just skill stuff. 
@@ -965,7 +966,7 @@ class Skill {
                 this.deduction += this.levelScore;
                 this.level += 1;
                 this.points += this.levelPoints;
-                if (this.level == c.TIER_1 || this.level == c.TIER_2 || this.level == c.TIER_3) {
+                if (this.level == c.TIER_1 || this.level == c.TIER_2 || this.level == c.TIER_3 || this.level == c.TIER_4 || this.level == c.TIER_5) {
                     this.canUpgrade = true;
                 }
                 this.update();
@@ -1840,6 +1841,16 @@ class Entity {
         if (set.UPGRADES_TIER_3 != null) { 
             set.UPGRADES_TIER_3.forEach((e) => {
                 this.upgrades.push({ class: e, level: c.TIER_3, index: e.index,});
+            });
+        }
+        if (set.UPGRADES_TIER_4 != null) { 
+            set.UPGRADES_TIER_4.forEach((e) => {
+                this.upgrades.push({ class: e, level: c.TIER_4, index: e.index,});
+            });
+        }
+        if (set.UPGRADES_TIER_5 != null) { 
+            set.UPGRADES_TIER_5.forEach((e) => {
+                this.upgrades.push({ class: e, level: c.TIER_5, index: e.index,});
             });
         }
         if (set.SIZE != null) {
