@@ -19,7 +19,8 @@
   "ROOM_SETUP": [
     [ "roid", "rock", "rock", "roid" ],
     [ "norm", "norm", "nest", "norm" ],
-    
+    [ "norm", "nest", "norm", "norm" ],
+    [ "roid", "rock", "rock", "roid" ]
     ],
   "X_GRID": 4,
   "Y_GRID": 4,
