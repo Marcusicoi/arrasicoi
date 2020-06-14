@@ -11,8 +11,8 @@
   "runSpeed": 1.5,
   "maxHeartbeatInterval": 300000,
   "verbose": true,
-  "WIDTH":  4000,
-  "HEIGHT": 4000,
+  "WIDTH":  10000,
+  "HEIGHT": 10000,
   "MODE": "ffa",
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
@@ -21,7 +21,6 @@
     [ "norm", "norm", "nest", "norm" ],
     [ "norm", "nest", "norm", "norm" ],
     [ "roid", "rock", "rock", "roid" ]
-
     ],
   "X_GRID": 4,
   "Y_GRID": 4,
