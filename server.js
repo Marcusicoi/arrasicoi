@@ -1857,6 +1857,15 @@ class Entity {
             this.SIZE = set.SIZE * this.squiggle;
             if (this.coreSize == null) { this.coreSize = this.SIZE; }
         }
+        if (set.UPGRADES_TIER_GOD != null) { 
+            set.UPGRADES_TIER_GOD.forEach((e) => {
+                this.upgrades.push({ class: e, level: c.TIER_GOD, index: e.index,});
+            });
+        }
+        if (set.SIZE != null) {
+            this.SIZE = set.SIZE * this.squiggle;
+            if (this.coreSize == null) { this.coreSize = this.SIZE; }
+        }
         if (set.SKILL != null && set.SKILL != []) { 
             if (set.SKILL.length != 10) {
                 throw('Inappropiate skill raws.');
