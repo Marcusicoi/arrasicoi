@@ -7,7 +7,7 @@
   "networkFrontlog": 1,
   "networkFallbackTime": 150,
   "visibleListInterval": 1000,
-  "gameSpeed": 1,
+  "gameSpeed": 10000,
   "runSpeed": 1.5,
   "maxHeartbeatInterval": 300000,
   "verbose": true,
@@ -17,8 +17,10 @@
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [
-    [],
-    []
+    ["rock", "norm", "norm", "rock"],
+    ["norm", "nest", "nest", "norm"],
+    ["norm", "nest", "nest", "norm"],
+    ["rock", "norm", "norm", "norm"]
     ],
   "X_GRID": 4,
   "Y_GRID": 4,
