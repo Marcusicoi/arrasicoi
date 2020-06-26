@@ -4654,12 +4654,11 @@ var maintainloop = (() => {
             }).filter(e => { return e; });    
             // Spawning
             spawnBosses(census);
-            /*/ Bots
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                     o.color = 17;
                     o.define(Class.bot);
-                    o.define(Class.basic);
+                    o.define(Class.tripletwin, Class.sniprifle, Class.machinegunner, Class.stalker);
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
                     o.color = 17;
@@ -4669,12 +4668,11 @@ var maintainloop = (() => {
                 bots = bots.filter(e => { return !e.isDead(); });
                 // Slowly upgrade them
                 bots.forEach(o => {
-                    if (o.skill.level < 45) {
-                        o.skill.score += 35;
+                    if (o.skill.level < 75) {
+                        o.skill.score += 100;
                         o.skill.maintain();
                     }
                 });
-            */
         };
     })();
     // The big food function
