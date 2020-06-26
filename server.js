@@ -4654,27 +4654,31 @@ var maintainloop = (() => {
             }).filter(e => { return e; });    
             // Spawning
             spawnBosses(census);
+                // Bots
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                     o.color = 17;
                     o.define(Class.bot);
-                    o.define(Class.tripletwin, Class.sniprifle, Class.machinegunner, Class.stalker);
+                  let arrayOfClasses = [Class.factory, Class.sniprifle, Class.machinegunner]                  
+                      let newClass = arrayOfClasses[Math.floor(Math.random() * arrayOfClasses.length)];
+                    o.define(newClass);
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
-                    o.color = 17;
+               o.color = ran.choose([])
                     bots.push(o);
                 }
-                // Remove dead ones
+                  // Remove dead ones
                 bots = bots.filter(e => { return !e.isDead(); });
-                // Slowly upgrade them
+// Slowly upgrade them
                 bots.forEach(o => {
-                    if (o.skill.level < 75) {
-                        o.skill.score += 100;
+                    if (o.skill.level < 45) {
+                        o.skill.score += 35;
                         o.skill.maintain();
                     }
                 });
         };
     })();
+
     // The big food function
     let makefood = (() => {
         let food = [], foodSpawners = [];
