@@ -4642,9 +4642,9 @@ var maintainloop = (() => {
         let bots = [];
         return () => {
             let census = {
-                crasher: 2,
-                miniboss: 1,
-                tank: 5,
+                crasher: 0,
+                miniboss: 0,
+                tank: 0,
             };    
             let npcs = entities.map(function npcCensus(instance) {
                 if (census[instance.type] != null) {
@@ -4654,17 +4654,17 @@ var maintainloop = (() => {
             }).filter(e => { return e; });    
             // Spawning
             spawnBosses(census);
-                // Bots
+                                    // Bots
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                     o.color = 17;
                     o.define(Class.bot);
-                  let arrayOfClasses = [Class.factory, Class.sniprifle, Class.machinegunner]                  
+                  let arrayOfClasses = [Class.single, Class.machinegunner, Class.sniprifle]                  
                       let newClass = arrayOfClasses[Math.floor(Math.random() * arrayOfClasses.length)];
                     o.define(newClass);
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
-               o.color = ran.choose([])
+                    o.color = ran.choose([12])
                     bots.push(o);
                 }
                   // Remove dead ones
