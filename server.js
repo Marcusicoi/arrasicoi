@@ -966,7 +966,7 @@ class Skill {
                 this.deduction += this.levelScore;
                 this.level += 1;
                 this.points += this.levelPoints;
-                if (this.level == c.TIER_1 || this.level == c.TIER_2 || this.level == c.TIER_3 || this.level == c.TIER_4 || this.level == c.TIER_5) {
+                if (this.level == c.TIER_1 || this.level == c.TIER_2 || this.level == c.TIER_3) {
                     this.canUpgrade = true;
                 }
                 this.update();
@@ -1843,24 +1843,9 @@ class Entity {
                 this.upgrades.push({ class: e, level: c.TIER_3, index: e.index,});
             });
         }
-        if (set.UPGRADES_TIER_4 != null) { 
-            set.UPGRADES_TIER_4.forEach((e) => {
-                this.upgrades.push({ class: e, level: c.TIER_4, index: e.index,});
-            });
-        }
-        if (set.UPGRADES_TIER_5 != null) { 
-            set.UPGRADES_TIER_5.forEach((e) => {
-                this.upgrades.push({ class: e, level: c.TIER_5, index: e.index,});
-            });
-        }
         if (set.SIZE != null) {
             this.SIZE = set.SIZE * this.squiggle;
             if (this.coreSize == null) { this.coreSize = this.SIZE; }
-        }
-        if (set.UPGRADES_TIER_GOD != null) { 
-            set.UPGRADES_TIER_GOD.forEach((e) => {
-                this.upgrades.push({ class: e, level: c.TIER_GOD, index: e.index,});
-            });
         }
         if (set.SIZE != null) {
             this.SIZE = set.SIZE * this.squiggle;
