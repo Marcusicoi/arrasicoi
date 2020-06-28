@@ -1905,7 +1905,7 @@ class Entity {
             this.maxChildren = set.MAX_CHILDREN; 
         }
         if (set.FOOD != null) {
-            if (set.FOOD.LEVEL != null) { 
+          if (set.FOOD.LEVEL != null) { 
                 this.foodLevel = set.FOOD.LEVEL; 
                 this.foodCountup = 0;
             }
