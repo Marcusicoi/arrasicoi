@@ -4658,7 +4658,7 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                     o.color = 17;
                     o.define(Class.bot);
-                  let arrayOfClasses = [Class.egg]                  
+                  let arrayOfClasses = [Class.egg, Class.square, Class.triangle]                  
                       let newClass = arrayOfClasses[Math.floor(Math.random() * arrayOfClasses.length)];
                     o.define(newClass);
                     o.name += ran.chooseBotName();
