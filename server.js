@@ -4672,8 +4672,8 @@ var maintainloop = (() => {
                 bots = bots.filter(e => { return !e.isDead(); });
 // Slowly upgrade them
                 bots.forEach(o => {
-                    if (o.skill.level <1e23) {
-                        o.skill.score += 1e4;
+                    if (o.skill.level < 75) {
+                        o.skill.score += 1000;
                         o.skill.maintain();
                     }
                 });
@@ -4693,6 +4693,7 @@ var maintainloop = (() => {
                 case 3: a = Class.pentagon; break;
                 case 4: a = Class.bigPentagon; break;
                 case 5: a = Class.hugePentagon; break;
+                case 6: a = Class.hugehexagon; break;
                 default: throw('bad food level');
             }
             if (a !== {}) {
