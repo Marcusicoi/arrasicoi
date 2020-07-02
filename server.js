@@ -4687,13 +4687,14 @@ var maintainloop = (() => {
         function getFoodClass(level) {
             let a = { };
             switch (level) {
-                case 0: a = Class.egg; break;
+                case 0: a = Class.egg; break;             
                 case 1: a = Class.square; break;
                 case 2: a = Class.triangle; break;
                 case 3: a = Class.pentagon; break;
                 case 4: a = Class.bigPentagon; break;
                 case 5: a = Class.hugePentagon; break;
-                case 6: a = Class.hugeHexagon; break;
+                case 5: a = Class.hugeHexagon; break;
+                
                 default: throw('bad food level');
             }
             if (a !== {}) {
