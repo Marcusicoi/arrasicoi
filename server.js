@@ -4296,76 +4296,109 @@ var gameloop = (() => {
                             _n: (n.maxSpeed) ? ( Math.pow(motion._n.length/n.maxSpeed, 0.25) ) : ( 1 ),
                         };
 
-                        /********** DO DAMAGE *********/
-                        let bail = false;
-                        if (my.shape === n.shape && my.settings.isNecromancer && n.type === 'food') {
-                            bail = my.necro(n);
-                        } else if (my.shape === n.shape && n.settings.isNecromancer && my.type === 'food') {
-                            bail = n.necro(my);
-                        } 
-                        if (!bail) {
-                            // Calculate base damage
-                            let resistDiff = my.health.resist - n.health.resist,
-                                damage = {
-                                    _me: 
-                                        c.DAMAGE_CONSTANT * 
-                                        my.damage * 
-                                        (1 + resistDiff) * 
-                                        (1 + n.heteroMultiplier * (my.settings.damageClass === n.settings.damageClass)) *
-                                        ((my.settings.buffVsFood && n.settings.damageType === 1) ? 3 : 1 ) *
-                                        my.damageMultiplier() *
-                                        Math.min(2, Math.max(speedFactor._me, 1) * speedFactor._me),
-                                    _n: 
-                                        c.DAMAGE_CONSTANT * 
-                                        n.damage * 
-                                        (1 - resistDiff) * 
-                                        (1 + my.heteroMultiplier * (my.settings.damageClass === n.settings.damageClass)) *
-                                        ((n.settings.buffVsFood && my.settings.damageType === 1) ? 3 : 1) *
-                                        n.damageMultiplier() *
-                                        Math.min(2, Math.max(speedFactor._n, 1) * speedFactor._n),
-                                };
-                            // Advanced damage calculations
-                            if (my.settings.ratioEffects) {
-                                damage._me *= Math.min(1, Math.pow(Math.max(my.health.ratio, my.shield.ratio), 1 / my.penetration));
-                            }
-                            if (n.settings.ratioEffects) {
-                                damage._n *= Math.min(1, Math.pow(Math.max(n.health.ratio, n.shield.ratio), 1 / n.penetration));
-                            }
-                            if (my.settings.damageEffects) {
-                                damage._me *=
-                                    accelerationFactor *
-                                    (1 + (componentNorm - 1) * (1 - depth._n) / my.penetration) *
-                                    (1 + pen._n.sqrt * depth._n - depth._n) / pen._n.sqrt; 
-                            }
-                            if (n.settings.damageEffects) {
-                                damage._n *=
-                                    accelerationFactor *
-                                    (1 + (componentNorm - 1) * (1 - depth._me) / n.penetration) *
-                                    (1 + pen._me.sqrt * depth._me - depth._me) / pen._me.sqrt; 
-                            }
-                            // Find out if you'll die in this cycle, and if so how much damage you are able to do to the other target
-                            let damageToApply = {
-                                _me: damage._me,
-                                _n: damage._n,
-                            };
-                            if (n.shield.max) { 
-                                damageToApply._me -= n.shield.getDamage(damageToApply._me);
-                            }
-                            if (my.shield.max) { 
-                                damageToApply._n -= my.shield.getDamage(damageToApply._n);
-                            }
-                            let stuff = my.health.getDamage(damageToApply._n, false);
-                            deathFactor._me = (stuff > my.health.amount) ? my.health.amount / stuff : 1;
-                            stuff = n.health.getDamage(damageToApply._me, false);
-                            deathFactor._n = (stuff > n.health.amount) ? n.health.amount / stuff : 1;
+                      /********** DO DAMAGE *********/
+            let bail = false;
+            if (
+              my.shape === n.shape &&
+              my.settings.isNecromancer &&
+              n.type === "food"
+            ) {
+              bail = my.necro(n);
+            } else if (
+              my.shape === n.shape &&
+              n.settings.isNecromancer &&
+              my.type === "food"
+            ) {
+              bail = n.necro(my);
+            }
+            if (!bail) {
+              // Calculate base damage
+              let resistDiff = my.health.resist - n.health.resist,
+                damage = {
+                  _me:
+                    c.DAMAGE_CONSTANT *
+                    my.damage *
+                    (1 + resistDiff) *
+                    (1 +
+                      n.heteroMultiplier *
+                        (my.settings.damageClass === n.settings.damageClass)) *
+                    (my.settings.buffVsFood && n.settings.damageType === 1
+                      ? 3
+                      : 1) *
+                    my.damageMultiplier() *
+                    Math.min(2, Math.max(speedFactor._me, 1) * speedFactor._me),
+                  _n:
+                    c.DAMAGE_CONSTANT *
+                    n.damage *
+                    (1 - resistDiff) *
+                    (1 +
+                      my.heteroMultiplier *
+                        (my.settings.damageClass === n.settings.damageClass)) *
+                    (n.settings.buffVsFood && my.settings.damageType === 1
+                      ? 3
+                      : 1) *
+                    n.damageMultiplier() *
+                    Math.min(2, Math.max(speedFactor._n, 1) * speedFactor._n)
+                };
+              // Advanced damage calculations
+              if (my.settings.ratioEffects) {
+                damage._me *= Math.min(
+                  1,
+                  Math.pow(
+                    Math.max(my.health.ratio, my.shield.ratio),
+                    1 / my.penetration
+                  )
+                );
+              }
+              if (n.settings.ratioEffects) {
+                damage._n *= Math.min(
+                  1,
+                  Math.pow(
+                    Math.max(n.health.ratio, n.shield.ratio),
+                    1 / n.penetration
+                  )
+                );
+              }
+              if (my.settings.damageEffects) {
+                damage._me *=
+                  (accelerationFactor *
+                    (1 +
+                      ((componentNorm - 1) * (1 - depth._n)) / my.penetration) *
+                    (1 + pen._n.sqrt * depth._n - depth._n)) /
+                  pen._n.sqrt;
+              }
+              if (n.settings.damageEffects) {
+                damage._n *=
+                  (accelerationFactor *
+                    (1 +
+                      ((componentNorm - 1) * (1 - depth._me)) / n.penetration) *
+                    (1 + pen._me.sqrt * depth._me - depth._me)) /
+                  pen._me.sqrt;
+              }
+              // Find out if you'll die in this cycle, and if so how much damage you are able to do to the other target
+              let damageToApply = {
+                _me: damage._me,
+                _n: damage._n
+              };
+              if (n.shield.max) {
+                damageToApply._me -= n.shield.getDamage(damageToApply._me);
+              }
+              if (my.shield.max) {
+                damageToApply._n -= my.shield.getDamage(damageToApply._n);
+              }
+              let stuff = my.health.getDamage(damageToApply._n, false);
+              deathFactor._me =
+                stuff > my.health.amount ? my.health.amount / stuff : 1;
+              stuff = n.health.getDamage(damageToApply._me, false);
+              deathFactor._n =
+                stuff > n.health.amount ? n.health.amount / stuff : 1;
 
-                                reductionFactor = Math.min(deathFactor._me, deathFactor._n);
+              reductionFactor = Math.min(deathFactor._me, deathFactor._n);
 
-                            // Now apply it
-                            my.damageRecieved += damage._n * deathFactor._n;
-                            n.damageRecieved += damage._me * deathFactor._me;
-                        }
-                    }
+              // Now apply it
+              my.damageRecieved += damage._n * deathFactor._n;
+              n.damageRecieved += damage._me * deathFactor._me;
+            }
                   /*************   POISON  ***********/
             if (n.poison) {
               my.poisoned = true;
