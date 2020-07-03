@@ -1563,13 +1563,6 @@ class Entity {
         this.master = master;
         this.source = this;
         this.parent = this;
-      this.poisoned = false;
-      this.poison = false;
-      this.poisonedBy = -1;
-      this.poisonLevel = 0;
-      this.poisonToApply = 0;
-      this.showpoison = false;
-      this.poisonTimer = 0;
         this.control = {
             target: new Vector(0, 0),
             goal: new Vector(0, 0),
@@ -1718,18 +1711,6 @@ class Entity {
         if (set.COLOR != null) { 
             this.color = set.COLOR; 
         }   
-      if (set.POISON != null) {
-      this.poison = set.POISON;
-    }
-    if (set.POISONED != null) {
-      this.poisoned = set.POISONED;
-    }
-    if (set.POISON_TO_APPLY != null) {
-      this.poisonToApply = set.POISON_TO_APPLY;
-    }
-    if (set.SHOWPOISON != null) {
-      this.showpoison = set.SHOWPOISON;
-    }
         if (set.CONTROLLERS != null) { 
             let toAdd = [];
             set.CONTROLLERS.forEach((ioName) => {
@@ -4366,20 +4347,6 @@ var gameloop = (() => {
                             n.damageRecieved += damage._me * deathFactor._me;
                         }
                     }
-                  /*************   POISON  ***********/
-            if (n.poison) {
-              my.poisoned = true;
-              my.poisonedLevel = n.poisionToApply;
-              my.poisonTime = 20;
-              my.poisonedBy = n.master;
-            }
-            if (my.poison) {
-              n.poisoned = true;
-              n.poisonedLevel = my.poisionToApply;
-              n.poisonTime = 20;
-              n.poisonedBy = my.master;
-            }
-          }
                     /************* DO MOTION ***********/    
                     if (nIsFirmCollide < 0) {
                         nIsFirmCollide *= -0.5;
@@ -4425,88 +4392,65 @@ var gameloop = (() => {
         }
         // The actual collision resolution function
         return collision => {
-      // Pull the two objects from the collision grid
-      let instance = collision[0],
-        other = collision[1];
-      // Check for ghosts...
-      if (other.isGhost) {
-        util.error("GHOST FOUND");
-        util.error(other.label);
-        util.error("x: " + other.x + " y: " + other.y);
-        util.error(other.collisionArray);
-        util.error("health: " + other.health.amount);
-        util.warn("Ghost removed.");
-        if (grid.checkIfInHSHG(other)) {
-          util.warn("Ghost removed.");
-          grid.removeObject(other);
-        }
-        return 0;
-      }
-      if (instance.isGhost) {
-        util.error("GHOST FOUND");
-        util.error(instance.label);
-        util.error("x: " + instance.x + " y: " + instance.y);
-        util.error(instance.collisionArray);
-        util.error("health: " + instance.health.amount);
-        if (grid.checkIfInHSHG(instance)) {
-          util.warn("Ghost removed.");
-          grid.removeObject(instance);
-        }
-        return 0;
-      }
-      if (!instance.activation.check() && !other.activation.check()) {
-        util.warn("Tried to collide with an inactive instance.");
-        return 0;
-      }
-      // Handle walls
-      if (instance.type === "wall" || other.type === "wall") {
-        let a =
-          instance.type === "bullet" || other.type === "bullet"
-            ? 1 +
-              10 /
-                (Math.max(instance.velocity.length, other.velocity.length) + 10)
-            : 1;
-        if (instance.type === "wall")
-          advancedcollide(instance, other, false, false, a);
-        else advancedcollide(other, instance, false, false, a);
-      }
-      // If they can firm collide, do that
-      else if (
-        (instance.type === "crasher" && other.type === "food") ||
-        (other.type === "crasher" && instance.type === "food")
-      ) {
-        firmcollide(instance, other);
-      }
-      // Otherwise, collide normally if they're from different teams
-      else if (instance.team !== other.team) {
-        advancedcollide(instance, other, true, true);
-      }
-      // Ignore them if either has asked to be
-      else if (
-        instance.settings.hitsOwnType == "never" ||
-        other.settings.hitsOwnType == "never"
-      ) {
-        // Do jack
-      }
-      // Standard collision resolution
-      else if (instance.settings.hitsOwnType === other.settings.hitsOwnType) {
-        switch (instance.settings.hitsOwnType) {
-          case "push":
-            advancedcollide(instance, other, false, false);
-            break;
-          case "hard":
-            firmcollide(instance, other);
-            break;
-          case "hardWithBuffer":
-            firmcollide(instance, other, 30);
-            break;
-          case "repel":
-            simplecollide(instance, other);
-            break;
-        }
-      }
-    };
-  })();
+            // Pull the two objects from the collision grid      
+            let instance = collision[0],
+                other = collision[1];   
+            // Check for ghosts...
+            if (other.isGhost) {
+                util.error('GHOST FOUND');
+                util.error(other.label);
+                util.error('x: ' + other.x + ' y: ' + other.y);
+                util.error(other.collisionArray);
+                util.error('health: ' + other.health.amount);
+                util.warn('Ghost removed.');
+                if (grid.checkIfInHSHG(other)) {
+                    util.warn('Ghost removed.'); grid.removeObject(other);
+                }
+                return 0;
+            }
+            if (instance.isGhost) {
+                util.error('GHOST FOUND');
+                util.error(instance.label);
+                util.error('x: ' + instance.x + ' y: ' + instance.y);
+                util.error(instance.collisionArray);
+                util.error('health: ' + instance.health.amount);
+                if (grid.checkIfInHSHG(instance)) {
+                    util.warn('Ghost removed.'); grid.removeObject(instance);
+                }
+                return 0;
+            }
+            if (!instance.activation.check() && !other.activation.check()) { util.warn('Tried to collide with an inactive instance.'); return 0; }
+            // Handle walls
+            if (instance.type === 'wall' || other.type === 'wall') {
+                let a = (instance.type === 'bullet' || other.type === 'bullet') ? 
+                    1 + 10 / (Math.max(instance.velocity.length, other.velocity.length) + 10) : 
+                    1;
+                if (instance.type === 'wall') advancedcollide(instance, other, false, false, a);
+                else advancedcollide(other, instance, false, false, a);
+            } else
+            // If they can firm collide, do that
+            if ((instance.type === 'crasher' && other.type === 'food') || (other.type === 'crasher' && instance.type === 'food')) {
+                firmcollide(instance, other);
+            } else
+            // Otherwise, collide normally if they're from different teams
+            if (instance.team !== other.team) {
+                advancedcollide(instance, other, true, true);
+            } else 
+            // Ignore them if either has asked to be
+            if (instance.settings.hitsOwnType == 'never' || other.settings.hitsOwnType == 'never') {
+                // Do jack                    
+            } else 
+            // Standard collision resolution
+            if (instance.settings.hitsOwnType === other.settings.hitsOwnType) {
+                switch (instance.settings.hitsOwnType) {
+                case 'push': advancedcollide(instance, other, false, false); break;
+                case 'hard': firmcollide(instance, other); break;
+                case 'hardWithBuffer': firmcollide(instance, other, 30); break;
+                case 'repel': simplecollide(instance, other); break;
+                }
+            }     
+        };
+    })();
     // Living stuff
     function entitiesactivationloop(my) {
         // Update collisions.
@@ -4574,71 +4518,6 @@ var gameloop = (() => {
     //setTimeout(moveloop, 1000 / roomSpeed / 30 - delta); 
 })();
 // A less important loop. Runs at an actual 5Hz regardless of game speed.
-var poisonLoop = (() => {
-  // Fun stuff, like RAINBOWS :D
-  function poison(my) {
-    entities.forEach(function(element) {
-      if (element.showpoison) {
-        let x = element.size + 10;
-        let y = element.size + 10;
-        Math.random() < 0.5 ? (x *= -1) : x;
-        Math.random() < 0.5 ? (y *= -1) : y;
-        Math.random() < 0.5 ? (x *= Math.random() + 1) : x;
-        Math.random() < 0.5 ? (y *= Math.random() + 1) : y;
-        var o = new Entity({
-          x: element.x + x,
-          y: element.y + y
-        });
-        o.define(Class["poisonEffect"]);
-      }
-      if (element.poisoned && element.type == "tank") {
-        let x = element.size + 10;
-        let y = element.size + 10;
-        Math.random() < 0.5 ? (x *= -1) : x;
-        Math.random() < 0.5 ? (y *= -1) : y;
-        Math.random() < 0.5 ? (x *= Math.random() + 1) : x;
-        Math.random() < 0.5 ? (y *= Math.random() + 1) : y;
-        var o = new Entity({
-          x: element.x + x,
-          y: element.y + y
-        });
-        o.define(Class["poisonEffect"]);
-
-        if (!element.invuln) {
-          element.health.amount -=
-            element.health.max / (55 - element.poisonLevel);
-          element.shield.amount -=
-            element.shield.max / (35 - element.poisonLevel);
-        }
-
-        element.poisonTime -= 1;
-        if (element.poisonTime <= 0) element.poisoned = false;
-
-        if (
-          element.health.amount <= 0 &&
-          element.poisonedBy != undefined &&
-          element.poisonedBy.skill != undefined
-        ) {
-          element.poisonedBy.skill.score += Math.ceil(
-            util.getJackpot(element.poisonedBy.skill.score)
-          );
-          element.poisonedBy.sendMessage(
-            "You killed " + element.name + " with poison."
-          );
-          element.sendMessage(
-            "You have been killed by " +
-              element.poisonedBy.name +
-              " with poison."
-          );
-        }
-      }
-    });
-  }
-  return () => {
-    // run the poison
-    poison();
-  };
-})();
 var maintainloop = (() => {
     // Place obstacles
     function placeRoids() {
@@ -5107,4 +4986,3 @@ let websockets = (() => {
 setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
-setInterval(poisonLoop, room.cycleSpeed * 7);
