@@ -3,3 +3,5 @@ UPDATES AND CHANGELOGS
 2020/6/17 Sniper Rifle Completed
 2020/7/1 Lazer Completed
 2020/7/3 added poison bullet
+2020/7/5 Extinguisher Completed,
+         
