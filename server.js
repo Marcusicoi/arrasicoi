@@ -4699,7 +4699,7 @@ var maintainloop = (() => {
                     o.name = names[i++];
             };
             return {
-                prepareToSpawn: (classArray, number, nameClass, typeOfLocation = 'norm') => {
+                prepareToSpawn: (classArray, number, nameClass, typeOfLocation = 'nest') => {
                     n = number;
                     bois = classArray;
                     loc = typeOfLocation;
