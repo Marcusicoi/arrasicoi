@@ -4791,7 +4791,7 @@ var maintainloop = (() => {
                     o.define(Class.bot);
                   let arrayOfClasses = [Class.sniprifle, Class.lazer, Class.necromancer, Class.overlord,
                                         Class.machinegunner, Class.stalker, Class.penta, Class.octo,
-                                        Class.hybrid, Class.anni, Class.quint]                  
+                                        Class.hybrid, Class.anni, Class.quint, Class.sidewind, ]                  
                       let newClass = arrayOfClasses[Math.floor(Math.random() * arrayOfClasses.length)];
                     o.define(newClass);
                     o.name += ran.chooseBotName();
