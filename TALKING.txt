@@ -1,0 +1,5 @@
+talk here if u want, format ur sentence like this:
+Boom: *sentence* /Day/Month time:time
+Griefer: *sentence* /Day/Month time:time
+--------------------------------------------------
+Boom: I'm here /8/7 15:37
