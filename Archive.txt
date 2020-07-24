@@ -1,6 +1,7 @@
 YOU NEED TO COPY THINGS HERE BEFORE DELETING
 -----------------------------------------------
 deleted: ak47
+
 exports.ak47 = {
     PARENT: [exports.genericTank],
     LABEL: 'AK47',
