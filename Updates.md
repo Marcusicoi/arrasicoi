@@ -2,7 +2,7 @@
 ### All Changelogs
 
 - - -
-2020/7/24 Added **Lancer** (Completed)
+2020/7/25 Added **Lancer** (Completed)
 - - -
 2020/7/23 Removed **AK47** (Copied to `Archive.txt`)
 - - -
