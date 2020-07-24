@@ -1,6 +1,8 @@
 # UPDATES AND CHANGELOGS
 ### All Changelogs
 - - -
+2020/7/24 Added **Lancer** (completed)
+- - -
 2020/7/23 Removed **AK47** (Copied to `Notes`)
 - - -
 2020/7/23 **AK47** Completed (Overpowered)
