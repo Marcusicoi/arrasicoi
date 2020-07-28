@@ -1,6 +1,7 @@
 # UPDATES AND CHANGELOGS
 ### All Changelogs
 
+2020/7/26 
 - - -
 2020/7/25 Added **Lancer** (Completed)
 - - -
@@ -10,7 +11,7 @@
 - - -
 2020/7/21 **Boosted Fighter** Completed
 - - -
-2020/7/5 **Extinguisher** Completed, Debuffed Sniper Rifle
+2020/7/5 **Extinguisher** Completed, Debuffed Sniper Rifle**
 - - -
 2020/7/3 Added **poison bullet**
 - - -
