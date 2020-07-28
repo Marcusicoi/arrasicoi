@@ -1,7 +1,8 @@
 # UPDATES AND CHANGELOGS
 ## All Changelogs
 
-2020/7/26 
+2020/7/27
+
 - - -
 2020/7/25 
 - Added **Lancer** (Completed)
@@ -22,8 +23,10 @@
 - - -
 2020/7/1 
 - **Lazer** Completed
+- Added **lazerbeam**
 - - -
 2020/6/17 
 - **Sniper Rifle** Completed
 - - -
 - - -
+You Read All of Them! Congrats! ：P
