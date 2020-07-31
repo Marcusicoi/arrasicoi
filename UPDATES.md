@@ -12,7 +12,8 @@ Remarks: Completed=Tanks, Added=Bullets
 
 2020/7/27
 
-- Completed **
+- Completed **Double Machgunner** `exports.doublegunner`
+- Completed **Quadra Machgunner** `exports.quadragunner`
 
 ---
 
