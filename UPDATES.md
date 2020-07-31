@@ -13,8 +13,7 @@ Remarks: Completed=Tanks, Added=Bullets
 2020/7/27
 
 - Completed **Double Machgunner** `exports.doublegunner`
-- Completed **Quadra Machgunner** `exports.quadragunner`
-
+- Completed **Quadra Machgunner** `exports.quadragunner`- Completed **Necromonster** `exports.necromonster`
 ---
 
 2020/7/25
@@ -69,3 +68,4 @@ Remarks: Completed=Tanks, Added=Bullets
 ###### -By Boom v3
 
 ###### Special Thanks: Griefer Cube
+
