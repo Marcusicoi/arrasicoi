@@ -4,18 +4,20 @@
 
 2020/7/27
 
+- Completed **
+
 ---
 
 2020/7/25
 
-- Added **Lancer** (Completed)
+- Completed **Lancer**
 
 ---
 
 2020/7/23
 
 - Removed **AK47** (Copied to `Archive.txt`)
-- **AK47** Completed (Overpowered)
+- **AK47** Completed `exports.ak47` (Overpowered)
 
 ---
 
@@ -27,27 +29,27 @@
 
 2020/7/5
 
-- **Extinguisher** Completed
+- **Extinguisher** Completed `exports.extinct`
 - Debuffed **Sniper Rifle**
 
 ---
 
 2020/7/3
 
-- Added **poison bullet**
+- Added **Poison Bullet**
 
 ---
 
 2020/7/1
 
-- **Lazer** Completed
-- Added **lazerbeam**
+- **Lazer** Completed `exports.lazer`
+- Added **Lazerbeam** `exports.lazerbeam`
 
 ---
 
 2020/6/17
 
-- **Sniper Rifle** Completed
+- **Sniper Rifle** Completed `exports.sniprifle`
 
 ---
 
