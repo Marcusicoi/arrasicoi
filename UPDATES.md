@@ -10,10 +10,17 @@ Remarks: Completed=Tanks, Added=Bullets
 ---
 ---
 
+2020/7/31
+
+- Completed **Pentaseer** `exports.pentaseer` DIE
+
+---
+
 2020/7/27
 
 - Completed **Double Machgunner** `exports.doublegunner`
-- Completed **Quadra Machgunner** `exports.quadragunner`- Completed **Necromonster** `exports.necromonster`
+- Completed **Quadra Machgunner** `exports.quadragunner``- Completed **Necromonster** `exports.necromonster`
+- Completed **Automancer** `exports.autonecro`
 ---
 
 2020/7/25
