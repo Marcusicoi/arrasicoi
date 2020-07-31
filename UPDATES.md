@@ -5,14 +5,14 @@
 ---
 ---
 
-Remarks: Completed=Tanks, Added=Bullets
+`Remarks: Completed=Tanks, Added=Bullets
 
 ---
 ---
 
 2020/7/31
 
-- Completed **Pentaseer** `exports.pentaseer` DIE
+- Completed **Pentaseer** `exports.pentaseer`
 
 ---
 
