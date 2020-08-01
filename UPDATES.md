@@ -10,9 +10,10 @@ Remarks: Completed=Tanks, Added=Bullets
 ---
 ---
 
-2020/8/2
+2020/8/1
 
 - Debuffed **Pentamancer**
+- Completed **Healer** `exports.healer`
 
 ---
 
