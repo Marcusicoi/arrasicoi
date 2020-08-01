@@ -14,6 +14,8 @@ Remarks: Completed=Tanks, Added=Bullets
 
 - Debuffed **Pentamancer**
 - Completed **Healer** `exports.healer`
+- Added **Triangle Bullet** `exports.trianglet`
+- Completed **Triangle Shooter** `exports.bigtrishooter`
 
 ---
 
