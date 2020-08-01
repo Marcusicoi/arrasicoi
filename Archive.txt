@@ -17,3 +17,18 @@ exports.ak47 = {
     ],
 }
 ------------------------------------------------
+exports.omger = {
+        LABEL: 'omger',
+        PARENT: [exports.trap],
+        CONTROLLERS: ['boomerang'],
+        MOTION_TYPE: 'motor',  
+        HITS_OWN_TYPE: 'never',
+        SHAPE: -5,
+        BODY: {
+            SPEED: 3.75,
+            DAMAGE:50,
+            HEALTH:3,
+            RANGE: 120,
+        },
+    };
+-------------------------------------------------
