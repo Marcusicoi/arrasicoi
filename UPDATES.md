@@ -10,9 +10,15 @@ Remarks: Completed=Tanks, Added=Bullets
 ---
 ---
 
+2020/8/2
+
+- Debuffed **Pentamancer**
+
+---
+
 2020/7/31
 
-- Completed **Pentaseer** `exports.pentaseer`
+- Completed **Pentamancer** `exports.pentaseer`
 
 ---
 
