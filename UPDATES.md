@@ -5,7 +5,7 @@
 ---
 ---
 
-`Remarks: Completed=Tanks, Added=Bullets
+Remarks: Completed=Tanks, Added=Bullets
 
 ---
 ---
