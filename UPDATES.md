@@ -6,8 +6,15 @@
 ---
 
 Remarks: Completed=Tanks, Added=Bullets
+         Copied removed stuffs to `Archive.txt`
 
 ---
+---
+
+2020/8/2
+
+- Completed **Crossbow** `exports.crossbow`
+
 ---
 
 2020/8/1
@@ -28,7 +35,8 @@ Remarks: Completed=Tanks, Added=Bullets
 2020/7/27
 
 - Completed **Double Machgunner** `exports.doublegunner`
-- Completed **Quadra Machgunner** `exports.quadragunner``- Completed **Necromonster** `exports.necromonster`
+- Completed **Quadra Machgunner** `exports.quadragunner``
+- Completed **Necromonster** `exports.necromonster`
 - Completed **Automancer** `exports.autonecro`
 ---
 
