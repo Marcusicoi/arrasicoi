@@ -45,7 +45,7 @@
     0.02,
     0
   ],
-  "MAX_SKILL": 9,
+  "MAX_SKILL": 10,
   "SOFT_MAX_SKILL": 0.59,
   "TIER_1": 15,
   "TIER_2": 30,
@@ -53,7 +53,7 @@
   "TIER_4": 60,
   "TIER_5": 75,
   "TIER_GOD": 75,
-  "SKILL_CAP":75,
+  "SKILL_CAP": 75,
   "SKILL_DEV_CAP": 75,
   "SKILL_SOFT_CAP": 0,
   "SKILL_CHEAT_CAP": 75,
@@ -63,6 +63,6 @@
   "MIN_SPEED": 0.001,
   "FOOD_AMOUNT": 0.4, 
   "SKILL_BOOST": 5,
-  "BOTS": 6,
+  "BOTS": 10,
   "GLASS_HEALTH_FACTOR": 2
 }
