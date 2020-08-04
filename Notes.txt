@@ -3,9 +3,9 @@ Notes here (Useless notes will be deleted)
 SHAPE: 
 -3 = trap
 -2 = oval
--1 = horizontal ber
+-1 = verticle bar
 0 = circle
 1 = dot
-2 = vertical bar
+2 = horizontal bar
 3 = triangle
 ----------
