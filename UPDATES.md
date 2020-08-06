@@ -13,8 +13,9 @@ Remarks:
 ---
 ---
 
-2020/8/2
+2020/8/3
 
+- Added **Arrow** `exports.arrow`
 - Completed **Crossbow** `exports.crossbow`
 
 ---
