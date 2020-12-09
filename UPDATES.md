@@ -13,6 +13,12 @@ Remarks:
 ---
 ---
 
+2020/12/9
+
+- Start making **Poison Machgun** `exports.poisonmach`
+
+---
+
 2020/8/3
 
 - Added **Arrow** `exports.arrow`
@@ -38,7 +44,7 @@ Remarks:
 2020/7/27
 
 - Completed **Double Machgunner** `exports.doublegunner`
-- Completed **Quadra Machgunner** `exports.quadragunner``
+- Completed **Quadra Machgunner** `exports.quadragunner`
 - Completed **Necromonster** `exports.necromonster`
 - Completed **Automancer** `exports.autonecro`
 ---
@@ -87,13 +93,4 @@ Remarks:
 - **Sniper Rifle** Completed `exports.sniprifle`
 
 ---
-
 ---
-
-##### You Read All of Them! Congrats! 🤪
-
-###### -By Boom v3
-
-###### Special Thanks: Griefer Cube
-
-###### small print
