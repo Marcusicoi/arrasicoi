@@ -20,6 +20,7 @@ SECRET=aSecretPasswordHere
 4. The map/config data are in the `config.js` file
 5. The tank data are in the `lib/definitions.js` file
 6. Other stuff (score curve, stat amount) are in the `server.js` file
+   ok
 
 ## Gamemode Code
 
@@ -44,3 +45,5 @@ Note:
 ## Breaking Changes
 
 Breaking changes are important updates to the template that you should do on your server, as otherwise it may stop functioning. The last breaking change is on April 10th, 2019. If you've made a private server before that day, it may no longer work without this update. See `CHANGELOG.md` for details.
+
+hmm oh wait you are there? i was daydreaming lol
