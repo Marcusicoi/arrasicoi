@@ -5,7 +5,15 @@
 ---
 ---
 
-Remarks: 
+2021/3/9
+
+- Added **Pellet, Pelleter** `exports.pellet, exports.pelleter`
+- Added OverDrive `exports.overdrive`
+
+---
+---
+
+2020/12/10 
 
 - Completed=Tanks, Added=Bullets
 - Copied removed stuffs to `Archive.txt`
