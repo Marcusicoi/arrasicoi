@@ -21,6 +21,7 @@
 - Upgraded The Package Of **google-closure-library**
 - Pushed **EliteSprayer** In Bosses Testbed Tier Class List
 - Pushed **EliteDestroyer** In Bosses Testbed Tier Class List
+- Added **AnniLord** `exports.overanni`
 
 ---
 ---
