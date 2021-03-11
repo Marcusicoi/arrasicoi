@@ -1,5 +1,6 @@
 # Marcusicoi Arras Template 
 
+NOTE: **Make Sure You Go To My
 # Remix It!
 
 1. Click The Top Left Where It Says **Remix To Edit**
@@ -173,3 +174,10 @@ TYPE: exports.bullet
 ```
 
 And Find **UPGRADE PATHS** And Add (Make sure you remember what the next tank that fits your screen) `exports.basic.UPGRADES_TIER_1 = [exports.page2]`
+
+# Show My App
+
+1. Look Up
+2. Click `🕶️`
+3. Click **In A New Window/Tab**
+**Note: If You Tap Next To The Code It Automatically Cant See your App**
