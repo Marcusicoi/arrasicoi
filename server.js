@@ -4789,9 +4789,17 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                     o.color = 17;
                     o.define(Class.bot);
-                  let arrayOfClasses = [Class.sniprifle, Class.lazer, Class.pentaseer,
-                                        Class.machinegunner, Class.penta, Class.octo,
-                                        Class.hybrid, Class.anni, Class.quint, Class.sidewind, Class.basic, Class.factory, Class.spike, Class.crossbow]                  
+                  let arrayOfClasses = [Class.sniprifle, Class.lazer,
+                                        Class.pentaseer, Class.booster,
+                                        Class.machinegunner, Class.penta, 
+                                        Class.octo, Class.cyclone,
+                                        Class.hybrid, Class.anni, 
+                                        Class.quint, Class.sidewind, 
+                                        Class.basic, Class.factory, 
+                                        Class.spike, Class.crossbow,
+                                        Class.bonk, Class.skimmer,
+                                        Class.single, Class.shotgun2,
+                                       ]                  
                       let newClass = arrayOfClasses[Math.floor(Math.random() * arrayOfClasses.length)];
                     o.define(newClass);
                     o.name += ran.chooseBotName();
