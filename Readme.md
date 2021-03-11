@@ -17,4 +17,17 @@ Example:
 SECRET = AnyPasswordYouWant
 ```
 If you Accidently Delete It Follow My Steps.
-1. Go To Top 
+1. Go To Top Says `PlainText🧿`
+2. TYPE: SECRET = `anypassword`
+Done!
+
+# File Meaning
+The Tank Data, Polygons, Tier List Are In **`lib/efinitions.js`*
+*
+Packages Are In **`package.json`**
+
+Random,Chances Are in **`lib/random.js`**
+
+Map/Data Are In **`config.json`**
+
+lll
