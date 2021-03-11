@@ -87,5 +87,26 @@ Y = **Y-Axis** Means The Position Of The Tank Was If It Its 0 It Will go normal
 If Its More Than 0 It Wil Move Up If its less Than 0 It will Move Down
 
 a = **ANGLE** Means The Position of The Barrel Rotate Was If Its 0 It will stay on top
-If its More Than 0 It will rotate The ClockWise The Body Of Your Tank
-If Its 
+If its More Than 0 It will rotate ClockWise The Body Of Your Tank
+If Its Less Than 0 It Will rotate Opposite Side Of Clockwise The Body Of Your Tank
+
+D = **DELAY** (**ONLY IF YOU HAVE 2 BARRELS**) Means The Recoil Of the Barrel Was Shoot If its 0 It Will Do Normally
+If Its More than 0 The 0 Will Shoot First If If Its Less Than 0
+The -1 Will Shot First
+
+So.
+```
+  L.  W. A. X. Y. a. D
+[ 18, 8, 1, 0, 0, 0, 0],
+```
+
+`PROPERTIES:` Means The Properties Of Tank If You Didn't add Properties It Will Not Shoot So `PROPERTIES: {`
+
+`SHOOT_SETTINGS: combineStats([g.?]),` Means The Shoot Settings of the tank if you put many the shoot bullet will strong or weak.
+(If you Want Own Go To The Top And Find **const g =**
+ So `SHOOT_SETTINGS: combineStats([g.basic]),`
+ 
+`TYPE:` Means What Type Of Bullet It Shoot
+`TYPE: exports.bullet` Or `TYPE:exports
+
+
