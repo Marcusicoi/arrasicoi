@@ -52,12 +52,12 @@ file.**css** Is A Style,Font,Color,BackGround, For file.**html**
 
 # Creating Tanks Tutorial
 
-`exports.anyname` Means To Export A Name to Select It On Tier So `exports.basic`
+`exports.anyname` Means To Export A Name to Select It On Tier So `exports.test`
 
 `PARENT: [],` Means To Do Same As You Want To Export It So `PARENT: [exports.genericTank]`
 
 `LABEL: '',` Means That Name Of Your Tank So
-`LABEL: 'Basic',`
+`LABEL: 'TestTank',`
 
 `DANGER: 0,` Means How Danger Your Tank Was So `DANGER: 7`
 
@@ -107,6 +107,33 @@ So.
  So `SHOOT_SETTINGS: combineStats([g.basic]),`
  
 `TYPE:` Means What Type Of Bullet It Shoot
-`TYPE: exports.bullet` Or `TYPE:exports
+`TYPE: exports.bullet` Or `TYPE: exports.drone` Or `TYPE: exports.trap` So I'll Pick `TYPE: exports.bullet`
 
+If Its Done Type/Copy This: 
+```
+}, },
+],
+};
+```
+If You Want Another Barrel Type/Copy This:
+```
+}, }, {//. L. W. A. X. Y. a. D
+POSITION: [0, 0, 0, 0, 0, 0, 0],
+PROPERTIES: {, (or not)
+SHOOT_SETTINGS: combineStats([g.?]),
+TYPE: exports.?
+```
+
+And Start Working!
+
+I Forgot My Tank Is
+(**NOTE: DO NOT COPY THIS ITS ALREADY WORKED** or you just want page2)
+```
+exports.test = {
+PARENT: [exports.genericTank],
+LABEL: 'TestTank',
+DANGER: 7,
+GUNS: [{//   L. W. A. X. Y. a. D
+POSITION: [ 18, 8, 1, 0, 0, 0, 0],
+SHOOT_SETTINGS: [
 
