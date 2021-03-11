@@ -1,6 +1,15 @@
 # UPDATES AND CHANGELOGS
 
 ## All Changelogs
+---
+---
+
+2021/3/10
+- Added **Musket** `exports.musk`
+- Replaced **PentaMancer** To **Triangseer** Because its overpowered
+- Removed **Rocket Launcher** And **Arrow** Because Of Cursed Stuff
+- Added **Arrow**, **Rocket Launcher**,
+
 
 ---
 ---
