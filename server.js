@@ -342,7 +342,7 @@ class io_boomerang extends IO {
     }
     think(input) {
         if (this.b.range > this.r) this.r = this.b.range;
-        let t = 1; 1 - Math.sin(2 * Math.PI * this.b.range / this.r) || 1;
+        let t = 1; //1 - Math.sin(2 * Math.PI * this.b.range / this.r) || 1;
         if (!this.turnover) {
             if (this.r && this.b.range < this.r * 0.5) { this.turnover = true; }
             return {
@@ -2267,7 +2267,7 @@ class Entity {
                 givenangle = Math.atan2(t.y, t.x);
                 let diff = util.angleDifference(givenangle, this.firingArc[0]);
                 if (Math.abs(diff) >= this.firingArc[1]) {
-                    givenangle = this.firingArc[0]; - util.clamp(Math.sign(diff), -this.firingArc[1], this.firingArc[1]);
+                    givenangle = this.firingArc[0];// - util.clamp(Math.sign(diff), -this.firingArc[1], this.firingArc[1]);
                 }
             } else {
                 givenangle = this.firingArc[0];
@@ -4789,7 +4789,7 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                     o.color = 17;
                     o.define(Class.bot);
-                  let arrayOfClasses = [Class.sniprifle, Class.lazer, Class.triaseer,
+                  let arrayOfClasses = [Class.sniprifle, Class.lazer, Class.pentaseer,
                                         Class.machinegunner, Class.penta, Class.octo,
                                         Class.hybrid, Class.anni, Class.quint, Class.sidewind, Class.basic, Class.factory, Class.spike, Class.crossbow]                  
                       let newClass = arrayOfClasses[Math.floor(Math.random() * arrayOfClasses.length)];

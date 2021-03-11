@@ -1,28 +1,11 @@
 # UPDATES AND CHANGELOGS
 
 ## All Changelogs
----
----
-
-2021/3/10
-- Added **Musket** `exports.musk`
-- Replaced **PentaMancer** To **Triangseer** Because its overpowered
-- Removed **Rocket Launcher** And **Arrow** Because Of Cursed Stuff
-- Added **Arrow**, **Rocket Launcher**,
-
 
 ---
 ---
 
-2021/3/9
-
-- Added **Pellet, Pelleter** `exports.pellet, exports.pelleter`
-- Added OverDrive `exports.overdrive`
-
----
----
-
-2020/12/10 
+Remarks: 
 
 - Completed=Tanks, Added=Bullets
 - Copied removed stuffs to `Archive.txt`
