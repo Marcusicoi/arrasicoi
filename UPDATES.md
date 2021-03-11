@@ -5,10 +5,13 @@
 ---
 ---
 
-Remarks: 
+2021/3/10
 
-- Completed=Tanks, Added=Bullets
-- Copied removed stuffs to `Archive.txt`
+- Replaced **BetaPenta, AlphaPenta, AlphaHexa** to **Hexagon, Heptagin, Octagon**
+- Replaced **'Sub To BoomV3'** to **'Sub To Marcusicoi**,
+- Added the name of bot = **Pet,SPIN=TEAM!**,
+- Removed The Shape Of **Beta Tester**, `exports.testbed`,
+- Removed All The Tiers Of **Beta Tester** and Start Making New one
 
 ---
 ---
