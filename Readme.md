@@ -52,4 +52,27 @@ file.**css** Is A Style,Font,Color,BackGround, For file.**html**
 
 # Creating Tanks Tutorial
 
-`exports.anyname` Means To Export A Name to Select It On Tier
+`exports.anyname` Means To Export A Name to Select It On Tier So `exports.basic`
+
+`PARENT: [],` Means To Do Same As You Want To Export It So `PARENT: [exports.genericTank]`
+
+`LABEL: '',` Means That Name Of Your Tank So
+`LABEL: 'Basic',`
+
+`DANGER: 0,` Means How Danger Your Tank Was So `DANGER: 7`
+
+`GUNS: [{` Means The Gun Of The Barrel 
+
+```
+  L. W. A. X. Y. a. D
+[ 0, 0, 0, 0, 0, 0, 0],
+```
+
+L = **LENGTH** means How Long The Barrel Of The Vertical One If Its 18 it will do as normal if Its
+more Than 18 It Will go More Longer Like The Tank **Sniper, Assassin, Ranger**
+if its less than 18 It will go short Like The Tank **Brusher**, (custom tank)
+
+W = **WIDTH** means How Long The Barrel Of The Horizontal One If Its 10 It will do as normal
+If Its more than 10 The Bullet Will Be Big And The tank barrel Will Wide Like The Tank
+**Annihilator** If Its Less Than 10 The Horizon Tao 
+ 
