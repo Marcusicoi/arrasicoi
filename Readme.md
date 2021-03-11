@@ -1,6 +1,6 @@
 # Marcusicoi Arras Template 
 
-NOTE: **Make Sure You Go To My
+NOTE: **Make Sure You Go To My.
 # Remix It!
 
 1. Click The Top Left Where It Says **Remix To Edit**

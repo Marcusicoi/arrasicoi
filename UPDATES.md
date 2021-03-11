@@ -19,6 +19,8 @@
 - Removed The Arras Version Of **Readme.md**
 - Added My Version Of **Readme.md**,
 - Upgraded The Package Of **google-closure-library**
+- Pushed **EliteSprayer** In Bosses Testbed Tier Class List
+- Pushed **EliteDestroyer** In Bosses Testbed Tier Class List
 
 ---
 ---
@@ -82,6 +84,7 @@
 2020/7/21
 
 - **Boosted Fighter** Completed `exports.booghter`
+- Added **Boomer Boomer Boomer**
 
 ---
 ---
@@ -90,6 +93,7 @@
 
 - **Extinguisher** Completed `exports.extinct`
 - Debuffed **Sniper Rifle**
+- Added **Bonker**
 
 ---
 ---
@@ -120,7 +124,7 @@
 
 - **Bots** Can Upgrade Random Tanks.
 - Added **Tier 5**
--
+- Added **Shuriken Thrower**
 
 ---
 ---
@@ -128,6 +132,8 @@
 2020/5/21
 
 - Added **Tier 4**
+- Added **Ninja**
+- Completed **Shuriken**
 
 ---
 ---
