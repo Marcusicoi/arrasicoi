@@ -74,5 +74,18 @@ if its less than 18 It will go short Like The Tank **Brusher**, (custom tank)
 
 W = **WIDTH** means How Long The Barrel Of The Horizontal One If Its 10 It will do as normal
 If Its more than 10 The Bullet Will Be Big And The tank barrel Will Wide Like The Tank
-**Annihilator** If Its Less Than 10 The Horizon Tao 
- 
+**Annihilator** If Its Less Than 10 The Horizontal Barrel Will Be Short 
+
+A = **ASPECT** Means How Straight Or Not Straight The Barrel If Its 1 It will Be Normal
+If Its More Than 1 It Will Go Wide And wide Like The Tank **Machine Gun**
+If Its Less Than 1 It Will Go Narrow And More Like The Tank **Stalker**
+
+X = **X-Axis** Means The Position Of The Tank Was If It Its 0 It Will go normal
+If Its More Than 0 It Wil Move Left If its less Than 0 It will Move Right
+
+Y = **Y-Axis** Means The Position Of The Tank Was If It Its 0 It Will go normal
+If Its More Than 0 It Wil Move Up If its less Than 0 It will Move Down
+
+a = **ANGLE** Means The Position of The Barrel Rotate Was If Its 0 It will stay on top
+If its More Than 0 It will rotate The ClockWise The Body Of Your Tank
+If Its 
