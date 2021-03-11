@@ -1,4 +1,4 @@
-# Arras.io Private Server Template
+# Marcusicoi Arras Server Template
 
 ## Quick Start Guide
 

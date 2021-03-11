@@ -117,7 +117,7 @@
 
 - **Bots** Can Upgrade Random Tanks.
 - Added **Tier 5**
--;
+-
 
 ---
 ---
@@ -125,3 +125,6 @@
 2020/5/21
 
 - Added **Tier 4**
+
+---
+---
