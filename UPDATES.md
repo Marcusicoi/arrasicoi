@@ -8,7 +8,7 @@
 2021/3/10
 
 - Replaced **BetaPenta, AlphaPenta, AlphaHexa** to **Hexagon, Heptagin, Octagon**
-- Replaced **'Sub To BoomV3'** to **'Sub To Marcusicoi**,
+- Replaced **'Sub To BoomV3'** to **'Sub To Marcusicoi**, And **'Sub To griefer Cube'** to **'Dev'**,
 - Added the name of bot = **Pet,SPIN=TEAM!**,
 - Removed The Shape Of **Beta Tester**, `exports.testbed`,
 - Removed All The Tiers Of **Beta Tester** and Start Making New one
