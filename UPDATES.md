@@ -16,7 +16,8 @@
 - You Can Now Upgrade BattleShip using **Doubletwin** and Cruiser using **Twin** 
 - **Tripletwin** Can Upgrade In Flank's Tier 3 Class.
 - Added **AK-47** In Beta Tank Class.
-
+- Removed The Arras Version Of **Readme.md**
+- Added My Version Of **Readme.md**
 ---
 ---
 

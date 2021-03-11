@@ -69,16 +69,16 @@ file.**css** Is A Style,Font,Color,BackGround, For file.**html**
 ```
 
 L = **LENGTH** means How Long The Barrel Of The Vertical One If Its 18 it will do as normal if Its
-more Than 18 It Will go More Longer Like The Tank **Sniper, Assassin, Ranger**
-if its less than 18 It will go short Like The Tank **Brusher**, (custom tank)
+more Than 18 It Will go More Longer Like The Tank Barrel **Sniper, Assassin, Ranger**
+if its less than 18 It will go short Like The Tank Barrel **Brusher**, (custom tank)
 
 W = **WIDTH** means How Long The Barrel Of The Horizontal One If Its 10 It will do as normal
-If Its more than 10 The Bullet Will Be Big And The tank barrel Will Wide Like The Tank
+If Its more than 10 The Bullet Will Be Big And The tank barrel Will Wide Like The Tank Barrel
 **Annihilator** If Its Less Than 10 The Horizontal Barrel Will Be Short 
 
 A = **ASPECT** Means How Straight Or Not Straight The Barrel If Its 1 It will Be Normal
-If Its More Than 1 It Will Go Wide And wide Like The Tank **Machine Gun**
-If Its Less Than 1 It Will Go Narrow And More Like The Tank **Stalker**
+If Its More Than 1 It Will Go Wide And wide Like The Tank Barrel **Machine Gun**
+If Its Less Than 1 It Will Go Narrow And More Like The Tank Barrel **Stalker**
 
 X = **X-Axis** Means The Position Of The Tank Was If It Its 0 It Will go normal
 If Its More Than 0 It Wil Move Left If its less Than 0 It will Move Right
@@ -126,7 +126,10 @@ TYPE: exports.?
 
 And Start Working!
 
-I Forgot My Tank Is
+And If Its Done Find Scroll To Bottom Find **UPGRADE PATHS** select 
+Any You Want To Put It If You Picked One Type `exports.test`
+
+I Forgot My The Test Tank Is
 (**NOTE: DO NOT COPY THIS ITS ALREADY WORKED** or you just want page2)
 ```
 exports.test = {
@@ -135,5 +138,38 @@ LABEL: 'TestTank',
 DANGER: 7,
 GUNS: [{//   L. W. A. X. Y. a. D
 POSITION: [ 18, 8, 1, 0, 0, 0, 0],
-SHOOT_SETTINGS: [
+PROPERTIES: {
+SHOOT_SETTINGS: combineStats([g.basic]),
+TYPE: exports.bullet
+}, },
+],
+};
+```
+If You Want Page 2 Type/Copy This
+```
+exports.page2 = {
 
+PARENT: [exports.genericTank],
+
+LABEL: 'Page 2',
+
+DANGER: 7,
+
+GUNS: [{//   L. W. A. X. Y. a. D
+
+POSITION: [ 18, 8, 1, 0, 0, 0, 0],
+
+PROPERTIES: {
+
+SHOOT_SETTINGS: combineStats([g.basic]),
+
+TYPE: exports.bullet
+
+}, },
+
+],
+
+};
+```
+
+And Find **UPGRADE PATHS** And Add (Make sure you remember what the next tank that fits your screen) `exports.basic.UPGRADES_TIER_1 = [exports.page2]`
