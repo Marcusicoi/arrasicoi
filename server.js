@@ -4822,10 +4822,10 @@ var maintainloop = (() => {
                 case 1: a = Class.square; break;
                 case 2: a = Class.triangle; break;
                 case 3: a = Class.pentagon; break;
-                case 4: a = Class.bigPentagon; break;
-                case 5: a = Class.hugePentagon; break;
+                case 4: a = Class.hexagon; break;
+                case 5: a = Class.heptagon; break;
 
-                case 6: a = Class.hugeHexagon; break;
+                case 6: a = Class.octagon; break;
                 default: throw('bad food level');
             }
             if (a !== {}) {
