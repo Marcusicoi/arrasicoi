@@ -180,4 +180,7 @@ And Find **UPGRADE PATHS** And Add (Make sure you remember what the next tank th
 1. Look Up
 2. Click `🕶️`
 3. Click **In A New Window/Tab**
+
 **Note: If You Tap Next To The Code It Automatically Cant See your App**
+
+#
