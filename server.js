@@ -4792,7 +4792,7 @@ var maintainloop = (() => {
                   let arrayOfClasses = [Class.sniprifle, Class.lazer,
                                         Class.pentaseer, Class.booster,
                                         Class.machinegunner, Class.penta, 
-                                        Class.octo, Class.cyclone,
+                                        Class.octo, Class.ninja,
                                         Class.hybrid, Class.anni, 
                                         Class.quint, Class.sidewind, 
                                         Class.basic, Class.factory, 
