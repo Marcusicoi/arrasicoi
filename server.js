@@ -3419,8 +3419,11 @@ const sockets = (() => {
                     socket.camera.x = body.x; socket.camera.y = body.y; socket.camera.fov = 2000;
                     // Mark it as spawned
                     socket.status.hasSpawned = true;
-                    body.sendMessage('Welcome To ArrasIcoi The AAmazingAmazing Server');
+                    /*
+                    body.sendMessage('Welcome To ArrasIcoi The Amazing Server');
                     body.sendMessage('You have spawned! Remember to subscibe Marcusicoi!');
+                    */
+                    body.sendMessage('HELP!');
                     // Move the client camera
                     socket.talk('c', socket.camera.x, socket.camera.y, socket.camera.fov);
                     return player;
