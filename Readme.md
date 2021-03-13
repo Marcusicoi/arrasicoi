@@ -40,6 +40,7 @@ OpenShift Tutorial Are In **`OPENSHIFT.md`**
 
 Block Codes,Test Suite Are In **`fasttalk.js`**
 
+Help Are In **`help.md`**
 # Type File Meaning
 
 file.**js** Is A JavaScript The You Need To Work On
