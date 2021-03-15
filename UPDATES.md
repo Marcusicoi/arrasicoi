@@ -8,7 +8,9 @@
 - Added **Flank** `exports.flank2`
 - Disabled The AutoSpin Of **Necromancer**
 - Added **Quad Builder** `exports.quadbuilder
-
+- Making **Healer**'s Barrel Look Similar To **Sidewinder**
+- You Cant Upgrade To **Healer** In **Basic**
+- You Can Upgrade To **Healer** In **Sidewinder**
 ---
 ---
 
