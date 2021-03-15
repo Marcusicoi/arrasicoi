@@ -1,7 +1,12 @@
 # UPDATES AND CHANGELOGS
 
 ## All Changelogs
+---
+---
 
+2021/3/15
+- Added **Flank** `exports.flank`
+- Disabled The AutoSpin Of **Necromancer**
 ---
 ---
 
@@ -135,6 +140,6 @@
 - Added **Tier 4**
 - Added **Ninja**
 - Completed **Shuriken**
-
+- Crashers And Sentrys Were **Disabled**
 ---
 ---
