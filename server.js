@@ -4765,7 +4765,7 @@ var maintainloop = (() => {
     // The NPC function
     let makenpcs = (() => {
         // Make base protectors if needed.
-            let f = (loc, team) => { 
+          /*  let f = (loc, team) => { 
                 let o = new Entity(loc);
                     o.define(Class.baseProtector);
                     o.team = -team;
@@ -4773,12 +4773,12 @@ var maintainloop = (() => {
             };
             for (let i=1; i<5; i++) {
                 room['bas' + i].forEach((loc) => { f(loc, i); }); 
-            }
+            }*/
         // Return the spawning function
         let bots = [];
         return () => {
             let census = {
-                crasher: 0,
+                crasher: 1,
                 miniboss: 0,
                 tank: 0,
             };    
