@@ -5,8 +5,10 @@
 ---
 
 2021/3/15
-- Added **Flank** `exports.flank`
+- Added **Flank** `exports.flank2`
 - Disabled The AutoSpin Of **Necromancer**
+- Added **Quad Builder** `exports.quadbuilder
+
 ---
 ---
 
