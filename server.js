@@ -3419,11 +3419,14 @@ const sockets = (() => {
                     socket.camera.x = body.x; socket.camera.y = body.y; socket.camera.fov = 2000;
                     // Mark it as spawned
                     socket.status.hasSpawned = true;
-                    /*
+                    
                     body.sendMessage('Welcome To ArrasIcoi The Amazing Server');
                     body.sendMessage('You have spawned! Remember to subscibe Marcusicoi!');
-                    */
+                     /*
                     body.sendMessage('HELP!');
+                    body.sendMessage('GO TO THIS LINK DOWN!!');
+                    body.sendMessage('glitch.com/edit/#!/arrasicoi-server')
+                    */
                     // Move the client camera
                     socket.talk('c', socket.camera.x, socket.camera.y, socket.camera.fov);
                     return player;

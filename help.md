@@ -1,4 +1,4 @@
-# I NEED HELP
+# THIS HELP IS ALREADY HELPED AND ARCHIVED
 **NOTE: I Only Need Help If You See This Message When
 You Spawn And See This**
 ```
