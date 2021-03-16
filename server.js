@@ -4794,10 +4794,12 @@ var maintainloop = (() => {
           let TypeBot = [Class.bbot, Class.rbot]
           let RNGbot = TypeBot[Math.floor(Math.random() * TypeBot.length)]
           let BotClass = [
-
-           
-            
-            
+Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class.destroy,
+            Class.rifle, Class.penta, Class.spread, Class.bird, Class.mortar, Class.fighter,
+           Class.booster, Class.spike, Class.megaland, Class.bonk, Class.overlord, exports.stream,
+            Class.falcon, Class.artillery, Class.chass, Class.triple, Class.overtrap, Class.overgunner,
+           Class.single 
+         ]
             let RNGclass = BotClass[Math.floor(Math.random() * BotClass.length)]
                 
              // Bots
