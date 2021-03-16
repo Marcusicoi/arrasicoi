@@ -4791,13 +4791,14 @@ var maintainloop = (() => {
             // Spawning
             spawnBosses(census);
              //Randomizing Bot
-          let 
+          let TypeBot = [Class.bbot, Class.rbot]
+          let RNGbot = TypeBot[Math.floor(Math.random() * TypeBot.length)]
              // Bots
          
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                     o.color = 17;
-                    o.define(Class.rbot);
+                    o.define(RNGbot);
                     o.define(Class.basic)
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
@@ -4817,7 +4818,29 @@ var maintainloop = (() => {
                 });
         };
     })();
-
+if (bots.length < c.BOTS) {
+                    let o = new Entity(room.random());
+                    o.color = 17;
+                    o.define(RNGbot);
+                    o.define(Class.basic)
+                    o.name += ran.chooseBotName();
+                    o.refreshBodyAttributes();
+                    
+                    o.color =  ran.choose([12])
+                   
+                    bots.push(o);
+                }
+                  // Remove dead ones
+                bots = bots.filter(e => { return !e.isDead(); });
+// Slowly upgrade them
+                bots.forEach(o => {
+                    if (o.skill.level < 75) {
+                        o.skill.score += 1000;
+                        o.skill.maintain();
+                    }
+                });
+        };
+    })();
     // The big food function
     let makefood = (() => {
         let food = [], foodSpawners = [];
