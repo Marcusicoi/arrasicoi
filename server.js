@@ -4790,7 +4790,7 @@ var maintainloop = (() => {
             }).filter(e => { return e; });    
             // Spawning
             spawnBosses(census);
-            spawnCrasher(census);
+         //   spawnCrasher(census);
              //Randomizing Bot
           let TypeBot = [Class.bbot, Class.rbot]
           let RNGbot = TypeBot[Math.floor(Math.random() * TypeBot.length)]
@@ -4809,7 +4809,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                     let o = new Entity(room.random());
                     o.color = 17;
                     o.define(RNGbot);
-                    o.define(RNGclass)
+                    o.define(RNGclass);
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
                     
