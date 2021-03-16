@@ -9,6 +9,10 @@
 2021/3/16
 
 - Added many **NAMES** in bots
+- Added **Chasseur** `exports.chass`
+- Added **Landmine** `exports.landmine`
+- You Cant Upgrade To **Smasher** In **Page2**
+- You Can Upgrade To **Smasher** In **Lancer**
 
 ---
 
