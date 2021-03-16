@@ -13,6 +13,10 @@
 - Added **Landmine** `exports.landmine`
 - You Cant Upgrade To **Smasher** In **Page2**
 - You Can Upgrade To **Smasher** In **Lancer**
+- Added **Mega-Landmine** `exports.megaland`
+- Added **Minishot** `exports.minishot`
+- Added **Enderar** `exports.ender`
+- Replaced **Krov Missile** To **Skimmest**
 
 ---
 
@@ -38,7 +42,7 @@
 - Added the name of bot = **Pet,SPIN=TEAM!**,
 - Removed The Shape Of **Beta Tester**, `exports.testbed`,
 - Removed All The Tiers Of **Beta Tester** and Start Making New one
-- Replaced **Brutalizer** To Surfer
+- Replaced **Brutalizer** To **Surfer**
 - You Can Now Upgrade BattleShip using **Doubletwin** and Cruiser using **Twin**
 - **Tripletwin** Can Upgrade In Flank's Tier 3 Class.
 - Added **AK-47** In Beta Tank Class.
@@ -65,7 +69,8 @@
 
 - Added **Arrow** `exports.arrow`
 - Completed **Crossbow** `exports.crossbow`
-
+- Added **Krov Missile** `exports.krov`
+- Added **BoomerBoomerBoomer** `exports.bturret`
 ---
 
 ---
@@ -148,6 +153,8 @@
 
 - **Lazer** Completed `exports.lazer`
 - Added **Lazerbeam** `exports.lazerbeam`
+- Added **Tier 6**
+- Added **Tier 7**
 
 ---
 
