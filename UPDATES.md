@@ -1,17 +1,30 @@
 # UPDATES AND CHANGELOGS
 
 ## All Changelogs
+
 ---
+
+---
+
+2021/3/16
+
+- Added many **NAMES** in bots
+
+---
+
 ---
 
 2021/3/15
+
 - Added **Flank** `exports.flank2`
 - Disabled The AutoSpin Of **Necromancer**
 - Added **Quad Builder** `exports.quadbuilder
 - Making **Healer**'s Barrel Look Similar To **Sidewinder**
 - You Cant Upgrade To **Healer** In **Basic**
 - You Can Upgrade To **Healer** In **Sidewinder**
+
 ---
+
 ---
 
 2021/3/10
@@ -22,7 +35,7 @@
 - Removed The Shape Of **Beta Tester**, `exports.testbed`,
 - Removed All The Tiers Of **Beta Tester** and Start Making New one
 - Replaced **Brutalizer** To Surfer
-- You Can Now Upgrade BattleShip using **Doubletwin** and Cruiser using **Twin** 
+- You Can Now Upgrade BattleShip using **Doubletwin** and Cruiser using **Twin**
 - **Tripletwin** Can Upgrade In Flank's Tier 3 Class.
 - Added **AK-47** In Beta Tank Class.
 - Removed The Arras Version Of **Readme.md**
@@ -33,6 +46,7 @@
 - Added **AnniLord** `exports.overanni`
 
 ---
+
 ---
 
 2020/12/9
@@ -40,6 +54,7 @@
 - Start making **Poison Machgun** `exports.poisonmach`
 
 ---
+
 ---
 
 2020/8/3
@@ -48,6 +63,7 @@
 - Completed **Crossbow** `exports.crossbow`
 
 ---
+
 ---
 
 2020/8/1
@@ -58,6 +74,7 @@
 - Completed **Triangle Shooter** `exports.bigtrishooter`
 
 ---
+
 ---
 
 2020/7/31
@@ -65,6 +82,7 @@
 - Completed **Pentamancer** `exports.pentaseer`
 
 ---
+
 ---
 
 2020/7/27
@@ -73,7 +91,9 @@
 - Added **Quadra Machgunner** `exports.quadragunner`
 - Added **Necromonster** `exports.necromonster`
 - Added **Automancer** `exports.autonecro`
+
 ---
+
 ---
 
 2020/7/25
@@ -81,14 +101,16 @@
 - Added **Lancer** `exports.lance`
 
 ---
+
 ---
 
 2020/7/23
 
-- Removed **AK47** because of overpowered 
+- Removed **AK47** because of overpowered
 - **AK47** Completed `exports.ak47`
 
 ---
+
 ---
 
 2020/7/21
@@ -97,6 +119,7 @@
 - Added **Boomer Boomer Boomer**
 
 ---
+
 ---
 
 2020/7/5
@@ -106,6 +129,7 @@
 - Added **Bonker**
 
 ---
+
 ---
 
 2020/7/3
@@ -113,6 +137,7 @@
 - Added **Poison Bullet** `exports.poisonbullet`
 
 ---
+
 ---
 
 2020/7/1
@@ -121,6 +146,7 @@
 - Added **Lazerbeam** `exports.lazerbeam`
 
 ---
+
 ---
 
 2020/6/17
@@ -128,6 +154,7 @@
 - **Sniper Rifle** Completed `exports.sniprifle`
 
 ---
+
 ---
 
 2020/6/10
@@ -137,6 +164,7 @@
 - Added **Shuriken Thrower**
 
 ---
+
 ---
 
 2020/5/21
@@ -145,5 +173,7 @@
 - Added **Ninja**
 - Completed **Shuriken**
 - Crashers And Sentrys Were **Disabled**
+
 ---
+
 ---
