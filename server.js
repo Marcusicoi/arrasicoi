@@ -4790,12 +4790,15 @@ var maintainloop = (() => {
             }).filter(e => { return e; });    
             // Spawning
             spawnBosses(census);
-                                // Bots
+             //Randomizing Bot
+          let 
+             // Bots
+         
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                     o.color = 17;
-                                        
-                    o.define(newClass);
+                    o.define(Class.rbot);
+                    o.define(Class.basic)
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
                     
