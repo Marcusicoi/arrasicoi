@@ -15,6 +15,7 @@
 - Added **Cloner** `exports.clone`
 - Added **Decentrilizer** `exports.decent`
 - Added **Giga-Smasher** `exports.gigasmash`
+- Added **Quad Twin** `exports.quadtwin`
 
 ---
 
