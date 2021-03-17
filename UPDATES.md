@@ -12,6 +12,7 @@
 - Added **Dual** `exports.dual`
 - Added **Musket** `exports.musk`
 - Repiared **Lilfact/Spawner** 
+- Added **Cloner** `exports.clone`
 
 ---
 
