@@ -13,6 +13,8 @@
 - Added **Musket** `exports.musk`
 - Repiared **Lilfact/Spawner** 
 - Added **Cloner** `exports.clone`
+- Added **Decentrilizer** `exports.decent`
+- Added **Giga-Smasher** `exports.gigasmash`
 
 ---
 
