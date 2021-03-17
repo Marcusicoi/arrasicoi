@@ -4799,7 +4799,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
             Class.rifle, Class.penta, Class.spread, Class.bird, Class.mortar, Class.fighter,
            Class.booster, Class.spike, Class.megaland, Class.bonk, Class.overlord, exports.stream,
             Class.falcon, Class.artillery, Class.chass, Class.triple, Class.overtrap, Class.overgunner,
-           Class.single, Class.ninja
+           Class.single, Class.ninja, Class.manage, Class.gigasmash, Class.clone, Class.dual, Class.musk
          ]
             let RNGclass = BotClass[Math.floor(Math.random() * BotClass.length)]
                 
