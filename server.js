@@ -4808,7 +4808,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                     o.color = 17;
-                    o.define(RNGbot)
+                    o.define(RNGbot) 
                     o.define(RNGclass)
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
