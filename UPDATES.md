@@ -16,6 +16,8 @@
 - Added **Decentrilizer** `exports.decent`
 - Added **Giga-Smasher** `exports.gigasmash`
 - Added **Quad Twin** `exports.quadtwin`
+- Fixed The Reload Of **Director**
+- Added **Malefictor** `exports.malefict`
 
 ---
 
