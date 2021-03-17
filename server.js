@@ -1694,9 +1694,9 @@ class Entity {
     } 
 
     define(set) {
-        if (set.PARENT
+        if (set.PARENT != null) {
          
-            != null) {
+            
             for (let i=0; i<set.PARENT.length; i++) {
                 this.define(set.PARENT[i]);
             }
