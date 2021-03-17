@@ -84,10 +84,10 @@ If Its More Than 1 It Will Go Wide And wide Like The Tank Barrel **Machine Gun**
 If Its Less Than 1 It Will Go Narrow And More Like The Tank Barrel **Stalker**
 
 X = **X-Axis** Means The Position Of The Tank Was If It Its 0 It Will go normal
-If Its More Than 0 It Wil Move Left If its less Than 0 It will Move Right
+If Its More Than 0 It Wil Move Up If its less Than 0 It will Move Down
 
 Y = **Y-Axis** Means The Position Of The Tank Was If It Its 0 It Will go normal
-If Its More Than 0 It Wil Move Up If its less Than 0 It will Move Down
+If Its More Than 0 It Wil Move Left If its less Than 0 It will Move Right
 
 a = **ANGLE** Means The Position of The Barrel Rotate Was If Its 0 It will stay on top
 If its More Than 0 It will rotate ClockWise The Body Of Your Tank

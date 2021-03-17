@@ -10,6 +10,7 @@
 - Replaced **Hiveshooter** To **Swarmer**
 - Removed **Swarmer** In Boomer's Tier 4 Class
 - Added **Dual** `exports.dual`
+- Added **Musket** `exports.musk`
 
 ---
 
@@ -84,10 +85,12 @@
 
 ---
 
-2020/8/1
+# July 1, 2020
 
 - Debuffed **Pentamancer**
-- Completed **Healer** `exports.healer`
+- Added **Healer** `
+
+ 
 - Added **Triangle Bullet** `exports.trianglet`
 - Completed **Triangle Shooter** `exports.bigtrishooter`
 
@@ -95,7 +98,7 @@
 
 ---
 
-2020/7/31
+# June 31, 2020
 
 - Completed **Pentamancer** `exports.pentaseer`
 
@@ -103,7 +106,7 @@
 
 ---
 
-2020/7/27
+# June 27, 2020
 
 - Added **Double Machgunner** `exports.doublegunner`
 - Added **Quadra Machgunner** `exports.quadragunner`
@@ -114,7 +117,7 @@
 
 ---
 
-2020/7/25
+# June 25, 2020
 
 - Added **Lancer** `exports.lance`
 
@@ -122,16 +125,19 @@
 
 ---
 
-2020/7/23
+# June 23, 2020
+
+
+
 
 - Removed **AK47** because of overpowered
-- **AK47** Completed `exports.ak47`
+- Added **AK47** `exports.ak47`
 
 ---
 
 ---
 
-2020/7/21
+# June 21, 2020
 
 - **Boosted Fighter** Completed `exports.booghter`
 - Added **Boomer Boomer Boomer**
@@ -140,7 +146,7 @@
 
 ---
 
-2020/7/5
+# June 15, 2020
 
 - **Extinguisher** Completed `exports.extinct`
 - Debuffed **Sniper Rifle**
@@ -150,7 +156,7 @@
 
 ---
 
-2020/7/3
+# June 7, 2020
 
 - Added **Poison Bullet** `exports.poisonbullet`
 
@@ -158,7 +164,7 @@
 
 ---
 
-2020/7/1
+# June 1, 2020
 
 - **Lazer** Completed `exports.lazer`
 - Added **Lazerbeam** `exports.lazerbeam`
@@ -169,7 +175,7 @@
 
 ---
 
-2020/6/17
+# May 17, 2020
 
 - **Sniper Rifle** Completed `exports.sniprifle`
 
@@ -177,7 +183,7 @@
 
 ---
 
-2020/6/10
+# March 6, 2020
 
 - **Bots** Can Upgrade Random Tanks.
 - Added **Tier 5**
@@ -187,7 +193,7 @@
 
 ---
 
-2020/5/21
+# March 5, 2020
 
 - Added **Tier 4**
 - Added **Ninja**
