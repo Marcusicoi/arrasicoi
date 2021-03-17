@@ -9,6 +9,7 @@
 
 - Replaced **Hiveshooter** To **Swarmer**
 - Removed **Swarmer** In Boomer's Tier 4 Class
+- Added **Dual** `exports.dual`
 
 ---
 
