@@ -5,18 +5,19 @@
 
 ---
 
-2021/3/17
+# March 17, 2021
 
 - Replaced **Hiveshooter** To **Swarmer**
 - Removed **Swarmer** In Boomer's Tier 4 Class
 - Added **Dual** `exports.dual`
 - Added **Musket** `exports.musk`
+- Repiared **Lilfact/Spawner** 
 
 ---
 
 ---
 
-2021/3/16
+# March 16, 2021
 
 - Added many **NAMES** in bots
 - Added **Chasseur** `exports.chass`
@@ -32,7 +33,7 @@
 
 ---
 
-2021/3/15
+# March 15, 2021
 
 - Added **Flank** `exports.flank2`
 - Disabled The AutoSpin Of **Necromancer**
@@ -45,7 +46,7 @@
 
 ---
 
-2021/3/10
+# March 3, 2021
 
 - Replaced **BetaPenta, AlphaPenta, AlphaHexa** to **Hexagon, Heptagon, Octagon**
 - Replaced The names of bots
@@ -67,7 +68,7 @@
 
 ---
 
-2020/12/9
+# December 9, 2020
 
 - Start making **Poison Machgun** `exports.poisonmach`
 
@@ -75,7 +76,7 @@
 
 ---
 
-2020/8/3
+# July 3, 2020
 
 - Added **Arrow** `exports.arrow`
 - Completed **Crossbow** `exports.crossbow`
@@ -88,7 +89,7 @@
 # July 1, 2020
 
 - Debuffed **Pentamancer**
-- Added **Healer** `
+- Added **Healer** `exports.heal`
 
  
 - Added **Triangle Bullet** `exports.trianglet`
