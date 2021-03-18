@@ -216,4 +216,22 @@ TYPE: exports.?
 Means What Kind Of Bullet/Drone/Trap or others Will Shoot In The Barrel
 
 Example:
-``
+```
+TYPE: exports.bullet = The Bullet/Blue Circle Will Come Out
+TYPE: exports.drone = The Drone/Blue Triangle Will Come Out
+TYPE: exports.trap = The Trap/Weird Triangle Will Come Out
+```
+If You Want More Go To **lib/definition.js** Find The Line **512** 
+Scroll Down Find You Want To Test Then Select In Here `TYPE: exports.?`
+
+# More Options
+If You Want Your Tank Invisibles Type `INVISIBLE: [1,1]`
+
+
+# Turrets
+Yez.
+```
+TURRETS : [{ S. X. Y. A.  arc
+POSITION: [  0, 0, 0, 0, 0, 0],
+TYPE: exports.?
+```
