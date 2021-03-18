@@ -5,6 +5,14 @@
 
 ---
 
+# March 18, 2021
+
+- Renamed **Bent** Tanks To **TripleShot** Tanks
+
+---
+
+---
+
 # March 17, 2021
 
 - Replaced **Hiveshooter** To **Swarmer**
