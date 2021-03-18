@@ -11,8 +11,8 @@
   "runSpeed": 1.5,
   "maxHeartbeatInterval": 300000,
   "verbose": true,
-  "WIDTH":  9999,
-  "HEIGHT": 99990,
+  "WIDTH":  4000,
+  "HEIGHT": 4000,
   "MODE": "4tdm",
   "RANDOM_COLORS": true,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
@@ -20,7 +20,7 @@
     ["rock", "norm", "norm", "rock"],
     ["norm", "nest", "nest", "norm"],
     ["norm", "nest", "nest", "norm"],
-    ["rock", "norm", "norm", "norm"]
+    ["rock", "norm", "norm", "rock"]
     ],
   "X_GRID": 4,
   "Y_GRID": 4,
@@ -63,6 +63,6 @@
   "MIN_SPEED": 0.001,
   "FOOD_AMOUNT": 0.4, 
   "SKILL_BOOST": 5,
-  "BOTS":300,
+  "BOTS": 10,
   "GLASS_HEALTH_FACTOR": 2
 }
