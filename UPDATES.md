@@ -1,6 +1,7 @@
 # UPDATES AND CHANGELOGS
 
-## All Changelogs
+# i dont know how to make a arras.io website so i just did this
+
 ---
 
 ---
