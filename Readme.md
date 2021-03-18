@@ -185,4 +185,35 @@ And Find **UPGRADE PATHS** And Add (Make sure you remember what the next tank th
 
 **Note: If You Tap Next To The Code It Automatically Cant See your App**
 
-#
+# Angle
+This Means The Tank Position Of An Barrel
+Where It Shoots 
+
+
+0 = **Normal**
+
+90 = **Right**
+
+180 = **Down**
+
+-90 = **Left**
+
+# Shoot Settings
+Yes.
+
+SHOOT_SETTINGS: combineStats([g.])
+
+Means What Your Bullet Is Type of Weak, Normal, Op
+
+If You wanna Make Your own
+Search `const g`
+
+# Type
+Yes
+
+TYPE: exports.?
+
+Means What Kind Of Bullet/Drone/Trap or others Will Shoot In The Barrel
+
+Example:
+``
