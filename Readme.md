@@ -235,3 +235,10 @@ TURRETS : [{ S. X. Y. A.  arc
 POSITION: [  0, 0, 0, 0, 0, 0],
 TYPE: exports.?
 ```
+
+S = **Size**
+X = **X-axis**
+Y = **Y-axis**
+A = **Angle**
+arc = **Arc** Means **later.**
+
