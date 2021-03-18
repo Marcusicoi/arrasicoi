@@ -1695,9 +1695,9 @@ class Entity {
 
     define(set) {
        if (set.PARENT != null) {
-      
+      /*This is my hatiest glitch ive ever seen..
          
-            
+       */     
             for (let i=0; i<set.PARENT.length; i++) {
                 this.define(set.PARENT[i]);
             }
@@ -4759,7 +4759,7 @@ var maintainloop = (() => {
         if (ran.chance(1 -  0.5 * census.crasher / room.maxFood / room.nestFoodAmount)) {
             let spot, i = 30;
             do { spot = room.randomType('nest'); i--; if (!i) return 0; } while (dirtyCheck(spot, 100));
-            let type = (ran.dice(80)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap]) : Class.crasher;
+            let type = (ran.dice(80)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryGun2]) : Class.crasher;
             let o = new Entity(spot);
                 o.define(type);
                 o.team = -100;
