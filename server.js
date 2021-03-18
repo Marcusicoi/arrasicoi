@@ -4815,8 +4815,8 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                     o.define(RNGclass)
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes();
-                    
-                    o.color =  ran.choose([12])
+                    o.team = (10, 11, 12, 15)
+                    o.color =  ran.choose([10, 11, 12, 15])
                    
                     bots.push(o);
                 }

@@ -14,7 +14,7 @@
   "WIDTH":  4000,
   "HEIGHT": 4000,
   "MODE": "tdm",
-  "RANDOM_COLORS": false,
+  "RANDOM_COLORS": true,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [
     ["rock", "norm", "norm", "rock"],
