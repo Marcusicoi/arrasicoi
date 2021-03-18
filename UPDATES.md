@@ -12,7 +12,7 @@
 - Added More Informations In **readme.md**
 - Bots And **YOU** had Randomizing Colors
 - Added **Twinner** `exports.twinn`
-
+- Added **Terminator** `exports.term`
 ---
 
 ---
