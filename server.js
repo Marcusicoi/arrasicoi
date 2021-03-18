@@ -4793,7 +4793,7 @@ var maintainloop = (() => {
             }).filter(e => { return e; });    
             // Spawning
             spawnBosses(census);
-         //   spawnCrasher(census);
+            spawnCrasher(census);
              //Randomizing Bot
           let TypeBot = [Class.bbot, Class.rbot]
           let RNGbot = TypeBot[Math.floor(Math.random() * TypeBot.length)]
