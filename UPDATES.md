@@ -11,6 +11,7 @@
 - Added **Rammer** `exports.ram` Seems **Buggy** It cant shot bullets
 - Added More Informations In **readme.md**
 - Bots And **YOU** had Randomizing Colors
+- Added **Twinner** `exports.twinn`
 
 ---
 
@@ -45,6 +46,7 @@
 - Added **Minishot** `exports.minishot`
 - Added **Enderar** `exports.ender`
 - Replaced **Krov Missile** To **Skimmest**
+- Added **OverDrive** `exports.overdrive`
 
 ---
 
