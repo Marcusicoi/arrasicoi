@@ -14,6 +14,7 @@
 - Added **Twinner** `exports.twinn`
 - Added **Terminator** `exports.term`
 - Added **Hepta Shot** `exports.hepta`
+- Added **Trual** `exports.trual`
 
 ---
 
