@@ -10,6 +10,7 @@
 - Renamed **Bent** Tanks To **TripleShot** Tanks
 - Added **Rammer** `exports.ram` Seems **Buggy** It cant shot bullets
 - Added More Informations In **readme.md**
+- Bots And **YOU** had Randomizing Colors
 
 ---
 
