@@ -6,6 +6,16 @@
 
 ---
 
+# March 19, 2021
+
+- Added **Reloader** `exports.reloader`
+- Fixed The Shrudder Of **Streamliner** And **Reloader**
+- Repiared **Conqueror** `exports.conq`
+
+---
+
+---
+
 # March 18, 2021
 
 - Renamed **Bent** Tanks To **TripleShot** Tanks
