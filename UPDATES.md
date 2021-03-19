@@ -11,6 +11,8 @@
 - Added **Reloader** `exports.reloader`
 - Fixed The Shrudder Of **Streamliner** And **Reloader**
 - Repiared **Conqueror** `exports.conq`
+- Added **Nightmare** `exports.night`
+
 
 ---
 
