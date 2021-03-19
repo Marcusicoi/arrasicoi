@@ -237,8 +237,12 @@ TYPE: exports.?
 ```
 
 S = **Size**
+
 X = **X-axis**
+
 Y = **Y-axis**
+
 A = **Angle**
-arc = **Arc** Means **later.**
+
+arc = **Arc** 
 
