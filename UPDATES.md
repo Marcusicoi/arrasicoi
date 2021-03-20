@@ -6,6 +6,14 @@
 
 ---
 
+# March 20, 2021
+
+- Added The Hybrid Version Of **Sentry**
+
+---
+
+---
+
 # March 19, 2021
 
 - Added **Reloader** `exports.reloader`
