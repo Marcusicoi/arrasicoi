@@ -228,17 +228,19 @@ Scroll Down Find You Want To Test Then Select In Here `TYPE: exports.?`
 If You Want Your Tank Invisibles Type `INVISIBLE: [1,1]`
 
 
-# Turrets
-Yez.
+# Tank Creator
+The platform of an tank is
 ```
-TURRETS : [{ S. X. Y. A.  arc
-POSITION: [  0, 0, 0, 0, 0, 0],
+exports.? = {
+PARENT: [exports.genericTank]
+LABEL: 'UnamedTank',
+GUNS: [{ //.L. W. A. X. Y. a. D
+POSITION: [ ?, ?, ?, ?, ?, ?, ?],
+PROPERTIES: {
+SHOOT_SETTINGS: ([g.?]),
 TYPE: exports.?
 ```
 
-S = **Size**
-X = **X-axis**
-Y = **Y-axis**
-A = **Angle**
-arc = **Arc** Means **later.**
+
+
 
