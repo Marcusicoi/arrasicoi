@@ -9,6 +9,8 @@
 # March 21, 2021
 
 - Added **Pounper** `exports.pounper`
+- Added **Gilorine** `exports.gilor`
+
 
 ---
 
