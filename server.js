@@ -1694,8 +1694,8 @@ class Entity {
     } 
 
     define(set) {
-      if (set.PARENT!= null) {
-         
+      if (set.PARENT != null) {
+       
 
 
       /*This is my hatiest glitch ive ever seen..
