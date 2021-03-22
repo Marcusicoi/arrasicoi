@@ -12,6 +12,7 @@
 - Added **Trapper** `exports.trapper`
 - Removed **Flank** (not flank guard)
 - Added **Cheapist** `exports.cri`
+- Added **Corporker** `exports.corp`
 
 ---
 
