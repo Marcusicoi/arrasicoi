@@ -1,4 +1,4 @@
-This means How grow this server is
+This means How grow this server is NotDoneYet
 
 
 ```
@@ -7,17 +7,21 @@ M5220 | M6220 | A1220 | M1220 | M17220 | J1220 | J17220 | J31220 | A23220 | N232
 
 
  
- 
-                                                    /
-                                                  ____________/
-                                             /
-                                        |
-                                                                                                          |
+                                                                                            
 
-                                                                                               |
-                        |
-                                                                                               |
-                                                                    |
+                                                                                                               /
+                                                                                                  ____________/
+                                                                                                 /
+                                                                                                 |
+                                                                                                 |
+                                                                                                 |
+                                                                                                 |
+                                                                                                 |
+                                                                                                 |
+                                                                                                 |
+                                                                                                 |
+                                                                                                 |
+                                                                                                 |
                                                                                                  | 
                                                                                                  |
                                                                                          _______/
