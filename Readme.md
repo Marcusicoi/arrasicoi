@@ -2,6 +2,9 @@
 
 NOTE: **Make Sure You Go To My Main Server So You Can See What Updates
 I Have.**
+
+ANOTHER NOTE: **Make Sure You Join The Discord. And Ping me everyday**
+
 # Remix It!
 
 1. Click The Top Left Where It Says **Remix To Edit**

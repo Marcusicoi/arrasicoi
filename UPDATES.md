@@ -11,7 +11,7 @@
 - Colored The **Poision Tanks's Shape** To Green
 - Added **Trapper** `exports.trapper`
 - Removed **Flank** (not flank guard)
-- Added **Cheapist** `
+- Added **Cheapist** `exports.cri`
 
 ---
 

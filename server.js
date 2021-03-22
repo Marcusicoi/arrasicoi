@@ -1694,7 +1694,7 @@ class Entity {
     } 
 
     define(set) {
-      if (set.PARENT != null) {
+      if (set.PARENT!= null) {
          
 
 
