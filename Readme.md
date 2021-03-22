@@ -240,7 +240,13 @@ PROPERTIES: {
 SHOOT_SETTINGS: ([g.?]),
 TYPE: exports.?
 ```
-# Links
-
-
+# Tank Maker # NOT DONE YET.
+The **Basic**
+```
+GUNS: [{ //.L. W. A. X. Y. a. D
+POSITION: [ 18, 8, 1, 0, 0, 0, 0],
+PROPERTIES: {
+SHOOT_SETTINGS: ([g.basic]),
+TYPE: exports.bullet
+```
 
