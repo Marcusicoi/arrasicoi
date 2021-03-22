@@ -9,6 +9,7 @@
 # March 22, 2021
 
 - Colored The **Poision Tanks's Shape** To Green
+- Added **Trapper** `exports.trapper`
 
 ---
 
