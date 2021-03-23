@@ -78,9 +78,9 @@ L = **LENGTH** means How Long The Barrel Of The Vertical One If Its 18 it will d
 more Than 18 It Will go More Longer Like The Tank Barrel **Sniper, Assassin, Ranger**
 if its less than 18 It will go short Like The Tank Barrel **Brusher**, (custom tank)
 
-W = **WIDTH** means How Long The Barrel Of The Horizontal One If Its 10 It will do as normal
-If Its more than 10 The Bullet Will Be Big And The tank barrel Will Wide Like The Tank Barrel
-**Annihilator** If Its Less Than 10 The Horizontal Barrel Will Be Short 
+W = **WIDTH** means How Long The Barrel Of The Horizontal One If Its 18 It will do as normal
+If Its more than 18 The Bullet Will Be Big And The tank barrel Will Wide Like The Tank Barrel
+**Annihilator** If Its Less Than 18 The Horizontal Barrel Will Be Short 
 
 A = **ASPECT** Means How Straight Or Not Straight The Barrel If Its 1 It will Be Normal
 If Its More Than 1 It Will Go Wide And wide Like The Tank Barrel **Machine Gun**
