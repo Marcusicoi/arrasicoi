@@ -13,6 +13,7 @@
 - Removed **Flank** (not flank guard)
 - Added **Cheapist** `exports.cri`
 - Added **Corporker** `exports.corp`
+- Added **Accelerator** `exports.accor`
 
 ---
 
