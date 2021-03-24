@@ -9,6 +9,7 @@
 # March 24, 2021
 
 - Replaced The Name Of **Auto-4** To **Twin-4**
+- Replaced The Name Of **Auto-8** To **Twin-8**
 
 ---
 
@@ -166,6 +167,8 @@
 - Completed **Crossbow** `exports.crossbow`
 - Added **Krov Missile** `exports.krov`
 - Added **BoomerBoomerBoomer** `exports.bturret`
+- Added **Auto-8** `exports.auto8`
+
 ---
 
 ---
@@ -173,9 +176,7 @@
 # July 1, 2020
 
 - Debuffed **Pentamancer**
-- Added **Healer** `exports.heal`
-
- 
+- Added **Healer** `exports.heal` 
 - Added **Triangle Bullet** `exports.trianglet`
 - Completed **Triangle Shooter** `exports.bigtrishooter`
 
