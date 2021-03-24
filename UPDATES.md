@@ -10,6 +10,9 @@
 
 - Replaced The Name Of **Auto-4** To **Twin-4**
 - Replaced The Name Of **Auto-8** To **Twin-8**
+- Added **Auto2's Gun** `exports.auto2gun`
+- Repaired **Sniper-3** `exports.sniper3`
+- Added **Auto-2** `exports.auto2`
 
 ---
 
