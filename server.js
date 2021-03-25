@@ -4806,7 +4806,8 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
            Class.booster, Class.spike, Class.megaland, Class.bonk, Class.overlord, exports.stream,
             Class.falcon, Class.artillery, Class.chass, Class.triple, Class.overtrap, Class.overgunner,
            Class.single, Class.ninja, Class.manage, Class.gigasmash, Class.clone, Class.dual, Class.musk,
-            Class.pbasic, Class.gilor, Class.flank2, Class.trapper, Class.engineer
+            Class.pbasic, Class.gilor, Class.corp, Class.trapper, Class.engineer, Class.hepta, Class.term,
+            Class.decent, Class.twin4, Class.twin8, Class.accor, Class.skimmest, Class.skimmer, Class.ender,
          ]
             let RNGclass = BotClass[Math.floor(Math.random() * BotClass.length)]
                 
