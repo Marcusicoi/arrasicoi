@@ -6,6 +6,14 @@
 
 ---
 
+# March 25, 2021
+
+- Added **Basebrid** `exports.bbase`
+
+---
+
+---
+
 # March 24, 2021
 
 - Replaced The Name Of **Auto-4** To **Twin-4**
