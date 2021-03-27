@@ -6,6 +6,14 @@
 
 ---
 
+# March 27, 2021
+
+- Added **Pelleter** `exports.pellet`
+
+---
+
+---
+
 # March 25, 2021
 
 - Added **Basebrid** `exports.bbase`
