@@ -20,7 +20,7 @@
     ["rock", "norm", "norm", "rock"],
     ["norm", "nest", "nest", "norm"],
     ["norm", "nest", "nest", "norm"],
-    ["rock", "norm", "norm", "rock"]
+    ["norm", "norm", "norm", "rock"]
     ],
   "X_GRID": 4,
   "Y_GRID": 4,
