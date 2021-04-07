@@ -17,7 +17,7 @@
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [
-    ["dom1", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
+    ["bap1", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
     ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
     ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
     ["norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm"],
@@ -26,7 +26,9 @@
     ["norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm"],
     ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
     ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-    ["port", "norm", "norm", "norm", "norm", "norm", "norm", "port"]
+    ["bap3",
+
+ "norm", "norm", "norm", "norm", "norm", "norm", "norm"]
     ],
   "X_GRID": 10,
   "Y_GRID": 10,
