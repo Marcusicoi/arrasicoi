@@ -2170,6 +2170,11 @@ class Entity {
             this.SIZE += 0.5;
             this.maxSpeed = this.topSpeed;
             break; 
+         
+        case 'grow':
+            this.SIZE += 1
+            this.maxSpeed = this.topSpeed;
+            break;
             
         case 'motor':
             this.maxSpeed = 0;            
