@@ -2180,7 +2180,9 @@ class Entity {
             this.SIZE += 1.5;
             this.maxSpeed = this.topSpeed;
             break;
-            
+          
+        case 'gigaGrow':
+            this.SIZ
         case 'motor':
             this.maxSpeed = 0;            
             if (this.topSpeed) {
