@@ -2166,7 +2166,7 @@ class Entity {
             this.damp = 0.05;
             break; 
             
-        case 'minigrow':
+        case 'miniGrow':
             this.SIZE += 0.5;
             this.maxSpeed = this.topSpeed;
             break; 
