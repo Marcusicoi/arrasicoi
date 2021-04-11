@@ -2172,7 +2172,12 @@ class Entity {
             break; 
          
         case 'grow':
-            this.SIZE += 1
+            this.SIZE += 1;
+            this.maxSpeed = this.topSpeed;
+            break;
+            
+        case 'megaGrow':
+            this.SIZE += 1.5;
             this.maxSpeed = this.topSpeed;
             break;
             
