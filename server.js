@@ -2164,9 +2164,13 @@ class Entity {
         case 'glide':
             this.maxSpeed = this.topSpeed;
             this.damp = 0.05;
-            break;
-        case 'grow':
-            this.size += @1;
+            break; 
+            
+        case 'minigrow':
+            this.SIZE += 0.5;
+            this.maxSpeed = this.topSpeed;
+            break; 
+            
         case 'motor':
             this.maxSpeed = 0;            
             if (this.topSpeed) {
