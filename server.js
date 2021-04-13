@@ -4834,6 +4834,9 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
            Class.single, Class.ninja, Class.manage, Class.gigasmash, Class.clone, Class.dual, Class.musk,
             Class.pbasic, Class.gilor, Class.corp, Class.trapper, Class.engineer, Class.hepta, Class.term,
             Class.decent, Class.twin4, Class.twin8, Class.accor, Class.skimmest, Class.skimmer, Class.anger,
+            Class.seek, Class.flatt, Class.infern, Class.thewn, Class.steamroll, Class.anni, Class.lance, 
+            Class.death, Class.excali, Class.tlance, Class.mgrow, Class.amgrow, Class.grow, Class.agrow,
+            Class.m2grow, Class.am2grow, Class.ggrow
          ]
             let RNGclass = BotClass[Math.floor(Math.random() * BotClass.length)]
                 
