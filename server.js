@@ -2189,7 +2189,9 @@ class Entity {
         case 'minifreezeGrow':
             this.SIZE += 0.5
             break;
-            
+        
+       /* case 'freezeAtRelease':
+            break;*/
         case 'motor':
             this.maxSpeed = 0;            
             if (this.topSpeed) {
