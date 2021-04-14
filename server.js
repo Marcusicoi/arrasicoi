@@ -4879,14 +4879,14 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
             let a = { };
             switch (level) {
                 case 0: a = Class.egg; break;             
-                case 1: a = Class.square; break;
-                case 7:
+                case 1: a = Class.square; break; 
                 case 2: a = Class.triangle; break;
                 case 3: a = Class.pentagon; break;
                 case 4: a = Class.hexagon; break;
-                case 5: a = Class.heptagon; break;
-
+                case 5: a = Class.heptagon; break; 
                 case 6: a = Class.octagon; break;
+                case 7: a = Class.nonagon; break;
+                case 8: a = Class.decagon; break;
                 default: throw('bad food level');
             }
             if (a !== {}) {
@@ -5009,6 +5009,10 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                 [4]: 0, // Beta
                 [5]: 0, // Alpha
                 [6]: 0,
+                [7]: 0,
+                [8]: 0,
+                [9]: 0,
+                [10]: 0,
                 tank: 0,
                 sum: 0,
             };
@@ -5020,6 +5024,10 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                 [4]: 0, // Beta
                 [5]: 0, // Alpha
                 [6]: 0,
+                [7]: 0,
+                [8]: 0,
+                [9]: 0,
+                [10]: 0,
                 sum: 0,
             };
             // Do the censusNest
@@ -5146,7 +5154,7 @@ let server = http.createServer((req, res) => {
   switch (pathname) {
     case '/':
       res.writeHead(200)
-      res.end(`<!DOCTYPE html><h3>Arras</h3><button onclick="location.href = 'http://arras.io/#host=' + location.host">Open</button>`)
+      res.end(`<!DOCTYPE html><h3>Arrasicoi</h3><button onclick="location.href = 'http://arras.io/#host=' + location.host">Open</button>`)
     break
     case '/mockups.json':
       res.setHeader('Access-Control-Allow-Origin', '*')
