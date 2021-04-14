@@ -2187,15 +2187,11 @@ class Entity {
             break;
             
         case 'minifreezeGrow':
-            this.SIZE += 0.5;
+            this.SIZE += 0.5
             break;
         
-        case 'miniSmolie':
-            this.SIZE -= 0.5; 
-            this.maxSpeed = this.topSpeed;
-            this.damp = +0.5;
-            break;
-            
+       /* case 'freezeAtRelease':
+            break;*/
         case 'motor':
             this.maxSpeed = 0;            
             if (this.topSpeed) {
