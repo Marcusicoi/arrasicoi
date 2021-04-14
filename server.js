@@ -2191,9 +2191,9 @@ class Entity {
             break;
         
         case 'miniSmolie':
-            this.SIZE -= 0.5;
-            this.ACCEL += 0.5
+            this.SIZE -= 0.5; 
             this.maxSpeed = this.topSpeed;
+            this.damp = +0.5;
             break;
             
         case 'motor':
