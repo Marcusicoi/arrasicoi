@@ -4839,7 +4839,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
             Class.seek, Class.flatt, Class.infern, Class.thewn, Class.steamroll, Class.anni, Class.lance, 
             Class.death, Class.excali, Class.tlance, Class.mgrow, Class.amgrow, Class.grow, Class.agrow,
             Class.m2grow, Class.am2grow, Class.ggrow, Class.twinfern, Class.fsnipe, Class.tlance, Class.seek,
-            Class.sotap, Class.trual, Class.autogunner, Class.minitrap, Class.crop
+            Class.sotap, Class.trual, Class.autogunner, Class.minitrap, Class.crop, Class.quint, Class.direcow
          ]
             let RNGclass = BotClass[Math.floor(Math.random() * BotClass.length)]
                 
