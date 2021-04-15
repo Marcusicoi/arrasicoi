@@ -4723,7 +4723,7 @@ var maintainloop = (() => {
         let boss = (() => {
             let i = 0,
                 names = [],
-                bois = [Class.guardian],
+                bois = [Class.elite],
                 n = 0,
                 begin = 'yo some shit is about to move to a lower position',
                 arrival = 'Something happened lol u should probably let Neph know this broke',
@@ -4777,7 +4777,7 @@ var maintainloop = (() => {
                         break;
                     case 1: 
                         choice = [[Class.palisade], 1, 'castle', 'norm']; 
-                        sockets.broadcast('A strange trembling...');
+                        sockets.broadcast('A Stange Coming...');
                         break;
                 }
                 boss.prepareToSpawn(...choice);
