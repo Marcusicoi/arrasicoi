@@ -4889,6 +4889,11 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                 case 6: a = Class.octagon; break;
                 case 7: a = Class.nonagon; break;
                 case 8: a = Class.decagon; break;
+                case 9: a = Class.gem; break;
+                case 10:a = Class.gsqu; break;
+                case 11:a = Class.gtrip; break;
+                case 12:a = Class.gpenta; break;
+                case 13:a = Class.ghexa; break;
                 default: throw('bad food level');
             }
             if (a !== {}) {
@@ -5008,13 +5013,16 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                 [1]: 0, // Square
                 [2]: 0, // Triangle
                 [3]: 0, // Penta
-                [4]: 0, // Beta
-                [5]: 0, // Alpha
-                [6]: 0,
-                [7]: 0,
-                [8]: 0,
-                [9]: 0,
-                [10]: 0,
+                [4]: 0, // Hexa
+                [5]: 0, // Hepta
+                [6]: 0, // Octa
+                [7]: 0, // Nona
+                [8]: 0, // Deca
+                [9]: 0, // Gem
+                [10]:0, // Green Square
+                [11]:0, // Green Triangle
+                [12]:0, // Green Penta
+                [13]:0, // Green Hexa
                 tank: 0,
                 sum: 0,
             };
@@ -5023,13 +5031,16 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                 [1]: 0, // Square
                 [2]: 0, // Triangle
                 [3]: 0, // Penta
-                [4]: 0, // Beta
-                [5]: 0, // Alpha
+                [4]: 0, // Hexa
+                [5]: 0, // Hepta
                 [6]: 0,
                 [7]: 0,
                 [8]: 0,
                 [9]: 0,
-                [10]: 0,
+                [10]:0,
+                [11]:0, // Green Triangle
+                [12]:0, // Green Penta
+                [13]:0, // Green Hexa
                 sum: 0,
             };
             // Do the censusNest
