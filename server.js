@@ -5033,11 +5033,11 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                 [3]: 0, // Penta
                 [4]: 0, // Hexa
                 [5]: 0, // Hepta
-                [6]: 0,
-                [7]: 0,
-                [8]: 0,
-                [9]: 0,
-                [10]:0,
+                [6]: 0, // Octa
+                [7]: 0, // Nona
+                [8]: 0, // Deca
+                [9]: 0, // Gem
+                [10]:0, // Green Square
                 [11]:0, // Green Triangle
                 [12]:0, // Green Penta
                 [13]:0, // Green Hexa
