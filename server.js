@@ -4889,11 +4889,11 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                 case 6: a = Class.octagon; break;
                 case 7: a = Class.nonagon; break;
                 case 8: a = Class.decagon; break;
-                case 9: a = Class.gem; break;
-                case 10:a = Class.gsqu; break;
-                case 11:a = Class.gtrip; break;
-                case 12:a = Class.gpenta; break;
-                case 13:a = Class.ghexa; break;
+                case 0: a = Class.gem; break;
+                case 1: a = Class.gsqu; break;
+                case 2: a = Class.gtrip; break;
+                case 3: a = Class.gpenta; break;
+                case 4: a = Class.ghexa; break;
                 default: throw('bad food level');
             }
             if (a !== {}) {
