@@ -4858,8 +4858,8 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                 bots = bots.filter(e => { return !e.isDead(); });
 // Slowly upgrade them
                 bots.forEach(o => {
-                    if (o.skill.level < 45) {
-                        o.skill.score += 10;
+                    if (o.skill.level < 25) {
+                        o.skill.score += 75;
                         o.skill.maintain();
                     }
                 });
