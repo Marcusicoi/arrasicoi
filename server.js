@@ -4826,14 +4826,12 @@ var maintainloop = (() => {
             spawnBosses(census);
             spawnCrasher(census);
              //Randomizing Bot
-          let TypeBot = [Class.bbot, Class.rbot]
-          let RNGbot = TypeBot[Math.floor(Math.random() * TypeBot.length)]
           let BotClass = [
 Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class.destroy,
             Class.rifle, Class.penta, Class.spread, Class.bird, Class.mortar, Class.fighter,
-           Class.booster, Class.shot, Class., Class.bonk, Class.overlord, exports.stream,
+           Class.booster, Class.shot, Class.cyc, Class.autwin, Class.overlord, exports.stream,
             Class.falcon, Class.artillery, Class.basinv, Class.triple, Class.overtrap, Class.overgunner,
-           Class.single, Class.ninja, Class.manage, Class.gigasmash, Class.clone, Class.dual, Class.musk,
+           Class.single, Class.ninja, Class.manage, Class.autiper, Class.clone, Class.dual, Class.musk,
             Class.pbasic, Class.gilor, Class.corp, Class.trapper, Class.engineer, Class.hepta, Class.term,
             Class.decent, Class.twin4, Class.achine, Class.accor, Class.skimmest, Class.skimmer, Class.anger,
             Class.seek, Class.flatt, Class.infern, Class.thewn, Class.steamroll, Class.anni, Class.lance, 
@@ -4849,21 +4847,19 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                     o.color = 17;
-                    o.define(Class.bbot) 
+                    o.define(Class.bot) 
                     o.define(RNGclass)
                     o.name += ran.chooseBotName();
-                    o.refreshBodyAttributes();
-                    
-                    o.color = ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37])
-                   
+                    o.refreshBodyAttributes(); 
+                    o.color = ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37]) 
                     bots.push(o);
                 }
                   // Remove dead ones
                 bots = bots.filter(e => { return !e.isDead(); });
 // Slowly upgrade them
                 bots.forEach(o => {
-                    if (o.skill.level < 75) {
-                        o.skill.score += 1000;
+                    if (o.skill.level < 45) {
+                        o.skill.score += 10;
                         o.skill.maintain();
                     }
                 });
