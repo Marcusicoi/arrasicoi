@@ -9,9 +9,11 @@ LABEL: '**Custom**' = name,
 
 TYPE: base.TYPE * **?**(or **?.?**) = Number,
 
-STAT_NAMES: statnames.**?** = 
-example. if you in android and you cant copy this.
-This `temp.md` will help you.
+STAT_NAMES: statnames.**?** = Insert Name (Like
+statnames.**trap**, statnames.**drone**, statnames.**generic**
+statnames.**smasher**, statnames.**necro**, statnames.**swarm**)
+
+
 
 Simple = 
 ```
