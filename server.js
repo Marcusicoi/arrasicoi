@@ -2476,7 +2476,7 @@ class Entity {
             this.sendMessage(killText + '.');
             // If I'm the leader, broadcast it:
             if (this.id === room.topPlayerID) {
-                let usurptText = (this.name === '') ? 'The leader': this.name;
+            let usurptText = (this.name === '') ? 'The leader': this.name;
                 if (notJustFood) { 
                     usurptText += ' has been usurped by';
                     killers.forEach(instance => {
@@ -2485,7 +2485,7 @@ class Entity {
                         usurptText += ' and';
                     });
                     usurptText = usurptText.slice(0, -4);
-                    usurptText += '!';
+                    usurptText += '!';    
                 } else {
                     usurptText += ' fought a polygon... and the polygon won.';
                 }
