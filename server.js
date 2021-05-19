@@ -4746,10 +4746,10 @@ var maintainloop = (() => {
                     names = ran.chooseBossName(nameClass, number);
                     i = 0;
                     if (n === 1) {
-                        begin = 'Oh no... its spawning';
+                        begin = 'Something is coming ...';
                         arrival = names[0] + ' has arrived.'; 
                     } else {
-                        begin = 'Its more harder. spawning';
+                        begin = 'An Nightmare Is Coming.....';
                         arrival = '';
                         for (let i=0; i<n-2; i++) arrival += names[i] + ', ';
                         arrival += names[n-2] + ' and ' + names[n-1] + ' have arrived.';
