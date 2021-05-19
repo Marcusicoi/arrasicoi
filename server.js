@@ -4746,10 +4746,10 @@ var maintainloop = (() => {
                     names = ran.chooseBossName(nameClass, number);
                     i = 0;
                     if (n === 1) {
-                        begin = 'A visitor is coming.';
+                        begin = 'Oh no... its spawning';
                         arrival = names[0] + ' has arrived.'; 
                     } else {
-                        begin = 'Visitors are coming.';
+                        begin = 'Its more harder. spawning';
                         arrival = '';
                         for (let i=0; i<n-2; i++) arrival += names[i] + ', ';
                         arrival += names[n-2] + ' and ' + names[n-1] + ' have arrived.';
@@ -4774,10 +4774,11 @@ var maintainloop = (() => {
                 switch (ran.chooseChance(40, 1)) {
                     case 0: 
                         choice = [[Class.elite], 2, 'a', 'nest'];
+                        sockets.broadcast('Some Pink Is Coming');
                         break;
                     case 1: 
                         choice = [[Class.palisade], 1, 'castle', 'norm']; 
-                        sockets.broadcast('A Stange Coming...');
+                        sockets.broadcast('Different Boss Is Coming..');
                         break;
                 }
                 boss.prepareToSpawn(...choice);
