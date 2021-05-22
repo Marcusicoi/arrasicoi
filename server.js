@@ -4778,7 +4778,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Some Pink Is Coming');
                         break;
                     case 1: 
-                        choice = [[Class.palisade, Class.summon], 1, 'castle', 'norm']; 
+                        choice = [[Class.palisade, Class.summon, Class.elite_skimmer], 1, 'castle', 'norm']; 
                         sockets.broadcast('Different Boss Is Coming..');
                         break;
                 }
