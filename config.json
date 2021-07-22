@@ -17,15 +17,15 @@
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [
-["bas1", "bas1", "norm", "norm", "norm", "norm", "norm", "norm", "roid", "bas2"],
-["bas1", "bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "roid"],
+["bas1", "bas1", "norm", "norm", "norm", "norm", "norm", "norm", "bas2", "bas2"],
+["bas1", "bas1", "norm", "norm", "norm", "norm", "norm", "norm", "bas2", "bas2"],
 ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
 ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
 ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
 ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
 ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
 ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-["roid", "bas3", "norm", "norm", "norm", "norm", "norm", "norm", "bas4", "bas4"],
+["bas3", "bas3", "norm", "norm", "norm", "norm", "norm", "norm", "bas4", "bas4"],
 ["bas3", "bas3", "norm", "norm", "norm", "norm", "norm", "norm", "bas4", "bas4"]
 ],
   "X_GRID": 10,
