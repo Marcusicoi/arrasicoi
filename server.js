@@ -4793,7 +4793,7 @@ var maintainloop = (() => {
             let spot, i = 30;
             do { spot = room.randomType('nest'); i--; if (!i) return 0; } while (dirtyCheck(spot, 100));
             let type = (ran.dice(80)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryBrid, Class.icoceles]): Class.crasher
-            let type2 = 
+            let type2 = (ran.dice(3)) ? ran.choose([Class.isoceles]) : Class.isoceles
             let o = new Entity(spot);
                 o.define(type);
                 o.team = -100;
@@ -4820,8 +4820,8 @@ var maintainloop = (() => {
                 tank: 0,
             };    
             let npcs = entities.map(function npcCensus(instance) {
-                if (census[instance.type] != null) {
-                    census[instance.type]++;
+                if (census[instance.type, instance.type2] != null) {
+                    census[instance.type, instance.type2]++;
                     return instance;
                 }
             }).filter(e => { return e; });    
