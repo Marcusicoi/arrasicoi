@@ -4847,7 +4847,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
          ]
             let RNGclass = BotClass[Math.floor(Math.random() * BotClass.length)]
           */      
-             // Bots
+             /* Bots
          
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
@@ -4862,7 +4862,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                     if (o.team === -1) {o.color = 10};
                     if (o.team === -2) {o.color = 11};
                     if (o.team === -3) {o.color = 12};
-                    if (o.team === -4) {o.color = 15}; */
+                    if (o.team === -4) {o.color = 15}; 
                     bots.push(o);
                 }
                   // Remove dead ones
@@ -4875,8 +4875,8 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                     }
                 });
         };
-    })();
- 
+    })(); 
+    */
        
     
 
@@ -5155,7 +5155,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
             }
         });
     };
-})();
+}();
 // This is the checking loop. Runs at 1Hz.
 var speedcheckloop = (() => {
     let fails = 0;
