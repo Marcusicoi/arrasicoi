@@ -4792,7 +4792,7 @@ var maintainloop = (() => {
         if (ran.chance(1 -  0.5 * census.crasher, census.isoceles / room.maxFood / room.nestFoodAmount)) {
             let spot, i = 30;
             do { spot = room.randomType('nest'); i--; if (!i) return 0; } while (dirtyCheck(spot, 100));
-            let type = (ran.dice(80)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryBrid, Class.sentryAnni, Class.gsentryGun]) : Class.crasher;
+            let type = (ran.dice(80)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryBrid, Class.sentryAnni, Class.gsentryGun, Class.gem]) : Class.crasher;
          
             let type2 = (ran.dice(80)) ? ran.choose([Class.gsentryGun]) : Class.isoceles
             let o = new Entity(spot);
@@ -4903,25 +4903,20 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
             }
             return a;
         }
-        function getFoodClass2(level) {
+        /*function getFoodClass2(level) {
             let a = { };
             switch (level) {
-                case 0: a = Class.egg; break;             
-                case 1: a = Class.square; break; 
-                case 2: a = Class.triangle; break;
-                case 3: a = Class.pentagon; break;
-                case 4: a = Class.hexagon; break;
-                case 5: a = Class.heptagon; break; 
-                case 6: a = Class.octagon; break;
-                case 7: a = Class.nonagon; break;
-                case 8: a = Class.decagon; break;
+                case 0: a = Class.gem; break;             
+                case 1: a = Class.gsqu; break; 
+                case 2: a = Class.gtri; break;
+                case 3: a = Class.gpenta; break
                 default: throw('bad food level');
             }
             if (a !== {}) {
                 a.BODY.ACCELERATION = 0.015 / (a.FOOD.LEVEL + 1);
             }
             return a;
-        }
+        }*/
         let placeNewFood = (position, scatter, level, allowInNest = false) => {
             let o = nearest(food, position); 
             let mitosis = false;
