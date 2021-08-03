@@ -4903,6 +4903,25 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
             }
             return a;
         }
+        function spawnBall7() {
+  let type = ran.dice(3)
+    ? ran.choose([
+        Class.gem,
+        Class.gsqu,
+        Class.gtri,
+        Class.gpenta
+      ])
+    : Class.greensquare;
+  let spot = room.randomType("norm");
+  let o = new Entity(spot);
+  o.define(type);
+  o.team = -100;
+  o.ondeath = () => {
+    setTimeout(() => {
+      spawnBall7();
+    }, 5000);
+  };
+}
         /*function getFoodClass2(level) {
             let a = { };
             switch (level) {
