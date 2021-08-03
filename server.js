@@ -4874,7 +4874,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                         o.skill.maintain();
                     }
                 });
-        };
+        }; 
     })(); 
     */
        
@@ -5155,7 +5155,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
             }
         });
     };
-}();
+};
 // This is the checking loop. Runs at 1Hz.
 var speedcheckloop = (() => {
     let fails = 0;
