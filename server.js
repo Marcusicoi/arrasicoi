@@ -4903,7 +4903,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
             }
             return a;
         }
-        function spawnBall7() {
+        function spawnBall() {
   let type = ran.dice(3)
     ? ran.choose([
         Class.gem,
@@ -4918,8 +4918,8 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
   o.team = -100;
   o.ondeath = () => {
     setTimeout(() => {
-      spawnBall7();
-    }, 5000);
+      spawnBall();
+    }, 30000);
   };
 }
         /*function getFoodClass2(level) {
@@ -5235,3 +5235,8 @@ setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
+
+/* let ball = setTimeout(() => {
+spawnBall();
+spawnBall();
+}, 20000); */
