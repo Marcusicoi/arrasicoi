@@ -5231,7 +5231,7 @@ function spawnBall() {
         Class.gtri,
         Class.gpenta
       ])
-    : Class.greensquare;
+    : Class.gsqu;
   let spot = room.randomType("norm");
   let o = new Entity(spot);
   o.define(type69);
