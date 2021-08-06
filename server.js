@@ -17,7 +17,7 @@ const ran = require('./lib/random');
 const hshg = require('./lib/hshg');
 
 // Let's get a cheaper array removal thing
-Array.prototype.remove = index => {
+Array.prototype.remove = index => {m
     if(index === this.length - 1){
         return this.pop();
     } else {
@@ -4828,7 +4828,7 @@ var maintainloop = (() => {
             }).filter(e => { return e; });    
             // Spawning
             spawnBosses(census);
-            spawnCrasher(census);
+          //  spawnCrasher(census);
              //Randomizing Bot
        /*   let BotClass = [
 Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class.destroy,
