@@ -4720,7 +4720,7 @@ var maintainloop = (() => {
     placeRoids();
     // Spawning functions
     let spawnBosses = (() => {
-        let timer = 0;
+        let timer = 200;
         let boss = (() => {
             let i = 0,
                 names = [],
@@ -4778,12 +4778,32 @@ var maintainloop = (() => {
                         sockets.broadcast('Big Bullets On your face is coming.');
                         break;
                     case 1: 
-                        choice = [[Class.elite_sprayer], 1, 'castle', 'norm']; 
+                        choice = [[Class.elite_sprayer], 1, 'a', 'nest']; 
                         sockets.broadcast('Auto3 of elite is coming. Find out.');
                         break;
                     case 2: 
-                        choice = [[Class.elite_gunner], 1, 'castle', 'norm']; 
-                        sockets.broadcast('Auto3 of elite is ');
+                        choice = [[Class.elite_gunner], 1, 'a', 'nest']; 
+                        sockets.broadcast('Weak Boss Is Coming. have a free bosskill');
+                        break;
+                    case 3: 
+                        choice = [[Class.elite_battleship], 1, 'a', 'nest']; 
+                        sockets.broadcast('Get ready for evil swarm.');
+                        break;
+                    case 4: 
+                        choice = [[Class.palisade], 1, 'castle', 'norm']; 
+                        sockets.broadcast('Boss with broken traps is coming..');
+                        break;
+                    case 5: 
+                        choice = [[Class.summoner], 1, 'castle', 'norm']; 
+                        sockets.broadcast('The squares seem to hate you...');
+                        break;
+                    case 6: 
+                        choice = [[Class.skimboss], 1, 'castle', 'norm']; 
+                        sockets.broadcast('Baby Of Zaphkiel is coming...');
+                        break;
+                    case 7: 
+                        choice = [[Class.ek1], 1, 'castle', 'nest']; 
+                        sockets.broadcast("Starter Pack Of EK. you'll see");
                         break;
                 }
                 boss.prepareToSpawn(...choice);
