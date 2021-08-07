@@ -4805,7 +4805,10 @@ var maintainloop = (() => {
                         choice = [[Class.ek1], 1, 'castle', 'nest']; 
                         sockets.broadcast("Starter Pack Of EK. you'll see");
                         break;
-                    
+                    case 8: 
+                        choice = [[Class.nest], 1, 'a', 'nest']; 
+                        sockets.broadcast('Guardian Of Pentagons Is Comingm..');
+                        break;
                 }
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 3000);
