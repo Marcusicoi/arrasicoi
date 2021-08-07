@@ -17,7 +17,7 @@ const ran = require('./lib/random');
 const hshg = require('./lib/hshg');
 
 // Let's get a cheaper array removal thing
-Array.prototype.remove = index => {m
+Array.prototype.remove = index => {
     if(index === this.length - 1){
         return this.pop();
     } else {
@@ -4775,11 +4775,15 @@ var maintainloop = (() => {
                 switch (ran.chooseChance(40, 1)) {
                     case 0: 
                         choice = [[Class.elite_destroyer], 2, 'a', 'nest'];
-                        sockets.broadcast('Alright. Big Bullets On your face is coming.');
+                        sockets.broadcast('Big Bullets On your face is coming.');
                         break;
                     case 1: 
-                        choice = [[Class.palisade, Class.summon, Class.elite_skimmer], 1, 'castle', 'norm']; 
-                        sockets.broadcast('Different Boss Is Coming..');
+                        choice = [[Class.elite_sprayer], 1, 'castle', 'norm']; 
+                        sockets.broadcast('Auto3 of elite is coming. Find out.');
+                        break;
+                    case 2: 
+                        choice = [[Class.elite_gunner], 1, 'castle', 'norm']; 
+                        sockets.broadcast('Auto3 of elite is ');
                         break;
                 }
                 boss.prepareToSpawn(...choice);
