@@ -5259,7 +5259,7 @@ function spawnBall() {
         Class.gtri,
         Class.gpenta
       ])
-    : Class.gsqu;
+    : Class.gem;
   let spot = room.randomType("norm");
   let o = new Entity(spot);
   o.define(type69);
@@ -5267,6 +5267,6 @@ function spawnBall() {
   o.ondeath = () => {
     setTimeout(() => {
       spawnBall();
-    }, 5000);
+    }, 20000);
   };
 }
