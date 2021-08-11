@@ -3409,7 +3409,7 @@ const sockets = (() => {
                         } break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
-                                ran.choose([3]) : 3 ; // red
+                                ran.choose([]) : 3 ; // red
                         }
                     }
                     // Decide what to do about colors when sending updates and stuff
