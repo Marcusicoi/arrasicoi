@@ -1853,8 +1853,8 @@ class Entity {
         if (set.RESET_UPGRADES) {
             this.upgrades = [];
         }
-        if (set.TANK_COLOR) {
-            this.tankColor = set.TANK_COLOR;
+        if (set.TANK_COLOR != null) {
+            this.color = set.body.color;
         }
         if (set.UPGRADES_TIER_1 != null) { 
             set.UPGRADES_TIER_1.forEach((e) => {
@@ -2109,6 +2109,7 @@ class Entity {
                     (this.type === 'crasher') ? 1 :
                     0,
             color: this.color,
+            tank_color: this.body.color,
             name: this.name,
             score: this.skill.score,
             guns: this.guns.map(gun => gun.getLastShot()),
@@ -3409,7 +3410,7 @@ const sockets = (() => {
                         } break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
-                                ran.choose([]) : 3 ; // red
+                                ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]) : 12 ; // red
                         }
                     }
                     // Decide what to do about colors when sending updates and stuff
