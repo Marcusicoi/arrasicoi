@@ -4720,7 +4720,7 @@ var maintainloop = (() => {
     placeRoids();
     // Spawning functions
     let spawnBosses = (() => {
-        let timer = 200;
+        let timer = 69;
         let boss = (() => {
             let i = 0,
                 names = [],
