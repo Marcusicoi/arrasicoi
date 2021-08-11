@@ -5158,7 +5158,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
     return () => {
         // Do stuff
         makenpcs();      
-        makefood(); 
+    //    makefood(); 
         // Regen health and update the grid
         entities.forEach(instance => {
             if (instance.shield.max) {
