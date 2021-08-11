@@ -2109,7 +2109,7 @@ class Entity {
                     (this.type === 'crasher') ? 1 :
                     0,
             color: this.color,
-            tank_color: this.body.color,
+          //  tank_color: this.body.color,
             name: this.name,
             score: this.skill.score,
             guns: this.guns.map(gun => gun.getLastShot()),
