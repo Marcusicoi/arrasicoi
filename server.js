@@ -4879,7 +4879,7 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                     o.color = 12;
                     o.define(Class.bot) 
-                     
+                    o.define(Class.basic);
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12
@@ -4898,7 +4898,8 @@ var maintainloop = (() => {
                     if (o.skill.level < 25) {
                         o.skill.score += 75;
                         o.skill.maintain();
-                    }
+                    } if (o.upgrades.length) o.upgrade(Math.floor(Math.random() * o.upgrades.length));
+   
                 }); // */
         }; 
     })();
