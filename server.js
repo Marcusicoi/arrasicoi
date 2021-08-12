@@ -4724,7 +4724,7 @@ var maintainloop = (() => {
     placeRoids();
     // Spawning functions
     let spawnBosses = (() => {
-        let timer = 69;
+        let timer = 7;
         let boss = (() => {
             let i = 0,
                 names = [],
@@ -4811,8 +4811,20 @@ var maintainloop = (() => {
                         break;
                     case 8: 
                         choice = [[Class.nest], 1, 'a', 'nest']; 
-                        sockets.broadcast('Guardian Of Pentagons Is Comingm..');
+                        sockets.broadcast('Guardian Of Pentagons Is Coming..');
                         break;
+                    case 9:
+                        choice = [[Class.paladin], 1, 'castle', 'norm'];
+                        sockets.broadcast('I have to start the chaos.');
+                        break;
+                    case 10:
+                        choice = [[Class.freyja], 1, 'castle', 'norm'];
+                        sockets.broadcast('Ready to fight 3 battleships?');
+                        break;
+                    case 11:
+                        choice = [[Class.zaphkiel], 1, 'castle', 'norm'];
+                        sockets.broadcast('Look who it is, an skimmer');
+                        break; 
                 }
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 3000);
@@ -4860,27 +4872,9 @@ var maintainloop = (() => {
             }).filter(e => { return e; });    
             // Spawning
             spawnBosses(census);
-          //  spawnCrasher(census);
-             //Randomizing Bot
-       /*   let BotClass = [
-Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class.destroy,
-            Class.rifle, Class.penta, Class.spread, Class.bird, Class.mortar, Class.fighter,
-           Class.booster, Class.shot, Class.cyc, Class.autwin, Class.overlord, exports.stream,
-            Class.falcon, Class.artillery, Class.basinv, Class.triple, Class.overtrap, Class.overgunner,
-           Class.single, Class.ninja, Class.manage, Class.autiper, Class.clone, Class.dual, Class.musk,
-            Class.pbasic, Class.gilor, Class.corp, Class.trapper, Class.engineer, Class.hepta, Class.term,
-            Class.decent, Class.twin4, Class.achine, Class.accor, Class.skimmest, Class.skimmer, Class.anger,
-            Class.seek, Class.flatt, Class.infern, Class.thewn, Class.steamroll, Class.anni, Class.lance, 
-            Class.death, Class.excali, Class.tlance, Class.mgrow, Class.amgrow, Class.grow, Class.agrow,
-            Class.m2grow, Class.am2grow, Class.ggrow, Class.twinfern, Class.fsnipe, Class.tlance, Class.seek,
-            Class.sotap, Class.trual, Class.autogunner, Class.minitrap, Class.crop, Class.quint, Class.direcow,
-            Class.dsnipe, Class.basicep, Class.twinicep, Class.drive, Class.ppound, Class.dpound, Class.fpound,
-            Class.swas, Class.sswas, Class.tswas, Class.mswas
-         ]
-            let RNGclass = BotClass[Math.floor(Math.random() * BotClass.length)]
-          */      
-             //Bots
-         
+          //  spawnCrasher(census);      
+            
+                //Bots
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                     o.color = 12;
