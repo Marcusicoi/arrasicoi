@@ -4885,7 +4885,7 @@ Class.basic, Class.anni, Class.factory, Class.overdrive, Class.tripletwin, Class
                     let o = new Entity(room.random());
                     o.color = 12;
                     o.define(Class.bot) 
-                    o.define(ran.chooseBotTank());
+                    o.define(ran.choose([Class.basic, Class.sniper]));
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12
