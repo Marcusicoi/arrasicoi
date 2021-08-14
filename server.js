@@ -4832,7 +4832,7 @@ var maintainloop = (() => {
                         break; 
                 }
                 boss.prepareToSpawn(...choice);
-                setTimeout(boss.spawn, 69);
+                setTimeout(boss.spawn, 3);
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
