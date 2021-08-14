@@ -1127,8 +1127,8 @@ class Gun {
                 false : info.PROPERTIES.NEGATIVE_RECOIL;
         }                    
         let position = info.POSITION;
-        this.length = position[0] / 10;
-        this.width = position[1] / 10;
+        this.length = position[1] / 10;
+        this.width = position[0] / 10;
         this.aspect = position[2];
         let _off = new Vector(position[3], position[4]);
         this.angle  = position[5] * Math.PI / 180;
