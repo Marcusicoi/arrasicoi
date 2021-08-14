@@ -4826,9 +4826,13 @@ var maintainloop = (() => {
                         choice = [[Class.zaphkiel], 1, 'castle', 'norm'];
                         sockets.broadcast('Look who it is, an skimmer');
                         break; 
+                    case 11:
+                        choice = [[Class.theia], 1, 'castle', 'norm'];
+                        sockets.broadcast('would you like an quad tank ram in your face?');
+                        break; 
                 }
                 boss.prepareToSpawn(...choice);
-                setTimeout(boss.spawn, 3000);
+                setTimeout(boss.spawn, 69);
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
