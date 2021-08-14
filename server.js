@@ -4764,10 +4764,10 @@ var maintainloop = (() => {
                 spawn: () => {
                     sockets.broadcast(begin);
                     for (let i=0; i<n; i++) {
-                        setTimeout(spawn, ran.randomRange(3500, 5000));
+                        setTimeout(spawn, ran.randomRange(3500));
                     }
                     // Wrap things up.
-                    setTimeout(() => sockets.broadcast(arrival), 5000);
+                    setTimeout(() => sockets.broadcast(arrival), 3000);
                     util.log('[SPAWN] ' + arrival);
                 },
             };
@@ -4832,7 +4832,7 @@ var maintainloop = (() => {
                         break; 
                 }
                 boss.prepareToSpawn(...choice);
-                setTimeout(boss.spawn, 3);
+                setTimeout(boss.spawn, 4);
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
