@@ -4725,9 +4725,9 @@ var maintainloop = (() => {
     placeRoids();
     // Spawning functions
     let spawnBosses = (() => {
-        let timer = 7;
+        let timer = 8;
         let boss = (() => {
-            let i = 0,
+            let i = 1,
                 names = [],
                 bois = [Class.elite],
                 n = 0,
@@ -4815,26 +4815,30 @@ var maintainloop = (() => {
                         sockets.broadcast("I think EK is going to be advanved.");
                         break;
                     case 9: 
+                        choice = [[Class.ek2], 1, 'castle', 'nest']; 
+                        sockets.broadcast('Its Getting Worser.');
+                        break;
+                    case 10: 
                         choice = [[Class.nest], 1, 'a', 'nest']; 
                         sockets.broadcast('Guardian Of Pentagons Is Coming..');
                         break;
-                    case 10:
+                    case 11:
                         choice = [[Class.paladin], 1, 'castle', 'norm'];
                         sockets.broadcast('I have to start the chaos.');
                         break;
-                    case 11:
+                    case 12:
                         choice = [[Class.freyja], 1, 'castle', 'norm'];
                         sockets.broadcast('Ready to fight 3 battleships?');
                         break;
-                    case 12:
+                    case 13:
                         choice = [[Class.zaphkiel], 1, 'castle', 'norm'];
                         sockets.broadcast('Look who it is, an skimmer');
                         break; 
-                    case 13:
+                    case 14:
                         choice = [[Class.theia], 1, 'castle', 'norm'];
                         sockets.broadcast('would you like an quad tank ram in your face?');
                         break;  
-                    case 14:
+                    case 15:
                         choice = [[Class.alviss], 1, 'castle', 'norm'];
                         sockets.broadcast('would you like an quad tank ram in your face?');
                         break; 
