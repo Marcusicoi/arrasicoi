@@ -4898,7 +4898,8 @@ var maintainloop = (() => {
                     o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
-                    o.color = 12
+                    o.color = 12;
+                    o.label = '[AI] '
                 //  o.color = ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37]) 
                 /*  o.team = ran.chooseBotTeam();
                     if (o.team === -1) {o.color = 10};
@@ -4911,8 +4912,8 @@ var maintainloop = (() => {
                 bots = bots.filter(e => { return !e.isDead(); });
 // Slowly upgrade them
                 bots.forEach(o => {
-                    if (o.skill.level < 45) {
-                        o.skill.score += 75;
+                    if (o.skill.level < 55) {
+                        o.skill.score += 10;
                         o.skill.maintain();
                     } if (o.upgrades.length) o.upgrade(Math.floor(Math.random() * o.upgrades.length));
    
