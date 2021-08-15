@@ -4811,23 +4811,31 @@ var maintainloop = (() => {
                         sockets.broadcast("Starter Pack Of EK. you'll see");
                         break;
                     case 8: 
+                        choice = [[Class.ek2], 1, 'castle', 'nest']; 
+                        sockets.broadcast("I think EK is going to be advanved.");
+                        break;
+                    case 9: 
                         choice = [[Class.nest], 1, 'a', 'nest']; 
                         sockets.broadcast('Guardian Of Pentagons Is Coming..');
                         break;
-                    case 9:
+                    case 10:
                         choice = [[Class.paladin], 1, 'castle', 'norm'];
                         sockets.broadcast('I have to start the chaos.');
                         break;
-                    case 10:
+                    case 11:
                         choice = [[Class.freyja], 1, 'castle', 'norm'];
                         sockets.broadcast('Ready to fight 3 battleships?');
                         break;
-                    case 11:
+                    case 12:
                         choice = [[Class.zaphkiel], 1, 'castle', 'norm'];
                         sockets.broadcast('Look who it is, an skimmer');
                         break; 
-                    case 11:
+                    case 13:
                         choice = [[Class.theia], 1, 'castle', 'norm'];
+                        sockets.broadcast('would you like an quad tank ram in your face?');
+                        break;  
+                    case 14:
+                        choice = [[Class.alviss], 1, 'castle', 'norm'];
                         sockets.broadcast('would you like an quad tank ram in your face?');
                         break; 
                 }
