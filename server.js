@@ -4895,7 +4895,7 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                     o.color = 12;
                     o.define(Class.bot) 
-                    o.define(ran.choose([Class.dev2, /*Class.page2, Class.page3*/]));
+                    o.define(ran.choose([Class.basica, Class.page2, Class.page3]));
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12;
@@ -5205,7 +5205,7 @@ var speedcheckloop = (() => {
             util.warn('~~ LOOPS: ' + loops + '. ENTITY #: ' + entities.length + '//' + Math.round(active/loops) + '. VIEW #: ' + views.length + '. BACKLOGGED :: ' + (sum * roomSpeed * 3).toFixed(3) + '%! ~~');
             if(sum * roomSpeed>333){
               too_much_lag_streak++;
-              if(too_much_lag_streak===10){
+              if(too_much_lag_streak===5){
                 let spare=0;
                 for(const e of entities)if(e.invuln||e.type==='wall')spare++;else e.kill();
                 const txt=`[anti lag] killed ${entities.length-spare} entities, spared ${spare} entities`;
