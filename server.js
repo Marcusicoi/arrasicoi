@@ -5208,7 +5208,7 @@ var speedcheckloop = (() => {
               if(too_much_lag_streak===15){
                 util.error('too much lag, restarting server')
                 sockets.broadcast('Server Overloaded!');
-                sockets.brodcaast('Restarting...');
+                sockets.broadcast('Restarting...');
                 process.exit(0);
               }
             } else too_much_lag_streak=0;
