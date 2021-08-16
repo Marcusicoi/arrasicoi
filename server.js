@@ -4895,7 +4895,7 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                     o.color = 12;
                     o.define(Class.bot) 
-                    o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
+                    o.define(ran.choose([Class.dev, Class.page2, Class.page3]));
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12;
@@ -5185,6 +5185,7 @@ var maintainloop = (() => {
 // This is the checking loop. Runs at 1Hz.
 var speedcheckloop = (() => {
     let fails = 0;
+    let too_much_lag_streak=0;
     // Return the function
     return () => {
         let activationtime = logs.activation.sum(),
@@ -5201,6 +5202,17 @@ var speedcheckloop = (() => {
         global.fps = (1000/sum).toFixed(2);
         if (sum > 1000 / roomSpeed / 30) { 
             //fails++;
+            util.warn('~~ LOOPS: ' + loops + '. ENTITY #: ' + entities.length + '//' + Math.round(active/loops) + '. VIEW #: ' + views.length + '. BACKLOGGED :: ' + (sum * roomSpeed * 3).toFixed(3) + '%! ~~');
+            if(sum * roomSpeed>333){
+              too_much_lag_streak++;
+              if(too_much_lag_streak===10){
+                let spare=0;
+                for(const e of entities)if(e.invuln||e.type==='wall')spare++;else e.kill();
+                const txt=`[anti lag] killed ${entities.length-spare} entities, spared ${spare} entities`;
+                util.warn(txt);
+                sockets.broadcast(txt);
+              }
+            } else too_much_lag_streak=0;
             util.warn('~~ LOOPS: ' + loops + '. ENTITY #: ' + entities.length + '//' + Math.round(active/loops) + '. VIEW #: ' + views.length + '. BACKLOGGED :: ' + (sum * roomSpeed * 3).toFixed(3) + '%! ~~');
             util.warn('Total activation time: ' + activationtime);
             util.warn('Total collision time: ' + collidetime);
