@@ -4926,7 +4926,7 @@ var maintainloop = (() => {
         function getFoodClass(level, isGreenShape) {
             let a = { };
             switch (level) {
-                case 0: a = Class.egg; break;             
+                case 0: a = ran.dice(5) ? Class.gem : Class.egg; break;             
                 case 1: a = Class.square; break; 
                 case 2: a = Class.triangle; break;
                 case 3: a = Class.pentagon; break;
@@ -5157,7 +5157,7 @@ var maintainloop = (() => {
                     while (o.foodCountup >= (o.foodLevel + 1) * 100) {
                         o.foodCountup -= (o.foodLevel + 1) * 100;
                         if (ran.chance(1 - cens[o.foodLevel + 1] / amount / proportions[o.foodLevel + 1])) {
-                            o.define(getFoodClass(o.foodLevel + 1));
+                            o.define(o.isGreenShape ? getFoodClass2(o.foodLevel + 1) : getFoodClass(o.foodLevel + 1));
                         }
                     }
                 }
