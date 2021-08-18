@@ -4770,7 +4770,7 @@ var maintainloop = (() => {
         return census => {
             if (timer > 6000 && ran.dice(16000 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
-                timer = 0;
+                timer = 69;
                 let choice = [];
                 switch (ran.chooseChance(40, 1)) {
                     case 0: 
@@ -4923,7 +4923,7 @@ var maintainloop = (() => {
     let makefood = (() => {
         let food = [], foodSpawners = [];
         // The two essential functions
-        function getFoodClass(level) {
+        function getFoodClass(level, isGreenShape) {
             let a = { };
             switch (level) {
                 case 0: a = Class.egg; break;             
@@ -4943,7 +4943,7 @@ var maintainloop = (() => {
             return a;
         }
         
-        /*function getFoodClass2(level) {
+       function getFoodClass2(level) {
             let a = { };
             switch (level) {
                 case 0: a = Class.gem; break;             
@@ -4956,7 +4956,7 @@ var maintainloop = (() => {
                 a.BODY.ACCELERATION = 0.015 / (a.FOOD.LEVEL + 1);
             }
             return a;
-        }*/
+        }
         let placeNewFood = (position, scatter, level, allowInNest = false) => {
             let o = nearest(food, position); 
             let mitosis = false;
@@ -5034,10 +5034,13 @@ var maintainloop = (() => {
             }
         }
         // Add them
+        if (food.length < 32) {
         foodSpawners.push(new FoodSpawner());
         foodSpawners.push(new FoodSpawner());
         foodSpawners.push(new FoodSpawner());
         foodSpawners.push(new FoodSpawner());
+        util.log(food.length)
+        }
         // Food making functions 
         let makeGroupedFood = () => { // Create grouped food
             // Choose a location around a spawner
@@ -5164,8 +5167,8 @@ var maintainloop = (() => {
     // Define food and food spawning
     return () => {
         // Do stuff
-        makenpcs();      
-//        makefood(); 
+//        makenpcs();      
+        makefood(); 
         // Regen health and update the grid
         entities.forEach(instance => {
             if (instance.shield.max) {
