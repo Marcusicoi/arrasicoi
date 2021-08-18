@@ -1696,16 +1696,11 @@ class Entity {
 
     define(set) {
       if (set.PARENT != null) {
-       
-
-
-      /*This is my hatiest glitch ive ever seen..
-        This stupid one keepps hapenning  
-       */     
             for (let i=0; i<set.PARENT.length; i++) {
                 this.define(set.PARENT[i]);
             }
         }
+        this.isGreenShape = set.IS_GREEN_SHAPE;
         if (set.index != null) {
             this.index = set.index;
         }
