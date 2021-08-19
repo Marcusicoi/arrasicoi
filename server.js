@@ -4654,7 +4654,20 @@ var poisonLoop = (() => {
           y: element.y + y
         });
         o.define(Class["poisonEffect"]);
-
+        
+      if (element.poisoned && element.type == "food") {
+        let x = element.size + 10;
+        let y = element.size + 10;
+        Math.random() < 0.5 ? (x *= -1) : x;
+        Math.random() < 0.5 ? (y *= -1) : y;
+        Math.random() < 0.5 ? (x *= Math.random() + 1) : x;
+        Math.random() < 0.5 ? (y *= Math.random() + 1) : y;
+        var o = new Entity({
+          x: element.x + x,
+          y: element.y + y
+        });
+        o.define(Class["poisonEffect"]);
+        
         if (!element.invuln) {
           element.health.amount -=
             element.health.max / (55 - element.poisonLevel);
@@ -4683,7 +4696,8 @@ var poisonLoop = (() => {
           );
         }
       }
-    });
+    }
+   });
   }
   return () => {
     // run the poison
