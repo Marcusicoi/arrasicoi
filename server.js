@@ -5181,8 +5181,8 @@ var maintainloop = (() => {
     // Define food and food spawning
     return () => {
         // Do stuff
-//        makenpcs();      
-        makefood(); 
+        makenpcs();      
+       // makefood(); 
         // Regen health and update the grid
         entities.forEach(instance => {
             if (instance.shield.max) {
