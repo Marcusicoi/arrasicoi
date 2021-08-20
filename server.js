@@ -4965,6 +4965,7 @@ var maintainloop = (() => {
                 case 2: a = Class.gtri; break;
                 case 3: a = Class.gpenta; break;
                 case 4: a = Class.gbpenta; break;
+                case 5: a = Class.ghpenta; break;
                 default: throw('bad food level');
             }
             if (a !== {}) {
