@@ -5056,6 +5056,11 @@ var maintainloop = (() => {
         foodSpawners.push(new FoodSpawner());
         foodSpawners.push(new FoodSpawner());
         foodSpawners.push(new FoodSpawner());
+        foodSpawners.push(new FoodSpawner());
+        foodSpawners.push(new FoodSpawner());
+        foodSpawners.push(new FoodSpawner());
+        foodSpawners.push(new FoodSpawner());
+        foodSpawners.push(new FoodSpawner());
         util.log(food.length)
         }
         // Food making functions 
