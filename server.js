@@ -5191,7 +5191,8 @@ var maintainloop = (() => {
                     while (o.foodCountup >= (o.foodLevel + 1) * 100) {
                         o.foodCountup -= (o.foodLevel + 1) * 100;
                         if (ran.chance(1 - cens[o.foodLevel + 1] / amount / proportions[o.foodLevel + 1])) {
-                            o.define(o.isGreenShape ? getFoodClass2(o.foodLevel + 1, o.food2 ? getFoodClass3(o.foodlevel + 1) : getFoodClass(o.foodLevel + 1)));
+                            o.define(o.isGreenShape ? getFoodClass2(o.foodLevel + 1) :
+                                     o.food2 ? getFoodClass3(o.foodlevel + 1) : getFoodClass(o.foodLevel + 1));
                         }
                     }
                 }
