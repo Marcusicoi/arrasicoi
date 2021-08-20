@@ -4853,7 +4853,7 @@ var maintainloop = (() => {
                         break;  
                     case 15:
                         choice = [[Class.alviss], 1, 'castle', 'norm'];
-                        sockets.broadcast('would you like an quad tank ram in your face?');
+                        sockets.broadcast('egg? what? rogue? idk');
                         break; 
                 }
                 boss.prepareToSpawn(...choice);
@@ -4941,10 +4941,10 @@ var maintainloop = (() => {
     let makefood = (() => {
         let food = [], foodSpawners = [];
         // The two essential functions
-        function getFoodClass(level, isGreenShape) {
+        function getFoodClass(level, isGreenShape, food2) {
             let a = { };
             switch (level) {
-                case 0: a = Class.egg; break;
+                case 0: a = Class.heptagon; break;
                 case 1: a = Class.square; break; 
                 case 2: a = Class.triangle; break;
                 case 3: a = Class.pentagon; break;
@@ -4964,7 +4964,8 @@ var maintainloop = (() => {
                 case 0: a = Class.gem; break;             
                 case 1: a = Class.gsqu; break; 
                 case 2: a = Class.gtri; break;
-                case 3: a = Class.gpenta; break
+                case 3: a = Class.gpenta; break;
+                case 4: a = Class.gbpenta; break;
                 default: throw('bad food level');
             }
             if (a !== {}) {
@@ -5272,7 +5273,7 @@ let server = http.createServer((req, res) => {
   switch (pathname) {
     case '/':
       res.writeHead(200)
-      res.end(`<!DOCTYPE html><h3>Arrasicoi</h3><button onclick="location.href = 'http://arras.io/#host=' + location.host">Open</button>` )
+      res.end(`<!DOCTYPE html><h1>Arrasicoi</h1><button onclick="location.href = 'http://arras.io/#host=' + location.host">Open</button>` )
     break
     case '/mockups.json':
       res.setHeader('Access-Control-Allow-Origin', '*')
@@ -5317,7 +5318,8 @@ function spawnBall() {
         Class.gem,
         Class.gsqu,
         Class.gtri,
-        Class.gpenta
+        Class.gpenta,
+        Class.gbpenta
       ])
     : Class.gem;
   let spot = room.randomType("norm");
