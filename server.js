@@ -1722,12 +1722,12 @@ class Entity {
         }   
         if (set.CONTROLLERS != null) { 
             let toAdd = [];
-            CONTROLLERS.forEach((ioName) => {
+            set.CONTROLLERS.forEach((ioName) => {
                 toAdd.push(eval('new io_' + ioName + '(this)'));
             });
             this.addController(toAdd);
         }
-        
+        this.food2 = set.FOOD2;
         if (set.POISON != null) {
             this.poison = set.POISON;
         }
@@ -5180,7 +5180,7 @@ var maintainloop = (() => {
                     while (o.foodCountup >= (o.foodLevel + 1) * 100) {
                         o.foodCountup -= (o.foodLevel + 1) * 100;
                         if (ran.chance(1 - cens[o.foodLevel + 1] / amount / proportions[o.foodLevel + 1])) {
-                            o.define(o.isGreenShape ? getFoodClass2(o.foodLevel + 1) : getFoodClass(o.foodLevel + 1));
+                            o.define(o.isGreenShape ? getFoodClass2(o.foodLevel + 1, o.food2 ? ) : getFoodClass(o.foodLevel + 1));
                         }
                     }
                 }
