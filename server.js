@@ -2465,7 +2465,7 @@ class Entity {
                 killText += 'killed you with ';
             }
             //test
-            i
+            
             // Broadcast
             if (this.settings.broadcastMessage) sockets.broadcast(this.settings.broadcastMessage);
             // Add the implements to the message
