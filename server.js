@@ -2456,14 +2456,16 @@ class Entity {
                         killText += ' and ';
                     }
                     // Only if we give messages
-                 /*   if (dothISendAText) { 
+                    if (dothISendAText) { 
                         instance.sendMessage('You killed ' + name + ((killers.length > 1) ? ' (with some help).' : '.')); 
-                    }*/
+                    }
                 });
                 // Prepare the next part of the next 
                 killText = killText.slice(0, -4);
                 killText += 'killed you with ';
             }
+            //test
+            
             // Broadcast
             if (this.settings.broadcastMessage) sockets.broadcast(this.settings.broadcastMessage);
             // Add the implements to the message
