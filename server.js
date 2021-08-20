@@ -1722,23 +1722,24 @@ class Entity {
         }   
         if (set.CONTROLLERS != null) { 
             let toAdd = [];
-            set.CONTROLLERS.forEach((ioName) => {
+            CONTROLLERS.forEach((ioName) => {
                 toAdd.push(eval('new io_' + ioName + '(this)'));
             });
             this.addController(toAdd);
         }
-      if (set.POISON != null) {
-      this.poison = set.POISON;
-    }
-    if (set.POISONED != null) {
-      this.poisoned = set.POISONED;
-    }
-    if (set.POISON_TO_APPLY != null) {
-      this.poisonToApply = set.POISON_TO_APPLY;
-    }
-    if (set.SHOWPOISON != null) {
-      this.showpoison = set.SHOWPOISON;
-    }
+        
+        if (set.POISON != null) {
+            this.poison = set.POISON;
+        }
+        if (set.POISONED != null) {
+            this.poisoned = set.POISONED;
+         }
+        if (set.POISON_TO_APPLY != null) {
+            this.poisonToApply = set.POISON_TO_APPLY;
+        }
+        if (set.SHOWPOISON != null) {
+            this.showpoison = set.SHOWPOISON;
+        }
         if (set.MOTION_TYPE != null) { 
             this.motionType = set.MOTION_TYPE; 
         }
