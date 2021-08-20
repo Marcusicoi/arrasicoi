@@ -1727,7 +1727,6 @@ class Entity {
             });
             this.addController(toAdd);
         }
-        this.food2 = set.FOOD2;
         if (set.POISON != null) {
             this.poison = set.POISON;
         }
@@ -4941,15 +4940,15 @@ var maintainloop = (() => {
     let makefood = (() => {
         let food = [], foodSpawners = [];
         // The two essential functions
-        function getFoodClass(level, isGreenShape, food2) {
+        function getFoodClass(level, isGreenShape) {
             let a = { };
             switch (level) {
-                case 0: a = Class.heptagon; break;
+                case 0: a = Class.egg; break;
                 case 1: a = Class.square; break; 
                 case 2: a = Class.triangle; break;
                 case 3: a = Class.pentagon; break;
-                case 4: a = Class.hexagon; break;
-                case 5: a = Class.heptagon; break;
+                case 4: a = Class.bigpenta; break;
+                case 5: a = Class.hugepenta; break;
                 default: throw('bad food level');
             }
             if (a !== {}) {
@@ -4966,20 +4965,6 @@ var maintainloop = (() => {
                 case 2: a = Class.gtri; break;
                 case 3: a = Class.gpenta; break;
                 case 4: a = Class.gbpenta; break;
-                default: throw('bad food level');
-            }
-            if (a !== {}) {
-                a.BODY.ACCELERATION = 0.015 / (a.FOOD.LEVEL + 1);
-            }
-            return a;
-        }
-       function getFoodClass3(level) {
-            let a = { };
-            switch (level) {
-                case 0: a = Class.heptagon; break;             
-                case 1: a = Class.octagon; break; 
-                case 2: a = Class.nonagon; break;
-                case 3: a = Class.decagon; break
                 default: throw('bad food level');
             }
             if (a !== {}) {
@@ -5065,11 +5050,6 @@ var maintainloop = (() => {
         }
         // Add them
         if (food.length < 32) {
-        foodSpawners.push(new FoodSpawner());
-        foodSpawners.push(new FoodSpawner());
-        foodSpawners.push(new FoodSpawner());
-        foodSpawners.push(new FoodSpawner());
-        foodSpawners.push(new FoodSpawner());
         foodSpawners.push(new FoodSpawner());
         foodSpawners.push(new FoodSpawner());
         foodSpawners.push(new FoodSpawner());
@@ -5192,8 +5172,7 @@ var maintainloop = (() => {
                     while (o.foodCountup >= (o.foodLevel + 1) * 100) {
                         o.foodCountup -= (o.foodLevel + 1) * 100;
                         if (ran.chance(1 - cens[o.foodLevel + 1] / amount / proportions[o.foodLevel + 1])) {
-                            o.define(o.isGreenShape ? getFoodClass2(o.foodLevel + 1) :
-                                     o.food2 ? getFoodClass3(o.foodlevel + 1) : getFoodClass(o.foodLevel + 1));
+                            o.define(o.isGreenShape ? getFoodClass2(o.foodLevel + 1) : getFoodClass(o.foodLevel + 1));
                         }
                     }
                 }
