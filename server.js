@@ -2465,7 +2465,7 @@ class Entity {
                 killText += 'killed you with ';
             }
             //test
-            
+            i
             // Broadcast
             if (this.settings.broadcastMessage) sockets.broadcast(this.settings.broadcastMessage);
             // Add the implements to the message
@@ -2902,6 +2902,7 @@ const sockets = (() => {
                 } else {
                     util.log('[INFO] A player disconnected before entering the game.');
                 }
+              //  if (player.name == 'e') {o.value = 5303}
                 // Free the view
                 util.remove(views, views.indexOf(socket.view));
                 // Remove the socket
