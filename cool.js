@@ -9,8 +9,9 @@ let channel = (app.discord => server.arras <= channel.channel)
 let chat = (app.discord => server.arras <= channel.general)
 let status = (profile.marcusicoi9150 = discord.settings.status)
 
-do (entity.o = chat.dead => {
+do (entity.o = chat.dead.active => {
 if (chat.dead = status.offline)
-else (chat.dead = turn.status ? status.coding)
+else (chat.dead = turn.status ? status.coding)) 
 if (chat.active = status.online)
 else (chat.active) while status.coding = [status === status.donotdisturb]
+}
