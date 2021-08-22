@@ -1,4 +1,4 @@
-do let
+/*do let
 //what happens if chat is dead for me?
 let app = (basic.apps) {
 if (gadget.PC = (category.games)) else (category.apps)
@@ -14,4 +14,4 @@ if (chat.dead = status.offline)
 else (chat.dead = turn.status ? status.coding)) 
 if (chat.active = status.online)
 else (chat.active) while status.coding = [status === status.donotdisturb]
-}
+}*/
