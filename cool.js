@@ -1,4 +1,4 @@
-do let
+/*o let
 //what happens if chat is dead for me?
 let a = () => {
 let app = (basic.apps) {
@@ -21,4 +21,11 @@ let tank = definitons.js
 let exports = (tank)
 if (exports.defined = require('definitons.js')
 if (PARENT === null) {o.parent = tank + exports}
-if (LABEL === null) {let u = fill.
+if (LABEL === null) {let u = u.Slot(LABEL===null) 
+fill.style('label') tank=null ? label=null}
+if (GUNS === null) {
+if (L === null) { let a=0: guns.length} barrel.edit(let height = a?0)
+if ()
+if (PROPERTIES === null) { let b=-1: guns.syntax{}
+                          
+*/
