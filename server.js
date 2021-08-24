@@ -4785,7 +4785,7 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 6000 && ran.dice(16000 - timer)) {
+            if (timer > 500 && ran.dice(501 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 69;
                 let choice = [];
@@ -4907,7 +4907,7 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                 //    o.color = 12;
                     o.define(Class.bot) 
-                    o.define(ran.choose([Class.hybrid, /*Class.page2, Class.page3//*/]));
+                    o.define(ran.choose([Class.overdrive, /*Class.page2, Class.page3//*/]));
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12;
