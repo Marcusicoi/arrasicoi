@@ -2369,10 +2369,10 @@ class Entity {
             let loc = { x: this.x, y: this.y, };
             if (
                 (this.team !== -1 && room.isIn('bas1', loc)) ||
-                (this.team !== -2 && room.isIn('bas2', loc)) 
-             /*   (this.team !== -3 && room.isIn('bas3', loc)) ||
+                (this.team !== -2 && room.isIn('bas2', loc)) ||
+                (this.team !== -3 && room.isIn('bas3', loc)) ||
                 (this.team !== -4 && room.isIn('bas4', loc)) ||
-                (this.team !== -5 && room.isIn('bas5', loc))*/
+                (this.team !== -5 && room.isIn('bas5', loc))
             ) { this.kill(); }
         }
     }
@@ -3405,8 +3405,8 @@ const sockets = (() => {
                     switch (room.gameMode) {
                         case "tdm": {
                             body.team = -player.team;
-                            body.color = [31, 32][player.team - 1];
-                        } break;
+                            body.color = [10, 11, 12, 15[player.team - 1]
+                        break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
                                 ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]) : 12 ; // red
@@ -4914,8 +4914,10 @@ var maintainloop = (() => {
                     o.label = '[AI] '
                 //  o.color = ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37]) 
                     o.team = ran.chooseBotTeam();
-                    if (o.team === -1) {o.color = 31};
-                    if (o.team === -2) {o.color = 32};
+                    if (o.team === -1) {o.color = 10};
+                    if (o.team === -2) {o.color = 11};
+                    if (o.team === -3) {o.color = 12};
+                    if (o.team === -4) {o.color = 15};
                     bots.push(o);
                 }
                   // Remove dead ones
