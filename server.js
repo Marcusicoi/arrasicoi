@@ -3390,7 +3390,7 @@ const sockets = (() => {
                     // Create and bind a body for the player host
                     let body = new Entity(loc);
                         body.protect();
-                        body.define(Class.anni); // Start as a basic tank
+                        body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
                         // Dev hax
                         if (socket.key === 'testl' || socket.key === 'testk') {
@@ -4907,7 +4907,7 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                     o.color = 12;
                     o.define(Class.bot) 
-                    o.define(ran.choose([Class.anni, /*Class.dev3u2, Class.dev4u2*/]));
+                    o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12;
