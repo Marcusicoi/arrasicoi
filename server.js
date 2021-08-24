@@ -3390,7 +3390,7 @@ const sockets = (() => {
                     // Create and bind a body for the player host
                     let body = new Entity(loc);
                         body.protect();
-                        body.define(Class.basic); // Start as a basic tank
+                        body.define(Class.anni); // Start as a basic tank
                         body.name = name; // Define the name
                         // Dev hax
                         if (socket.key === 'testl' || socket.key === 'testk') {
@@ -3413,7 +3413,8 @@ const sockets = (() => {
                         }
                     }
                     // Decide what to do about colors when sending updates and stuff
-                    player.teamColor = (!c.RANDOM_COLORS && room.gameMode === 'ffa') ? 10 : body.color; // blue
+                    player.teamColor = (!c.RANDOM_COLORS && room.gameMode === 'ffa') ? 10
+  : body.color; // blue
                     // Set up the targeting structure
                     player.target = {
                         x: 0,
@@ -4907,7 +4908,7 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                     o.color = 12;
                     o.define(Class.bot) 
-                    o.define(ran.choose([Class.hybrid, /*Class.dev3u2, Class.dev4u2*/]));
+                    o.define(ran.choose([Class.anni, /*Class.dev3u2, Class.dev4u2*/]));
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12;
@@ -4924,8 +4925,8 @@ var maintainloop = (() => {
                 bots = bots.filter(e => { return !e.isDead(); });
 // Slowly upgrade them
                 bots.forEach(o => {
-                    if (o.skill.level < 55) {
-                        o.skill.score += 10;
+                    if (o.skill.level < 0) {
+                        o.skill.score += 0;
                         o.skill.maintain();
                     } if (o.upgrades.length) o.upgrade(Math.floor(Math.random() * o.upgrades.length));
    
