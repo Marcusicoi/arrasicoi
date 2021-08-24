@@ -2456,9 +2456,9 @@ class Entity {
                         killText += ' and ';
                     }
                     // Only if we give messages
-                  /*  if (dothISendAText) { 
+                    if (dothISendAText) { 
                         instance.sendMessage('You killed ' + name + ((killers.length > 1) ? ' (with some help).' : '.')); 
-                    }*/
+                    }
                 });
                 // Prepare the next part of the next 
                 killText = killText.slice(0, -4);
@@ -4785,7 +4785,7 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 200 && ran.dice(20 - timer)) {
+            if (timer > 2000 && ran.dice(200 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 69;
                 let choice = [];
@@ -4907,7 +4907,7 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                 //    o.color = 12;
                     o.define(Class.bot) 
-                    o.define(ran.choose([Class.overdrive, /*Class.page2, Class.page3//*/]));
+                    o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12;

@@ -11,13 +11,13 @@
   "runSpeed": 1.5,
   "maxHeartbeatInterval": 300000,
   "verbose": true,
-  "WIDTH":  1500,
-  "HEIGHT": 1500,
-  "MODE": "",
+  "WIDTH":  4000,
+  "HEIGHT": 4000,
+  "MODE": "4",
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [
-  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
+  ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
   ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
   ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
   ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
@@ -26,7 +26,7 @@
   ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
   ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
   ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"]
+  ["bas3", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas4"]
   ],
   "X_GRID": 10,
   "Y_GRID": 10,
@@ -65,6 +65,6 @@
   "MIN_SPEED": 0.001,
   "FOOD_AMOUNT": 0.0004, 
   "SKILL_BOOST": 5,
-  "BOTS": 0,
+  "BOTS": 20,
   "GLASS_HEALTH_FACTOR": 2
 } 
