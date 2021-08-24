@@ -4811,7 +4811,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Boss with broken traps is coming..');
                         break;
                     case 5: 
-                        choice = [[Class.summoner], 1, 'castle', 'norm']; 
+                        choice = [[Class.summon], 1, 'castle', 'norm']; 
                         sockets.broadcast('The squares seem to hate you...');
                         break;
                     case 6: 
