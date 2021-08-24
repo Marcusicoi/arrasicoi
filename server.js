@@ -2456,9 +2456,9 @@ class Entity {
                         killText += ' and ';
                     }
                     // Only if we give messages
-                    if (dothISendAText) { 
+                  /*  if (dothISendAText) { 
                         instance.sendMessage('You killed ' + name + ((killers.length > 1) ? ' (with some help).' : '.')); 
-                    }
+                    }*/
                 });
                 // Prepare the next part of the next 
                 killText = killText.slice(0, -4);
@@ -4785,11 +4785,11 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 6000 && ran.dice(16000 - timer)) {
+            if (timer > 200 && ran.dice(20 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 69;
                 let choice = [];
-                switch (ran.chooseChance(40, 1)) {
+                switch (ran.chooseChance(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)) {
                     case 0: 
                         choice = [[Class.elite_destroyer], 2, 'a', 'nest'];
                         sockets.broadcast('Big Bullets On your face is coming.');
@@ -4811,7 +4811,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Boss with broken traps is coming..');
                         break;
                     case 5: 
-                        choice = [[Class.summoner], 1, 'castle', 'norm']; 
+                        choice = [[Class.summon], 1, 'castle', 'norm']; 
                         sockets.broadcast('The squares seem to hate you...');
                         break;
                     case 6: 
@@ -4907,7 +4907,7 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                 //    o.color = 12;
                     o.define(Class.bot) 
-                    o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
+                    o.define(ran.choose([Class.overdrive, /*Class.page2, Class.page3//*/]));
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12;
