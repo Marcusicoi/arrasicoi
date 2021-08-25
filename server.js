@@ -4689,7 +4689,7 @@ var poisonLoop = (() => {
           );
         }
       }
-     if (element.poisoned && element.type == "tank") {
+     if (element.poisoned && element.type == "food") {
         let x = element.size + 10;
         let y = element.size + 10;
         Math.random() < 0.5 ? (x *= -1) : x;
