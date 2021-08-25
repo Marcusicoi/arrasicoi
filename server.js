@@ -1811,6 +1811,9 @@ class Entity {
         if (set.BROADCAST_MESSAGE != null) { 
             this.settings.broadcastMessage = (set.BROADCAST_MESSAGE === '') ? undefined : set.BROADCAST_MESSAGE; 
         }
+        if (set.BROADCAST_MESSAGE2 != null) { 
+            this.settings.sendMessage = (set.BROADCAST_MESSAGE2 === '') ? undefined : set.BROADCAST_MESSAGE2; 
+        }
         if (set.DAMAGE_CLASS != null) { 
             this.settings.damageClass = set.DAMAGE_CLASS; 
         }
