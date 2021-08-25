@@ -1,7 +1,8 @@
-/*do let
+/*o let
 //what happens if chat is dead for me?
+let a = () => {
 let app = (basic.apps) {
-if (gadget.PC = (category.games)) else (category.apps)
+if (gadget.PC = (category.games)) else (category.apps)}
 let (gadget.android) else (gadget.ios) {gadget.PC}
 let discord = (redirect.html(google.play.store) search("discord") number(1))
 let arras = (redirect.html("discord.gg/arras") <= app.discord)
@@ -14,4 +15,17 @@ if (chat.dead = status.offline)
 else (chat.dead = turn.status ? status.coding)) 
 if (chat.active = status.online)
 else (chat.active) while status.coding = [status === status.donotdisturb]
-}*/
+}};
+//tanks idk
+let tank = definitons.js
+let exports = (tank)
+if (exports.defined = require('definitons.js')
+if (PARENT === null) {o.parent = tank + exports}
+if (LABEL === null) {let u = u.Slot(LABEL===null) 
+fill.style('label') tank=null ? label=null}
+if (GUNS === null) {
+if (L === null) { let a=0: guns.length} barrel.edit(let height = a?0)
+if ()
+if (PROPERTIES === null) { let b=-1: guns.syntax{}
+                          
+*/
