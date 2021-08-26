@@ -1811,9 +1811,6 @@ class Entity {
         if (set.BROADCAST_MESSAGE != null) { 
             this.settings.broadcastMessage = (set.BROADCAST_MESSAGE === '') ? undefined : set.BROADCAST_MESSAGE; 
         }
-        if (set.BROADCAST_MESSAGE2 != null) { 
-            this.settings.sendMessage = (set.BROADCAST_MESSAGE2 === '') ? undefined : set.BROADCAST_MESSAGE2; 
-        }
         if (set.DAMAGE_CLASS != null) { 
             this.settings.damageClass = set.DAMAGE_CLASS; 
         }
@@ -2459,9 +2456,9 @@ class Entity {
                         killText += ' and ';
                     }
                     // Only if we give messages
-                    if (dothISendAText) { 
+                  /*  if (dothISendAText) { 
                         instance.sendMessage('You killed ' + name + ((killers.length > 1) ? ' (with some help).' : '.')); 
-                    }
+                    }*/
                 });
                 // Prepare the next part of the next 
                 killText = killText.slice(0, -4);
@@ -4661,35 +4658,7 @@ var poisonLoop = (() => {
         });
         o.define(Class["poisonEffect"]);
         
-        if (!element.invuln) {
-          element.health.amount -=
-            element.health.max / (55 - element.poisonLevel);
-          element.shield.amount -=
-            element.shield.max / (35 - element.poisonLevel);
-        }
-
-        element.poisonTime -= 1;
-        if (element.poisonTime <= 0) element.poisoned = false;
-
-        if (
-          element.health.amount <= 0 &&
-          element.poisonedBy != undefined &&
-          element.poisonedBy.skill != undefined
-        ) {
-          element.poisonedBy.skill.score += Math.ceil(
-            util.getJackpot(element.poisonedBy.skill.score)
-          );
-          element.poisonedBy.sendMessage(
-            "You killed " + element.name + " with poison."
-          );
-          element.sendMessage(
-            "You have been killed by " +
-              element.poisonedBy.name +
-              " with poison."
-          );
-        }
-      }
-     if (element.poisoned && element.type == "food") {
+      if (element.poisoned && element.type == "food") {
         let x = element.size + 10;
         let y = element.size + 10;
         Math.random() < 0.5 ? (x *= -1) : x;
@@ -4711,6 +4680,7 @@ var poisonLoop = (() => {
 
         element.poisonTime -= 1;
         if (element.poisonTime <= 0) element.poisoned = false;
+
         if (
           element.health.amount <= 0 &&
           element.poisonedBy != undefined &&
@@ -4730,7 +4700,7 @@ var poisonLoop = (() => {
         }
       }
     }
-   );
+   });
   }
   return () => {
     // run the poison
@@ -4937,7 +4907,7 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                 //    o.color = 12;
                     o.define(Class.bot) 
-                    o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
+                    o.define(ran.choose([Class.hybrid, /*Class.page2, Class.page3//*/]));
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12;
