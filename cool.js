@@ -23,10 +23,15 @@ if (PARENT === null) {o.parent = tank + exports}
 if (LABEL === null) {let u = u.slot(LABEL===null) 
 fill.style('label') : tank=null ? label=null}
 if (GUNS === null) {
+  
 if (L === null) { let hl=0: guns.length} 
 barrel.edit(let height = a?(>num?) if {exports.basic = normal.average(18))
 if (18- = barrel.edit(guns.length + this.low(this.small(-)))))
-if (W === null) { let ba=0; guns.width} barrel.edit(let wide = ba?(>num?0))
+if (18+ = barrel.edit(guns.length + this.high(this.big(+))))
+   
+if (W === null) { let ba=0; guns.width} 
+barrel.edit(let wide = ba?(>num?0)) if {exports.basic = normal.average(8))
+if (
 if (A ==! null) { let wa=1; guns.aspect} barrel.edit(let widen = wa?(>num?1))
 if (X !=! null) { let px = let position.x ? normal.average(0)} : use.always();
 barrel.edit(let x = px?(>num?0 + px,x)
