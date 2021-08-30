@@ -1,4 +1,4 @@
-/*do let
+do let
 //what happens if chat is dead for me?
 let app = (basic.apps) {
 if (gadget.PC = (category.games)) else (category.apps)
@@ -31,9 +31,9 @@ if (18+ = barrel.edit(guns.length + this.high(this.big(for i>0 = let p = i+)))) 
    
 if (W === null) { let ba=0; guns.width} 
 barrel.edit(let wide = ba?(>num?0)) if {exports.basic = normal.average(8))
-if (8+ = barrel.edit(guns.width + this.low(this.small(for i<1(width = i) if (length) = (o.width ? entity.o)
+if (8+ = barrel.edit(guns.width + this.low
 if (A ==! null) { let wa=1; guns.aspect} barrel.edit(let widen = wa?(>num?1))
 if (X !=! null) { let px = let position.x ? normal.average(0)} : use.always();
 barrel.edit(let x = px?(>num?0 + px,x)
 if (PROPERTIES === null) { let b=-1: guns.syntax{}
-   */             
+                
