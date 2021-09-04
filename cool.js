@@ -1,4 +1,4 @@
-do let instanceof catch if do else this var return 
+/* do let instanceof catch if do else this var return export 
 //what happens if chat is dead for me?
 let app = (basic.apps) {
 if (gadget.PC = (category.games)) else (category.apps)
@@ -30,12 +30,13 @@ do (this.up(for (let i > a + i < a ? i=0 = i++ a | i ? a += 0 = i++=0))) this.le
 if (i+=0 = i > a = hl ? if(hl + a = i < hl > a++)) if i = hl+= 0 = a < i < hl = this.length(guns.legth + hl)
 if (18- = barrel.edit(guns.length + this.low(this.small(for i>0 = let p = i-)))) if(this.small)=> (↓)))))
 if (18+ = barrel.edit(guns.length + this.high(this.big(for i>0 = let p = i+)))) if(this.small)
-   
 if (W === null) { let ba=0; guns.width} 
 barrel.edit(let wide = ba?(>num?0)) if {exports.basic = normal.average(8)) 
+do barrel.edit(for (let i < 1 = i++ ba || if (hl = ba = i < hl > ba) this.guns( let i > a + ba < i++)
+                
 if (8+ = barrel.edit(guns.width + this.low
 if (A ==! null) { let wa=1; guns.aspect} barrel.edit(let widen = wa?(>num?1))
 if (X !=! null) { let px = let position.x ? normal.average(0)} : use.always();
 barrel.edit(let x = px?(>num?0 + px,x)
 if (PROPERTIES === null) { let b=-1: guns.syntax{}
-                
+    */            

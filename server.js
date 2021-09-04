@@ -4875,7 +4875,7 @@ var maintainloop = (() => {
                     case 13:
                         choice = [[Class.zaphkiel], 1, 'castle', 'norm'];
                         sockets.broadcast('Look who it is, an skimmer');
-                        break; 
+                        break;
                     case 14:
                         choice = [[Class.theia], 1, 'castle', 'norm'];
                         sockets.broadcast('would you like an quad tank ram in your face?');
