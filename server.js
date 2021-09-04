@@ -4845,7 +4845,7 @@ var maintainloop = (() => {
                         sockets.broadcast('The squares seem to hate you...');
                         break;
                     case 6: 
-                        choice = [[Class.skimboss], 1, 'castle', 'norm']; 
+                        choice = [[Class.elite_skimmer], 1, 'castle', 'norm']; 
                         sockets.broadcast('Baby Of Zaphkiel is coming...');
                         break;
                     case 7: 
@@ -4857,7 +4857,7 @@ var maintainloop = (() => {
                         sockets.broadcast("I think EK is going to be advanved.");
                         break;
                     case 9: 
-                        choice = [[Class.ek2], 1, 'castle', 'nest']; 
+                        choice = [[Class.ek3], 1, 'castle', 'nest']; 
                         sockets.broadcast('Its Getting Worser.');
                         break;
                     case 10: 
@@ -4882,7 +4882,7 @@ var maintainloop = (() => {
                         break;  
                     case 15:
                         choice = [[Class.alviss], 1, 'castle', 'norm'];
-                        sockets.broadcast('egg? what? rogue? idk');
+                        sockets.broadcast('The darkness arrives as the realms are ripped apart!');
                         break; 
                 }
                 boss.prepareToSpawn(...choice);
