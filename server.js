@@ -4810,11 +4810,11 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 40 && ran.dice(20 - timer)) {
+            if (timer > 200 && ran.dice(100 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
-                timer = 3;
+                timer = 8;
                 let choice = [];
-                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
+                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
                     case 0: 
                         choice = [[Class.elite_destroyer], 1, 'a', 'nest'];
                         sockets.broadcast('Big Bullets On your face is coming.');
@@ -4890,6 +4890,10 @@ var maintainloop = (() => {
                     case 18:
                         choice = [[Class.ragnarok], 1, 'castle', 'norm'];
                         sockets.broadcast('The reality comes to an end as ragnarok finally arrives!');
+                        break;
+                    case 19:
+                        choice = [[Class.kronos], 1, 'castle', 'norm'];
+                        sockets.broadcast('Do you believe in ragnarok?');
                         break;
                 }      
                 boss.prepareToSpawn(...choice);
