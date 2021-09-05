@@ -4815,9 +4815,9 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 6000 && ran.dice(16000 - timer)) {
+            if (timer > 50 && ran.dice(20 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
-                timer = 69;
+                timer = 5;
                 let choice = [];
                 switch (ran.chooseChance(40, 1)) {
                     case 0: 
@@ -4870,15 +4870,15 @@ var maintainloop = (() => {
                         break;
                     case 12:
                         choice = [[Class.freyja], 1, 'castle', 'norm'];
-                        sockets.broadcast('Ready to fight 3 battleships?');
+                        sockets.broadcast('The King of cruiser is ready to swarm you.');
                         break;
                     case 13:
                         choice = [[Class.zaphkiel], 1, 'castle', 'norm'];
-                        sockets.broadcast('Look who it is, an skimmer');
+                        sockets.broadcast('The king of skimmers is coming.');
                         break;
                     case 14:
                         choice = [[Class.theia], 1, 'castle', 'norm'];
-                        sockets.broadcast('The upcoming ');
+                        sockets.broadcast('The king of summoner has to enter a game.');
                         break;  
                     case 15:
                         choice = [[Class.alviss], 1, 'castle', 'norm'];
@@ -4887,6 +4887,10 @@ var maintainloop = (() => {
                     case 16:
                         choice = [[Class.athena], 1, 'castle', 'norm'];
                         sockets.broadcast('The woomy celestials are entered the arrasicoi kingdom!');
+                        break;
+                    case 17:
+                        choice = [[Class.nyx], 1, 'castle', 'norm'];
+                        sockets.broadcast('The new final celestial is entered to the game.');
                         break;
                     case 18:
                         choice = [[Class.ragnarok], 1, 'castle', 'norm'];
