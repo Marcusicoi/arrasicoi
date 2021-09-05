@@ -4819,9 +4819,9 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 5;
                 let choice = [];
-                switch (ran.chooseChance(40, 1)) {
+                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
                     case 0: 
-                        choice = [[Class.elite_destroyer], 2, 'a', 'nest'];
+                        choice = [[Class.elite_destroyer], 1, 'a', 'nest'];
                         sockets.broadcast('Big Bullets On your face is coming.');
                         break;
                     case 1: 
