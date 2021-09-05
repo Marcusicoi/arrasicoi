@@ -4878,13 +4878,21 @@ var maintainloop = (() => {
                         break;
                     case 14:
                         choice = [[Class.theia], 1, 'castle', 'norm'];
-                        sockets.broadcast('would you like an quad tank ram in your face?');
+                        sockets.broadcast('The upcoming ');
                         break;  
                     case 15:
                         choice = [[Class.alviss], 1, 'castle', 'norm'];
                         sockets.broadcast('The darkness arrives as the realms are ripped apart!');
                         break; 
-                }
+                    case 16:
+                        choice = [[Class.athena], 1, 'castle', 'norm'];
+                        sockets.broadcast('The woomy celestials are entered the arrasicoi kingdom!');
+                        break;
+                    case 18:
+                        choice = [[Class.ragnarok], 1, 'castle', 'norm'];
+                        sockets.broadcast('The reality comes to an end as ragnarok finally arrives!');
+                        break;
+                }      
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 4);
                 // Set the timeout for the spawn functions
