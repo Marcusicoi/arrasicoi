@@ -4796,12 +4796,7 @@ var maintainloop = (() => {
                     if (n === 1) {
                         begin = 'Something is coming ...';
                         arrival = names[0] + ' has arrived.'; 
-                    } else {
-                        begin = 'An Nightmare Is Coming.....';
-                        arrival = '';
-                        for (let i=0; i<n-2; i++) arrival += names[i] + ', ';
-                        arrival += names[n-2] + ' and ' + names[n-1] + ' have arrived.';
-                    }
+                    } 
                 },
                 spawn: () => {
                     sockets.broadcast(begin);
@@ -4841,7 +4836,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Boss with broken traps is coming..');
                         break;
                     case 5: 
-                        choice = [[Class.summoner], 1, 'castle', 'norm']; 
+                        choice = [[Class.summon], 1, 'castle', 'norm']; 
                         sockets.broadcast('The squares seem to hate you...');
                         break;
                     case 6: 
