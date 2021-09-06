@@ -2981,11 +2981,11 @@ const sockets = (() => {
                         let key = m[0];
                         socket.key = key;
                         util.log('[INFO] A sockets was verified with the token: '); util.log(key);
-                    if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
+                   /* if (m.length !== -1) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // Mobile
                     if (player.body != null) { if (socket.key === process.env.SECRET) {
                         player.body.define(Class.dev);
-                    } }
+                    } }*/
                     }
                     socket.verified = true;
                     util.log('Clients: ' + clients.length);
