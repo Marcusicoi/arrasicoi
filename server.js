@@ -4810,7 +4810,7 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 200 && ran.dice(100 - timer)) {
+            if (timer > 2000 && ran.dice(1000 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
@@ -5328,13 +5328,13 @@ setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
 
-let ball = setTimeout(() => {
-spawnBall();
-spawnBall();
+let rareSpawner = setTimeout(() => {
+greenSpawn();
+greenSpawn();
 }, 20000); 
 
-function spawnBall() {
-  let type69 = ran.dice(3)
+function greenSpawn() {
+  let type1 = ran.dice(3)
     ? ran.choose([
         Class.gem,
         Class.gsqu,
@@ -5345,11 +5345,31 @@ function spawnBall() {
     : Class.gem;
   let spot = room.randomType("norm");
   let o = new Entity(spot);
-  o.define(type69);
+  o.define(type1);
   o.team = -100;
   o.ondeath = () => {
     setTimeout(() => {
-      spawnBall();
+      greenSpawn();
+    }, 20000);
+  };
+}
+function legendSpawn() {
+  let type2 = ran.dice(13)
+    ? ran.choose([
+        Class.gem,
+        Class.gsqu,
+        Class.gtri,
+        Class.gpenta,
+        Class.gbpenta
+      ])
+    : Class.gem;
+  let spot = room.randomType("norm");
+  let o = new Entity(spot);
+  o.define(type2);
+  o.team = -100;
+  o.ondeath = () => {
+    setTimeout(() => {
+      legendSpawn();
     }, 20000);
   };
 }
