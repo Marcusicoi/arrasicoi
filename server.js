@@ -5388,7 +5388,8 @@ function greenSpawn() {
         Class.gsqu,
         Class.gtri,
         Class.gpenta,
-        Class.gbpenta
+        Class.gbpenta,
+        Class.ghpenta
       ])
     : Class.gem;
   let spot = room.randomType("norm");
@@ -5404,11 +5405,12 @@ function greenSpawn() {
 function legendSpawn() {
   let type2 = ran.dice(13)
     ? ran.choose([
-        Class.gem,
-        Class.gsqu,
-        Class.gtri,
-        Class.gpenta,
-        Class.gbpenta
+        Class.jewel,
+        Class.lsqu,
+        Class.ltri,
+        Class.lpenta,
+        Class.lbpenta,
+        Class.lhpenta
       ])
     : Class.gem;
   let spot = room.randomType("norm");
