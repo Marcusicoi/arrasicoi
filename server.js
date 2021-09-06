@@ -4862,7 +4862,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
-                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
+                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
                     case 0: 
                         choice = [[Class.elite_destroyer], 1, 'a', 'nest'];
                         sockets.broadcast('Big Bullets On your face is coming.');
@@ -4943,9 +4943,13 @@ var maintainloop = (() => {
                         choice = [[Class.kronos], 1, 'castle', 'norm'];
                         sockets.broadcast('Do you believe in ragnarok?');
                         break;
-                    case 1:
-                        choice = [[Class.kronos], 1, 'castle', 'norm'];
-                        sockets.broadcast('Do you believe in ragnarok?');
+                    case 20:
+                        choice = [[Class.eq1], 1, 'castle', 'norm'];
+                        sockets.broadcast('We Believe in EK-X. Now whats on the other side?');
+                        break;
+                    case 21:
+                        choice = [[Class.eq2], 1, 'castle', 'norm'];
+                        sockets.broadcast('The other side of EK-X is leveling up.');
                         break;
                 }      
                 boss.prepareToSpawn(...choice);
