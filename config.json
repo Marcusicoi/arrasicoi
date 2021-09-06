@@ -21,7 +21,7 @@
   ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
   ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
   ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
+  ["norm", "wall", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
   ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
   ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
   ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],

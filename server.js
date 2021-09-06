@@ -73,6 +73,7 @@ const room = {
     room.findType('bas4');
     room.findType('roid');
     room.findType('rock');
+    room.findType('wall');
     room.findType('bas5')
     room.nestFoodAmount = 1.5 * Math.sqrt(room.nest.length) / room.xgrid / room.ygrid;
     room.random = () => {
@@ -3703,6 +3704,12 @@ const sockets = (() => {
                   }
                   setTimeout(updateMaze, 2500)
                   setInterval(updateMaze, 10000)
+                  if (room.wall)
+                  for (let loc of room.wall) {
+                  let o = new Entity(loc);
+                  o.define(Class.wall);
+                  o.team = -100;
+                  }
                   setInterval(() => {
                     let minimaps = all.players = { [1]: [], [2]: [], [3]: [], [4]: [] }
                     let minibosses = all.minibosses = []
