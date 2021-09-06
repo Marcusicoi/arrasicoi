@@ -4943,6 +4943,10 @@ var maintainloop = (() => {
                         choice = [[Class.kronos], 1, 'castle', 'norm'];
                         sockets.broadcast('Do you believe in ragnarok?');
                         break;
+                    case 1:
+                        choice = [[Class.kronos], 1, 'castle', 'norm'];
+                        sockets.broadcast('Do you believe in ragnarok?');
+                        break;
                 }      
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 4);
