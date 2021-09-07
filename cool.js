@@ -1,8 +1,8 @@
-/* do let instanceof catch if do else this var return export 
+/*do let instanceof catch if do else this var return export case break default throwa const function
 //what happens if chat is dead for me?
 let app = (basic.apps) {
 if (gadget.PC = (category.games)) else (category.apps)
-let (gadget.android) else (gadget.ios) {gadget.PC}
+let (gadget.android) else (gadget.ios) {gadget.PC}À
 let discord = (redirect.html(google.play.store) search("discord") number(1))
 let arras = (redirect.html("discord.gg/arras") <= app.discord)
 let channel = (app.discord => server.arras <= channel.channel)
