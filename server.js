@@ -3048,7 +3048,7 @@ const sockets = (() => {
                     util.log('[INFO] ' + (m[0]) + (needsRoom ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);  
               //Broadcast it if a player joins the game
               if (player.name == '' ? 'Unnamed' : 'Unnamed')
-              sockets.broadcast('User ' + player.name + ' has joined the game! Players: ' + players.length + '.')
+              sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has joined' : ' rejoined') + ' the game! Players: ' + players.length + '!')
                 } break;
                 case 'S': { // clock syncing
                     if (m.length !== 1) { socket.kick('Ill-sized sync packet.'); return 1; }
