@@ -5396,7 +5396,10 @@ setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
+//Arena Closed.
+let arenaClosed = false;
 
+//Spawn rare Shapes :D
 let rareSpawner = setTimeout(() => {
 greenSpawn();
 greenSpawn();
