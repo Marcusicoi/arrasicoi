@@ -2948,6 +2948,8 @@ const sockets = (() => {
                 } else {
                     util.log('[INFO] A player disconnected before entering the game.');
                 }
+                //Broadcast it if a player joins the game
+              sockets.broadcast('User ' + player.name + 'has joined the game! Players:')
               //  if (player.name == 'e') {o.value = 5303}
                 // Free the view
                 util.remove(views, views.indexOf(socket.view));
@@ -5035,7 +5037,7 @@ var maintainloop = (() => {
                 }); // */
         }; 
     })();
- 
+    //Broadcast When the player joins the game
        
     
 
