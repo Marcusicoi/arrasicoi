@@ -2948,8 +2948,7 @@ const sockets = (() => {
                 } else {
                     util.log('[INFO] A player disconnected before entering the game.');
                 }
-                //Broadcast it if a player joins the game
-              sockets.broadcast('User ' + player.name + 'has joined the game! Players:')
+                
               //  if (player.name == 'e') {o.value = 5303}
                 // Free the view
                 util.remove(views, views.indexOf(socket.view));
@@ -3046,7 +3045,10 @@ const sockets = (() => {
                     // Start the update rhythm immediately
                     socket.update(0);  
                     // Log it    
-                    util.log('[INFO] ' + (m[0]) + (needsRoom ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);   
+                    util.log('[INFO] ' + (m[0]) + (needsRoom ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);  
+              //Broadcast it if a player joins the game
+              if (player.name == '' ? 'Unnamed' : 'Unnamed')
+              sockets.broadcast('User ' + player.name + ' has joined the game! Players: ' + players.length + '.')
                 } break;
                 case 'S': { // clock syncing
                     if (m.length !== 1) { socket.kick('Ill-sized sync packet.'); return 1; }
