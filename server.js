@@ -8,7 +8,7 @@ require('google-closure-library');
 goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
 
-// Import game settings.
+// Import gam settings.
 const c = require('./config.json');
 
 // Import utilities.
