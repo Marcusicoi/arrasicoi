@@ -5397,8 +5397,17 @@ setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
 //Arena Closed.
-let arenaClosed = false;
-
+function spawnArenaCloser() {
+let o = new Entity(room.norm());
+o.define(Class.ac);
+o.team = -100;  
+}
+function arenaClosing() {
+util.log('[INFO] Arena Closed.');
+sockets.broadcast('Arena Closed: No Players Can Join.')
+spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser();
+spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser();
+}
 //Spawn rare Shapes :D
 let rareSpawner = setTimeout(() => {
 greenSpawn();
