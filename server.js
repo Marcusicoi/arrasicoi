@@ -5392,19 +5392,13 @@ setInterval(poisonLoop, room.cycleSpeed * 7);
 let rareSpawner = setTimeout(() => {
 greenSpawn();
 greenSpawn();
+legendSpawn();
+legendSpawn();
 }, 20000); 
 
 function greenSpawn() {
   let type1 = ran.dice(3)
-    ? ran.choose([
-        Class.gem,
-        Class.gsqu,
-        Class.gtri,
-        Class.gpenta,
-        Class.gbpenta,
-        Class.ghpenta
-      ])
-    : Class.gem;
+  ? ran.choose([Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta]) : Class.gem;
   let spot = room.randomType("norm");
   let o = new Entity(spot);
   o.define(type1);
@@ -5414,18 +5408,10 @@ function greenSpawn() {
       greenSpawn();
     }, 20000);
   };
-}
+};
 function legendSpawn() {
   let type2 = ran.dice(13)
-    ? ran.choose([
-        Class.jewel,
-        Class.lsqu,
-        Class.ltri,
-        Class.lpenta,
-        Class.lbpenta,
-        Class.lhpenta
-      ])
-    : Class.gem;
+  ? ran.choose([Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta]) : Class.gem;
   let spot = room.randomType("norm");
   let o = new Entity(spot);
   o.define(type2);
@@ -5435,4 +5421,4 @@ function legendSpawn() {
       legendSpawn();
     }, 20000);
   };
-}
+};
