@@ -4966,7 +4966,11 @@ var maintainloop = (() => {
                         break;
                     case 22:
                         choice = [[Class.eq3], 1, 'castle', 'norm'];
-                        sockets.broadcast('The other side of EK-X is r');
+                        sockets.broadcast('The other side of EK-X has its final upgrade. get. ready.');
+                        break;
+                    case 23:
+                        choice = [[Class.fallenboost], 1, 'castle', 'norm'];
+                        sockets.broadcast('The community of diep bosses has to visit the game');
                         break;
                 }      
                 boss.prepareToSpawn(...choice);
