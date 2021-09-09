@@ -1664,7 +1664,7 @@ class Entity {
         this.children = [];
         // Define it
         this.SIZE = 1;
-        this.color = 36;
+       // this.color = 36;
         this.define(Class.genericEntity);
         // Initalize physics and collision
         this.maxSpeed = 0;
