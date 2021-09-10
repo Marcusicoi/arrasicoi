@@ -72,5 +72,5 @@ FFA:
   
   All Tanks With Date Release
   ```
-  Basic = ???
+  Basic = October 25th, 2017
   Bomber = November 12, 2017
