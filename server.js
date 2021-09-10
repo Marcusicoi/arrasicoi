@@ -4871,7 +4871,7 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 2000 && ran.dice(1000 - timer)) {
+            if (timer > 69 && ran.dice(59 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
@@ -4965,7 +4965,7 @@ var maintainloop = (() => {
                         sockets.broadcast('The other side of EK-X is leveling up.');
                         break;
                     case 22:
-                        choice = [[Class.eq3], 1, 'castle', 'norm'];
+                        choice = [[Class.eq3rd], 1, 'castle', 'norm'];
                         sockets.broadcast('The other side of EK-X has its final upgrade. get. ready.');
                         break;
                     case 23:
