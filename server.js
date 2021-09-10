@@ -4875,7 +4875,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
-                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
+                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
                     case 0: 
                         choice = [[Class.elite_destroyer], 1, 'a', 'nest'];
                         sockets.broadcast('Big Bullets On your face is coming.');
@@ -4965,7 +4965,7 @@ var maintainloop = (() => {
                         sockets.broadcast('The other side of EK-X is leveling up.');
                         break;
                     case 22:
-                        choice = [[Class.eq3rd], 1, 'castle', 'norm'];
+                        choice = [[Class.eq3], 1, 'castle', 'norm'];
                         sockets.broadcast('The other side of EK-X has its final upgrade. get. ready.');
                         break;
                     case 23:
@@ -5438,7 +5438,7 @@ function greenSpawn() {
   };
 };
 function legendSpawn() {
-  let type2 = ran.dice(13)
+  let type2 = ran.dice(5)
   ? ran.choose([Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta]) : Class.gem;
   let spot = room.randomType("norm");
   let o = new Entity(spot);
