@@ -70,7 +70,13 @@ FFA:
   ],
   ```
   
-  All Tanks With Date Release
+  All Custom Tanks With Date Release
   ```
-  Basic = October 25th, 2017
-  Bomber = November 12, 2017
+  Ninja = March 5, 2020 (2020 tanks are not real)
+  Shuriken = March 6, 2020 (^^^^^^^^^^^^^^^^^^^^)
+  Sniper Rifle = May 17, 2020 (^^^^^^^^^^^^^^^^^)
+  Lazer (Weak Lazer) = June 1, 2020 (^^^^^^^^^^^)
+  Bonker = June 15, 2020 (^^^^^^^^^^^^^^^^^^^^^^)
+  Extinguisher = June 15, 2020 (^^^^^^^^^^^^^^^^)
+  Boosted Fighter (Dragon) = June 21, 2020 (^^^^)
+  
