@@ -4871,13 +4871,13 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 2000 && ran.dice(1000 - timer)) {
+            if (timer > 200 && ran.dice(100 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
-                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
-                    case 0: 
-                        choice = [[Class.elite_destroyer], 1, 'a', 'nest'];
+                switch (ran.chooseChance(1,/* 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1*/)) {
+                      case 0: 
+                        choice = [[Class.fallenboost], 1, 'a', 'nest'];
                         sockets.broadcast('Big Bullets On your face is coming.');
                         break;
                     case 1: 
