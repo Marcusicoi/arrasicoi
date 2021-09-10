@@ -1,6 +1,6 @@
 Angles: (or idk)
 ```
-1: 0, 290, 295
+1: 0,
 
 2: 0, 180,
 
@@ -68,3 +68,9 @@ FFA:
   ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
   ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"]
   ],
+  ```
+  
+  All Tanks With Date Release
+  ```
+  Basic = ???
+  Bomber = November 12, 2017
