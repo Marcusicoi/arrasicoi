@@ -1,6 +1,6 @@
 Angles: (or idk)
 ```
-1: 0,
+1: 0, 290, 295
 
 2: 0, 180,
 
@@ -68,17 +68,3 @@ FFA:
   ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
   ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"]
   ],
-  ```
-  
-  All Custom Tanks With Date Release
-  ```
-   5, 2020 (2020 tanks are n
-
-)
-  Shurikenot actually release on the date) arch 6, 2020 (^^^^^^^^^^^^^^^^^^^^)
-  Sniper Rifle = May 17, 2020 (^^^^^^^^^^^^^^^^^)
-  Lazer (Weak Lazer) = June 1, 2020 (^^^^^^^^^^^)
-  Bonker = June 15, 2020 (^^^^^^^^^^^^^^^^^^^^^^)
-  Extinguisher = June 15, 2020 (^^^^^^^^^^^^^^^^)
-  Boosted Fighter (Dragon) = June 21, 2020 (^^^^)
-  

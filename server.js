@@ -1664,7 +1664,7 @@ class Entity {
         this.children = [];
         // Define it
         this.SIZE = 1;
-       // this.color = 36;
+        this.color = 36;
         this.define(Class.genericEntity);
         // Initalize physics and collision
         this.maxSpeed = 0;
@@ -4871,11 +4871,11 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 69 && ran.dice(59 - timer)) {
+            if (timer > 2000 && ran.dice(1000 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
-                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
+                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
                     case 0: 
                         choice = [[Class.elite_destroyer], 1, 'a', 'nest'];
                         sockets.broadcast('Big Bullets On your face is coming.');
@@ -4963,14 +4963,6 @@ var maintainloop = (() => {
                     case 21:
                         choice = [[Class.eq2], 1, 'castle', 'norm'];
                         sockets.broadcast('The other side of EK-X is leveling up.');
-                        break;
-                    case 22:
-                        choice = [[Class.eq3], 1, 'castle', 'norm'];
-                        sockets.broadcast('The other side of EK-X has its final upgrade. get. ready.');
-                        break;
-                    case 23:
-                        choice = [[Class.fallenboost], 1, 'castle', 'norm'];
-                        sockets.broadcast('The community of diep bosses has to visit the game');
                         break;
                 }      
                 boss.prepareToSpawn(...choice);
@@ -5438,7 +5430,7 @@ function greenSpawn() {
   };
 };
 function legendSpawn() {
-  let type2 = ran.dice(5)
+  let type2 = ran.dice(13)
   ? ran.choose([Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta]) : Class.gem;
   let spot = room.randomType("norm");
   let o = new Entity(spot);
