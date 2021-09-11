@@ -3048,9 +3048,9 @@ const sockets = (() => {
                     util.log('[INFO] ' + (m[0]) + (needsRoom ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);  
               //Broadcast it if a player joins the game
               if (player.name == '' ? 'Unnamed' : 'Unnamed')
-              sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has joined' : ' rejoined') + ' the game! Players: ' + players.length + '!')
+              sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')
               //Broadcast it if a player left the game
-            //  sockets.broadcast('User ' + (m[0]) + ' has left the game! Players: ' + players.length + '!')
+              if (c.BROADCAST = sockets.broadcast("")
              // util.remove(players)
                 } break;
                 case 'S': { // clock syncing
