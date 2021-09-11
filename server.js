@@ -3050,7 +3050,7 @@ const sockets = (() => {
               if (player.name == '' ? 'Unnamed' : 'Unnamed')
               sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')
               //Broadcast it if a player left the game
-              if (c.BROADCAST = sockets.broadcast("")
+              if (c.BROADCAST) {sockets.broadcast("")}
              // util.remove(players)
                 } break;
                 case 'S': { // clock syncing
