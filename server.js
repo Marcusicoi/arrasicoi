@@ -5329,7 +5329,7 @@ var speedcheckloop = (() => {
             util.warn('~~ LOOPS: ' + loops + '. ENTITY #: ' + entities.length + '//' + Math.round(active/loops) + '. VIEW #: ' + views.length + '. BACKLOGGED :: ' + (sum * roomSpeed * 3).toFixed(3) + '%! ~~');
             if(sum * roomSpeed>333){
               too_much_lag_streak++;
-              if(too_much_lag_streak===10){
+              if(too_much_lag_streak===15){
                 util.error('too much lag, restarting server')
                 sockets.broadcast('Server Overloaded!');
                 sockets.broadcast('Restarting...');
