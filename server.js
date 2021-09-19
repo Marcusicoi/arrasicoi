@@ -5009,7 +5009,7 @@ var maintainloop = (() => {
                 }
             }).filter(e => { return e; });    
             // Spawning
-            spawnBosses(census);
+          //  spawnBosses(census);
           //  spawnCrasher(census);      
                 
                 if (bots.length < c.BOTS) {
