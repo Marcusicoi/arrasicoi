@@ -4870,7 +4870,7 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 200 && ran.dice(100 - timer)) {
+            if (timer > 400 && ran.dice(300 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
