@@ -63,9 +63,9 @@
   "SKILL_LEAK": 0,
   "STEALTH": 4,
   "MIN_SPEED": 0.001,
-  "FOOD_AMOUNT": 0.0004, 
+  "FOOD_AMOUNT": 0.000000000004, 
   "SKILL_BOOST": 5,
-  "BOTS": 10,
+  "BOTS": 0,
   "GLASS_HEALTH_FACTOR": 2,
   "BROADCAST": "$message"
 } 
