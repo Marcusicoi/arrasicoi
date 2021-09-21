@@ -5429,7 +5429,7 @@ function greenSpawn() {
   };
 };
 function legendSpawn() {
-  let type2 = ran.dice(13)
+  let type2 = ran.dice(5)
   ? ran.choose([Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta]) : Class.gem;
   let spot = room.randomType("norm");
   let o = new Entity(spot);
