@@ -1,6 +1,6 @@
 {
   "name": "Arrasicoi",
-  "version": "10.3.2",
+  "version": "1.7",
   "main": "server.js",
   "scripts": {
     "start": "node server"
