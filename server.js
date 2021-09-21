@@ -5052,7 +5052,7 @@ var maintainloop = (() => {
         function getFoodClass(level, isGreenShape) {
             let a = { };
             switch (level) {
-                case 0: a = Class.eggspawn; break;
+                case 0: a = Class.egg; break;
                 case 1: a = Class.square; break; 
                 case 2: a = Class.triangle; break;
                 case 3: a = Class.pentagon; break;
