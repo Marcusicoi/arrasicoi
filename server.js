@@ -4963,6 +4963,10 @@ var maintainloop = (() => {
                         choice = [[Class.eq2], 1, 'castle', 'norm'];
                         sockets.broadcast('The other side of EK-X is leveling up.');
                         break;
+                    case 22:
+                        choice = [[Class.sk1], 1, 'castle', 'norm'];
+                        sockets.broadcast('The journey has started as SK-X arrived.');
+                        break
                 }      
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 4);
