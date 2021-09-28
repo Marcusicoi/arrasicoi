@@ -1853,8 +1853,8 @@ class Entity {
         if (set.BROADCAST_MESSAGE != null) { 
             this.settings.broadcastMessage = (set.BROADCAST_MESSAGE === '') ? undefined : set.BROADCAST_MESSAGE; 
         }
-        if (set.BROADCAST_MESSAGE2 != null) { 
-            this.settings.sendMessage = (set.BROADCAST_MESSAGE2 === '') ? undefined : set.BROADCAST_MESSAGE2; 
+        if (set.SEND_MESSAGE != null) { 
+            this.settings.sendMessage = (set.SEND_MESSAGE === '') ? undefined : set.SEND_MESSAGE; 
         }
         if (set.DAMAGE_CLASS != null) { 
             this.settings.damageClass = set.DAMAGE_CLASS; 
@@ -4966,7 +4966,11 @@ var maintainloop = (() => {
                     case 22:
                         choice = [[Class.sk1], 1, 'castle', 'norm'];
                         sockets.broadcast('The journey has started as SK-X arrived.');
-                        break
+                        break;
+                    case 23:
+                        choice = [[Class.sk2], 1, 'castle', 'norm'];
+                        sockets.broadcast('The SK-X is leveling up as the realms are ripping apart!');
+                        break;
                 }      
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 4);
