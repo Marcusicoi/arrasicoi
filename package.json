@@ -1,6 +1,6 @@
 {
   "name": "Arrasicoi",
-  "version": "1.10.2.4",
+  "version": "1.10.4",
   "main": "server.js",
   "scripts": {
     "start": "node server"
@@ -9,7 +9,7 @@
     "google-closure-library": "^20210808.0.0",
     "ws": "6.1.x",
     "gpl-3.0": "^1.0.1",
-    "node": "^16.10.0"
+    "node": "^16.6.1"
   },
   "engines": {
     "node": "10.x"
