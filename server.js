@@ -2504,9 +2504,9 @@ class Entity {
                         killText += ' and ';
                     }
                     // Only if we give messages
-                   /* if (dothISendAText) { 
+                    if (dothISendAText) { 
                         instance.sendMessage('You killed ' + name + ((killers.length > 1) ? ' (with some help).' : '.')); 
-                    }*/
+                    }
                 });
                 // Prepare the next part of the next 
                 killText = killText.slice(0, -4);
@@ -2951,7 +2951,7 @@ const sockets = (() => {
                     util.log('[INFO] A player disconnected before entering the game.');
                 }
                 
-              //  if (player.name == 'e') {o.value = 5303}
+             //   if (player.name == 'e') {o.score = 5303}
                 // Free the view
                 util.remove(views, views.indexOf(socket.view));
                 // Remove the socket
@@ -5406,25 +5406,8 @@ setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
-//Arena Closed.
-function spawnArenaCloser() {
-let o = new Entity(room.norm());
-o.define(Class.ac);
-o.team = -100;  
-}
-function arenaClosing() {
-util.log('[INFO] Arena Closed.');
-sockets.broadcast('Arena Closed: No Players Can Join.')
-spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser();
-spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser(); spawnArenaCloser();
-}
-//Spawn rare Shapes :D
-let rareSpawner = setTimeout(() => {
-greenSpawn();
-greenSpawn();
-legendSpawn();
-legendSpawn();
-}, 20000); 
+//Restore Test
+if (instance.name === 'e') (o.score
 
 function greenSpawn() {
   let type1 = ran.dice(3)
