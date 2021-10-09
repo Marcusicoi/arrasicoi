@@ -5409,10 +5409,12 @@ setInterval(poisonLoop, room.cycleSpeed * 7);
 //Restore Test
 function restore() {
   let player = sockets.player;
-  let spot = this.player.name = (set.player.name = '')
+  let spot = this.player.name;
   let o = new Entity(spot);
   o.value = 10292288;
+  o.player.name === 'e';
  } 
+restore();
 function greenSpawn() {
   let type1 = ran.dice(3)
   ? ran.choose([Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta]) : Class.gem;
