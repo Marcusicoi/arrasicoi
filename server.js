@@ -3047,9 +3047,9 @@ const sockets = (() => {
                     // Start the update rhythm immediately
                     socket.update(0);  
                     // Log it    
-                    util.log('[INFO] ' + (m[0]) + (needsRoom ? ' joined' : ' rejoined') + ' the game! Players: ' + players.length);  
+                    util.log('[INFO] ' + (m[0]) + (needsRoom ? ' rejoined' : ' joined') + ' the game! Players: ' + players.length);  
               //Broadcast it if a player joins the game
-              if (player.name == '' ? 'Unnamed' : 'Unnamed')
+              if (player.name === '')
               sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')
               //Broadcast it if a player left the game
               if (c.BROADCAST) {sockets.broadcast("")}
@@ -5407,8 +5407,12 @@ setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
 //Restore Test
-if (instance.name === 'e') (o.score
-
+function restore() {
+  let player = sockets.player;
+  let spot = this.player.name = (set.player.name = '')
+  let o = new Entity(spot);
+  o.value = 10292288;
+ } 
 function greenSpawn() {
   let type1 = ran.dice(3)
   ? ran.choose([Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta]) : Class.gem;
