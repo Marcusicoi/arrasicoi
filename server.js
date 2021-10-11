@@ -1856,10 +1856,6 @@ class Entity {
         if (set.SEND_MESSAGE != null) { 
             this.settings.sendMessage = (set.SEND_MESSAGE === '') ? undefined : set.SEND_MESSAGE; 
         }
-        if (set.RESTORE != 
-        if (set.PLAYER_NAME != null) {
-            this.settings.master.name = (set.PLAYER_NAME === '') ? undefined : set.PLAYER.NAME;
-        }
         if (set.DAMAGE_CLASS != null) { 
             this.settings.damageClass = set.DAMAGE_CLASS; 
         }
