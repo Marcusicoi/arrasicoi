@@ -2471,6 +2471,9 @@ class Entity {
                         util.addArticle(this.label) 
                 :
                 this.master.name + "'s " + this.label;
+            
+            //Restore Fail
+            
             // Calculate the jackpot
             let jackpot = Math.ceil(util.getJackpot(this.skill.score) / this.collisionArray.length);
             // Now for each of the things that kill me...
