@@ -1506,6 +1506,13 @@ var bringToLife = (() => {
             }
           }
         } else my.alpha = 1;
+        //Shadow Shapes
+        if (my.shadow[1]) {
+        my.alpha = Math.max(0.01, my.alpha - my.shadow[1]);
+        if (!(my.velocity.x * my.velocity.x + my.velocity.y * my.velocity.y < 0.25 * 0.15) || my.damageRecieved) {
+        my.alpha < 0.1 ? my.alpha === 0.1 : [];      
+         }  
+        } else my.
         // So we start with my master's thoughts and then we filter them down through our control stack
         my.controllers.forEach(AI => {
             let a = AI.think(b);
