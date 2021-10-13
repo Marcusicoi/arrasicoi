@@ -1493,12 +1493,19 @@ var bringToLife = (() => {
         if (my.settings.attentionCraver && !faucet.main && my.range) {
             my.range -= 1;
         }
-   // Invisibility
+        // Invisibility
         if (my.invisible[1]) {
-		  	    my.alpha = Math.max(0.01, my.alpha - my.invisible[1]);
-		  	    if (!(my.velocity.x * my.velocity.x + my.velocity.y * my.velocity.y < 0.15 * 0.15) || my.damageRecieved)
-		  	      	my.alpha = Math.min(1, my.alpha + my.invisible[0]);
-		    } else my.alpha = 1;
+        my.alpha = Math.max(0.001, my.alpha - my.invisible[1]);
+        if (!(my.velocity.x * my.velocity.x + my.velocity.y * my.velocity.y < 0.25 * 0.15) || my.damageRecieved) {
+       //my.alpha = Math.min(1, my.alpha + my.invisible[0]);
+        my.alpha < 1 ? my.alpha += 0.1 : [];
+        my.dangerValue = 7; // Make it danger in AIs eyes so the AIs can attack it
+        } else {
+        if (my.alpha > 0.2) {
+        my.dangerValue = -1; // when you invisible, the danger will be -1, that means the AIs will skip you and attack other things
+            }
+          }
+        } else my.alpha = 1;
         // So we start with my master's thoughts and then we filter them down through our control stack
         my.controllers.forEach(AI => {
             let a = AI.think(b);
