@@ -1688,7 +1688,6 @@ class Entity {
         this.invuln = false;
         this.alpha = 1;
         this.invisible = [0, 0];
-        this.shadow = [0, 0];
         // Get a new unique id
         this.id = entitiesIdLog++;
         this.team = this.id;
@@ -1890,9 +1889,6 @@ class Entity {
         }
         if (set.INVISIBLE != null) { 
             this.invisible = set.INVISIBLE;
-        }
-        if (set.SHADOW != null) {
-            this.shadow = set.SHADOW;
         }
         if (set.DANGER != null) { 
             this.dangerValue = set.DANGER; 
@@ -4536,13 +4532,6 @@ var gameloop = (() => {
               n.poisonTime = 20;
               n.poisonedBy = my.master;
             }
-            //Shadow Shapes
-            if (n.shadow[1]) {
-            n.alpha = Math.max(0.01, n.alpha - n.shadow[1]);
-            if (!(n.velocity.x * n.velocity.x + n.velocity.y * n.velocity.y < 0.25 * 0.15) || n.damageRecieved) {
-            n.alpha < 0.1 ? n.alpha === 0.1 : [];      
-            }  
-           } else n.alpha = 0;
           }
                     /************* DO MOTION ***********/    
                     if (nIsFirmCollide < 0) {
