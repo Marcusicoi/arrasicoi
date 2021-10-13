@@ -28,10 +28,10 @@ delay: [guns[gunsType[6]], main.DELAY],
 //Foods
 var foodType = ['egg', 'square', 'triangle', 'pentagon']
 var food = [entity.food, foodType[0,1,2,3]];
-if (foodType['pentagon'] === food[foodType[3]]) ([
-  return: {
-   }])
+var pentaType = food[foodType[3], ['norm', 'big', 'huge']]
 const foods = {
 egg: [food[foodType[0]], exports.egg],
 square: [food[foodType[1]], exports.square],
 triangle: [food[foodType[2]], exports.triangle],
+pentagon: [food[foodType[3], pentaType['norm']], exports.pentagon],
+}
