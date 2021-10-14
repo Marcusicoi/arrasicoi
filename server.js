@@ -5038,6 +5038,7 @@ var maintainloop = (() => {
                 //  o.color = 12;
                     o.define(Class.bot) 
                     o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
+                  //o.define(Class.dev)
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12;
