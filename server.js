@@ -5418,28 +5418,28 @@ setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
 
 function greenSpawn() {
-  let type1 = ran.dice(3)
+  let type = ran.dice(3)
   ? ran.choose([Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta]) : Class.gem;
-  let spot = room.randomType("norm");
+  let spot = room.randomType("norm", "nest");
   let o = new Entity(spot);
-  o.define(type1);
+  o.define(type);
   o.team = -100;
   o.ondeath = () => {
     setTimeout(() => {
-      greenSpawn();
+     ran.choose([legendSpawn(), greenSpawn()]);
     }, 20000);
   };
 };
 function legendSpawn() {
-  let type2 = ran.dice(5)
+  let type = ran.dice(3)
   ? ran.choose([Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta]) : Class.gem;
-  let spot = room.randomType("norm");
+  let spot = room.randomType("norm", "nest");
   let o = new Entity(spot);
-  o.define(type2);
+  o.define(type);
   o.team = -100;
   o.ondeath = () => {
-    setTimeout(() => {
-      legendSpawn();
+    setTimeout(() => { 
+      ran.choose([legendSpawn(), greenSpawn])
     }, 20000);
   };
 };
