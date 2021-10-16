@@ -1489,6 +1489,8 @@ var bringToLife = (() => {
             alt: faucet.alt,
             power: undefined,
         };
+        // Danger
+        my.dangerValie = 7;
         // Seek attention
         if (my.settings.attentionCraver && !faucet.main && my.range) {
             my.range -= 1;
