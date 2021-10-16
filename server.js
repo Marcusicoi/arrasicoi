@@ -5000,9 +5000,9 @@ var maintainloop = (() => {
             legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta],
         };
         return census => {
-            if (census.crasher < config.max) {
-                for (let i = 0; i < config.max - census.crasher; i++) {
-                    if (Math.random() > config.shinyChance, config.legendChance) {
+            if (census.rare < config.max) {
+                for (let i = 0; i < config.max - census.rare; i++) {
+                    if (Math.random() > config.shinyChance) {
                         let spot, i = 10;
                         do {
                             spot = room.randomType(room.random());
