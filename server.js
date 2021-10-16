@@ -3059,10 +3059,21 @@ const sockets = (() => {
                     // Log it    
                     util.log('[INFO] ' + (m[0]) + (needsRoom ? ' rejoined' : ' joined') + ' the game! Players: ' + players.length);  
               //Broadcast it if a player joins the game
-              if (player.name === '')
-              sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')
-              //Broadcast it if a player left the game
-              if (c.BROADCAST) {sockets.broadcast("")}
+              //Unamed Player Joins the game
+              if (player.name === '') {
+              sockets.broascast('User Unamed Player ' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')scast it if   p} else sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')
+              layer left the game
+              if (index != -1) {
+              //Player Recently Left
+              if (player.body != null) {
+                        player.body.invuln = false;
+                        setTimeout(() => {
+                            player.body.kill();
+                        }, 10000);
+                    }
+             //Now time to broadcast it
+             if (player.name === '') {
+             sockets.broadcast('User Unamed Player ' + (needsRoom ? ' has left the game again!' : ' has left the game!') + ' Players: ' + players.length + '!')
              // util.remove(players)
                 } break;
                 case 'S': { // clock syncing
