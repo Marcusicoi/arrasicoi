@@ -4994,14 +4994,14 @@ var maintainloop = (() => {
     let spawnRareShapes = (() => {
         const config = {
             max: 1000,
-            shinyChance: 0.1, //0.00002
-            legendChance: 0.01, //0.000001
+            shinyChance: 1, //0.00002
+            legendChance: 0.5, //0.000001
             shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta],
             legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta],
         };
         return census => {
-            if (census.rare < config.max) {
-                for (let i = 0; i < config.max - census.rare; i++) {
+            if (census.crasher < config.max) {
+                for (let i = 0; i < config.max - census.crasher; i++) {
                     if (Math.random() > config.shinyChance) {
                         let spot, i = 10;
                         do {
@@ -5009,15 +5009,7 @@ var maintainloop = (() => {
                             i--;
                             if (!i) return 0;
                         } while (dirtyCheck(spot, 50));
-                        const type = config.shinies[+(Math.random() > config.shinyChance)]; 
-                        } else if (Math.random() > config.legendChance) {
-                            let spot, i = 5;
-                            do {
-                                spot = room.randomType(room.random());
-                                i--;
-                                if (!i) return 0;
-                        } while (dirtyCheck(spot, 30));
-                        const type = config.legendaries[+(Math.random() > config.legendChance)];
+                        const type = ran.choose([config.shinies, config.legendaries][+(Math.random() > config.shinyChance)])
                         let o = new Entity(spot);
                         o.define(type);
                         o.team = -100;
