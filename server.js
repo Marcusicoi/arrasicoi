@@ -4990,13 +4990,18 @@ var maintainloop = (() => {
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
-    })();
-   
+    })();  
+    let spawnRareShapes = (() => {
+        const config = {
+            shinyChance: 0.00002,
+            legendChance: 0.000001,
+            shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta],
+            legendaries
     let spawnCrasher = (() => {
         const config = {
             max: 1, // The max amount of crashers/sentries
-            chance: 0.8, // Math.random() must be greater than this in order to spawn anything
-            sentryChance: 0.4438, // Math.random() must be greater than this for a sentry spawn.
+            chance: 0.1, // Math.random() must be greater than this in order to spawn anything
+            sentryChance: 0.1, // Math.random() must be greater than this for a sentry spawn.
             crashers: [Class.crasher, Class.autoCrash], // Crasher Types
             sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
         };
