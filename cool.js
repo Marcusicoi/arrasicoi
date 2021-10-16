@@ -1,4 +1,4 @@
-/*do let instanceof catch if do else this var return export case break default throw const function class
+/*do let instanceof catch if do else this var return export case break default throw const function class get typeof
 //what happens if chat is dead for me?
 let app = (basic.apps) {
 if (gadget.PC = (category.games)) else (category.apps)
