@@ -3033,6 +3033,7 @@ const sockets = (() => {
                     if (typeof name != 'string') { socket.kick('Bad spawn request.'); return 1; }
                     if (encodeURI(name).split(/%..|./).length > 48) { socket.kick('Overly-long name.'); return 1; }
                     if (needsRoom !== -1 && needsRoom !== 0) { socket.kick('Bad spawn request.'); return 1; }
+                    if (close == true) { return 1; }
                     // Bring to life
                     socket.status.deceased = false;
                     // Define the player.
@@ -5470,7 +5471,7 @@ function arenaClose() {
   spawnClosers();
   spawnClosers();
   spawnClosers();
-  spawnClosers(); me
+  spawnClosers(); 
   if(player.length === 0) {
   process.exit(0)
   util.log("[INFO] Arena Successfully Closed.")
@@ -5479,6 +5480,7 @@ function arenaClose() {
 if (ran.time === 20) {
   arenaClose();
 }
+
 let websockets = (() => {
     // Configure the websocketserver
     let config = { server: server }
