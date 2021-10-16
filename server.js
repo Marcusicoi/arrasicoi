@@ -75,7 +75,7 @@ const room = {
     room.findType('rock');
     room.findType('wall');
     room.findType('bas5')
-    room.nestFoodAmount = 1.5 * Math.sqrt(room.nest.length) / room.xgrid / room.ygrid;
+    room.nestFoodAmount = 0.1 * Math.sqrt(room.nest.length) / room.xgrid / room.ygrid;
     room.random = () => {
         return {
             x: ran.irandom(room.width),
