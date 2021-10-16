@@ -5002,14 +5002,14 @@ var maintainloop = (() => {
         return census => {
             if (census.crasher < config.max) {
                 for (let i = 0; i < config.max - census.crasher; i++) {
-                    if (Math.random() > config.shinyChance) {
+                    if (Math.random() > config.shinyChance, config.legendChance) {
                         let spot, i = 10;
                         do {
                             spot = room.randomType(room.random());
                             i--;
                             if (!i) return 0;
                         } while (dirtyCheck(spot, 50));
-                        const type = ran.choose([config.shinies, config.legendaries][+(Math.random() > config.shinyChance)])
+                        const type = ran.choose(([config.shinies, config.legendaries][+(Math.random() > config.legendChance)]));
                         let o = new Entity(spot);
                         o.define(type);
                         o.team = -100;
@@ -5064,6 +5064,7 @@ var maintainloop = (() => {
                 crasher: 0,
                 miniboss: 0,
                 tank: 0,
+                rare: 0,
             };    
             let npcs = entities.map(function npcCensus(instance) {
                 if (census[instance.type, instance.type2] != null) {
