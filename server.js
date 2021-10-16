@@ -5011,11 +5011,12 @@ var maintainloop = (() => {
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
         };
-    })();  
+    })(); 
+   
     let spawnRareShapes = (() => {
         const config = {
             max: 1000,
-            shinyChance: 1, //0.00002
+            chance: 1, //0.00002
             legendChance: 0.5, //0.000001
             shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta],
             legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta],
@@ -5023,13 +5024,13 @@ var maintainloop = (() => {
         return census => {
             if (census.crasher < config.max) {
                 for (let i = 0; i < config.max - census.crasher; i++) {
-                    if (Math.random() > config.shinyChance) {
+                    if (Math.random() > config.chance) {
                         let spot, i = 30;
                         do {
                             spot = room.randomType(room.random());
                             i--;
                             if (!i) return 0;
-                        } while (dirtyCheck(spot, 50));
+                        } while (dirtyCheck(spot, 100));
                         const type = ran.choose(([config.shinies, config.legendaries][+(Math.random() > config.legendChance)]));
                         let o = new Entity(spot);
                         o.define(type);
@@ -5038,12 +5039,12 @@ var maintainloop = (() => {
                   }
               }
           }
-    })();         
+    })();        
     let spawnCrasher = (() => {
         const config = {
             max: 1, // The max amount of crashers/sentries
-            chance: 0.1, // Math.random() must be greater than this in order to spawn anything
-            sentryChance: 0.1, // Math.random() must be greater than this for a sentry spawn.
+            chance: 1, // Math.random() must be greater than this in order to spawn anything
+            sentryChance: 1, // Math.random() must be greater than this for a sentry spawn.
             crashers: [Class.crasher, Class.autoCrash], // Crasher Types
             sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
         };
@@ -5101,8 +5102,8 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                 //  o.color = 12;
                     o.define(Class.bot) 
-                    o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
-                  //o.define(Class.dev)
+                  //o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
+                    o.define(Class.engineer)
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12;
