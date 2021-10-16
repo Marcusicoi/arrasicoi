@@ -3062,7 +3062,8 @@ const sockets = (() => {
               } else if (socket.key === process.env.BetaTesterToken) {
               return sockets.broadcast((m[0]) + ' The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!! Players: ' + players.length + '!');
               } else if (name === '', socket.key === process.envBetaTesterToken) {
-              return sockets.broadcast('Unamed Player The Beta Tester
+              return sockets.broadcast('Unamed Player The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the !! Players: ' +  players.length + '!');
+              } else
               sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
               //Broadcast it if a player left the game
               let index = players.indexOf(player);   
