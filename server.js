@@ -5477,7 +5477,7 @@ function arenaClose() {
   util.log("[INFO] Arena Successfully Closed.")
   }
 }  
-if (ran.time === 20) {
+if (ran.serverStartTime === 20) {
   arenaClose();
 }
 
