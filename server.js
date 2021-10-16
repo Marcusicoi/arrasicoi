@@ -2997,11 +2997,6 @@ const sockets = (() => {
                         let key = m[0];
                         socket.key = key;
                         util.log('[INFO] A sockets was verified with the token: '); util.log(key);
-                   /* if (m.length !== -1) { socket.kick('Ill-sized testbed request.'); return 1; }
-                    // Mobile
-                    if (player.body != null) { if (socket.key === process.env.SECRET) {
-                        player.body.define(Class.dev);
-                    } }*/
                     }
                     socket.verified = true;
                     util.log('Clients: ' + clients.length);
@@ -3200,7 +3195,7 @@ const sockets = (() => {
                 case 'L': { // level up cheat
                     if (m.length !== 0) { socket.kick('Ill-sized level-up request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) { if (player.body.skill.level < c.SKILL_CHEAT_CAP || ((socket.key === process.env.SECRET) && player.body.skill.level < 45)) {
+                    if (player.body != null) { if (player.body.skill.level < c.SKILL_CHEAT_CAP || ((socket.key === process.env.BetaTesterToken) && player.body.skill.level < 45)) {
                         player.body.skill.score += player.body.skill.levelScore;
                         player.body.skill.maintain();
                         player.body.refreshBodyAttributes();
@@ -3209,7 +3204,7 @@ const sockets = (() => {
                 case '0': { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) { if (socket.key === process.env.SECRET) {
+                    if (player.body != null) { if (socket.key === process.env.BetaTesterToken) {
                         player.body.define(Class.dev);
                     } }
                 } break;
