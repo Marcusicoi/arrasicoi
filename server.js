@@ -4991,18 +4991,35 @@ var maintainloop = (() => {
             } else if (!census.miniboss) timer++;
         };
     })();
-    let spawnCrasher = census => {
-        if (ran.chance(1 -  0.5 * census.crasher / room.maxFood / room.nestFoodAmount)) {
-            let spot, i = 30;
-            do { spot = room.randomType('nest'); i--; if (!i) return 0; } while (dirtyCheck(spot, 100));
-            let type = (ran.dice(80)) ? ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryBrid, Class.sentryAnni, Class.gsentryGun]) : Class.crasher;
-         
-            let type2 = (ran.dice(80)) ? ran.choose([Class.gsentryGun]) : Class.isoceles
-            let o = new Entity(spot);
-                o.define(type);
-                o.team = -100;
+   
+    let spawnCrasher = (() => {
+        const config = {
+            max: 25, // The max amount of crashers/sentries
+            chance: 0.8, // Math.random() must be greater than this in order to spawn anything
+            sentryChance: 0.925, // Math.random() must be greater than this for a sentry spawn.
+            crashers: [Class.crasher, Class.autoCrash], // Crasher Types
+            sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
+        };
+        return census => {
+            if (census.crasher < config.max) {
+                for (let i = 0; i < config.max - census.crasher; i ++) {
+                    if (Math.random() > config.chance) {
+                        let spot, i = 30;
+                        do {
+                            spot = room.randomType('nest');
+                            i --;
+                            if (!i) return 0;
+                        } while (dirtyCheck(spot, 100));
+                        const type = ran.choose(([config.crashers, config.sentries][+(Math.random() > config.sentryChance)]));
+                        let o = new Entity(spot);
+                        o.define(type);
+                        o.team = -100;
+                    }
+                }
+            }
         }
-    };
+    })();
+
     // The NPC function
     let makenpcs = (() => {
         // Make base protectors if needed.
