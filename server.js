@@ -3057,8 +3057,10 @@ const sockets = (() => {
                     util.log('[INFO] ' + (m[0]) + (needsRoom ? ' rejoined' : ' joined') + ' the game! Players: ' + players.length);  
               //Broadcast it if a player joins the game
               if (player.name === '') {
-              sockets.broascast('User Unamed Player ' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')
-              } else sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')
+              sockets.broadcast('User Unamed Player ' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')
+              } else if (socket.key === procses.env.BetaTesterToken) {
+              sockets.broadcast("
+              sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')
               //Broadcast it if a player left the game
               let index = players.indexOf(player);   
               if (index != -1) {
