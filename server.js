@@ -5452,13 +5452,17 @@ let server = http.createServer((req, res) => {
 //Arena Closed.
 let close = false
 function spawnClosers() {
-  spot = room.randomType('roid');
+  let spot = room.randomType('roid');
   let o = new Entity(spot);
-  let typ
-  o.
+  const type = ran.choose([Class.ac, Class.tc]);
+  o.define(type);
+  o.team = -100;
+}; 
 function arenaClose() {
   close = true;
-  
+  util.log("[INFO] Arena Closed.")
+  sockets.broadcast("Arena Closed: No players can join.")
+  spawnClosers()
 }  
 let websockets = (() => {
     // Configure the websocketserver
