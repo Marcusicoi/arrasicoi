@@ -5039,7 +5039,9 @@ var maintainloop = (() => {
                     o.define(Class.bot) 
                     o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
                   //o.define(Class.dev)
-                    o.name += ran.chooseBotName();
+                    o.name += ran.choose([ran.chooseBotName(), "xXProPlayer" + exports.chooseBotNumberClan + "Xx",
+     "xXNoobPlayer" + exports.chooseBotNumberClan + "Xx",
+        "[" + exports.chooseBotLetterClan + "-" + exports.chooseBotNumberClan + "]"
                     o.refreshBodyAttributes(); 
                     o.color = 12;
                     o.label = '[AI] '
