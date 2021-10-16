@@ -5102,8 +5102,8 @@ var maintainloop = (() => {
                     let o = new Entity(room.random());
                 //  o.color = 12;
                     o.define(Class.bot) 
-                  //o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
-                    o.define(Class.engineer)
+                    o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
+                  //  o.define(Class.engineer)
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = 12;
