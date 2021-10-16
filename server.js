@@ -3058,12 +3058,12 @@ const sockets = (() => {
                     util.log('[INFO] ' + (m[0]) + (needsRoom ? ' rejoined' : ' joined') + ' the game! Players: ' + players.length);  
               //Broadcast it if a player joins the game
               if (name === '') {
-              return sockets.broadcast('User Unamed Player ' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
+              return sockets.broadcast('User Unamed Player' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
               } else if (socket.key === process.env.BetaTesterToken) {
-              return sockets.broadcast('Beta Tester ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!! Players: ' + players.length + '!');
-              } else if (name == (m[0])) {
+              return sockets.broadcast((m[0]) + ' The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!! Players: ' + players.length + '!');
+              } else if (name === '', socket.key === process.envBetaTesterToken) {
+              return sockets.broadcast('Unamed Player The Beta Tester
               sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
-              }
               //Broadcast it if a player left the game
               let index = players.indexOf(player);   
               if (index != -1) {
@@ -3076,7 +3076,7 @@ const sockets = (() => {
                     }
              //Now time to broadcast it
              if (name === '') {
-             sockets.broadcast('User Unamed Player ' + (needsRoom ? ' has left the game again!' : ' has left the game!') + ' Players: ' + players.length + '!')
+             sockets.broadcast('User Unamed Player' + (needsRoom ? ' has left the game again!' : ' has left the game!') + ' Players: ' + players.length + '!')
              // util
              } else sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has left the game again!' : ' has left the game!') + ' Players: ' + players.length + '!')
              };
