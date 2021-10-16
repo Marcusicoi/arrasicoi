@@ -3056,11 +3056,11 @@ const sockets = (() => {
                     // Log it    
                     util.log('[INFO] ' + (m[0]) + (needsRoom ? ' rejoined' : ' joined') + ' the game! Players: ' + players.length);  
               //Broadcast it if a player joins the game
-              if (player.name === '') {
+              if (name === '') {
               return sockets.broadcast('User Unamed Player ' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
               } else if (socket.key === process.env.BetaTesterToken) {
               return sockets.broadcast('Beta Tester ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!! Players: ' + players.length + '!');
-              } else if (player.name == (m[0])) {
+              } else if (name == (m[0])) {
               sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
               }
               //Broadcast it if a player left the game
@@ -3074,7 +3074,7 @@ const sockets = (() => {
                         }, 10000);
                     }
              //Now time to broadcast it
-             if (player.name === '') {
+             if (name === '') {
              sockets.broadcast('User Unamed Player ' + (needsRoom ? ' has left the game again!' : ' has left the game!') + ' Players: ' + players.length + '!')
              // util
              } else sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has left the game again!' : ' has left the game!') + ' Players: ' + players.length + '!')
@@ -5449,7 +5449,17 @@ let server = http.createServer((req, res) => {
       res.end()
   }
 })
-
+//Arena Closed.
+let close = false
+function spawnClosers() {
+  spot = room.randomType('roid');
+  let o = new Entity(spot);
+  let typ
+  o.
+function arenaClose() {
+  close = true;
+  
+}  
 let websockets = (() => {
     // Configure the websocketserver
     let config = { server: server }
