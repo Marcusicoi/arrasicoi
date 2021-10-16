@@ -4993,7 +4993,7 @@ var maintainloop = (() => {
     })();  
     let spawnRareShapes = (() => {
         const config = {
-            max: 10,
+            max: 1000,
             shinyChance: 0.1, //0.00002
             legendChance: 0.01, //0.000001
             shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta],
@@ -5043,7 +5043,7 @@ var maintainloop = (() => {
                             spot = room.randomType('nest');
                             i --;
                             if (!i) return 0;
-                        } while (dirtyCheck(spot, 10));
+                        } while (dirtyCheck(spot, 5000));
                         const type = ran.choose(([config.crashers, config.sentries][+(Math.random() > config.sentryChance)]));
                         let o = new Entity(spot);
                         o.define(type);
