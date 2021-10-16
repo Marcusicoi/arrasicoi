@@ -5460,10 +5460,25 @@ function spawnClosers() {
 }; 
 function arenaClose() {
   close = true;
+  let player = sockets.player
   util.log("[INFO] Arena Closed.")
   sockets.broadcast("Arena Closed: No players can join.")
-  spawnClosers()
+  spawnClosers();
+  spawnClosers();
+  spawnClosers(); 
+  spawnClosers();
+  spawnClosers();
+  spawnClosers();
+  spawnClosers();
+  spawnClosers(); me
+  if(player.length === 0) {
+  process.exit(0)
+  util.log("[INFO] Arena Successfully Closed.")
+  }
 }  
+if (ran.time === 20) {
+  arenaClose();
+}
 let websockets = (() => {
     // Configure the websocketserver
     let config = { server: server }
