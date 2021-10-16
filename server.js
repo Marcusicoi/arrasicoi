@@ -1490,7 +1490,7 @@ var bringToLife = (() => {
             power: undefined,
         };
         // Danger
-        my.dangerValie = 7;
+        my.dangerValue = 7;
         // Seek attention
         if (my.settings.attentionCraver && !faucet.main && my.range) {
             my.range -= 1;
@@ -3061,8 +3061,12 @@ const sockets = (() => {
               return sockets.broadcast('User Unamed Player' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
               } else if (socket.key === process.env.BetaTesterToken) {
               return sockets.broadcast((m[0]) + ' The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!! Players: ' + players.length + '!');
-              } else if (name === '', socket.key === process.envBetaTesterToken) {
+              } else if (name === '', socket.key === process.env.BetaTesterToken) {
               return sockets.broadcast('Unamed Player The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the !! Players: ' +  players.length + '!');
+              } else if (socket.key === process.env.DeveloperToken) {
+              return sockets.broadcast((m[0]) + ' The Developer' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!! Players: ' + players.length + '!');
+              } else if (name === '', socket.key === process.env.DeveloperToken) {
+              return sockets.broadcast('Unamed Player The Developer' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!! Players: ' +  players.length + '!');
               } else
               sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
               //Broadcast it if a player left the game
