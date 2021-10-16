@@ -4994,9 +4994,9 @@ var maintainloop = (() => {
    
     let spawnCrasher = (() => {
         const config = {
-            max: 25, // The max amount of crashers/sentries
+            max: 1, // The max amount of crashers/sentries
             chance: 0.8, // Math.random() must be greater than this in order to spawn anything
-            sentryChance: 0.925, // Math.random() must be greater than this for a sentry spawn.
+            sentryChance: 0.4438, // Math.random() must be greater than this for a sentry spawn.
             crashers: [Class.crasher, Class.autoCrash], // Crasher Types
             sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
         };
@@ -5048,7 +5048,7 @@ var maintainloop = (() => {
             }).filter(e => { return e; });    
             // Spawning
             spawnBosses(census);
-          //  spawnCrasher(census);      
+            spawnCrasher(census);      
                 
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
