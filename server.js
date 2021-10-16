@@ -4993,10 +4993,26 @@ var maintainloop = (() => {
     })();  
     let spawnRareShapes = (() => {
         const config = {
+            max: 10,
             shinyChance: 0.00002,
             legendChance: 0.000001,
             shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta],
-            legendaries
+            legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta],
+        },
+        return censu => {
+            if (census.rare < config.max) {
+                for (let i = 0; i < config.max - census.rare; i++) {
+                    if (Math.random() > config.shinyChance) {
+                        let spot, i = 10;
+                        do {
+                            spot = room.randomType(room.random());
+                            i--;
+                            if (!i) return 0;
+                        } while (dirtyCheck(spot, 50));
+                        const type = config.shinies;
+                        let o = new Entity(spot);
+                        o.define(type);
+                        o.team = -100;
     let spawnCrasher = (() => {
         const config = {
             max: 1, // The max amount of crashers/sentries
@@ -5438,30 +5454,3 @@ setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
-
-function greenSpawn() {
-  let type = ran.dice(3)
-  ? ran.choose([Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta]) : Class.gem;
-  let spot = room.randomType("norm", "nest");
-  let o = new Entity(spot);
-  o.define(type);
-  o.team = -100;
-  o.ondeath = () => {
-    setTimeout(() => {
-     ran.choose([legendSpawn(), greenSpawn()]);
-    }, 20000);
-  };
-};
-function legendSpawn() {
-  let type = ran.dice(3)
-  ? ran.choose([Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta]) : Class.gem;
-  let spot = room.randomType("norm", "nest");
-  let o = new Entity(spot);
-  o.define(type);
-  o.team = -100;
-  o.ondeath = () => {
-    setTimeout(() => { 
-      ran.choose([legendSpawn(), greenSpawn])
-    }, 20000);
-  };
-};
