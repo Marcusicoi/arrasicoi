@@ -4994,12 +4994,12 @@ var maintainloop = (() => {
     let spawnRareShapes = (() => {
         const config = {
             max: 10,
-            shinyChance: 0.00002,
-            legendChance: 0.000001,
+            shinyChance: 0.1, //0.00002
+            legendChance: 0.01, //0.000001
             shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta],
             legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta],
-        },
-        return censu => {
+        };
+        return census => {
             if (census.rare < config.max) {
                 for (let i = 0; i < config.max - census.rare; i++) {
                     if (Math.random() > config.shinyChance) {
@@ -5009,10 +5009,23 @@ var maintainloop = (() => {
                             i--;
                             if (!i) return 0;
                         } while (dirtyCheck(spot, 50));
-                        const type = config.shinies;
+                        const type = config.shinies[+(Math.random() > config.shinyChance)]; 
+                        } else if (Math.random() > config.legendChance) {
+                            let spot, i = 5;
+                            do {
+                                spot = room.randomType(room.random());
+                                i--;
+                                if (!i) return 0;
+                        } while (dirtyCheck(spot, 30));
+                        const type = config.legendaries[+(Math.random() > config.legendChance)];
                         let o = new Entity(spot);
                         o.define(type);
                         o.team = -100;
+                        }
+                  }
+              }
+          }
+    })();         
     let spawnCrasher = (() => {
         const config = {
             max: 1, // The max amount of crashers/sentries
@@ -5030,7 +5043,7 @@ var maintainloop = (() => {
                             spot = room.randomType('nest');
                             i --;
                             if (!i) return 0;
-                        } while (dirtyCheck(spot, 100));
+                        } while (dirtyCheck(spot, 10));
                         const type = ran.choose(([config.crashers, config.sentries][+(Math.random() > config.sentryChance)]));
                         let o = new Entity(spot);
                         o.define(type);
@@ -5040,7 +5053,6 @@ var maintainloop = (() => {
             }
         }
     })();
-
     // The NPC function
     let makenpcs = (() => {
         // Make base protectors if needed.
@@ -5070,7 +5082,7 @@ var maintainloop = (() => {
             // Spawning
             spawnBosses(census);
             spawnCrasher(census);      
-                
+            spawnRareShapes(census);  
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                 //  o.color = 12;
