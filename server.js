@@ -3063,12 +3063,9 @@ const sockets = (() => {
               sockets.broascast('User Unamed Player ' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')
               } else sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!')
               //Broadcast it if a player left the game
-              
-                // Figure out who the player was
-                let player = socket.player,
-                    index = players.indexOf(player);   
+              let index = players.indexOf(player);   
               if (index != -1) {
-              //Player Recently Left
+              //Player has now left
               if (player.body != null) {
                         player.body.invuln = false;
                         setTimeout(() => {
