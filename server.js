@@ -5013,7 +5013,7 @@ var maintainloop = (() => {
         const config = {
             max: 1000,
             chance: 1, //0.00002
-            legendChance: 0.5, //0.000001
+            legendChance: 1, //0.000001
             shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta],
             legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta],
         };
