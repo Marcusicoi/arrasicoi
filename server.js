@@ -3080,11 +3080,7 @@ const sockets = (() => {
                         }, 10000);
                     }
              //Now time to broadcast it
-             if (name === '') {
-             sockets.broadcast('User Unamed Player' + (needsRoom ? ' has left the game again!' : ' has left the game!') + ' Players: ' + players.length + '!')
-             // util
-             } else sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has left the game again!' : ' has left the game!') + ' Players: ' + players.length + '!')
-             };
+             
                 } break;
                 case 'S': { // clock syncing
                     if (m.length !== 1) { socket.kick('Ill-sized sync packet.'); return 1; }
