@@ -3080,7 +3080,7 @@ const sockets = (() => {
                         }, 10000);
                     }
              //Now time to broadcast it
-             
+             };
                 } break;
                 case 'S': { // clock syncing
                     if (m.length !== 1) { socket.kick('Ill-sized sync packet.'); return 1; }
