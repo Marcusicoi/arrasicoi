@@ -5026,13 +5026,13 @@ var maintainloop = (() => {
                             spot = room.randomType('nest', 'norm');
                             i--;
                             if (!i) return 0;
-                        } while (dirtyCheck(spot, 1000));
+                        } while (dirtyCheck(spot, 100));
                         const type = ran.choose(([option.shinies, option.legendaries][+(Math.random() > option.legendChance)]));
                         let o = new Entity(spot);
                         o.define(type);
                         o.team = -100;
                         }
-                  }
+                   }
               }
           }
     })();        
@@ -5053,7 +5053,7 @@ var maintainloop = (() => {
                             spot = room.randomType('nest');
                             i --;
                             if (!i) return 0;
-                        } while (dirtyCheck(spot, 1000));
+                        } while (dirtyCheck(spot, 100));
                         const type = ran.choose(([config.crashers, config.sentries][+(Math.random() > config.sentryChance)]));
                         let o = new Entity(spot);
                         o.define(type);
