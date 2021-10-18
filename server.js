@@ -5009,33 +5009,7 @@ var maintainloop = (() => {
         };
     })(); 
    
-    let spawnRareShapes = (() => {
-        const option = {
-            max: 1000,
-            chance: 1, //0.00002
-            legendChance: 1, //0.000001
-            shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta],
-            legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta],
-        };
-        return census => {
-            if (census.crasher < option.max) {
-                for (let i = 0; i < option.max - census.crasher; i++) {
-                    if (Math.random() > option.chance) {
-                        let spot, i = 30;
-                        do {
-                            spot = room.randomType('nest', 'norm');
-                            i--;
-                            if (!i) return 0;
-                        } while (dirtyCheck(spot, 100));
-                        const type = ran.choose(([option.shinies, option.legendaries][+(Math.random() > option.legendChance)]));
-                        let o = new Entity(spot);
-                        o.define(type);
-                        o.team = -100;
-                        }
-                   }
-              }
-          }
-    })();        
+    let 
     let spawnCrasher = (() => {
         const config = {
             max: 10, // The max amount of crashers/sentries
