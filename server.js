@@ -5050,8 +5050,8 @@ var maintainloop = (() => {
             sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
         };
         return census => {
-            if (census.crasher < config.max) {
-                for (let i = 0; i < config.max - census.crasher; i ++) {
+            if (census.gem < config.max) {
+                for (let i = 0; i < config.max - census.gem; i ++) {
                     if (Math.random() > config.chance) {
                         let spot, i = 30;
                         do {
