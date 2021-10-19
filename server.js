@@ -1242,7 +1242,7 @@ class Gun {
                     this.body.maxChildren > this.body.children.length * ((this.calculator == 'necro') ? sk.rld : 1)
                 : true;                
             // Override in invuln
-            if (this.body.master.invuln) {
+            if (this.body.master.invuln || this.shootOnDeath) {
                 shootPermission = false;
             }
             // Cycle up if we should
@@ -2240,6 +2240,11 @@ class Entity {
             this.maxSpeed = this.topSpeed;
             break;
             
+        case 'ultraGrow':
+            this.SIZE += 10;
+            this.maxSpeed = this.topSpeed;
+            break;
+            
         case 'minifreezeGrow':
             this.SIZE += 0.5
             break;
@@ -2481,9 +2486,30 @@ class Entity {
                         util.addArticle(this.label) 
                 :
                 this.master.name + "'s " + this.label;
-            
-            //Restore Fail
-            
+            //Shoot on death
+            this.guns.forEach(gun => {
+                if (gun.shootOnDeath) {
+                    // get Skills
+                    let sk =
+                        gun.bulletStats === "master" ? gun.body.skill : gun.bulletStats;
+                    this.canShoot = true;
+                    // Find the end of the gun
+                    if (gun.body != null) {
+                        let gx =
+                            gun.offset *
+                            Math.cos(gun.direction + gun.angle + gun.body.facing) +
+                            (1.5 * gun.length - (gun.width * gun.settings.size) / 2) *
+                            Math.cos(gun.angle + gun.body.facing);
+                        let gy =
+                            gun.offset *
+                            Math.sin(gun.direction + gun.angle + gun.body.facing) +
+                            (1.5 * gun.length - (gun.width * gun.settings.size) / 2) *
+                            Math.sin(gun.angle + gun.body.facing);
+                        // FIRE!
+                        gun.fire(gx, gy, sk);
+                    }
+                }
+            })
             // Calculate the jackpot
             let jackpot = Math.ceil(util.getJackpot(this.skill.score) / this.collisionArray.length);
             // Now for each of the things that kill me...
