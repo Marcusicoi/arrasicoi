@@ -4915,16 +4915,17 @@ var freezeLoop = (() => {
             element.health.max / (35 - element.freezeLevel);
           element.shield.amount -=
             element.shield.max / (25 - element.freezeLevel);
-          element.frozen.IsFrozen === true;
         }
     element.freezeTime -= 1;
     element.freezeImmunity = 1;
+    element.doNothing = {CONTROLLERS: ["doNothing"]};
    if (element.freezeTime <= 0) element.freezed = false;
        element.freezeEffective = {SlowMulti: 0.5, time: this.element.freezeTime, AddTime: 0}
        element.frozen = {isFrozen: false, SlowMulti: 3}
        if (element.frozen.IsFrozen === true && element.invuln !== true) {
            element.freezeEffective.time += (Math.random() < 0.5 ? -1 : 1)*(Math.round(Math.random())) * element.freezeEffective.AddTime
            element.frozen.IsFrozen = 2 //2 is just a number to show you are already freezed, so don't redo it
+           element.doNothing;
            setTimeout(() => {
              element.frozen.IsFrozen = false
           },  element.freezeEffective.time*1000);
@@ -4934,7 +4935,7 @@ var freezeLoop = (() => {
          util.getJackpot(element.freezedBy.skill.score)
        );
        element.freezedBy.sendMessage("You killed " + element.name + " with freeze.");
-      element.sendMessage("You have been killed by " + element.freezed.name + " with freeze.");
+      element.sendMessage("You have been killed by " + element.freezedBy.name + " with freeze.");
       };
       }
      },
