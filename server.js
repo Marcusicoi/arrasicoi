@@ -5557,26 +5557,6 @@ var speedcheckloop = (() => {
         }
     };
 })();
-
-/** BUILD THE SERVERS **/  
-// Turn the server on
-let server = http.createServer((req, res) => {
-  let { pathname } = url.parse(req.url)
-  switch (pathname) {
-    case '/':
-      res.writeHead(200)
-      res.end(`<!DOCTYPE html><h1h
-    break
-    case '/mockups.json':
-      res.setHeader('Access-Control-Allow-Origin', '*')
-      res.writeHead(200)
-      res.end(mockupJsonData)
-    break
-    default:
-      res.writeHead(404)
-      res.end()
-  }
-})
 //Arena Closed.
 let close = false
 function spawnClosers() {
@@ -5604,21 +5584,6 @@ function arenaClose() {
   util.log("[INFO] Arena Successfully Closed.")
   }
 }  
-let websockets = (() => {
-    // Configure the websocketserver
-    let config = { server: server }
-        server.listen(process.env.PORT || 8080, function httpListening() {
-            util.log((new Date()) + ". Joint HTTP+Websocket server turned on, listening on port "+server.address().port + ".")
-        })
-    /*if (c.servesStatic) {
-    } else {
-        config.port = 8080; 
-        util.log((new Date()) + 'Websocket server turned on, listening on port ' + 8080 + '.'); 
-    }*/
-    // Build it
-    return new WebSocket.Server(config)
-})().on('connection', sockets.connect); 
-
 // Bring it to life
 setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 200);
