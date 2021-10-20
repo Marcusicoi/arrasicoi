@@ -5381,11 +5381,11 @@ var maintainloop = (() => {
                     } while (o.id === oldId && --overflow);        
                     if (!overflow) continue;
                     // Configure for the nest if needed
-                            let probabilities = c.FOODPATHS[o.foodLevel.toString()][0][0],
+                            let probabilities = c.FOOD,//[o.foodLevel.toString()][0][0],
                                 cens = census,
                                 amount = foodAmount;
                             if (room.isIn('nest', o)) {
-                                probabilities = c.FOODPATHS[o.foodLevel.toString()][1][0],
+                                probabilities = c.FOOD_NEST,//[o.foodLevel.toString()][1][0],
                                     cens = censusNest;
                                 amount = nestFoodAmount;
                             }
