@@ -4750,8 +4750,8 @@ var gameloop = (() => {
     //setTimeout(moveloop, 1000 / roomSpeed / 30 - delta); 
 })();
 // A less important loop. Runs at an actual 5Hz regardless of game speed.
+//Poison.
 var poisonLoop = (() => {
-  // Fun stuff, like RAINBOWS :D
   function poison(my) {
     entities.forEach(function(element) {
       if (element.showpoison) {
@@ -4856,6 +4856,38 @@ var poisonLoop = (() => {
     poison();
   };
 })();
+//Freeze.
+var freezeLoop = (() => {
+  function freeze(my) {    
+    entities.forEach(function(element) {
+      if (element.showfreeze) {
+        let x = element.size + 10;
+        let y = element.size + 10;
+        Math.random() < 0.5 ? (x *= -1) : x;
+        Math.random() < 0.5 ? (y *= -1) : y;
+        Math.random() < 0.5 ? (x *= Math.random() + 1) : x;
+        Math.random() < 0.5 ? (y *= Math.random() + 1) : y;
+        var o = new Entity({
+          x: element.x + x,
+          y: element.y + y
+        });
+        o.define(Class["freezeEffect"]);
+      }
+      if (element.freezed && element.type == "tank") {
+        let x = element.size + 10;
+        let y = element.size + 10;
+        Math.random() < 0.5 ? (x *= -1) : x;
+        Math.random() < 0.5 ? (y *= -1) : y;
+        Math.random() < 0.5 ? (x *= Math.random() + 1) : x;
+        Math.random() < 0.5 ? (y *= Math.random() + 1) : y;
+        var o = new Entity({
+          x: element.x + x,
+          y: element.y + y
+        });
+        o.define(Class["freezeEffect"]);
+      }
+      if (!element.invuln) {
+        element.freezeEffective(
 var maintainloop = (() => {
     // Place obstacles
     function placeRoids() {
