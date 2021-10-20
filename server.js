@@ -2418,13 +2418,6 @@ class Entity {
         this.stepRemaining = 1;
         this.x += this.stepRemaining * this.velocity.x / roomSpeed;
         this.y += this.stepRemaining * this.velocity.y / roomSpeed; 
-        let slowdown = 1
-          if(this.frozen.IsFrozen != false){
-          slowdown = this.Frozen.SlowMulti*this.FreezeImmunity;
-          };            
-          this.stepRemaining = 1;
-          this.x += this.stepRemaining * this.velocity.x * slowdown / roomSpeed;
-          this.y += this.stepRemaining * this.velocity.y * slowdown / roomSpeed;
     }
 
     friction() { 
@@ -4922,6 +4915,7 @@ var freezeLoop = (() => {
             element.shield.max / (15 - element.freezeLevel);
         }
       element.freezeTime -= 1;
+      element.freezeImmunity = 1;
        if (element.freezeTime <= 0) element.freezed = false;
       element.freezeEffect = {SlowMulti: 0.5, time: this.element.freezeTime, AddTime: 0}
       element.frozen = {isFrozen: false, SlowMulti: 1}
@@ -4939,6 +4933,13 @@ var freezeLoop = (() => {
        element.freezedBy.sendMessage("You killed " + element.name + " with poison.");
       element.sendMessage("You have been killed by " + element.freezed.name + " with freeze.");
       };
+      let slowdown = 1
+      if (element.frozen.IsFrozen != false) {
+         slowdown = element.frozen.SlowMulti * element.freezeImmunity;
+      };            
+      element.stepRemaining = 1;
+          element.x += element.stepRemaining * element.velocity.x * slowdown / roomSpeed;
+          element.y += element.stepRemaining * element.velocity.y * slowdown / roomSpeed;
      },
    ); 
   };
