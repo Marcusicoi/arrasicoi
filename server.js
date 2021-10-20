@@ -5401,7 +5401,7 @@ var maintainloop = (() => {
                     }
                 }
             }
-        }
+        };
     })();
     // Define food and food spawning
     return () => {
