@@ -1624,6 +1624,11 @@ class Entity {
         this.poisonToApply = 0;
         this.showpoison = false;
         this.poisonTimer = 0;
+        this.freezed = false;
+        this.freeze = false;
+        this.freezeToApply = 0;
+        this.showfreeze = false;
+        this.freezeTime = 0;
         this.parent = this;
         this.control = {
             target: new Vector(0, 0),
@@ -4779,17 +4784,15 @@ var poisonLoop = (() => {
           y: element.y + y
         });
         o.define(Class["poisonEffect"]);
-        
+       
         if (!element.invuln) {
           element.health.amount -=
             element.health.max / (55 - element.poisonLevel);
           element.shield.amount -=
             element.shield.max / (35 - element.poisonLevel);
         }
-
         element.poisonTime -= 1;
         if (element.poisonTime <= 0) element.poisoned = false;
-
         if (
           element.health.amount <= 0 &&
           element.poisonedBy != undefined &&
@@ -4856,7 +4859,7 @@ var poisonLoop = (() => {
     poison();
   };
 })();
-//Freeze.
+//Freeze. 
 var freezeLoop = (() => {
   function freeze(my) {    
     entities.forEach(function(element) {
@@ -4892,19 +4895,33 @@ var freezeLoop = (() => {
       element.frozen = {isFrozen: false, SlowMulti: 1}
       if (element.frozen.IsFrozen === true && element.invuln !== true) {
     element.freezeEffect.time += (Math.random() < 0.5 ? -1 : 1)*(Math.round(Math.random())) * element.freezeEffect.AddTime
-    element.frozen.IsFrozen = 2 //2 is just a number to show you are already poisoned, so don't redo it
+    element.frozen.IsFrozen = 2 //2 is just a number to show you are already freezed, so don't redo it
       setTimeout(() => {
        element.frozen.IsFrozen = false
       }, element.freezeEffect.time*1000);
-     }
+     };
+    if (
+    element.freezedBy != undefined &&
+    element.By.skill != undefined
+    ) {
+          element.poisonedBy.skill.score += Math.ceil(
+            util.getJackpot(element.poisonedBy.skill.score)
+          );
+          element.poisonedBy.sendMessage(
+            "You killed " + element.name + " with poison."
+          );
+          element.sendMessage(
+            "You have been killed by " +
+              element.poisonedBy.name +
+              " with poison."
     },
    ); 
-  }
+  };
   return () => {
    //Run the freeze 
    freeze();
-  };
-})();  
+  }
+})();
 var maintainloop = (() => {
     // Place obstacles
     function placeRoids() {
@@ -5430,12 +5447,11 @@ var maintainloop = (() => {
                     } while (o.id === oldId && --overflow);        
                     if (!overflow) continue;
                     // Configure for the nest if needed
-                    if (o.foodLevel.toString() in c.FOODPATHS) {
-                            let probabilities = c.FOODPATHS[o.foodLevel.toString()][0][0],
+                            let probabilities = c.FOOD,
                                 cens = census,
                                 amount = foodAmount;
                             if (room.isIn('nest', o)) {
-                                probabilities = c.FOODPATHS[o.foodLevel.toString()][1][0],
+                                probabilities = c.FOOD_NEST,
                                     cens = censusNest;
                                 amount = nestFoodAmount;
                             }
@@ -5444,7 +5460,7 @@ var maintainloop = (() => {
                     o.foodCountup += Math.ceil(Math.abs(ran.gauss(0, 10)));
                     while (o.foodCountup >= (o.foodLevel + 1) * 100) {
                         o.foodCountup -= (o.foodLevel + 1) * 100;
-                        if (ran.chance(1 - cens[o.foodLevel + 1] / amount / proportions[o.foodLevel + 1])) {
+                        if (ran.chance(1 - cens[o.foodLevel + 1] / amount / probabilities[o.foodLevel + 1])) {
                             o.define(o.isGreenShape ? getFoodClass2(o.foodLevel + 1) : getFoodClass(o.foodLevel + 1));
                         }
                     }
