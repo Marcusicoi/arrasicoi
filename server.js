@@ -1626,6 +1626,8 @@ class Entity {
         this.poisonTimer = 0;
         this.freezed = false;
         this.freeze = false;
+        this.freezedBy = -1;
+        this.freezeLevel = 0;
         this.freezeToApply = 0;
         this.showfreeze = false;
         this.freezeTime = 0;
@@ -1808,7 +1810,7 @@ class Entity {
             this.freezeToApply = set.FREEZE_TO_APPLY;
         }
         if (set.SHOWFREEZE != null) {
-            this.showfreeze = set.FREEZE;
+            this.showfreeze = set.SHOW_FREEZE;
         }
         if (set.MOTION_TYPE != null) { 
             this.motionType = set.MOTION_TYPE; 
@@ -4907,25 +4909,26 @@ var freezeLoop = (() => {
           y: element.y + y
         });
         o.define(Class["freezeEffect"]);
-      
+    
       if (!element.invuln) {
           element.health.amount -=
-            element.health.max / (25 - element.freezeLevel);
+            element.health.max / (35 - element.freezeLevel);
           element.shield.amount -=
-            element.shield.max / (15 - element.freezeLevel);
+            element.shield.max / (25 - element.freezeLevel);
+          element.frozen.IsFrozen === true;
         }
-      element.freezeTime -= 1;
-      element.freezeImmunity = 1;
-       if (element.freezeTime <= 0) element.freezed = false;
-      element.freezeEffective = {SlowMulti: 0.5, time: this.element.freezeTime, AddTime: 0}
-      element.frozen = {isFrozen: false, SlowMulti: 3}
-      if (element.frozen.IsFrozen === true && element.invuln !== true) {
-    element.freezeEffective.time += (Math.random() < 0.5 ? -1 : 1)*(Math.round(Math.random())) * element.freezeEffective.AddTime
-    element.frozen.IsFrozen = 2 //2 is just a number to show you are already freezed, so don't redo it
-      setTimeout(() => {
-       element.frozen.IsFrozen = false
-      }, element.freezeEffective.time*1000);
-     };
+    element.freezeTime -= 1;
+    element.freezeImmunity = 1;
+   if (element.freezeTime <= 0) element.freezed = false;
+       element.freezeEffective = {SlowMulti: 0.5, time: this.element.freezeTime, AddTime: 0}
+       element.frozen = {isFrozen: false, SlowMulti: 3}
+       if (element.frozen.IsFrozen === true && element.invuln !== true) {
+           element.freezeEffective.time += (Math.random() < 0.5 ? -1 : 1)*(Math.round(Math.random())) * element.freezeEffective.AddTime
+           element.frozen.IsFrozen = 2 //2 is just a number to show you are already freezed, so don't redo it
+           setTimeout(() => {
+             element.frozen.IsFrozen = false
+          },  element.freezeEffective.time*1000);
+    };
     if (element.health.amount <= 0 && element.freezedBy != undefined && element.freezedBy.skill != undefined) {
         element.freezedBy.skill.score += Math.ceil(
          util.getJackpot(element.freezedBy.skill.score)
