@@ -4752,7 +4752,7 @@ var gameloop = (() => {
 // A less important loop. Runs at an actual 5Hz regardless of game speed.
 var poisonLoop = (() => {
   // Fun stuff, like RAINBOWS :D
-  function poison(my) {
+  function poison(my) {/*
     entities.forEach(function(element) {
       if (element.showpoison) {
         let x = element.size + 10;
@@ -4849,7 +4849,8 @@ var poisonLoop = (() => {
         }
       }
     }
-   );
+   );*/
+  this.contactPoison = false;
   }
   return () => {
     // run the poison
@@ -5381,12 +5382,11 @@ var maintainloop = (() => {
                     } while (o.id === oldId && --overflow);        
                     if (!overflow) continue;
                     // Configure for the nest if needed
-                    if (o.foodLevel.toString() in c.FOODPATHS) {
-                            let probabilities = c.FOODPATHS[o.foodLevel.toString()][0][0],
+                            let probabilities = c.FOOD,
                                 cens = census,
                                 amount = foodAmount;
                             if (room.isIn('nest', o)) {
-                                probabilities = c.FOODPATHS[o.foodLevel.toString()][1][0],
+                                probabilities = c.FOOD_NEST,
                                     cens = censusNest;
                                 amount = nestFoodAmount;
                             }
@@ -5395,7 +5395,7 @@ var maintainloop = (() => {
                     o.foodCountup += Math.ceil(Math.abs(ran.gauss(0, 10)));
                     while (o.foodCountup >= (o.foodLevel + 1) * 100) {
                         o.foodCountup -= (o.foodLevel + 1) * 100;
-                        if (ran.chance(1 - cens[o.foodLevel + 1] / amount / proportions[o.foodLevel + 1])) {
+                        if (ran.chance(1 - cens[o.foodLevel + 1] / amount / probabilities[o.foodLevel + 1])) {
                             o.define(o.isGreenShape ? getFoodClass2(o.foodLevel + 1) : getFoodClass(o.foodLevel + 1));
                         }
                     }
