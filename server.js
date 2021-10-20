@@ -5390,20 +5390,7 @@ var maintainloop = (() => {
                                     cens = censusNest;
                                 amount = nestFoodAmount;
                             }
-                            // Upgrade stuff
-                            o.foodCountup += Math.ceil(Math.abs(ran.gauss(0, 10)));
-                            while (o.foodCountup >= (o.foodLevel + 1) * 100) {
-                                o.foodCountup -= (o.foodLevel + 1) * 100;
-                                if (ran.chance(1 - cens[o.foodLevel + 1] / amount / probabilities)) {
-                                    o.define(getFoodClass(o.foodLevel, true));
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    } 
-                  )()
+                      
                     // Upgrade stuff
                     o.foodCountup += Math.ceil(Math.abs(ran.gauss(0, 10)));
                     while (o.foodCountup >= (o.foodLevel + 1) * 100) {
