@@ -1799,16 +1799,16 @@ class Entity {
             this.showpoison = set.SHOWPOISON;
         }
         if (set.FREEZE != null) {
-            this.freeze = set.POISON;
+            this.freeze = set.FREEZE;
         }
-        if (set.POISONED != null) {
-            this.poisoned = set.POISONED;
+        if (set.FREEZED != null) {
+            this.freezed = set.FREEZED;
          }
-        if (set.POISON_TO_APPLY != null) {
-            this.poisonToApply = set.POISON_TO_APPLY;
+        if (set.FREEZE_TO_APPLY != null) {
+            this.freezeToApply = set.FREEZE_TO_APPLY;
         }
-        if (set.SHOWPOISON != null) {
-            this.showpoison = set.SHOWPOISON;
+        if (set.SHOWFREEZE != null) {
+            this.showfreeze = set.FREEZE;
         }
         if (set.MOTION_TYPE != null) { 
             this.motionType = set.MOTION_TYPE; 
@@ -2417,10 +2417,17 @@ class Entity {
         // Apply motion
         this.stepRemaining = 1;
         this.x += this.stepRemaining * this.velocity.x / roomSpeed;
-        this.y += this.stepRemaining * this.velocity.y / roomSpeed;        
+        this.y += this.stepRemaining * this.velocity.y / roomSpeed; 
+        let slowdown = 1
+          if(this.frozen.IsFrozen != false){
+          slowdown = this.Frozen.SlowMulti*this.FreezeImmunity;
+          };            
+          this.stepRemaining = 1;
+          this.x += this.stepRemaining * this.velocity.x * slowdown / roomSpeed;
+          this.y += this.stepRemaining * this.velocity.y * slowdown / roomSpeed;
     }
 
-    friction() {
+    friction() { 
         var motion = this.velocity.length,
             excess = motion - this.maxSpeed;
         if (excess > 0 && this.damp) {
