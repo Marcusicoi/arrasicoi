@@ -5381,11 +5381,12 @@ var maintainloop = (() => {
                     } while (o.id === oldId && --overflow);        
                     if (!overflow) continue;
                     // Configure for the nest if needed
-                            let probabilities = c.FOOD,
+                    if (o.foodLevel.toString() in c.FOODPATHS) {
+                            let probabilities = c.FOODPATHS[o.foodLevel.toString()][0][0],
                                 cens = census,
                                 amount = foodAmount;
                             if (room.isIn('nest', o)) {
-                                probabilities = c.FOOD_NEST,
+                                probabilities = c.FOODPATHS[o.foodLevel.toString()][1][0],
                                     cens = censusNest;
                                 amount = nestFoodAmount;
                             }
@@ -5394,7 +5395,7 @@ var maintainloop = (() => {
                     o.foodCountup += Math.ceil(Math.abs(ran.gauss(0, 10)));
                     while (o.foodCountup >= (o.foodLevel + 1) * 100) {
                         o.foodCountup -= (o.foodLevel + 1) * 100;
-                        if (ran.chance(1 - cens[o.foodLevel + 1] / amount / probabilities[o.foodLevel + 1])) {
+                        if (ran.chance(1 - cens[o.foodLevel + 1] / amount / proportions[o.foodLevel + 1])) {
                             o.define(o.isGreenShape ? getFoodClass2(o.foodLevel + 1) : getFoodClass(o.foodLevel + 1));
                         }
                     }
