@@ -4933,13 +4933,7 @@ var freezeLoop = (() => {
        element.freezedBy.sendMessage("You killed " + element.name + " with freeze.");
       element.sendMessage("You have been killed by " + element.freezed.name + " with freeze.");
       };
-      let slowdown = 1
-      if (element.frozen.IsFrozen != false) {
-         slowdown = element.frozen.SlowMulti * element.freezeImmunity;
-      };            
-      element.stepRemaining = 1;
-          element.x += element.stepRemaining * element.velocity.x * slowdown / roomSpeed;
-          element.y += element.stepRemaining * element.velocity.y * slowdown / roomSpeed;
+      }
      },
    ); 
   };
