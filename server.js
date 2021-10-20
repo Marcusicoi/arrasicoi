@@ -5390,19 +5390,19 @@ var maintainloop = (() => {
                                     cens = censusNest;
                                 amount = nestFoodAmount;
                             }
-                      
-                    // Upgrade stuff
-                    o.foodCountup += Math.ceil(Math.abs(ran.gauss(0, 10)));
-                    while (o.foodCountup >= (o.foodLevel + 1) * 100) {
-                        o.foodCountup -= (o.foodLevel + 1) * 100;
-                        if (ran.chance(1 - cens[o.foodLevel + 1] / amount / proportions[o.foodLevel + 1])) {
-                            o.define(o.isGreenShape ? getFoodClass2(o.foodLevel + 1) : getFoodClass(o.foodLevel + 1));
+                            // Upgrade stuff
+                            o.foodCountup += Math.ceil(Math.abs(ran.gauss(0, 10)));
+                            while (o.foodCountup >= (o.foodLevel + 1) * 100) {
+                                o.foodCountup -= (o.foodLevel + 1) * 100;
+                                if (ran.chance(1 - cens[o.foodLevel + 1] / amount / probabilities)) {
+                                    o.define(getFoodClass(o.foodLevel, true));
+                                }
+                            }
                         }
                     }
                 }
-            }
-        };
-    })();
+            };
+        })();
     // Define food and food spawning
     return () => {
         // Do stuff
