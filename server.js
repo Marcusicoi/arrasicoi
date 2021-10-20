@@ -5381,14 +5381,29 @@ var maintainloop = (() => {
                     } while (o.id === oldId && --overflow);        
                     if (!overflow) continue;
                     // Configure for the nest if needed
-                    let proportions = c.FOOD,
-                        cens = census,
-                        amount = foodAmount;
-                    if (room.isIn('nest', o)) {
-                        proportions = c.FOOD_NEST;
-                        cens = censusNest;
-                        amount = nestFoodAmount;
-                    }
+                    if (o.foodLevel.toString() in c.FOODPATHS) {
+                            let probabilities = c.FOODPATHS[o.foodLevel.toString()][0][0],
+                                cens = census,
+                                amount = foodAmount;
+                            if (room.isIn('nest', o)) {
+                                probabilities = c.FOODPATHS[o.foodLevel.toString()][1][0],
+                                    cens = censusNest;
+                                amount = nestFoodAmount;
+                            }
+                            // Upgrade stuff
+                            o.foodCountup += Math.ceil(Math.abs(ran.gauss(0, 10)));
+                            while (o.foodCountup >= (o.foodLevel + 1) * 100) {
+                                o.foodCountup -= (o.foodLevel + 1) * 100;
+                                if (ran.chance(1 - cens[o.foodLevel + 1] / amount / probabilities)) {
+                                    o.define(getFoodClass(o.foodLevel, true));
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    } 
+                  )()
                     // Upgrade stuff
                     o.foodCountup += Math.ceil(Math.abs(ran.gauss(0, 10)));
                     while (o.foodCountup >= (o.foodLevel + 1) * 100) {
@@ -5399,7 +5414,7 @@ var maintainloop = (() => {
                     }
                 }
             }
-        };
+        }
     })();
     // Define food and food spawning
     return () => {
