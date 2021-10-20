@@ -4598,7 +4598,7 @@ var gameloop = (() => {
             /*************   FREEZE  ***********/
             if (n.freeze) {
               my.freezed = true;
-              my.freezedLevel = n.freezeToApply;
+              my.freezeLevel = n.freezeToApply;
               my.freezeTime = 20;
               my.freezedBy = n.master;
             }
@@ -4907,7 +4907,7 @@ var freezeLoop = (() => {
           y: element.y + y
         });
         o.define(Class["freezeEffect"]);
-      }
+      
       if (!element.invuln) {
           element.health.amount -=
             element.health.max / (25 - element.freezeLevel);
@@ -4917,20 +4917,20 @@ var freezeLoop = (() => {
       element.freezeTime -= 1;
       element.freezeImmunity = 1;
        if (element.freezeTime <= 0) element.freezed = false;
-      element.freezeEffect = {SlowMulti: 0.5, time: this.element.freezeTime, AddTime: 0}
+      element.freezeEffective = {SlowMulti: 0.5, time: this.element.freezeTime, AddTime: 0}
       element.frozen = {isFrozen: false, SlowMulti: 1}
       if (element.frozen.IsFrozen === true && element.invuln !== true) {
-    element.freezeEffect.time += (Math.random() < 0.5 ? -1 : 1)*(Math.round(Math.random())) * element.freezeEffect.AddTime
+    element.freezeEffective.time += (Math.random() < 0.5 ? -1 : 1)*(Math.round(Math.random())) * element.freezeEffective.AddTime
     element.frozen.IsFrozen = 2 //2 is just a number to show you are already freezed, so don't redo it
       setTimeout(() => {
        element.frozen.IsFrozen = false
-      }, element.freezeEffect.time*1000);
+      }, element.freezeEffective.time*1000);
      };
     if (element.health.amount <= 0 && element.freezedBy != undefined && element.freezedBy.skill != undefined) {
         element.freezedBy.skill.score += Math.ceil(
          util.getJackpot(element.freezedBy.skill.score)
        );
-       element.freezedBy.sendMessage("You killed " + element.name + " with poison.");
+       element.freezedBy.sendMessage("You killed " + element.name + " with freeze.");
       element.sendMessage("You have been killed by " + element.freezed.name + " with freeze.");
       };
       let slowdown = 1
