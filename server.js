@@ -5381,7 +5381,6 @@ var maintainloop = (() => {
                     } while (o.id === oldId && --overflow);        
                     if (!overflow) continue;
                     // Configure for the nest if needed
-                    if (o.foodLevel.toString() in c.FOODPATHS) {
                             let probabilities = c.FOODPATHS[o.foodLevel.toString()][0][0],
                                 cens = census,
                                 amount = foodAmount;
@@ -5401,9 +5400,8 @@ var maintainloop = (() => {
                         }
                     }
                 }
-            };
-        })();
-    // Define food and food spawning
+            })();
+   // Define food and food spawning
     return () => {
         // Do stuff
         makenpcs();      
