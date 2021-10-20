@@ -4888,15 +4888,23 @@ var freezeLoop = (() => {
       }
       element.freezeTime -= 1;
        if (element.freezeTime <= 0) element.freezed = false;
-      element.freezeEffect = {SlowMulti: 0.5, AddTime: 0}
+      element.freezeEffect = {SlowMulti: 0.5, time: this.element.freezeTime, AddTime: 0}
       element.frozen = {isFrozen: false, SlowMulti: 1}
       if (element.frozen.IsFrozen === true && element.invuln !== true) {
-    element.Frozen.Time += (Math.random() < 0.5 ? -1 : 1)*(Math.round(Math.random())) * element.Frozen.AddTime
-    element.Frozen.IsFrozen = 2 //2 is just a number to show you are already poisoned, so don't redo it
+    element.freezeEffect.time += (Math.random() < 0.5 ? -1 : 1)*(Math.round(Math.random())) * element.freezeEffect.AddTime
+    element.frozen.IsFrozen = 2 //2 is just a number to show you are already poisoned, so don't redo it
       setTimeout(() => {
-       element.Frozen.IsFrozen = false
-      }, element.Frozen.Time*1000);
+       element.frozen.IsFrozen = false
+      }, element.freezeEffect.time*1000);
+     }
+    },
+   ); 
   }
+  return () => {
+   //Run the freeze 
+   freeze();
+  };
+})();  
 var maintainloop = (() => {
     // Place obstacles
     function placeRoids() {
