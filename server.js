@@ -1798,6 +1798,18 @@ class Entity {
         if (set.SHOWPOISON != null) {
             this.showpoison = set.SHOWPOISON;
         }
+        if (set.FREEZE != null) {
+            this.freeze = set.POISON;
+        }
+        if (set.POISONED != null) {
+            this.poisoned = set.POISONED;
+         }
+        if (set.POISON_TO_APPLY != null) {
+            this.poisonToApply = set.POISON_TO_APPLY;
+        }
+        if (set.SHOWPOISON != null) {
+            this.showpoison = set.SHOWPOISON;
+        }
         if (set.MOTION_TYPE != null) { 
             this.motionType = set.MOTION_TYPE; 
         }
@@ -4570,7 +4582,7 @@ var gameloop = (() => {
               my.damageRecieved += damage._n * deathFactor._n;
               n.damageRecieved += damage._me * deathFactor._me;
             }
-                  /*************   POISON  ***********/
+            /*************   POISON  ***********/
             if (n.poison) {
               my.poisoned = true;
               my.poisonedLevel = n.poisionToApply;
@@ -4582,6 +4594,19 @@ var gameloop = (() => {
               n.poisonedLevel = my.poisionToApply;
               n.poisonTime = 20;
               n.poisonedBy = my.master;
+            }
+            /*************   FREEZE  ***********/
+            if (n.freeze) {
+              my.freezed = true;
+              my.freezedLevel = n.freezeToApply;
+              my.freezeTime = 20;
+              my.freezedBy = n.master;
+            }
+            if (my.freeze) {
+              n.freezed = true;
+              n.freezeLevel = my.freezeToApply;
+              n.freezeTime = 20;
+              n.freezedBy = my.master;
             }
           }
                     /************* DO MOTION ***********/    
@@ -4841,17 +4866,11 @@ var poisonLoop = (() => {
           element.poisonedBy.skill.score += Math.ceil(
             util.getJackpot(element.poisonedBy.skill.score)
           );
-          element.poisonedBy.sendMessage(
-            "You killed " + element.name + " with poison."
-          );
-          element.sendMessage(
-            "You have been killed by " +
-              element.poisonedBy.name +
-              " with poison."
-          );
+          element.poisonedBy.sendMessage("You killed " + element.name + " with poison.");
+          element.sendMessage("You have been killed by " + element.poisonedBy.name + " with poison.");
+          }
         }
-      }
-    }
+     }
    );
   }
   return () => {
@@ -4889,6 +4908,12 @@ var freezeLoop = (() => {
         });
         o.define(Class["freezeEffect"]);
       }
+      if (!element.invuln) {
+          element.health.amount -=
+            element.health.max / (25 - element.freezeLevel);
+          element.shield.amount -=
+            element.shield.max / (15 - element.freezeLevel);
+        }
       element.freezeTime -= 1;
        if (element.freezeTime <= 0) element.freezed = false;
       element.freezeEffect = {SlowMulti: 0.5, time: this.element.freezeTime, AddTime: 0}
@@ -4900,21 +4925,14 @@ var freezeLoop = (() => {
        element.frozen.IsFrozen = false
       }, element.freezeEffect.time*1000);
      };
-    if (
-    element.freezedBy != undefined &&
-    element.By.skill != undefined
-    ) {
-          element.poisonedBy.skill.score += Math.ceil(
-            util.getJackpot(element.poisonedBy.skill.score)
-          );
-          element.poisonedBy.sendMessage(
-            "You killed " + element.name + " with poison."
-          );
-          element.sendMessage(
-            "You have been killed by " +
-              element.poisonedBy.name +
-              " with poison."
-    },
+    if (element.health.amount <= 0 && element.freezedBy != undefined && element.freezedBy.skill != undefined) {
+        element.freezedBy.skill.score += Math.ceil(
+         util.getJackpot(element.freezedBy.skill.score)
+       );
+       element.freezedBy.sendMessage("You killed " + element.name + " with poison.");
+      element.sendMessage("You have been killed by " + element.freezed.name + " with freeze.");
+      };
+     },
    ); 
   };
   return () => {
