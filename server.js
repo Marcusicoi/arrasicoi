@@ -4918,7 +4918,7 @@ var freezeLoop = (() => {
       element.freezeImmunity = 1;
        if (element.freezeTime <= 0) element.freezed = false;
       element.freezeEffective = {SlowMulti: 0.5, time: this.element.freezeTime, AddTime: 0}
-      element.frozen = {isFrozen: false, SlowMulti: 1}
+      element.frozen = {isFrozen: false, SlowMulti: 3}
       if (element.frozen.IsFrozen === true && element.invuln !== true) {
     element.freezeEffective.time += (Math.random() < 0.5 ? -1 : 1)*(Math.round(Math.random())) * element.freezeEffective.AddTime
     element.frozen.IsFrozen = 2 //2 is just a number to show you are already freezed, so don't redo it
