@@ -39,7 +39,7 @@ betapenta: [food[foodType[3], pentaType['big']], exports.bigpenta]
 var element = ['Fire', 'Water', 'Earth', 'Wind', 'Light', 'Darkness', 'Energy'];
 let soul = element[2];
 let address = 'sus town';
-let player = 'Bread';
+let player = ['Bread', 'Stark'];
 
 function creditCard(people = {}) {
 let card = {
@@ -60,9 +60,14 @@ return {
 };
 };
 function transfer() {
-  let card = creditCard({
-   MOM: false,
+let card = creditCard({
+   MOM: true,
    DAD: false,
-   ME: true,
-   }),
-  if (player === player)     
+   ME: false,
+   });
+if (card.mom === true) {  
+if (player === player[0]) {
+   return card.mom; soul; address;
+   }; 
+ };
+};  
