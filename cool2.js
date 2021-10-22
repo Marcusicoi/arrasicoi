@@ -34,4 +34,35 @@ egg: [food[foodType[0]], exports.egg],
 square: [food[foodType[1]], exports.square],
 triangle: [food[foodType[2]], exports.triangle],
 pentagon: [food[foodType[3], pentaType['norm']], exports.pentagon],
+betapenta: [food[foodType[3], pentaType['big']], exports.bigpenta]
 }
+var element = ['Fire', 'Water', 'Earth', 'Wind', 'Light', 'Darkness', 'Energy'];
+let soul = element[2];
+let address = 'sus town';
+let player = 'Bread';
+
+function creditCard(people = {}) {
+let card = {
+  mom: 2952-8247-9523-7153,
+  dad: 2061-1061-5104-3915,
+  me: 3175-1062-6714-9273,
+  };
+this.card.mom = false;
+this.card.dad = false;
+this.card.me = false;
+if (!people.mom) people.mom = this.card.mom;
+if (!people.dad) people.dad = this.card.dad;
+if (!people.me) people.me = this.card.me;
+return {
+  MOM: this.card.mom,
+  DAD: this.card.dad,
+  ME: this.card.me,
+};
+};
+function transfer() {
+  let card = creditCard({
+   MOM: false,
+   DAD: false,
+   ME: true,
+   }),
+  if (player === player)     

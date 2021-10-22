@@ -68,3 +68,11 @@ FFA:
   ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
   ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"]
   ],
+  ```
+  Credits:
+  ```
+  BossStats, Builds Setup, Poison = Arras32
+  Crasher System = Oblivion
+  Shoot On Death = EternalFrost?
+  Bonker = Boom v3
+  ```
