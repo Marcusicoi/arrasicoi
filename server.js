@@ -5118,7 +5118,7 @@ var maintainloop = (() => {
                         break;
                     case 23:
                         choice = [[Class.sk2], 1, 'castle', 'norm'];
-                        sockets.broadcast('');
+                        sockets.broadcast('The SK-X is leveling up ');
                         break;
                     case 24:
                         choice = [[Class.tyr], 1, 'castle', 'norm'];
