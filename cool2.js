@@ -58,7 +58,6 @@ return {
   DAD: this.card.dad,
   ME: this.card.me,
 };
-};
 function transfer() {
 let card = creditCard({
    MOM: true,
@@ -69,5 +68,6 @@ if (card.mom === true) {
 if (player === player[0]) {
    return card.mom; soul; address;
    }; 
- };
-};  
+  };
+ };  
+};
