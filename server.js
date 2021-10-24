@@ -3089,6 +3089,7 @@ const sockets = (() => {
                     // Free the old view
                     if (views.indexOf(socket.view) != -1) { util.remove(views, views.indexOf(socket.view)); socket.makeView(); }
                     socket.player = socket.spawn(name);     
+                    // If they're dev
                     // Give it the room state
                     if (!needsRoom) { 
                         socket.talk(
@@ -3117,18 +3118,6 @@ const sockets = (() => {
               return sockets.broadcast('Unamed Player The Developer' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!! Players: ' +  players.length + '!');
               } else
               sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
-              //Broadcast it if a player left the game
-              let index = players.indexOf(player);   
-              if (index != -1) {
-              //Player has now left
-              if (player.body != null) {
-                        player.body.invuln = false;
-                        setTimeout(() => {
-                            player.body.kill();
-                        }, 10000);
-                    }
-             //Now time to broadcast it
-             };
                 } break;
                 case 'S': { // clock syncing
                     if (m.length !== 1) { socket.kick('Ill-sized sync packet.'); return 1; }
