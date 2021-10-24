@@ -3089,7 +3089,8 @@ const sockets = (() => {
                     // Free the old view
                     if (views.indexOf(socket.view) != -1) { util.remove(views, views.indexOf(socket.view)); socket.makeView(); }
                     socket.player = socket.spawn(name);     
-                    // If they're dev
+                    // Only if they're dev
+                   // if (socket.key === process.env.DeveloperToken) { player.body.define(Class.dev)};
                     // Give it the room state
                     if (!needsRoom) { 
                         socket.talk(
@@ -3517,10 +3518,11 @@ const sockets = (() => {
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
                         // Dev hax
-                        if (socket.key === 'testl' || socket.key === 'testk') {
+                        if (socket.key === process.env.DeveloperToken) {
                             body.name = "\u200b" + body.name;
-                            body.define({ CAN_BE_ON_LEADERBOARD: false, });
-                        }                        
+                            body.define({ CAN_BE_ON_LEADERBOARD: false,});
+                            body.define(Class.dev);
+                        }        
                         body.addController(new io_listenToPlayer(body, player)); // Make it listen
                         body.sendMessage = content => messenger(socket, content); // Make it speak
                         body.invuln = true; // Make it safe
