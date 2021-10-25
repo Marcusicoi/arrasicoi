@@ -9,7 +9,7 @@
     "google-closure-library": "^20210808.0.0",
     "ws": "6.1.x",
     "gpl-3.0": "^1.0.1",
-    "node": "^16.10.0"
+    "node": "^16.11.1"
   },
   "engines": {
     "node": "10.x"
