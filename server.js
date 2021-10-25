@@ -5123,38 +5123,6 @@ var maintainloop = (() => {
         };
     })(); 
    
-    let spawnRareShapes = (() => {
-        const option = {
-            max: 1000,
-            chance: 1, //0.00002
-            legendChance: 1, //0.000001
-            shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta],
-            legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta],
-        };
-        return census => {
-            if (census.crasher < option.max) {
-                for (let i = 0; i < option.max - census.crasher; i++) {
-                    if (Math.random() > option.chance) {
-                        let spot, i = 30;
-                        do {
-                            spot = room.randomType('nest', 'norm');
-                            i--;
-                            if (!i) return 0;
-                        } while (dirtyCheck(spot, 100));
-                        const type = ran.choose(([option.shinies, option.legendaries][+(Math.random() > option.legendChance)]));
-                        let o = new Entity(spot);
-                        o.define(type);
-                        o.team = -100;
-                        o.ondeath = () => {
-                          setTimeout(() => {
-                            spawnRareShapes(census);
-                             }, 20000)
-                        }
-                   }
-              }
-         }
-    }
-    })();        
     let spawnCrasher = (() => {
         const config = {
             max: 10, // The max amount of crashers/sentries
@@ -5164,7 +5132,7 @@ var maintainloop = (() => {
             sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
         };
         return census => {
-            if (census.gem < config.max) {
+            if (census.crasher < config.max) {
                 for (let i = 0; i < config.max - census.gem; i ++) {
                     if (Math.random() > config.chance) {
                         let spot, i = 30;
@@ -5194,6 +5162,39 @@ var maintainloop = (() => {
             for (let i=1; i<5; i++) {
                 room['bas' + i].forEach((loc) => { f(loc, i); }); 
             }
+        
+    let spawnRareShapes = (() => {
+        const option = {
+            max: 10,
+            chance: 1, //0.00002
+            legendChance: 1, //0.000001
+            shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.gbpenta, Class.ghpenta],
+            legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta],
+        };
+        return census => {
+            if (census.crasher < option.max) {
+                for (let i = 0; i < option.max - census.crasher; i++) {
+                    if (Math.random() > option.chance) {
+                        let spot, i = 30;
+                        do {
+                            spot = room.randomType('nest', 'norm');
+                            i--;
+                            if (!i) return 0;
+                        } while (dirtyCheck(spot, 100));
+                        const type = ran.choose(([option.shinies, option.legendaries][+(Math.random() > option.legendChance)]));
+                        let o = new Entity(spot);
+                        o.define(type);
+                        o.team = -100;
+                        o.ondeath = () => {
+                          setTimeout(() => {
+                            spawnRareShapes(census);
+                             }, 20000)
+                        }
+                   }
+              }
+         }
+    }
+    })();        
         // Return the spawning function
         let bots = [];
         return () => {
@@ -5204,8 +5205,8 @@ var maintainloop = (() => {
                 rare: 0,
             };    
             let npcs = entities.map(function npcCensus(instance) {
-                if (census[instance.type, instance.type2] != null) {
-                    census[instance.type, instance.type2]++;
+                if (census[instance.type] != null) {
+                    census[instance.type]++;
                     return instance;
                 }
             }).filter(e => { return e; });    
@@ -5216,11 +5217,11 @@ var maintainloop = (() => {
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                     o.define(Class.bot) 
-                   //o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
-                    o.define(Class.tyr2);
-                   // o.name += ran.chooseBotName();
+                    o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
+                   // o.define(Class.tyr2);
+                    o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
-                 //   o.color = ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55]) 
+                    o.color = ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55]) 
                   //  o.team = ran.chooseBotTeam();
                   /*  if (o.team === -1) {o.color = 10};
                     if (o.team === -2) {o.color = 11};
