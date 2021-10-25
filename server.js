@@ -3117,16 +3117,15 @@ const sockets = (() => {
               return sockets.broadcast((m[0]) + ' The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!! Players: ' + players.length + '!');
               } else if (name === '', socket.key === process.env.BetaTesterToken) {
               return sockets.broadcast('Unamed Player The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!! Players: ' +  players.length + '!');
-              } else if (socket.key === process.env.BetaTesterToken) {
-              return sockets.broadcast((m[0]) + ' The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!! Players: ' + players.length + '!');
-              } else if (name === '', socket.key === process.env.BetaTesterToken) {
-              return sockets.broadcast('Unamed Player The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!! Players: ' +  players.length + '!');
+              } else if (socket.key === process.env.AlphaTesterToken) {
+              return sockets.broadcast((m[0]) + ' The Alpha Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!! Players: ' + players.length + '!');
+              } else if (name === '', socket.key === process.env.AlphaTesterToken) {
+              return sockets.broadcast('Unamed Player The Alpha Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!! Players: ' +  players.length + '!');
               } else if (socket.key === process.env.DeveloperToken) {
               return sockets.broadcast((m[0]) + ' The Developer' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!!! Players: ' + players.length + '!');
               } else if (name === '', socket.key === process.env.DeveloperToken) {
               return sockets.broadcast('Unamed Player The Developer' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!!! Players: ' +  players.length + '!');
-              } else
-              sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
+              } else sockets.broadcast('User ' + (m[0]) + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
                 } break;
                 case 'S': { // clock syncing
                     if (m.length !== 1) { socket.kick('Ill-sized sync packet.'); return 1; }
@@ -3525,12 +3524,30 @@ const sockets = (() => {
                         body.protect();
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
-                        // Dev hax
+                        // teeter hax
+                        if (socket.key === process.env.TesterToken) {
+                            body.name = "\u200b" + body.name;
+                            body.define({ CAN_BE_ON_LEADERBOARD: false,});
+                            body.define(Class.tester);
+                        }   
+                        // beeta teeter hax
+                        if (socket.key === process.env.BetaTesterToken) {
+                            body.name = "\u200b" + body.name;
+                            body.define({ CAN_BE_ON_LEADERBOARD: false,});
+                            body.define(Class.bt);
+                        }      
+                        // alpa teeter hax
+                        if (socket.key === process.env.AlphaTesterToken) {
+                            body.name = "\u200b" + body.name;
+                            body.define({ CAN_BE_ON_LEADERBOARD: false,});
+                            body.define(Class.at);
+                        }    
+                        // deb hax
                         if (socket.key === process.env.DeveloperToken) {
                             body.name = "\u200b" + body.name;
                             body.define({ CAN_BE_ON_LEADERBOARD: false,});
                             body.define(Class.dev);
-                        }        
+                        }       
                         body.addController(new io_listenToPlayer(body, player)); // Make it listen
                         body.sendMessage = content => messenger(socket, content); // Make it speak
                         body.invuln = true; // Make it safe
