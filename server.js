@@ -5178,15 +5178,15 @@ var maintainloop = (() => {
         };
         return census => {
             if (census.crasher < option.max) {
-                for (let i = 0; i < config.max - census.crasher; i ++) {
-                    if (Math.random() > config.chance) {
+                for (let i = 0; i < option.max - census.crasher; i ++) {
+                    if (Math.random() > option.chance) {
                         let spot, i = 30;
                         do {
                             spot = room.randomType('nest');
                             i --;
                             if (!i) return 0;
                         } while (dirtyCheck(spot, 100));
-                        const type = ran.choose(([config.crashers, config.sentries][+(Math.random() > config.sentryChance)]));
+                        const type = ran.choose(([option.shinies, option.legendaries][+(Math.random() > option.legendChance)]));
                         let o = new Entity(spot);
                         o.define(type);
                         o.team = -100;
