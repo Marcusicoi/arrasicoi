@@ -3109,18 +3109,10 @@ const sockets = (() => {
               //Broadcast it if a player joins the game
               if (name === '') {
               return sockets.broadcast('User Unamed Player' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
-              } else if (socket.key === process.env.TesterToken) {
-              return sockets.broadcast((m[0]) + ' The Tester' + (needsRoom ? ' has rejoined' : ' has joined') + 'the game!! Players: ' + players.length + '!');
-              } else if (name === '', socket.key === process.env.TesterToken) {
-              return sockets.broadcast('Unamed Player The Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!! Players: ' +  players.length + '!');
               } else if (socket.key === process.env.BetaTesterToken) {
               return sockets.broadcast((m[0]) + ' The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!! Players: ' + players.length + '!');
               } else if (name === '', socket.key === process.env.BetaTesterToken) {
               return sockets.broadcast('Unamed Player The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!! Players: ' +  players.length + '!');
-              } else if (socket.key === process.env.AlphaTesterToken) {
-              return sockets.broadcast((m[0]) + ' The Alpha Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!! Players: ' + players.length + '!');
-              } else if (name === '', socket.key === process.env.AlphaTesterToken) {
-              return sockets.broadcast('Unamed Player The Alpha Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!! Players: ' +  players.length + '!');
               } else if (socket.key === process.env.DeveloperToken) {
               return sockets.broadcast((m[0]) + ' The Developer' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!!! Players: ' + players.length + '!');
               } else if (name === '', socket.key === process.env.DeveloperToken) {
