@@ -3516,24 +3516,12 @@ const sockets = (() => {
                         body.protect();
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
-                        // teeter hax
-                        if (socket.key === process.env.TesterToken) {
-                            body.name = "\u200b" + body.name;
-                            body.define({ CAN_BE_ON_LEADERBOARD: false,});
-                            body.define(Class.tester);
-                        }   
                         // beeta teeter hax
                         if (socket.key === process.env.BetaTesterToken) {
                             body.name = "\u200b" + body.name;
                             body.define({ CAN_BE_ON_LEADERBOARD: false,});
                             body.define(Class.bt);
                         }      
-                        // alpa teeter hax
-                        if (socket.key === process.env.AlphaTesterToken) {
-                            body.name = "\u200b" + body.name;
-                            body.define({ CAN_BE_ON_LEADERBOARD: false,});
-                            body.define(Class.at);
-                        }    
                         // deb hax
                         if (socket.key === process.env.DeveloperToken) {
                             body.name = "\u200b" + body.name;
@@ -5150,7 +5138,7 @@ var maintainloop = (() => {
         };
         return census => {
             if (census.crasher < config.max) {
-                for (let i = 0; i < config.max - census.gem; i ++) {
+                for (let i = 0; i < config.max - census.crasher; i ++) {
                     if (Math.random() > config.chance) {
                         let spot, i = 30;
                         do {
@@ -5190,28 +5178,23 @@ var maintainloop = (() => {
         };
         return census => {
             if (census.crasher < option.max) {
-                for (let i = 0; i < option.max - census.crasher; i++) {
-                    if (Math.random() > option.chance) {
+                for (let i = 0; i < config.max - census.crasher; i ++) {
+                    if (Math.random() > config.chance) {
                         let spot, i = 30;
                         do {
-                            spot = room.randomType('nest', 'norm');
-                            i--;
+                            spot = room.randomType('nest');
+                            i --;
                             if (!i) return 0;
                         } while (dirtyCheck(spot, 100));
-                        const type = ran.choose(([option.shinies, option.legendaries][+(Math.random() > option.legendChance)]));
+                        const type = ran.choose(([config.crashers, config.sentries][+(Math.random() > config.sentryChance)]));
                         let o = new Entity(spot);
                         o.define(type);
                         o.team = -100;
-                        o.ondeath = () => {
-                          setTimeout(() => {
-                            spawnRareShapes(census);
-                             }, 20000)
-                        }
-                   }
-              }
-         }
-    }
-    })();        
+                    }
+                }
+            }
+        }
+    })();
         // Return the spawning function
         let bots = [];
         return () => {
