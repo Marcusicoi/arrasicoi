@@ -5019,7 +5019,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
-                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
+                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
                     case 0: 
                         choice = [[Class.elite_destroyer], 1, 'a', 'nest'];
                         sockets.broadcast('Big Bullets On your face is coming.');
@@ -5118,6 +5118,10 @@ var maintainloop = (() => {
                         break;
                     case 24:
                         choice = [[Class.tyr], 1, 'castle', 'norm'];
+                        sockets.broadcast('The darkness arrived as the realms are ripped apart!');
+                        break;
+                    case 25:
+                        choice = [[Class.fiolnir], 1, 'castle', 'norm'];
                         sockets.broadcast('The darkness arrived as the realms are ripped apart!');
                         break;
                 }      
