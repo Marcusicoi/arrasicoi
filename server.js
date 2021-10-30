@@ -3244,10 +3244,10 @@ const sockets = (() => {
                         player.body.refreshBodyAttributes();
                     } }
                 } break;
-                case '0': { // testbed cheat
+                case "0": { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) { if (socket.key === process.env.BetaTesterToken) {
+                    if (player.body != null) { if (socket.key === process.env.DeveloperToken) {
                         player.body.define(Class.dev);
                     } }
                 } break;
