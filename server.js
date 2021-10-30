@@ -2265,7 +2265,7 @@ class Entity {
             this.SIZE += 10;
             this.maxSpeed = this.topSpeed;
             break;
-            
+             
         case 'minifreezeGrow':
             this.SIZE += 0.5
             break;
