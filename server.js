@@ -5135,8 +5135,8 @@ var maintainloop = (() => {
     let spawnCrasher = (() => {
         const config = {
             max: 10, // The max amount of crashers/sentries
-            chance: 0.8, // Math.random() must be greater than this in order to spawn anything
-            sentryChance: 0.625, // Math.random() must be greater than this for a sentry spawn.
+            chance: 0.625, // Math.random() must be greater than this in order to spawn anything
+            sentryChance: 0.8, // Math.random() must be greater than this for a sentry spawn.
             crashers: [Class.crasher, Class.autoCrash], // Crasher Types
             sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
         };
@@ -5163,9 +5163,9 @@ var maintainloop = (() => {
         const config = {
             max: 10, // The max amount of rare shapes
             chance: 0.05, // Math.random() must be greater than this in order to spawn anything
-            legendChance: 0.01, // Math.random() must be greater than this for a legend spawn.
-            shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.ghpenta], // Shiny Types
-            legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta] // Legendary types
+            legendChance: 0.05, // Math.random() must be greater than this for a legend spawn.
+            shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta], // Shiny Types
+            legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta] // Legendary types
         };
         return census => {
             if (census.crasher < config.max) {
@@ -5173,7 +5173,7 @@ var maintainloop = (() => {
                     if (Math.random() > config.chance) {
                         let spot, i = 30;
                         do {
-                            spot = room.randomType(room.random());
+                            spot = room.randomType(ran.choose(['norm', 'nest', 'roid']));
                             i --;
                             if (!i) return 0;
                         } while (dirtyCheck(spot, 100));
