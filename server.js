@@ -5162,7 +5162,7 @@ var maintainloop = (() => {
     let spawnRareShapes = (() => {
         const config = {
             max: 10, // The max amount of rare shapes
-            chance: 0.000000000005, // Math.random() must be greater than this in order to spawn anything
+            shinyChance: 0.000000000005, // Math.random() must be greater than this for a shiny spawn.
             legendChance: 0.000000000000001, // Math.random() must be greater than this for a legend spawn.
             shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta], // Shiny Types
             legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta] // Legendary types
@@ -5170,14 +5170,26 @@ var maintainloop = (() => {
         return census => {
             if (census.crasher < config.max) {
                 for (let i = 0; i < config.max - census.crasher; i ++) {
-                    if (Math.random() > config.chance) {
+                    if (Math.random() > config.shinyChance) {
                         let spot, i = 30;
                         do {
                             spot = room.randomType(ran.choose(['norm', 'nest', 'roid']));
                             i --;
                             if (!i) return 0;
                         } while (dirtyCheck(spot, 100));
-                        const type = ran.choose(([config.shinies, config.legendaries][+(Math.random() > config.legendChance)]));
+                        const type = (config.shinies);
+                        let o = new Entity(spot);
+                        o.define(type);
+                        o.team = -100;
+                    } else 
+                    if (Math.random() > config.legendChance) {
+                       let spot, i = 30;
+                       do {
+                           spot = room.randomType(ran.choose(['norm', 'nest', 'roid']));
+                           i --;
+                           if (!i) return 0;
+                        } while (dirtyCheck(spot, 500));
+                        const type = (config.legendaries);
                         let o = new Entity(spot);
                         o.define(type);
                         o.team = -100;
