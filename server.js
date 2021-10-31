@@ -5158,32 +5158,6 @@ var maintainloop = (() => {
                 }
             }
         }
-    })();
-    let spawnShinyShapes = (() => {
-        const config = {
-            max: 10, // The max amount of rare shapes
-            shinyChance: 0.000000000005, // Math.random() must be greater than this for a shiny spawn.
-            shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta], // Shiny Types
-        };
-        return census => {
-            if (census.crasher < config.max) {
-                for (let i = 0; i < config.max - census.crasher; i ++) {
-                    if (Math.random() > config.shinyChance) {
-                        let spot, i = 30;
-                        do {
-                            spot = room.randomType(ran.choose(['norm', 'nest', 'roid']));
-                            i --;
-                            if (!i) return 0;
-                        } while (dirtyCheck(spot, 500);
-                        util.log('[INFO] Shiny Entity Spawning... tier 1 : color 1 : name shiny');
-                        const type = (config.shinies);
-                        let o = new Entity(spot);
-                        o.define(type);
-                        o.team = -100;
-                    }
-                }
-            }
-        };
     })();    
     // The NPC function
     let makenpcs = (() => {
