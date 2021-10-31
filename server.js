@@ -5162,8 +5162,8 @@ var maintainloop = (() => {
     let spawnRareShapes = (() => {
         const config = {
             max: 10, // The max amount of rare shapes
-            chance: 0.05, // Math.random() must be greater than this in order to spawn anything
-            legendChance: 0.05, // Math.random() must be greater than this for a legend spawn.
+            chance: 0.000000000005, // Math.random() must be greater than this in order to spawn anything
+            legendChance: 0.000000000000001, // Math.random() must be greater than this for a legend spawn.
             shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta], // Shiny Types
             legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta] // Legendary types
         };
