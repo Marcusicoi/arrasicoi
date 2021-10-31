@@ -5161,9 +5161,11 @@ var maintainloop = (() => {
     })();
     let spawnRareShapes = (() => {
         const config = {
-            max: 1000, // The max amount of shinyshapes
+            max: 10, // The max amount of rare shapes
             shinyChance: 0.000000000005, // Math.random() must be greater than this for a shiny spawn.
+            legendChance: 0.000000000000001, // Math.random() must be greater than this for a legend spawn.
             shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta], // Shiny Types
+            legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta] // Legendary types
         };
         return census => {
             if (census.crasher < config.max) {
@@ -5179,7 +5181,19 @@ var maintainloop = (() => {
                         let o = new Entity(spot);
                         o.define(type);
                         o.team = -100;
-                    } 
+                    } else 
+                    if (Math.random() > config.legendChance) {
+                       let spot, i = 30;
+                       do {
+                           spot = room.randomType(ran.choose(['norm', 'nest', 'roid']));
+                           i --;
+                           if (!i) return 0;
+                        } while (dirtyCheck(spot, 500));
+                        const type = (config.legendaries);
+                        let o = new Entity(spot);
+                        o.define(type);
+                        o.team = -100;
+                    }
                 }
             }
         }
