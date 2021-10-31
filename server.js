@@ -5159,7 +5159,7 @@ var maintainloop = (() => {
             }
         }
     })();  
-    let spawnShinyShapes = (() => {
+   let spawnShinyShapes = (() => {
         const config = {
             max: 1, // The max amount of shinies
             chance: 50000, // Chance 
@@ -5168,14 +5168,14 @@ var maintainloop = (() => {
         return census => {
             if (census.crasher < config.max) {
                 for (let i = 0; i < config.max - census.crasher; i ++) {
-                    if (1 < config.chance) {
+                    if (0*49999 < config.chance) {
                         let spot, i = 30;
                         do {
-                            spot = room.randomType('nest', 'norm', 'roid');
+                            spot = room.randomType('norm');
                             i --;
                             if (!i) return 0;
                         } while (dirtyCheck(spot, 100));
-                        util.log("Spawning Shiny Entity. T1C1TYSC50000SI" + spot);
+                        util.log("Spawning Shiny Entity. T1C1TYSC5:0=4");
                         const type = ran.choose(([config.crashers, config.sentries][+(Math.random() > config.sentryChance)]));
                         let o = new Entity(spot);
                         o.define(type);
