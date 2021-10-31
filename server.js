@@ -5159,7 +5159,7 @@ var maintainloop = (() => {
             }
         }
     })();
-    let spawnRareShapes = (() => {
+    let spawnShinyShapes = (() => {
         const config = {
             max: 10, // The max amount of rare shapes
             shinyChance: 0.000000000005, // Math.random() must be greater than this for a shiny spawn.
@@ -5174,7 +5174,8 @@ var maintainloop = (() => {
                             spot = room.randomType(ran.choose(['norm', 'nest', 'roid']));
                             i --;
                             if (!i) return 0;
-                        } while (dirtyCheck(spot, 100));
+                        } while (dirtyCheck(spot, 500);
+                        util.log('[INFO] Shiny Entity Spawning... tier 1 : color 1 : name shiny');
                         const type = (config.shinies);
                         let o = new Entity(spot);
                         o.define(type);
@@ -5214,7 +5215,7 @@ var maintainloop = (() => {
             // Spawning
             spawnBosses(census);
             spawnCrasher(census);
-            spawnRareShapes(census);
+            spawnShinyShapes(census);
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                     o.define(Class.bot) 
