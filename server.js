@@ -5135,8 +5135,8 @@ var maintainloop = (() => {
     let spawnCrasher = (() => {
         const config = {
             max: 10, // The max amount of crashers/sentries
-            chance: 1, // Math.random() must be greater than this in order to spawn anything
-            sentryChance: 1, // Math.random() must be greater than this for a sentry spawn.
+            chance: 0.8, // Math.random() must be greater than this in order to spawn anything
+            sentryChance: 0.625, // Math.random() must be greater than this for a sentry spawn.
             crashers: [Class.crasher, Class.autoCrash], // Crasher Types
             sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
         };
@@ -5159,6 +5159,34 @@ var maintainloop = (() => {
             }
         }
     })();
+    let spawnRareShapes = (() => {
+        const config = {
+            max: 10, // The max amount of rare shapes
+            chance: 0.05, // Math.random() must be greater than this in order to spawn anything
+            legendChance: 0.01, // Math.random() must be greater than this for a legend spawn.
+            shinies: [Class.gem, Class.gsqu, Class.gtri, Class.gpenta, Class.ghpenta], // Shiny Types
+            legendaries: [Class.jewel, Class.lsqu, Class.ltri, Class.lpenta, Class.lbpenta, Class.lhpenta] // Legendary types
+        };
+        return census => {
+            if (census.crasher < config.max) {
+                for (let i = 0; i < config.max - census.crasher; i ++) {
+                    if (Math.random() > config.chance) {
+                        let spot, i = 30;
+                        do {
+                            spot = room.randomType(room.random());
+                            i --;
+                            if (!i) return 0;
+                        } while (dirtyCheck(spot, 100));
+                        const type = ran.choose(([config.shinies, config.legendaries][+(Math.random() > config.legendChance)]));
+                        let o = new Entity(spot);
+                        o.define(type);
+                        o.team = -100;
+                    }
+                }
+            }
+        }
+    })();
+    
     // The NPC function
     let makenpcs = (() => {
         // Make base protectors if needed.
@@ -5189,6 +5217,7 @@ var maintainloop = (() => {
             // Spawning
             spawnBosses(census);
             spawnCrasher(census);
+            spawnRareShapes(census);
                 if (bots.length < c.BOTS) {
                     let o = new Entity(room.random());
                     o.define(Class.bot) 
