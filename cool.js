@@ -47,4 +47,4 @@ if (A ==! null) { let wa=1; guns.aspect} barrel.edit(let widen = wa?(>num?1))
 if (X !=! null) { let px = let position.x ? normal.average(0)} : use.always();
 barrel.edit(let x = px?(>num?0 + px,x)
 if (PROPERTIES === null) { let b=-1: guns.syntax{}
-    */            
+    */          
