@@ -3544,7 +3544,7 @@ const sockets = (() => {
                         }
                     }
                     // Decide what to do about colors when sending updates and stuff
-                    player.teamColor = (!c.RANDOM_COLORS && room.gameMode === 'ffa') ? 1 : body.color; // blue
+                    player.teamColor = (!c.RANDOM_COLORS && room.gameMode === 'ffa') ? 10 : body.color; // blue
                     // Set up the targeting structure
                     player.target = {
                         x: 0,
