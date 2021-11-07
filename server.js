@@ -4970,6 +4970,35 @@ var maintainloop = (() => {
         util.log('Placing ' + count + ' obstacles!');
     }
     placeRoids();
+    //Place walls
+    function placeMazeWalls() {
+        let count = 0,
+            x = 0,
+            y = 0,
+            scale = 5600 / c.WIDTH;
+        for (let i = 150 + ~~(50 * Math.random()); i; i--) {
+            count++;
+            x += 200 * ~~(25 * Math.random());
+            y += 200 * ~~(25 * Math.random());
+            if (x > 5000) x = 200 * ~~(25 * Math.random());
+            if (y > 5000) y = 200 * ~~(25 * Math.random());
+            if (x > 1500 && x < 3500 && y > 1500 && y < 3500) {
+                x = 200 * ~~(7 * Math.random());
+                y = 200 * ~~(7 * Math.random());
+            }
+            let o = new Entity({
+                x: (300 + x) / scale,
+                y: (300 + y) / scale
+            });
+            o.define(Class.mazeObstacle);
+            o.SIZE = 100 / scale;
+            o.team = -101;
+            o.protect();
+            o.life();
+        }
+        util.log('Placing ' + count + ' maze walls.');
+    }
+ // placeMazeWalls();
     // Spawning functions
     let spawnBosses = (() => {
         let timer = 8;
