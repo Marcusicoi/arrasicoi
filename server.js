@@ -3536,7 +3536,7 @@ const sockets = (() => {
                     switch (room.gameMode) {
                         case "tdm": {
                             body.team = -player.team;
-                            body.color = [10, 11, 12, 15][player.team - 1];
+                            body.color = [10, 11][player.team - 1];
                         }; break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
