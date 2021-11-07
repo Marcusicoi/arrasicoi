@@ -22,22 +22,6 @@ Angles: (or idk)
 ```
 Room Setups:
 
-4TDM:
-```
-"ROOM_SETUP": [
-  ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
-  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-  ["bas3", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas4"]
-  ],
-```
-
 FFA:
 ```
 "ROOM_SETUP": [
@@ -69,6 +53,22 @@ FFA:
   ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"]
   ],
   ```
+ 4TDM:
+```
+"ROOM_SETUP": [
+  ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
+  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
+  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
+  ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
+  ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
+  ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
+  ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
+  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
+  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
+  ["bas3", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas4"]
+  ],
+```
+
   Credits:
   ```
   BossStats, Builds Setup, Poison = Arras32
