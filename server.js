@@ -4998,7 +4998,7 @@ var maintainloop = (() => {
         }
         util.log('Placing ' + count + ' maze walls.');
     }
-    placeMazeWalls();
+    // placeMazeWalls();
     // Spawning functions
     let spawnBosses = (() => {
         let timer = 8;
