@@ -42,30 +42,30 @@ FFA:
  ```
  "ROOM_SETUP": [
   ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
-  ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
+  ["bas1", "norm", "roid", "norm", "norm", "norm", "norm", "roid", "norm", "bas2"],
   ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
   ["bas1", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "bas2"],
   ["bas1", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "bas2"],
   ["bas1", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "bas2"],
   ["bas1", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "bas2"],
   ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
-  ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
+  ["bas1", "norm", "roid", "norm", "norm", "norm", "norm", "roid", "norm", "bas2"],
   ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"]
   ],
   ```
  4TDM:
 ```
 "ROOM_SETUP": [
-  ["bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2"],
-  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
+  ["bas1", "norm", "norm", "norm", "roid", "roid", "norm", "norm", "norm", "bas2"],
+  ["norm", "norm", "roid", "norm", "norm", "norm", "norm", "roid", "norm", "norm"],
   ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
   ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
+  ["roid", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "roid"],
+  ["roid", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "roid"],
   ["norm", "norm", "norm", "nest", "nest", "nest", "nest", "norm", "norm", "norm"],
   ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-  ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
-  ["bas3", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas4"]
+  ["norm", "norm", "roid", "norm", "norm", "norm", "norm", "roid", "norm", "norm"],
+  ["bas3", "norm", "norm", "norm", "roid", "roid", "norm", "norm", "norm", "bas4"]
   ],
 ```
 
