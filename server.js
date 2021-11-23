@@ -5649,7 +5649,6 @@ setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
 
-let SpawnRareShapes = (() => {
   function greenShapes() {
     var i = Math.floor(Math.random() * 50000)
     if (i < Math.random()) {  
@@ -5659,6 +5658,13 @@ let SpawnRareShapes = (() => {
       let o = new Entity(spot);
       o.define(type);
       o.team = -100;
-      o.ondeath => {
+      o.ondeath = () => {
+        setTimeout(() => {
+          greenShapes(); 
+        }, 20000);
+      }             
     }
-  
+  }    
+  return census => {(greenShapes())};
+  })();
+SpawnRareShapes()
