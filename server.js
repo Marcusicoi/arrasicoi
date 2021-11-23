@@ -5665,6 +5665,4 @@ setInterval(poisonLoop, room.cycleSpeed * 7);
       }             
     }
   }    
-  return census => {(greenShapes())};
-  })();
-SpawnRareShapes()
+greenShapes()
