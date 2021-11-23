@@ -5650,11 +5650,11 @@ setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
 
   function greenShapes() {
-    var i = Math.floor(Math.random() * 50000)
-    if (i < Math.random()) {  
+   /* var i = 0.893;
+    if (Math.random() > i) {  */
       util.log("[INFO] Shiny Entity Spawning (Tier 1)");
       let type = ran.dice(2) ? ran.choose([Class.gem, Class.gsqu, Class.gtri, Class.gpenta]) : Class.gem;
-      let spot = room.randomType(room.random());
+      let spot = room.randomType('norm', 'nest');
       let o = new Entity(spot);
       o.define(type);
       o.team = -100;
@@ -5663,6 +5663,6 @@ setInterval(poisonLoop, room.cycleSpeed * 7);
           greenShapes(); 
         }, 20000);
       }             
-    }
+   // }
   }    
-greenShapes()
+greenShapes();
