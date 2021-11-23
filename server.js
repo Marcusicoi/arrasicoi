@@ -5650,5 +5650,15 @@ setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
 
 let SpawnRareShapes = (() => {
-  function greenShapes = (() => {
-    
+  function greenShapes() {
+    var i = Math.floor(Math.random() * 50000)
+    if (i < Math.random()) {  
+      util.log("[INFO] Shiny Entity Spawning (Tier 1)");
+      let type = ran.dice(2) ? ran.choose([Class.gem, Class.gsqu, Class.gtri, Class.gpenta]) : Class.gem;
+      let spot = room.randomType(room.random());
+      let o = new Entity(spot);
+      o.define(type);
+      o.team = -100;
+      o.ondeath => {
+    }
+  
