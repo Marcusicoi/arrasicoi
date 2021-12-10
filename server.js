@@ -5731,6 +5731,13 @@ bot.on("messageCreate", message => {
                           '\nLife Time: ' + lifetime +
                           '\nSelfie Time: ' + selfietime +
                           '\nTotal Time: ' + (activationtime + collidetime + movetime + playertime + maptime + physicstime + lifetime + selfietime) + '`');
- }
+ };
+ if(message.content.startsWith(">define")) {
+    let error = false,
+    command = parse(message.content),
+    inputid = command[1], inputclass = command[2];
+    if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
+       if(eval(Class[inputclass]) != undefined) {
+          entities.filter(
 });
 bot.login(process.env.BotToken);
