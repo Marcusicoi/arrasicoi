@@ -5707,11 +5707,13 @@ bot.on("messageCreate", message => {
         message.channel.send('You need a role called "Beta Tester" To Execute The Command.');
      }
   }
-  if(message.content === ">help") {
-     let embed = new discord.MessageEmbed()
+  if(message.content.startsWith(">help")) {
+     let embed = new discord()
      .setTitle('Commands')
      .setDescription(">players = sends the player's name and id\n >broadcast = broadcasts message into the game")
-     .setFooter(''random 
-     
-  });
+     .setFooter('random footer')
+     .setColor('BLUE');
+     message.channel.send(embed)
+  }
+});
 bot.login(process.env.BotToken);
