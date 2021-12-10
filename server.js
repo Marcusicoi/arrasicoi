@@ -5736,25 +5736,30 @@ bot.on("messageCreate", message => {
                           '\nLife Time: ' + lifetime +
                           '\nSelfie Time: ' + selfietime +
                           '\nTotal Time: ' + (activationtime + collidetime + movetime + playertime + maptime + physicstime + lifetime + selfietime) + '`');
- };
- if(message.content.startsWith(">define")) {
-    let error = false,
-    command = parse(message.content),
-    inputid = command[1], inputclass = command[2];
-    if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
-       if(eval(Class[inputclass]) != undefined) {
-          entities.filter(r => r.id == inputid)[0].define(Class[inputclass]);
-          error = false;
-          message.channel.send('Defined user as ' + inputclass);
-       } else {
-       message.channel.send(inputclass + 'is not a valid tank');
-       }
-       if (error) {
-       message.channel.send("Couldn't Find Any Users by the id: " + inputid);
-       }
-    } else {
-    message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
-    }
+  };
+  if(message.content.startsWith(">define")) {
+     let error = false,
+     command = parse(message.content),
+     inputid = command[1], inputclass = command[2];
+     if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
+        if(eval(Class[inputclass]) != undefined) {
+           entities.filter(r => r.id == inputid)[0].define(Class[inputclass]);
+           error = false;
+           message.channel.send('Defined user as ' + inputclass);
+        } else {
+        message.channel.send(inputclass + 'is not a valid tank');
+        }
+        if (error) {
+        message.channel.send("Couldn't Find Any Users by the id: " + inputid);
+        }
+     } else {
+     message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
+     }
   }
+  if(message.content.startsWith(">restore")) {
+     let error = false,
+     command = parse(message.content),
+     inputid = command[1], inputvalue = command[2],
+     
 });
 bot.login(process.env.BotToken);
