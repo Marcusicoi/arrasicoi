@@ -5685,13 +5685,13 @@ bot.on('ready', () => {
 });
 bot.on("messageCreate", message => {
  if(message.content === ">help") {
-     message.channel.send("COMMANDS.\nlitterally cant send a embed so\n>players = Sends the player's name and id\n>broadcast = broadcasts a message into the game");
+     message.channel.send("COMMANDS.\nlitterally cant send a embed so\n>players = Sends the player's name and id\n>broadcast = broadcasts a message into the game\n>ping = tells the latency about the game");
   }
   if (message.content.startsWith(">players")) {
       let output = '', outWillFail = true;
       entities.forEach(function(element) {
       if (typeof element.sendMessage == "function" && element.name != '') {
-          output += String("`" + element.name + ' - ' + element.id + '\n`')
+          output += String("`" + element.name + ' - ' + element.id + '`')
           outWillFail = false;
       }
    });
@@ -5721,9 +5721,9 @@ bot.on("messageCreate", message => {
          loops = logs.loops.count(),
          active = logs.entities.count();
      message.channel.send('`Loops: ' + loops +
-                          '\nEntity: ' + entities.length + 'and ' + Math.round(active/loops) + 
+                          '\nEntity: ' + entities.length + ' and ' + Math.round(active/loops) + 
                           '\nViews: ' + views.length + 
-                          '\Backlogged: ' + (sum * roomSpeed * 3) + 
+                          '\nBacklogged: ' + (sum * roomSpeed * 3) + 
                           '\nActivation Time: ' + activationtime + 
                           '\nCollide Time: ' + collidetime +
                           '\nMove Time: ' + movetime +
@@ -5731,6 +5731,8 @@ bot.on("messageCreate", message => {
                           '\nMap Time: ' + maptime +
                           '\nPhysics Time: ' + physicstime +
                           '\nLife Time: ' + lifetime +
-                          '\nSelfie Time: ' +  
+                          '\nSelfie Time: ' + selfietime +
+                          '\nTotal Time: ' + (activationtime + collidetime + movetime + playertime + maptime + physicstime + lifetime + selfietime) + '`');
+ }
 });
 bot.login(process.env.BotToken);
