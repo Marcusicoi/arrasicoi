@@ -5683,13 +5683,18 @@ bot.on('ready', () => {
 });
 bot.on("messageCreate", message => {
  if(message.content === ">help") {
-     message.channel.send("COMMANDS.\nlitterally cant send a embed so\n>players = Sends the player's name and id\n>broadcast = broadcasts a message into the game\n>ping = tells the latency about the game");
+     message.channel.send("COMMANDS.",
+                          "\nlitterally cant send a embed so",
+                          "\n>players = Sends the player's name and id",
+                          "\n>broadcast = broadcasts a message into the game",
+                          "\n>ping = tells the latency about the game",
+                          "\n>define =  defines a user into a tank");
   }
   if (message.content.startsWith(">players")) {
       let output = '', outWillFail = true;
       entities.forEach(function(element) {
       if (typeof element.sendMessage == "function" && element.name != '') {
-          output += String("`" + element.name + ' - ' + element.id + '`')
+          output += String("`" + element.name + ' - ' + element.id + '\n`')
           outWillFail = false;
       }
    });
@@ -5749,6 +5754,7 @@ bot.on("messageCreate", message => {
        }
     } else {
     message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
-      
-);
+    }
+  }
+});
 bot.login(process.env.BotToken);
