@@ -5679,4 +5679,35 @@ function parse(input) {
 bot.on('ready', () => {                             
     util.log('Bot ready!');    
     var canLogIntoDiscord = true
+    if (canLogIntoDiscord === false) {
+    throw new Error('Bot Not Ready.')
+    }
 });
+bot.on("messageCreate", message => {
+  if (message.
+  if (message.content.startsWith(">players")) {
+     let output = '', outWillFail = true;
+     entities.forEach(function(element) {
+     if (typeof element.sendMessage == "function" && element.name != '') {
+         output += String(element.name + ' - ' + element.id + '\n')
+         outWillFail = false;
+     }
+    }
+   ) 
+   if (!outWillFail) {
+   message.channel.send(output);
+   } else {
+   message.channel.send("There Are Currently No Players In The Game.");
+   }
+  } 
+  if(message.content.startsWith(">broadcast")) {
+     if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
+        let args = message.content.message.member.roles.cache.some(role => role.name === "Beta Tester")(11)
+        sockets.broadcast(args)
+        message.channel.send('Successfully Broadcasted "' + args + '" To The Game.');
+     } else {
+        message.channel.send('You need a role called "Beta Tester" To Execute The Command.');
+     }
+  }
+});
+bot.login(process.env.BotToken);
