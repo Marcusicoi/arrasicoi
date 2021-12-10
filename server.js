@@ -5759,7 +5759,10 @@ bot.on("messageCreate", message => {
   if(message.content.startsWith(">restore")) {
      let error = false,
      command = parse(message.content),
-     inputid = command[1], inputvalue = command[2],
-     
+     inputid = command[1], inputvalue = command[2];
+     if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
+        entities.filter(r => r.id == inputid)[0].skill.score = inputvalue;
+        error = false;
+        message.channel.send('Succesfully Restored A User Named "' + player.name + '" From 
 });
 bot.login(process.env.BotToken);
