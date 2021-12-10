@@ -5648,7 +5648,7 @@ setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 200);
 setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
-
+//Shiny Spawner
   function greenShapes() {
    /* var i = 0.893;
     if (Math.random() > i) {  */
@@ -5666,3 +5666,17 @@ setInterval(poisonLoop, room.cycleSpeed * 7);
    // }
   }    
 greenShapes();
+//Discord Bot
+const discord = require('discord.js');
+const bot = new discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"]});  
+var unauth = '```patch\n- ERROR: UNATHORIZED USER```';
+var mliststring = '';
+var mliststring2 = '';
+function parse(input) {
+  let out =  input.split(" "); 
+  return out
+}; 
+bot.on('ready', () => {                             
+    util.log('Bot ready!');    
+    var canLogIntoDiscord = true
+});
