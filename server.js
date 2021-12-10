@@ -5684,8 +5684,7 @@ bot.on('ready', () => {
     }
 });
 bot.on("messageCreate", message => {
-  if (message.
-  if (message.content.startsWith(">players")) {
+ if (message.content.startsWith(">players")) {
      let output = '', outWillFail = true;
      entities.forEach(function(element) {
      if (typeof element.sendMessage == "function" && element.name != '') {
@@ -5698,8 +5697,7 @@ bot.on("messageCreate", message => {
    message.channel.send(output);
    } else {
    message.channel.send("There Are Currently No Players In The Game.");
-   }
-  } 
+  }}; 
   if(message.content.startsWith(">broadcast")) {
      if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
         let args = message.content.message.member.roles.cache.some(role => role.name === "Beta Tester")(11)
@@ -5709,5 +5707,11 @@ bot.on("messageCreate", message => {
         message.channel.send('You need a role called "Beta Tester" To Execute The Command.');
      }
   }
-});
+  if(message.content === ">help") {
+     let embed = new discord.MessageEmbed()
+     .setTitle('Commands')
+     .setDescription(">players = sends the player's name and id\n >broadcast = broadcasts message into the game")
+     .setFooter(''random 
+     
+  });
 bot.login(process.env.BotToken);
