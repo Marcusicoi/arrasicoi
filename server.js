@@ -5760,9 +5760,18 @@ bot.on("messageCreate", message => {
      let error = false,
      command = parse(message.content),
      inputid = command[1], inputvalue = command[2];
+     entities.forEach(function(element) {
      if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
-        entities.filter(r => r.id == inputid)[0].skill.score = inputvalue;
-        error = false;
-        message.channel.send('Succesfully Restored A User Named "' + player.name + '" From 
+        if(eval(this.skill.score = inputvalue)) {
+           entities.filter(r => r.id == inputid)[0].skill.score = inputvalue;
+           error = false;
+        b  message.channel.send('Succesfully Restored A User Named "' + element.name + '" From ' + element.skill.score + ' To ' + inputvalue);
+     } else {
+     message.channel.send(inputvalue + 'is not a valid number');
+     }
+     if (error) {
+     message.channel.id("Couldn't Find The Users by the id: " + inputid);
+     }
+     
 });
 bot.login(process.env.BotToken);
