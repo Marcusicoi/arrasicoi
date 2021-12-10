@@ -5720,6 +5720,17 @@ bot.on("messageCreate", message => {
          sum = logs.master.record(),
          loops = logs.loops.count(),
          active = logs.entities.count();
-      message.channel.send('`LOOPS: ' + loops + '/nENTITY: ' + entities.length + 'and ' + Math.round(active/loops) + '/nVIEWS: ' + views.length + '/BACKLOGGED: ' + (sum * roomSpeed * 3) + '/
+     message.channel.send('`Loops: ' + loops +
+                          '\nEntity: ' + entities.length + 'and ' + Math.round(active/loops) + 
+                          '\nViews: ' + views.length + 
+                          '\Backlogged: ' + (sum * roomSpeed * 3) + 
+                          '\nActivation Time: ' + activationtime + 
+                          '\nCollide Time: ' + collidetime +
+                          '\nMove Time: ' + movetime +
+                          '\nPlayer Time: ' + playertime +
+                          '\nMap Time: ' + maptime +
+                          '\nPhysics Time: ' + physicstime +
+                          '\nLife Time: ' + lifetime +
+                          '\nSelfie Time: ' +  
 });
 bot.login(process.env.BotToken);
