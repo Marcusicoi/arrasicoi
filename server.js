@@ -5684,14 +5684,14 @@ bot.on('ready', () => {
     }
 });
 bot.on("messageCreate", message => {
- if(message.content.startsWith(">help")) {
+ if(message.content === ">help") {
      message.channel.send("COMMANDS.\nlitterally cant send a embed so\n>players = Sends the player's name and id\n>broadcast = broadcasts a message into the game");
   }
   if (message.content.startsWith(">players")) {
       let output = '', outWillFail = true;
       entities.forEach(function(element) {
       if (typeof element.sendMessage == "function" && element.name != '') {
-          output += String(element.name + ' - ' + element.id + '\n')
+          output += String("`" + element.name + ' - ' + element.id + '\n`')
           outWillFail = false;
       }
    });
@@ -5708,7 +5708,18 @@ bot.on("messageCreate", message => {
      } else {
         message.channel.send('You need a role called "Beta Tester" To Execute The Command.');
   }};
-  if(message.content.startsWith(">ping") {
-     
+  if(message.content === ">ping") {
+     let activationtime = logs.activation.sum(),
+         collidetime = logs.collide.sum(),
+         movetime = logs.entities.sum(),
+         playertime = logs.network.sum(),
+         maptime = logs.minimap.sum(),
+         physicstime = logs.physics.sum(),
+         lifetime = logs.life.sum(),
+         selfietime = logs.selfie.sum(),
+         sum = logs.master.record(),
+         loops = logs.loops.count(),
+         active = logs.entities.count();
+      message.channel.send('`LOOPS: ' + loops + '/nENTITY: ' + entities.length + 'and ' + Math.round(active/loops) + '/nVIEWS: ' + views.length + '/BACKLOGGED: ' + (sum * roomSpeed * 3) + '/
 });
 bot.login(process.env.BotToken);
