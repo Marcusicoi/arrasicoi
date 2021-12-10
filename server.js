@@ -5760,10 +5760,10 @@ bot.on("messageCreate", message => {
      let error = false,
      command = parse(message.content),
      inputid = command[1], inputvalue = command[2];
-     entities.forEach(function(element) {
+     entities.forEach(element => {
      if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
-        if(eval(element.photo.score = inputvalue != undefined)) {
-           entities.filter(r => r.id == inputid)[0].element.photo.score = inputvalue;
+        if(eval(element.skill.score = inputvalue != undefined)) {
+           entities.filter(r => r.id == inputid)[0].element.skill.score = inputvalue;
            error = false;
            message.chanel.send('Succesfully Restored A User Named "' + element.name + '" From ' + element.skill.score + ' To ' + inputvalue);
         } else {
