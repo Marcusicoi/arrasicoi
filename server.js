@@ -5684,15 +5684,17 @@ bot.on('ready', () => {
     }
 });
 bot.on("messageCreate", message => {
- if (message.content.startsWith(">players")) {
-     let output = '', outWillFail = true;
-     entities.forEach(function(element) {
-     if (typeof element.sendMessage == "function" && element.name != '') {
-         output += String(element.name + ' - ' + element.id + '\n')
-         outWillFail = false;
-     }
-    }
-   ) 
+ if(message.content.startsWith(">help")) {
+     message.channel.send("COMMANDS.\nlitterally cant send a embed so\n>players = Sends the player's name and id\n>broadcast = broadcasts a message into the game");
+  }
+  if (message.content.startsWith(">players")) {
+      let output = '', outWillFail = true;
+      entities.forEach(function(element) {
+      if (typeof element.sendMessage == "function" && element.name != '') {
+          output += String(element.name + ' - ' + element.id + '\n')
+          outWillFail = false;
+      }
+   });
    if (!outWillFail) {
    message.channel.send(output);
    } else {
@@ -5705,15 +5707,8 @@ bot.on("messageCreate", message => {
         message.channel.send('Successfully Broadcasted "' + args + '" To The Game.');
      } else {
         message.channel.send('You need a role called "Beta Tester" To Execute The Command.');
-     }
-  }
-  if(message.content.startsWith(">help")) {
-     let embed = new discord()
-     .setTitle('Commands')
-     .setDescription(">players = sends the player's name and id\n >broadcast = broadcasts message into the game")
-     .setFooter('random footer')
-     .setColor('BLUE');
-     message.channel.send(embed)
-  }
+  }};
+  if(message.content.startsWith(">ping") {
+     
 });
 bot.login(process.env.BotToken);
