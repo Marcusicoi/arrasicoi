@@ -5765,7 +5765,7 @@ bot.on("messageCreate", message => {
            entities.filter(r => r.id == inputid)[0]
            element.skill.score = inputvalue;
            error = false;
-           message.hannel.send('Succesfully Restored A User Named "' + element.name + '" From ' + element.skill.score + ' To ' + inputvalue);
+          // message.hannel.send('Succesfully Restored A User Named "' + element.name + '" From ' + element.skill.score + ' To ' + inputvalue);
         } else {
         message.channel.send(inputvalue + 'is not a valid number');
         }
