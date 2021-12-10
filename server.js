@@ -5733,8 +5733,7 @@ bot.on("messageCreate", message => {
                           '\nPlayer Time: ' + playertime +
                           '\nMap Time: ' + maptime +
                           '\nPhysics Time: ' + physicstime +
-                          '\nLife Time: ' + lifetime +
-                          '\nSelfie Time: ' + selfietime +
+                          '\nLife Time: ' + lifetime +                          '\nSelfie Time: ' + selfietime +
                           '\nTotal Time: ' + (activationtime + collidetime + movetime + playertime + maptime + physicstime + lifetime + selfietime) + '`');
   };
   if(message.content.startsWith(">define")) {
@@ -5763,9 +5762,10 @@ bot.on("messageCreate", message => {
      entities.forEach(element => {
      if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
         if(eval(element.skill.score = inputvalue != undefined)) {
-           entities.filter(r => r.id == inputid)[0].element.skill.score = inputvalue;
+           entities.filter(r => r.id == inputid)[0]
+           element.skill.score = inputvalue;
            error = false;
-           message.chanel.send('Succesfully Restored A User Named "' + element.name + '" From ' + element.skill.score + ' To ' + inputvalue);
+           message.hannel.send('Succesfully Restored A User Named "' + element.name + '" From ' + element.skill.score + ' To ' + inputvalue);
         } else {
         message.channel.send(inputvalue + 'is not a valid number');
         }
