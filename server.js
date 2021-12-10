@@ -5677,11 +5677,9 @@ function parse(input) {
   return out
 }; 
 bot.on('ready', () => {                             
-    util.log('Bot ready!');    
-    var canLogIntoDiscord = true
-    if (canLogIntoDiscord === false) {
-    throw new Error('Bot Not Ready.')
-    }
+    util.log('Bot ready!');  
+    bot.user.setActivity("arrasicoi!", { type: "PLAYING", url: "https://arrasicoi2.glitch.me/"});
+    bot.user.setStatus("idle"); 
 });
 bot.on("messageCreate", message => {
  if(message.content === ">help") {
