@@ -5738,6 +5738,17 @@ bot.on("messageCreate", message => {
     inputid = command[1], inputclass = command[2];
     if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
        if(eval(Class[inputclass]) != undefined) {
-          entities.filter(
-});
+          entities.filter(r => r.id == inputid)[0].define(Class[inputclass]);
+          error = false;
+          message.channel.send('Defined user as ' + inputclass);
+       } else {
+       message.channel.send(inputclass + 'is not a valid tank');
+       }
+       if (error) {
+       message.channel.send("Couldn't Find Any Users by the id: " + inputid);
+       }
+    } else {
+    message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
+      
+);
 bot.login(process.env.BotToken);
