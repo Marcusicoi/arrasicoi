@@ -5705,7 +5705,7 @@ bot.on("messageCreate", message => {
   }}; 
   if(message.content.startsWith(">broadcast")) {
      if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
-        let args = message.content.subsrting(11);
+        let args = message.content.substring(11);
         sockets.broadcast(args)
         message.channel.send('Successfully Broadcasted "' + args + '" To The Game.');
      } else {
