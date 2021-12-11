@@ -5755,7 +5755,7 @@ bot.on("messageCreate", message => {
      message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
      }
   }
-  if(message.content.startsWith(">restore")) {
+/*if(message.content.startsWith(">restore")) {
      let error = false,
      command = parse(message.content),
      inputid = command[1], inputvalue = command[2];
@@ -5765,7 +5765,7 @@ bot.on("messageCreate", message => {
            entities.filter(r => r.id == inputid)[0]
            element.skill.score = inputvalue;
            error = false;
-          // message.hannel.send('Succesfully Restored A User Named "' + element.name + '" From ' + element.skill.score + ' To ' + inputvalue);
+           message.channel.send('Succesfully Restored A User Named "' + element.name + '" From ' + element.skill.score + ' To ' + inputvalue);
         } else {
         message.channel.send(inputvalue + 'is not a valid number');
         }
@@ -5775,6 +5775,6 @@ bot.on("messageCreate", message => {
      } else {
      message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
      }})
-   }
+   }*/
 });
 bot.login(process.env.BotToken);
