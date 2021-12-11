@@ -5683,11 +5683,11 @@ bot.on('ready', () => {
 });
 bot.on("messageCreate", message => {
  if(message.content === ">help") {
-     message.channel.send("COMMANDS.",
-                          "\nlitterally cant send a embed so",
-                          "\n>players = Sends the player's name and id",
-                          "\n>broadcast = broadcasts a message into the game",
-                          "\n>ping = tells the latency about the game",
+     message.channel.send("COMMANDS." +
+                          "\nlitterally cant send a embed so" +
+                          "\n>players = Sends the player's name and id" +
+                          "\n>broadcast = broadcasts a message into the game" +
+                          "\n>ping = tells the latency about the game" +
                           "\n>define =  defines a user into a tank");
   }
   if (message.content.startsWith(">players")) {
@@ -5705,7 +5705,7 @@ bot.on("messageCreate", message => {
   }}; 
   if(message.content.startsWith(">broadcast")) {
      if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
-        let args = message.content.message.member.roles.cache.some(role => role.name === "Beta Tester")(11)
+        let args = message.content.subsrting(11);
         sockets.broadcast(args)
         message.channel.send('Successfully Broadcasted "' + args + '" To The Game.');
      } else {
