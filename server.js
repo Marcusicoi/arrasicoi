@@ -5604,7 +5604,7 @@ let server = http.createServer((req, res) => {
 //Arena Closed.
 let close = false
 function spawnClosers() {
-  let spot = room.randomType('roid');
+  let spot = room.randomType("roid");
   let o = new Entity(spot);
   const type = ran.choose([Class.ac, Class.tc, Class.mc, Class.fc, Class.dc, Class.pc]);
   o.define(type);
@@ -5612,7 +5612,7 @@ function spawnClosers() {
 }; 
 function arenaClose() {
   close = true;
-  let player = sockets.player
+  let players = sockets.player
   util.log("[INFO] Arena Closed.")
   sockets.broadcast("Arena Closed: No players can join.")
   spawnClosers();
@@ -5623,7 +5623,7 @@ function arenaClose() {
   spawnClosers();
   spawnClosers();
   spawnClosers(); 
-  if(player.length === 0) {
+  if(players.length === 0) {
   process.exit(0)
   util.log("[INFO] Arena Successfully Closed.")
   }
