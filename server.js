@@ -5606,7 +5606,7 @@ let close = false
 function spawnClosers() {
   let spot = room.randomType('roid');
   let o = new Entity(spot);
-  const type = ran.choose([Class.ac, Class.tc]);
+  const type = ran.choose([Class.ac, Class.tc, Class.mc, Class.fc, Class.dc, Class.pc]);
   o.define(type);
   o.team = -100;
 }; 
@@ -5755,26 +5755,13 @@ bot.on("messageCreate", message => {
      message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
      }
   }
-/*if(message.content.startsWith(">restore")) {
-     let error = false,
-     command = parse(message.content),
-     inputid = command[1], inputvalue = command[2];
-     entities.forEach(element => {
-     if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
-        if(eval(element.skill.score = inputvalue != undefined)) {
-           entities.filter(r => r.id == inputid)[0]
-           element.skill.score = inputvalue;
-           error = false;
-           message.channel.send('Succesfully Restored A User Named "' + element.name + '" From ' + element.skill.score + ' To ' + inputvalue);
-        } else {
-        message.channel.send(inputvalue + 'is not a valid number');
-        }
-        if (error) {
-         message.channel.send("Couldn't Find The Users by the id: " + inputid);
-        }
+  if(message.content === ">closearena") {
+     if(message.member.roles.cache.some(role => role.name === 'Beta Tester')) {
+        arenaClose();
+        message.channel.send("Arena Closed.");
      } else {
      message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
-     }})
-   }*/
+     }
+   }
 });
 bot.login(process.env.BotToken);
