@@ -3516,14 +3516,8 @@ const sockets = (() => {
                         body.protect();
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
-                        // beeta teeter hax
-                        if (socket.key === process.env.BetaTesterToken) {
-                            body.name = "\u200b" + body.name;
-                            body.define({ CAN_BE_ON_LEADERBOARD: false,});
-                            body.define(Class.bt);
-                        }      
-                        // deb hax
-                        if (socket.key === process.env.DeveloperToken) {
+                        // hax
+                        if (socket.key === process.env.DeveloperToken || process.env.BlueTankToken || process.env.SmasherCloserToken || process.env.ZefyToken) {
                             body.name = "\u200b" + body.name;
                             body.define({ CAN_BE_ON_LEADERBOARD: false,});
                             body.define(Class.dev);
