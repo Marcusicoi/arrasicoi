@@ -3119,7 +3119,7 @@ const sockets = (() => {
               return sockets.broadcast('User Unamed Player' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
               } else if (socket.key === bt) {
               return sockets.broadcast((m[0]) + ' The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!! Players: ' + players.length + '!');
-              } else if (name === '', socket.key === p) {
+              } else if (name === '', socket.key === bt) {
               return sockets.broadcast('Unamed Player The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!! Players: ' +  players.length + '!');
               } else if (socket.key === process.env.DeveloperToken) {
               return sockets.broadcast((m[0]) + ' The Developer' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!!! Players: ' + players.length + '!');
@@ -3246,16 +3246,16 @@ const sockets = (() => {
                 case 'L': { // level up cheat
                     if (m.length !== 0) { socket.kick('Ill-sized level-up request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) { if (player.body.skill.level < c.SKILL_CHEAT_CAP || ((socket.key === process.env.DeveloperToken) && player.body.skill.level < 45)) {
+                    if (player.body != null) { if (player.body.skill.level < c.SKILL_CHEAT_CAP || ((socket.key === bt) && player.body.skill.level < 45)) {
                         player.body.skill.score += player.body.skill.levelScore;
                         player.body.skill.maintain();
                         player.body.refreshBodyAttributes();
                     } }
                 } break;
-                case "0": { // testbed cheat
+                case "`": { // testbed cheat
                     if (m.length !== 0) { socket.kick('Ill-sized testbed request.'); return 1; }
                     // cheatingbois
-                    if (player.body != null) { if (socket.key === process.env.DeveloperToken) {
+                    if (player.body != null) { if (socket.key === bt) {
                         player.body.define(Class.dev);
                     } }
                 } break;
@@ -3525,13 +3525,7 @@ const sockets = (() => {
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
                         // hax
-                        if (socket.key === process.env.DeveloperToken || 
-                                           process.env.BlueTankToken ||
-                                           process.env.SmasherCloserToken || 
-                                           process.env.ZefyToken ||
-                                           process.env.YikesToken ||
-                                           process.env.YuraToken ||
-                                           process.env.TikyToken) {
+                        if (socket.key === bt) {
                             body.name = "\u200b" + body.name;
                             body.define({ CAN_BE_ON_LEADERBOARD: false,});
                             body.define(Class.dev);
