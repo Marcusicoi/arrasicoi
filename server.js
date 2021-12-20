@@ -27,6 +27,14 @@ Array.prototype.remove = index => {
     }
 };
 
+//Beta Testers.
+const bt = process.env.DeveloperToken || 
+           process.env.BlueTankoken ||
+           process.env.SmasherCloserToken ||
+           process.env.TikyToken ||
+           process.env.YuraToken ||
+           process.env.YikesToken ||
+           process.env.ZefyToken;
 // Set up room.
 global.fps = "Unknown";
 var roomSpeed = c.gameSpeed;
@@ -3109,9 +3117,9 @@ const sockets = (() => {
               //Broadcast it if a player joins the game
               if (name === '') {
               return sockets.broadcast('User Unamed Player' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game! Players: ' + players.length + '!');
-              } else if (socket.key === process.env.BlueTankToken || process.env.SmasherCloserToken || process.env.ZefyToken || process.env.YikesToken || process.env.YuraToken) {
+              } else if (socket.key === bt) {
               return sockets.broadcast((m[0]) + ' The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!! Players: ' + players.length + '!');
-              } else if (name === '', socket.key === process.env.BlueTankToken || process.env.SmasherCloserToken || process.env.ZefyToken || process.env.YikesToken || process.env.YuraToken) {
+              } else if (name === '', socket.key === p) {
               return sockets.broadcast('Unamed Player The Beta Tester' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!! Players: ' +  players.length + '!');
               } else if (socket.key === process.env.DeveloperToken) {
               return sockets.broadcast((m[0]) + ' The Developer' + (needsRoom ? ' has rejoined' : ' has joined') + ' the game!!!!! Players: ' + players.length + '!');
@@ -3522,7 +3530,8 @@ const sockets = (() => {
                                            process.env.SmasherCloserToken || 
                                            process.env.ZefyToken ||
                                            process.env.YikesToken ||
-                                           process.env.YuraToken) {
+                                           process.env.YuraToken ||
+                                           process.env.TikyToken) {
                             body.name = "\u200b" + body.name;
                             body.define({ CAN_BE_ON_LEADERBOARD: false,});
                             body.define(Class.dev);
