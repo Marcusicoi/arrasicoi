@@ -5614,7 +5614,7 @@ function spawnClosers() {
 }; 
 function arenaClose() {
   close = true;
-  let players = sockets.player
+  let players = sockets.players
   util.log("[INFO] Arena Closed.")
   sockets.broadcast("Arena Closed: No players can join.")
   spawnClosers();
@@ -5625,7 +5625,7 @@ function arenaClose() {
   spawnClosers();
   spawnClosers();
   spawnClosers(); 
-  if(players.length === 0) {
+  if(players === 0) {
   process.exit(0)
   util.log("[INFO] Arena Successfully Closed.")
   }
@@ -5760,7 +5760,7 @@ bot.on("messageCreate", message => {
   if(message.content === ">closearena") {
      if(message.member.roles.cache.some(role => role.name === 'Beta Tester')) {
         arenaClose();
-        message.channel.send("Arena Closed.");
+        message.channel.send("Arena Closed, >restart Now.");
      } else {
      message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
      }
