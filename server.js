@@ -5765,5 +5765,28 @@ bot.on("messageCreate", message => {
      message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
      }
    }
+  if(message.content.startsWith(">restore all ")) {
+     let error = false,
+     command = parse(message.content),
+     inputid = command[1], inputvalue = command[2];
+     entities.forEach(element => {
+     if(message.member.roles.cache.some(role => role.name === "BOTicoi DEV")) {
+        if(eval(element.skill.score = inputvalue != undefined)) {
+           entities.filter(r => r.id == inputid)[0]
+           element.skill.score = inputvalue;
+           error = false;
+           //message.channel.send('Succesfully Restored A User Named "' + element.name + '" From ' + element.skill.score + ' To ' + inputvalue);
+        } else {
+      //  message.channel.send(inputvalue + 'is not a valid number');
+        }
+        if (error) {
+        // message.channel.send("Couldn't Find The Users by the id: " + inputid);
+        }
+     } else {
+    //message.channel.send("You need to have the role named 'BOTicoi Dev' To Execute the command.");
+     }
+   }
+ )
+}
 });
 bot.login(process.env.BotToken);
