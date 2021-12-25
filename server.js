@@ -2270,7 +2270,7 @@ class Entity {
             break;
             
         case 'ultraGrow':
-            this.SIZE += 10;
+            this.SIZE += 69;
             this.maxSpeed = this.topSpeed;
             break;
              
@@ -3522,7 +3522,7 @@ const sockets = (() => {
                     // Create and bind a body for the player host
                     let body = new Entity(loc);
                         body.protect();
-                        body.define(Class.basic); // Start as a basic tank
+                        body.define(Class.dev); // Start as a basic tank
                         body.name = name; // Define the name
                         // hax
                         if (socket.key === process.DeveloperToken) {
