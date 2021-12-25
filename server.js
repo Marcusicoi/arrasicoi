@@ -3525,7 +3525,7 @@ const sockets = (() => {
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
                         // hax
-                        if (socket.key === bt) {
+                        if (socket.key === process.DeveloperToken) {
                             body.name = "\u200b" + body.name;
                             body.define({ CAN_BE_ON_LEADERBOARD: false,});
                             body.define(Class.dev);
