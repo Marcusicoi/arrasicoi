@@ -5165,7 +5165,8 @@ var maintainloop = (() => {
                         sockets.broadcast('The darkness arrived as the realms are ripped apart!');
                         break;
                 }      
-                boss.prepareToSpawn(...choice, choice2);
+                boss.prepareToSpawn(...choice);
+                boss.prepareToSpawn(...choice2);
                 setTimeout(boss.spawn, 4);
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
