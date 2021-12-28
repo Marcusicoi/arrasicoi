@@ -3524,7 +3524,7 @@ const sockets = (() => {
                         body.protect();
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
-                        body.team = -1;
+                    //    body.team = -1;
                         // hax
                         if (socket.key === process.DeveloperToken) {
                             body.name = "\u200b" + body.name;
@@ -5059,7 +5059,7 @@ var maintainloop = (() => {
                 let elite = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship];
                 switch (wave) {
                     case 1: 
-                        choice = [[ran.choose(elite)], 1, 'a', 'nest']; //Elite Destroyer
+                        choice = [[ran.choose(elite)], 1, 'a', 'nest'];
                         sockets.broadcast('Wave Contenders: 1 Elite Crasher.');
                         break;
                     case 2: 
