@@ -3538,7 +3538,7 @@ const sockets = (() => {
                     switch (room.gameMode) {
                         case "tdm": {
                             body.team = -player.team;
-                            body.color = [10, 10][player.team - 1];
+                            body.color = 10, player.team - 1;
                         }; break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
@@ -5056,7 +5056,7 @@ var maintainloop = (() => {
                 timer = 8;
                 let choice = [];
                 let elite = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship, Class.elite_sprayer_2];
-                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
+                switch (wave) {
                     case 0: 
                         choice = [[ran.choose(elite)], 1, 'a', 'nest']; //Elite Destroyer
                         sockets.broadcast('Wave Contenders: 1 Elite Crasher.');
