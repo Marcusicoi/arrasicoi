@@ -3539,7 +3539,7 @@ const sockets = (() => {
                     switch (room.gameMode) {
                         case "tdm": {
                             body.team = -player.team;
-                            body.color = [10][player.team - 1]
+                            body.color = [10, 10][player.team - 1]
                         }; break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
@@ -5052,7 +5052,7 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 200 && ran.dice(300 - timer)) {
+            if (timer > 100 && ran.dice(200 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
@@ -5063,11 +5063,11 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 1 Elite Crasher.');
                         break;
                     case 2: 
-                        choice = [[ran.choose(elite), ran.choose(elite)], 1, 'a', 'nest']; 
+                        choice = [[ran.choose(elite)], 2, 'a', 'nest']; 
                         sockets.broadcast('Wave Contenders: 2 Elite Crashers.');
                         break;
                     case 3: 
-                        choice = [[Class.elite_gunner], 1, 'a', 'nest']; 
+                        choice = [[ran.choose(elite)], 3, 'a', 'nest']; 
                         sockets.broadcast('Wave Contenders: 1 Elite Crasher');
                         break;
                     case 3: 
@@ -5174,7 +5174,7 @@ var maintainloop = (() => {
         const config = {
             max: 10, // The max amount of crashers/sentries
             chance: 0.625, // Math.random() must be greater than this in order to spawn anything
-            sentryChance: 0.8, // Math.random() must be greater than this for a sentry spawn.
+            sentryChance: 0.3, // Math.random() must be greater than this for a sentry spawn.
             crashers: [Class.crasher, Class.autoCrash], // Crasher Types
             sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
         };
