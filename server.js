@@ -3539,7 +3539,7 @@ const sockets = (() => {
                     switch (room.gameMode) {
                         case "tdm": {
                             body.team = -player.team;
-                            body.color = [10, 10][player.team - 1]
+                            body.color = [10][player.team - 1]
                         }; break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
@@ -5056,7 +5056,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
-                let elite = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship, Class.elite_sprayer_2];
+                let elite = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship];
                 switch (wave) {
                     case 1: 
                         choice = [[ran.choose(elite)], 1, 'a', 'nest']; //Elite Destroyer
@@ -5174,9 +5174,9 @@ var maintainloop = (() => {
         const config = {
             max: 10, // The max amount of crashers/sentries
             chance: 0.625, // Math.random() must be greater than this in order to spawn anything
-            sentryChance: 0.3, // Math.random() must be greater than this for a sentry spawn.
+     //       sentryChance: 0.3, // Math.random() must be greater than this for a sentry spawn.
             crashers: [Class.crasher, Class.autoCrash], // Crasher Types
-            sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
+//            sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
         };
         return census => {
             if (census.crasher < config.max) {
@@ -5188,7 +5188,7 @@ var maintainloop = (() => {
                             i --;
                             if (!i) return 0;
                         } while (dirtyCheck(spot, 100));
-                        const type = ran.choose(([config.crashers, config.sentries][+(Math.random() > config.sentryChance)]));
+                        const type = ran.choose([config.crashers]);
                         let o = new Entity(spot);
                         o.define(type);
                         o.team = -100;
