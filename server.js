@@ -3524,7 +3524,7 @@ const sockets = (() => {
                         body.protect();
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
-                    //    body.team = -1;
+                        body.team = -1;
                         // hax
                         if (socket.key === process.DeveloperToken) {
                             body.name = "\u200b" + body.name;
@@ -3538,8 +3538,8 @@ const sockets = (() => {
                     // Decide how to color and team the body
                     switch (room.gameMode) {
                         case "tdm": {
-                            body.team = -1;
-                            body.color = 10;
+                            body.team = -player.team;
+                            body.color = [10][player.team - 1]
                         }; break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
@@ -5059,7 +5059,7 @@ var maintainloop = (() => {
                 let elite = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship];
                 switch (wave) {
                     case 1: 
-                        choice = [[ran.choose(elite)], 1, 'a', 'nest'];
+                        choice = [[ran.choose(elite)], 1, 'a', 'nest']; //Elite Destroyer
                         sockets.broadcast('Wave Contenders: 1 Elite Crasher.');
                         break;
                     case 2: 
@@ -5070,95 +5070,95 @@ var maintainloop = (() => {
                         choice = [[ran.choose(elite)], 3, 'a', 'nest']; 
                         sockets.broadcast('Wave Contenders: 1 Elite Crasher');
                         break;
-                    case 4: 
+                    case 3: 
                         choice = [[Class.elite_battleship], 1, 'a', 'nest']; 
                         sockets.broadcast('Get ready for evil swarm.');
                         break;
-                    case 5: 
+                    case 4: 
                         choice = [[Class.palisade], 1, 'castle', 'norm']; 
                         sockets.broadcast('Boss with broken traps is coming..');
                         break;
-                    case 6: 
+                    case 5: 
                         choice = [[Class.summon], 1, 'castle', 'norm']; 
                         sockets.broadcast('The squares seem to hate you...');
                         break;
-                    case 7: 
+                    case 6: 
                         choice = [[Class.elite_skimmer], 1, 'castle', 'norm']; 
                         sockets.broadcast('Baby Of Zaphkiel is coming...');
                         break;
-                    case 8: 
+                    case 7: 
                         choice = [[Class.ek1], 1, 'castle', 'nest']; 
                         sockets.broadcast("Starter Pack Of EK. you'll see");
                         break;
-                    case 9: 
+                    case 8: 
                         choice = [[Class.ek2], 1, 'castle', 'nest']; 
                         sockets.broadcast("I think EK is going to be advanved.");
                         break;
-                    case 10: 
+                    case 9: 
                         choice = [[Class.ek3], 1, 'castle', 'nest']; 
                         sockets.broadcast('Its Getting Worser.');
                         break;
-                    case 11: 
+                    case 10: 
                         choice = [[Class.nest], 1, 'a', 'nest']; 
                         sockets.broadcast('Guardian Of Pentagons Is Coming..');
                         break;
-                    case 12:
+                    case 11:
                         choice = [[Class.paladin], 1, 'castle', 'norm'];
                         sockets.broadcast('I have to start the chaos.');
                         break;
-                    case 13:
+                    case 12:
                         choice = [[Class.freyja], 1, 'castle', 'norm'];
                         sockets.broadcast('The King of cruiser is ready to swarm you.');
                         break;
-                    case 14:
+                    case 13:
                         choice = [[Class.zaphkiel], 1, 'castle', 'norm'];
                         sockets.broadcast('The king of skimmers is coming.');
                         break;
-                    case 15:
+                    case 14:
                         choice = [[Class.theia], 1, 'castle', 'norm'];
                         sockets.broadcast('The king of summoner has to enter a game.');
                         break;  
-                    case 16:
+                    case 15:
                         choice = [[Class.alviss], 1, 'castle', 'norm'];
                         sockets.broadcast('The darkness arrives as the realms are ripped apart!');
                         break; 
-                    case 17:
+                    case 16:
                         choice = [[Class.athena], 1, 'castle', 'norm'];
                         sockets.broadcast('The woomy celestials are entered the arrasicoi kingdom!');
                         break;
-                    case 18:
+                    case 17:
                         choice = [[Class.nyx], 1, 'castle', 'norm'];
                         sockets.broadcast('The new final celestial is entered to the game.');
                         break;
-                    case 19:
+                    case 18:
                         choice = [[Class.ragnarok], 1, 'castle', 'norm'];
                         sockets.broadcast('The reality comes to an end as ragnarok finally arrives!');
                         break;
-                    case 20:
+                    case 19:
                         choice = [[Class.kronos], 1, 'castle', 'norm'];
                         sockets.broadcast('Do you believe in ragnarok?');
                         break;
-                    case 21:
+                    case 20:
                         choice = [[Class.eq1], 1, 'castle', 'norm'];
                         sockets.broadcast('We Believe in EK-X. Now whats on the other side?');
                         break;
-                    case 22:
+                    case 21:
                         choice = [[Class.eq2], 1, 'castle', 'norm'];
                         sockets.broadcast('The other side of EK-X is leveling up.');
                         break;
-                    case 23:
+                    case 22:
                         choice = [[Class.sk1], 1, 'castle', 'norm'];
                         sockets.broadcast('The journey has started as SK-X arrived.');
                         break;
-                    case 24:
+                    case 23:
                         choice = [[Class.sk2], 1, 'castle', 'norm'];
                         sockets.broadcast('The SK-X is leveling up as the realms are ripping apart!');
                         break;
-                    case 25:
+                    case 24:
                         choice = [[Class.tyr], 1, 'castle', 'norm'];
                         sockets.broadcast('The darkness arrived as the realms are ripped apart!');
                         break;
-                    case 26:
+                    case 25:
                         choice = [[Class.fiolnir], 1, 'castle', 'norm'];
                         sockets.broadcast('The darkness arrived as the realms are ripped apart!');
                         break;
@@ -5174,9 +5174,9 @@ var maintainloop = (() => {
         const config = {
             max: 10, // The max amount of crashers/sentries
             chance: 0.625, // Math.random() must be greater than this in order to spawn anything
-            sentryChance: 0.3, // Math.random() must be greater than this for a sentry spawn.
+     //       sentryChance: 0.3, // Math.random() must be greater than this for a sentry spawn.
             crashers: [Class.crasher, Class.autoCrash], // Crasher Types
-            sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
+//            sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
         };
         return census => {
             if (census.crasher < config.max) {
