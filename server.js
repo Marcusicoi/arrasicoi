@@ -5004,10 +5004,11 @@ var maintainloop = (() => {
     // Spawning functions
     let spawnBosses = (() => {
         let timer = 8;
+        let wave = 1;
         let boss = (() => {
             let i = 1,
                 names = [],
-                bois = [Class.elite],
+                bois = [Class.egg],
                 n = 0,
                 begin = 'yo some shit is about to move to a lower position',
                 arrival = 'Something happened lol u should probably let Neph know this broke',
@@ -5029,10 +5030,14 @@ var maintainloop = (() => {
                     loc = typeOfLocation;
                     names = ran.chooseBossName(nameClass, number);
                     i = 0;
-                    if (n === 1) {
+                    if (n === 0) {
                         begin = 'Something is coming ...';
                         arrival = names[0] + ' has arrived.'; 
-                    } 
+                    } else {
+                      begin = 'The Wave Started!';
+                      arrival = '';
+                      arrival += "Wave " + wave + " Has Started!";
+                    } wave += 1;
                 },
                 spawn: () => {
                     sockets.broadcast(begin);
@@ -5050,14 +5055,15 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
+                let elite = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship, Class.elite_sprayer_2];
                 switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
                     case 0: 
-                        choice = [[Class.elite_destroyer], 1, 'a', 'nest'];
-                        sockets.broadcast('Big Bullets On your face is coming.');
+                        choice = [[ran.choose(elite)], 1, 'a', 'nest']; //Elite Destroyer
+                       // sockets.broadcast('Big Bullets On your face is coming.');
                         break;
                     case 1: 
-                        choice = [[Class.elite_sprayer], 1, 'a', 'nest']; 
-                        sockets.broadcast('Auto3 of elite is coming. Find out.');
+                        choice = [[ran.choose], 1, 'a', 'nest']; 
+                       // sockets.broadcast('Auto3 of elite is coming. Find out.');
                         break;
                     case 2: 
                         choice = [[Class.elite_gunner], 1, 'a', 'nest']; 
