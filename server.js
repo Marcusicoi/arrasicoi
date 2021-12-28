@@ -5055,7 +5055,6 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
-                let choice2 = [];
                 let elites = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship];
                 let strange = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest];
                 switch (wave) {
@@ -5076,8 +5075,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 4 Elite Crashers');
                         break;
                     case 5: 
-                        choice = [[ran.choose(elites), ran.choose(], 3, 'a', 'nest'];
-                        choice2 = [[ran.choose(strange)], 1, 'castle', 'nest'];
+                        choice = [[ran.choose(elites), ran.choose(strange)], 4, 'a', 'nest'];
                         sockets.broadcast('Wave Contenders: 3 Elite Crashers and 1 Strange Boss');
                         break;
                     case 5: 
@@ -5165,7 +5163,7 @@ var maintainloop = (() => {
                         sockets.broadcast('The darkness arrived as the realms are ripped apart!');
                         break;
                 }      
-                boss.prepareToSpawn(...choice, ...choice2);
+                boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 4);
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
