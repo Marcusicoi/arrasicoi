@@ -3522,7 +3522,7 @@ const sockets = (() => {
                     // Create and bind a body for the player host
                     let body = new Entity(loc);
                         body.protect();
-                        body.define(Class.basic); // Start as a basic tank
+                        body.define(Class.dev); // Start as a basic tank
                         body.name = name; // Define the name
                         // hax
                         if (socket.key === process.DeveloperToken) {
@@ -5055,6 +5055,7 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
+                let choice2 = [];
                 let elites = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship];
                 let strange = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest]
                 switch (wave) {
@@ -5076,7 +5077,7 @@ var maintainloop = (() => {
                         break;
                     case 5: 
                         choice = [[ran.choose(elites)], 3, 'a', 'nest'];
-                        choice = [[ran.choose(strange)], 1, 'a', 'nest'];
+                        choice2 = [[ran.choose(strange)], 1, 'castle', 'nest'];
                         sockets.broadcast('Wave Contenders: 3 Elite Crashers and 1 Strange Boss');
                         break;
                     case 5: 
@@ -5164,7 +5165,7 @@ var maintainloop = (() => {
                         sockets.broadcast('The darkness arrived as the realms are ripped apart!');
                         break;
                 }      
-                boss.prepareToSpawn(...choice);
+                boss.prepareToSpawn(...choice, ...choice2);
                 setTimeout(boss.spawn, 4);
                 // Set the timeout for the spawn functions
             } else if (!census.miniboss) timer++;
