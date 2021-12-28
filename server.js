@@ -3524,7 +3524,6 @@ const sockets = (() => {
                         body.protect();
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
-                        body.team = -1;
                         // hax
                         if (socket.key === process.DeveloperToken) {
                             body.name = "\u200b" + body.name;
@@ -3539,7 +3538,7 @@ const sockets = (() => {
                     switch (room.gameMode) {
                         case "tdm": {
                             body.team = -player.team;
-                            body.color = [10, 10][player.team - 1]
+                            body.color = [10, 11, 12, 15][player.team - 1];
                         }; break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
@@ -5005,11 +5004,10 @@ var maintainloop = (() => {
     // Spawning functions
     let spawnBosses = (() => {
         let timer = 8;
-        let wave = 1;
         let boss = (() => {
             let i = 1,
                 names = [],
-                bois = [Class.egg],
+                bois = [Class.elite],
                 n = 0,
                 begin = 'yo some shit is about to move to a lower position',
                 arrival = 'Something happened lol u should probably let Neph know this broke',
@@ -5031,14 +5029,10 @@ var maintainloop = (() => {
                     loc = typeOfLocation;
                     names = ran.chooseBossName(nameClass, number);
                     i = 0;
-                    if (n === 0) {
+                    if (n === 1) {
                         begin = 'Something is coming ...';
                         arrival = names[0] + ' has arrived.'; 
-                    } else {
-                      begin = 'The Wave Started!';
-                      arrival = '';
-                      arrival += "Wave " + wave + " Has Started!";
-                    } wave += 1;
+                    } 
                 },
                 spawn: () => {
                     sockets.broadcast(begin);
@@ -5052,23 +5046,22 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 100 && ran.dice(200 - timer)) {
+            if (timer > 1600 && ran.dice(1500 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
-                let elite = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship];
-                switch (wave) {
+                switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
+                    case 0: 
+                        choice = [[Class.elite_destroyer], 1, 'a', 'nest'];
+                        sockets.broadcast('Big Bullets On your face is coming.');
+                        break;
                     case 1: 
-                        choice = [[ran.choose(elite)], 1, 'a', 'nest']; //Elite Destroyer
-                        sockets.broadcast('Wave Contenders: 1 Elite Crasher.');
+                        choice = [[Class.elite_sprayer], 1, 'a', 'nest']; 
+                        sockets.broadcast('Auto3 of elite is coming. Find out.');
                         break;
                     case 2: 
-                        choice = [[ran.choose(elite)], 2, 'a', 'nest']; 
-                        sockets.broadcast('Wave Contenders: 2 Elite Crashers.');
-                        break;
-                    case 3: 
-                        choice = [[ran.choose(elite)], 3, 'a', 'nest']; 
-                        sockets.broadcast('Wave Contenders: 1 Elite Crasher');
+                        choice = [[Class.elite_gunner], 1, 'a', 'nest']; 
+                        sockets.broadcast('Weak Boss Is Coming. have a free bosskill');
                         break;
                     case 3: 
                         choice = [[Class.elite_battleship], 1, 'a', 'nest']; 
@@ -5174,7 +5167,7 @@ var maintainloop = (() => {
         const config = {
             max: 10, // The max amount of crashers/sentries
             chance: 0.625, // Math.random() must be greater than this in order to spawn anything
-            sentryChance: 0.3, // Math.random() must be greater than this for a sentry spawn.
+            sentryChance: 0.8, // Math.random() must be greater than this for a sentry spawn.
             crashers: [Class.crasher, Class.autoCrash], // Crasher Types
             sentries: [Class.sentryGun, Class.sentrySwarm, Class.sentryTrap, Class.sentryAnni, Class.sentryFlank] // Sentry types
         };
@@ -5188,7 +5181,7 @@ var maintainloop = (() => {
                             i --;
                             if (!i) return 0;
                         } while (dirtyCheck(spot, 100));
-                        const type = ran.choose([config.crashers]);
+                        const type = ran.choose(([config.crashers, config.sentries][+(Math.random() > config.sentryChance)]));
                         let o = new Entity(spot);
                         o.define(type);
                         o.team = -100;
@@ -5261,7 +5254,7 @@ var maintainloop = (() => {
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55]) 
-                    o.team = ran.chooseBot2Team();
+                  //  o.team = ran.chooseBot2Team();
                     if (o.team === -1) {o.color = 10};
                     if (o.team === -2) {o.color = 11};
                     if (o.team === -3) {o.color = 12};
