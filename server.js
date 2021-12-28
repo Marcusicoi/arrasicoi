@@ -3538,7 +3538,7 @@ const sockets = (() => {
                     switch (room.gameMode) {
                         case "tdm": {
                             body.team = -player.team;
-                            body.color = [10, 11, 12, 15][player.team - 1];
+                            body.color = [10, 10][player.team - 1];
                         }; break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
@@ -5051,7 +5051,7 @@ var maintainloop = (() => {
             };
         })();
         return census => {
-            if (timer > 1600 && ran.dice(1500 - timer)) {
+            if (timer > 200 && ran.dice(300 - timer)) {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
@@ -5059,15 +5059,15 @@ var maintainloop = (() => {
                 switch (ran.chooseChance(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) {
                     case 0: 
                         choice = [[ran.choose(elite)], 1, 'a', 'nest']; //Elite Destroyer
-                       // sockets.broadcast('Big Bullets On your face is coming.');
+                        sockets.broadcast('Wave Contenders: 1 Elite Crasher.');
                         break;
                     case 1: 
-                        choice = [[ran.choose], 1, 'a', 'nest']; 
-                       // sockets.broadcast('Auto3 of elite is coming. Find out.');
+                        choice = [[ran.choose(elite), ran.choose(elite)], 1, 'a', 'nest']; 
+                        sockets.broadcast('Wave Contenders: 2 Elite Crashers.');
                         break;
                     case 2: 
                         choice = [[Class.elite_gunner], 1, 'a', 'nest']; 
-                        sockets.broadcast('Weak Boss Is Coming. have a free bosskill');
+                        sockets.broadcast('Wave Contenders: 1 Elite Crasher');
                         break;
                     case 3: 
                         choice = [[Class.elite_battleship], 1, 'a', 'nest']; 
@@ -5260,7 +5260,7 @@ var maintainloop = (() => {
                     o.name += ran.chooseBotName();
                     o.refreshBodyAttributes(); 
                     o.color = ran.choose([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55]) 
-                  //  o.team = ran.chooseBot2Team();
+                    o.team = ran.chooseBot2Team();
                     if (o.team === -1) {o.color = 10};
                     if (o.team === -2) {o.color = 11};
                     if (o.team === -3) {o.color = 12};
