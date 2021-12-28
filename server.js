@@ -5056,6 +5056,7 @@ var maintainloop = (() => {
                 timer = 8;
                 let choice = [];
                 let elites = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship];
+                let strange = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest]
                 switch (wave) {
                     case 1: 
                         choice = [[ran.choose(elites)], 1, 'a', 'nest'];
@@ -5067,15 +5068,16 @@ var maintainloop = (() => {
                         break;
                     case 3: 
                         choice = [[ran.choose(elites)], 3, 'a', 'nest']; 
-                        sockets.broadcast('Weak Boss Is Coming. have a free bosskill');
-                        break;
-                    case 3: 
-                        choice = [[Class.elite_battleship], 1, 'a', 'nest']; 
-                        sockets.broadcast('Get ready for evil swarm.');
+                        sockets.broadcast('Wave Contenders: 3 Elite Crashers');
                         break;
                     case 4: 
-                        choice = [[Class.palisade], 1, 'castle', 'norm']; 
-                        sockets.broadcast('Boss with broken traps is coming..');
+                        choice = [[ran.choose(elites)], 4, 'a', 'nest']; 
+                        sockets.broadcast('Wave Contenders: 4 Elite Crashers');
+                        break;
+                    case 5: 
+                        choice = [[ran.choose(elites)], 3, 'a', 'nest'];
+                        choice = [[ran.choose(strange)], 1, 'a', 'nest'];
+                        sockets.broadcast('Wave Contenders: 3 Elite Crashers and 1 Strange Boss');
                         break;
                     case 5: 
                         choice = [[Class.summon], 1, 'castle', 'norm']; 
