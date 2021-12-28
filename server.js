@@ -3538,7 +3538,7 @@ const sockets = (() => {
                     switch (room.gameMode) {
                         case "tdm": {
                             body.team = -1;
-                            body.color = [10, 11, 12, 15][player.team - 1];
+                            body.color = 10;
                         }; break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
@@ -5065,8 +5065,8 @@ var maintainloop = (() => {
                         choice = [[ran.choose(elites)], 2, 'a', 'nest']; 
                         sockets.broadcast('Wave Contenders: 2 Elite Crashers');
                         break;
-                    case 2: 
-                        choice = [[Class.elite_gunner], 1, 'a', 'nest']; 
+                    case 3: 
+                        choice = [[ran.choose(elites)], 3, 'a', 'nest']; 
                         sockets.broadcast('Weak Boss Is Coming. have a free bosskill');
                         break;
                     case 3: 
