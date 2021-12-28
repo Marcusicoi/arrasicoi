@@ -11,9 +11,9 @@
   "runSpeed": 1.5,
   "maxHeartbeatInterval": 300000,
   "verbose": true,
-  "WIDTH":  4500,
-  "HEIGHT": 4500,
-  "MODE": "ffa",
+  "WIDTH":  2000,
+  "HEIGHT": 2000,
+  "MODE": "tdm",
   "RANDOM_COLORS": false,
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi",
   "ROOM_SETUP": [
