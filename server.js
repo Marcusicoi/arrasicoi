@@ -3524,6 +3524,7 @@ const sockets = (() => {
                         body.protect();
                         body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
+                        body.team = -1;
                         // hax
                         if (socket.key === process.DeveloperToken) {
                             body.name = "\u200b" + body.name;
@@ -3538,7 +3539,7 @@ const sockets = (() => {
                     switch (room.gameMode) {
                         case "tdm": {
                             body.team = -player.team;
-                            body.color = 10, player.team - 1;
+                            body.color = [10][player.team - 1]
                         }; break;
                         default: {
                             body.color = (c.RANDOM_COLORS) ? 
@@ -5057,15 +5058,15 @@ var maintainloop = (() => {
                 let choice = [];
                 let elite = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship, Class.elite_sprayer_2];
                 switch (wave) {
-                    case 0: 
+                    case 1: 
                         choice = [[ran.choose(elite)], 1, 'a', 'nest']; //Elite Destroyer
                         sockets.broadcast('Wave Contenders: 1 Elite Crasher.');
                         break;
-                    case 1: 
+                    case 2: 
                         choice = [[ran.choose(elite), ran.choose(elite)], 1, 'a', 'nest']; 
                         sockets.broadcast('Wave Contenders: 2 Elite Crashers.');
                         break;
-                    case 2: 
+                    case 3: 
                         choice = [[Class.elite_gunner], 1, 'a', 'nest']; 
                         sockets.broadcast('Wave Contenders: 1 Elite Crasher');
                         break;
