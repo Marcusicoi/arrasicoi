@@ -3849,19 +3849,12 @@ const sockets = (() => {
                   o.color = 10;
                   o.ondeath = () => {
                     let i = new Entity(loc);
-                    i.team = -100;
+                    i.team = -1 || -100;
                     i.color = 3;
-                    i.SIZE = 30;
+                    i.SIZE = 60;
                     i.define(Class.desanctuaroyed);
-                    i.ondeath = () => {
-                      let e = new Entity(loc);
-                      e.team = -1;
-                      e.color = 10;
-                      e.SIZE = 30;
-                      e.define(Class.sanctuary);
-                      e.ondeath = o.ondeath;
-                      e = o;
-                     };
+                    i.ondeath = o.ondeath;
+                    o = i;
                     };
                    };
                    setInterval(() => {
