@@ -3859,7 +3859,8 @@ const sockets = (() => {
                     o = i;
                     };
                   if (sancount === 0) {
-                    sockets.broadcast("Siege Defeated. Closing Arena..")
+                    sockets.broadcast("Your team has lost a game.");
+                    util.log("[INFO] The Team Has Lost.");
                     arenaClose();
                     };
                    };
