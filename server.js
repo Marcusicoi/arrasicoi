@@ -2459,7 +2459,7 @@ class Entity {
             this.accel.y -= Math.min(this.y - this.realSize + 50, 0) * c.ROOM_BOUND_FORCE / roomSpeed;
             this.accel.y -= Math.max(this.y + this.realSize - room.height - 50, 0) * c.ROOM_BOUND_FORCE / roomSpeed;
         }
-        if (room.gameMode === 'tdm' && this.type !== 'food') { 
+        if (room.gameMode === 'siege' && this.type !== 'food') { 
             let loc = { x: this.x, y: this.y, };
             if (
                 (this.team !== -1 && room.isIn('bas1', loc)) ||
@@ -3499,7 +3499,7 @@ const sockets = (() => {
                     // Find the desired team (if any) and from that, where you ought to spawn
                     player.team = socket.rememberedTeam;
                     switch (room.gameMode) {
-                        case "tdm": {
+                        case "siege": {
                             // Count how many others there are
                             let census = [1, 1, 1, 1], scoreCensus = [1, 1, 1, 1];
                             players.forEach(p => { 
@@ -3516,8 +3516,8 @@ const sockets = (() => {
                             }
                             // Choose from one of the least ones
                             if (player.team == null) { player.team = ran.choose(possiblities) + 1; }
-                            // Make sure you're in a base
-                            if (room['bas' + player.team].length) do { loc = room.randomType('bas' + player.team); } while (dirtyCheck(loc, 50));
+                            // Make sure you're in a sanctuary
+                            if (room['sanc'].length) do { loc = room.randomType('sanc'); } while (dirtyCheck(loc, 50));
                             else do { loc = room.gaussInverse(5); } while (dirtyCheck(loc, 50));
                         } break;
                         default: do { loc = room.gaussInverse(5); } while (dirtyCheck(loc, 50));
@@ -3540,7 +3540,7 @@ const sockets = (() => {
                     player.body = body;
                     // Decide how to color and team the body
                     switch (room.gameMode) {
-                        case "tdm": {
+                        case "siege": {
                             body.team = -1;
                             body.color = 10;
                         }; break;
