@@ -5038,6 +5038,11 @@ var maintainloop = (() => {
                       arrival = "";
                       arrival += "Wave " + wave + " Has Started!";
                     } wave += 1;
+                    if (wave += 2) {
+                      begin = '';
+                      arrival = ""
+                      arrival += "Wave " + wave + " Has Started!";
+                    }
                 },
                 spawn: () => {
                     sockets.broadcast(begin);
@@ -5075,11 +5080,11 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 4 Elite Crashers');
                         break;
                     case 5: 
-                        choice = [[ran.choose(elites), ran.choose(strange)], 4, 'a', 'nest'];
-                        sockets.broadcast('Wave Contenders: 3 Elite Crashers and 1 Strange Boss');
+                        choice = [[ran.choose(elites), Class.ek1], 4, 'a', 'nest'];
+                        sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK1');
                         break;
                     case 5: 
-                        choice = [[Class.summon], 1, 'castle', 'norm']; 
+                        choice = [[ran.], 1, 'castle', 'norm']; 
                         sockets.broadcast('The squares seem to hate you...');
                         break;
                     case 6: 
