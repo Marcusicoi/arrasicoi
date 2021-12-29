@@ -3840,23 +3840,6 @@ const sockets = (() => {
                   o.define(Class.wall);
                   o.team = -100;
                   }
-                  if (room.sanc)
-                  for (let loc of room.sanc) {
-                  let o = new Entity(loc);
-                  o.define(Class.sanctuary);
-                  o.team = -1;
-                  o.SIZE = 60;
-                  o.color = 10;
-                  o.ondeath = () => {
-                    let i = new Entity(loc);
-                    i.team = -1 || -100;
-                    i.color = 3;
-                    i.SIZE = 60;
-                    i.define(Class.desanctuaroyed);
-                    i.ondeath = o.ondeath;
-                    o = i;
-                    };
-                   };
                    setInterval(() => {
                     let minimaps = all.players = { [1]: [], [2]: [], [3]: [], [4]: [] }
                     let minibosses = all.minibosses = []
