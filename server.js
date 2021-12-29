@@ -5038,11 +5038,6 @@ var maintainloop = (() => {
                       arrival = "";
                       arrival += "Wave " + wave + " Has Started!";
                     } wave += 1;
-                    if (wave += 2) {
-                      begin = '';
-                      arrival = ""
-                      arrival += "Wave " + wave + " Has Started!";
-                    }
                 },
                 spawn: () => {
                     sockets.broadcast(begin);
@@ -5081,53 +5076,53 @@ var maintainloop = (() => {
                         break;
                     case 5: 
                         choice = [[ran.choose(elites), Class.ek1], 4, 'a', 'nest'];
-                        sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK1');
-                        break;
-                    case 5: 
-                        choice = [[ran.], 1, 'castle', 'norm']; 
-                        sockets.broadcast('The squares seem to hate you...');
+                        sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK1(s)');
                         break;
                     case 6: 
-                        choice = [[Class.elite_skimmer], 1, 'castle', 'norm']; 
-                        sockets.broadcast('Baby Of Zaphkiel is coming...');
+                        choice = [[ran.choose(elites), ran.choose(strange)], 4, 'a', 'nest'];
+                        sockets.broadcast('Wave Contenders: ? Elite Crashers and ? Strange Boss(es)');
                         break;
                     case 7: 
-                        choice = [[Class.ek1], 1, 'castle', 'nest']; 
-                        sockets.broadcast("Starter Pack Of EK. you'll see");
+                        choice = [[ran.choose(elites), Class.ek2], 3, 'castle', 'norm']; 
+                        sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK2(s)');
                         break;
                     case 8: 
-                        choice = [[Class.ek2], 1, 'castle', 'nest']; 
-                        sockets.broadcast("I think EK is going to be advanved.");
+                        choice = [[ran.choose(strange)], 3, 'castle', 'nest']; 
+                        sockets.broadcast("Wave Contenders: 3 Strange Bosses");
                         break;
                     case 9: 
-                        choice = [[Class.ek3], 1, 'castle', 'nest']; 
-                        sockets.broadcast('Its Getting Worser.');
+                        choice = [[ran.choose(strange)], 4, 'castle', 'nest']; 
+                        sockets.broadcast("Wave Contenders: 4 Strange Bosses");
                         break;
                     case 10: 
-                        choice = [[Class.nest], 1, 'a', 'nest']; 
+                        choice = [[ran.choose(strange), Class.ek2], 3, 'castle', 'nest']; 
+                        sockets.broadcast('Wave Contenders: ? Strange Boss(es) and ? EK2(s)');
+                        break;
+                    case 11: 
+                        choice = [[Class.], 1, 'a', 'nest']; 
                         sockets.broadcast('Guardian Of Pentagons Is Coming..');
                         break;
-                    case 11:
+                    case 12:
                         choice = [[Class.paladin], 1, 'castle', 'norm'];
                         sockets.broadcast('I have to start the chaos.');
                         break;
-                    case 12:
+                    case 13:
                         choice = [[Class.freyja], 1, 'castle', 'norm'];
                         sockets.broadcast('The King of cruiser is ready to swarm you.');
                         break;
-                    case 13:
+                    case 14:
                         choice = [[Class.zaphkiel], 1, 'castle', 'norm'];
                         sockets.broadcast('The king of skimmers is coming.');
                         break;
-                    case 14:
+                    case 15:
                         choice = [[Class.theia], 1, 'castle', 'norm'];
                         sockets.broadcast('The king of summoner has to enter a game.');
                         break;  
-                    case 15:
+                    case 16:
                         choice = [[Class.alviss], 1, 'castle', 'norm'];
                         sockets.broadcast('The darkness arrives as the realms are ripped apart!');
                         break; 
-                    case 16:
+                    case 17:
                         choice = [[Class.athena], 1, 'castle', 'norm'];
                         sockets.broadcast('The woomy celestials are entered the arrasicoi kingdom!');
                         break;
