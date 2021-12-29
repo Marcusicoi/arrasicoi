@@ -2466,7 +2466,8 @@ class Entity {
                 (this.team !== -2 && room.isIn('bas2', loc)) ||
                 (this.team !== -3 && room.isIn('bas3', loc)) ||
                 (this.team !== -4 && room.isIn('bas4', loc)) ||
-                (this.team !== -5 && room.isIn('bas5', loc))
+                (this.team !== -5 && room.isIn('bas5', loc)) ||
+                (this.team !== -100 && room.isIn('barr', loc))
             ) { this.kill(); }
         }
     }
@@ -3840,7 +3841,13 @@ const sockets = (() => {
                   let o = new Entity(loc);
                   o.define(Class.wall);
                   o.team = -100;
-                  }
+                  };
+                  if (room.barr)
+                  for (let loc of room.barr) {
+                  let o = new Entity(loc);
+                  o.team = -100;
+                  o.color = 32;
+                  };
                   var sancount = 4;
                   if (room.sanc)
                   for (let loc of room.sanc) {
