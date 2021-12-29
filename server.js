@@ -3852,13 +3852,13 @@ const sockets = (() => {
                     i.team = -100;
                     i.color = 3;
                     i.SIZE = 30;
-                    o.define(Class.desanctuaroyed);
+                    i.define(Class.desanctuaroyed);
                     i.ondeath = () => {
                       let e = new Entity(loc);
                       e.team = -1;
                       e.color = 10;
                       e.SIZE = 30;
-                      o.define(Class.sanctuary);
+                      e.define(Class.sanctuary);
                       e.ondeath = o.ondeath;
                       e = o;
                      };
@@ -5109,7 +5109,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: ? Elite Crashers and ? Strange Boss(es)');
                         break;
                     case 7: 
-                        choice = [[ran.choose(elites), Class.ek2], 3, 'castle', 'norm']; 
+                        choice = [[ran.choose(elites), Class.ek2], 3, 'castle', 'nest'];
                         sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK2(s)');
                         break;
                     case 8: 
@@ -5162,23 +5162,23 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 1 Athena');
                         break;
                     case 19:
-                        choice = [[Class.alviss], 1, 'castle', 'norm'];
+                        choice = [[Class.alviss], 1, 'castle', 'nest'];
                         sockets.broadcast('Wave Contenders: 1 Alviss');
                         break;
                     case 20:
-                        choice = [[Class.tyr], 1, 'castle', 'norm'];
+                        choice = [[Class.tyr], 1, 'castle', 'nest'];
                         sockets.broadcast('Wave Contenders: 1 Tyr');
                         break;
                     case 21:
-                        choice = [[Class.fiolnir], 1, 'castle', 'norm'];
+                        choice = [[Class.fiolnir], 1, 'castle', 'nest'];
                         sockets.broadcast('Wave Contenders: 1 Fiolnir');
                         break;
                     case 22:
-                        choice = [[Class.eq3], 1, 'castle', 'norm'];
+                        choice = [[Class.eq3], 1, 'castle', 'nest'];
                         sockets.broadcast('Wave Contenders: 1 EQ3');
                         break;
                     case 23:
-                        choice = [[Class.sk2], 1, 'castle', 'norm'];
+                        choice = [[ran.choose(celestials), ran.choose(elites)], 1, 'castle', 'norm'];
                         sockets.broadcast('The SK-X is leveling up as the realms are ripping apart!');
                         break;
                     case 24:
