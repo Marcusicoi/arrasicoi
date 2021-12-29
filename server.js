@@ -5107,8 +5107,8 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 1 EK3');
                         break;
                     case 13:
-                        choice = [[Class.eq1], 2, 'castle', 'nest'];
-                        sockets.broadcast('Wave Contenders: 2 EQ1');
+                        choice = [[Class.eq2], 1, 'castle', 'nest'];
+                        sockets.broadcast('Wave Contenders: 1 EQ2');
                         break;
                     case 14:
                         choice = [[Class.paladin], 1, 'castle', 'nest'];
@@ -5145,7 +5145,7 @@ var maintainloop = (() => {
                         break;
                     case 21:
                         choice = [[Class.fiolnir], 1, 'castle', 'norm'];
-                        sockets.broadcast('The other side of ');
+                        sockets.broadcast('Wave Contenders: 1 Fiolnir');
                         break;
                     case 22:
                         choice = [[Class.sk1], 1, 'castle', 'norm'];
