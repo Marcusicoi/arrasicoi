@@ -5057,6 +5057,7 @@ var maintainloop = (() => {
                 let choice = [];
                 let elites = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship];
                 let strange = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest];
+                let celestials = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir];
                 switch (wave) {
                     case 1: 
                         choice = [[ran.choose(elites)], 1, 'a', 'nest'];
@@ -5148,8 +5149,8 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 1 Fiolnir');
                         break;
                     case 22:
-                        choice = [[Class.sk1], 1, 'castle', 'norm'];
-                        sockets.broadcast('The journey has started as SK-X arrived.');
+                        choice = [[Class.eq3], 1, 'castle', 'norm'];
+                        sockets.broadcast('Wave Contenders: 1 EQ3');
                         break;
                     case 23:
                         choice = [[Class.sk2], 1, 'castle', 'norm'];
