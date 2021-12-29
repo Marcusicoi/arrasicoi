@@ -3847,6 +3847,17 @@ const sockets = (() => {
                   o.SIZE = 3;
                   o.color = 10;
                   o.ondeath = () => {
+                    o.team = -100;
+                    o.color = 3;
+                    o.define(Class.desanctuaroyed)
+                    o.ondeath = () => {
+                      o.team = -1;
+                      o.SIZE = 3;
+                      o.color = 10;
+                      o.define(Class.sanctuary);
+                    }
+                   }
+                  }
                   }
                   setInterval(() => {
                     let minimaps = all.players = { [1]: [], [2]: [], [3]: [], [4]: [] }
