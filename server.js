@@ -5099,23 +5099,23 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 2 Elite Crashers');
                         break;
                     case 3: 
-                        choice = [[ran.choose(elites)], 3, 'a', 'nest']; 
+                        choice = [[ran.choose(elites1), ran.choose(elites2), ran.choose(elites3)], 3, 'a', 'nest']; 
                         sockets.broadcast('Wave Contenders: 3 Elite Crashers');
                         break;
                     case 4: 
-                        choice = [[ran.choose(elites)], 4, 'a', 'nest']; 
+                        choice = [[ran.choose(elites1), ran.choose(elites2), ran.choose(elites3), ran.choose(elites4)], 4, 'a', 'nest']; 
                         sockets.broadcast('Wave Contenders: 4 Elite Crashers');
                         break;
                     case 5: 
-                        choice = [[ran.choose(elites), Class.ek1], 4, 'a', 'nest'];
+                        choice = [[ran.choose(elites1), Class.ek1], 4, 'a', 'nest'];
                         sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK1(s)');
                         break;
                     case 6: 
-                        choice = [[ran.choose(elites), ran.choose(strange)], 4, 'a', 'nest'];
+                        choice = [[ran.choose(elites1), ran.choose(strange)], 4, 'a', 'nest'];
                         sockets.broadcast('Wave Contenders: ? Elite Crashers and ? Strange Boss(es)');
                         break;
                     case 7: 
-                        choice = [[ran.choose(elites), Class.ek2], 3, 'castle', 'nest'];
+                        choice = [[ran.choose(elites1), Class.ek2], 3, 'castle', 'nest'];
                         sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK2(s)');
                         break;
                     case 8: 
@@ -5184,7 +5184,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 1 EQ3');
                         break;
                     case 23:
-                        choice = [[ran.choose(celestials), ran.choose(elites)], 1.1, 'castle', 'norm'];
+                        choice = [[ran.choose(celestials), ran.choose(elites1)], 1.1, 'castle', 'norm'];
                         sockets.broadcast('The SK-X is leveling up as the realms are ripping apart!');
                         break;
                     case 24:
