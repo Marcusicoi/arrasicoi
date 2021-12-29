@@ -2467,7 +2467,8 @@ class Entity {
                 (this.team !== -3 && room.isIn('bas3', loc)) ||
                 (this.team !== -4 && room.isIn('bas4', loc)) ||
                 (this.team !== -5 && room.isIn('bas5', loc)) ||
-                (this.team !== -100 && room.isIn('barr', loc))
+                (this.team !== -100 && room.isIn('barr', loc)) ||
+                (this.team !== -100 && room.isIn('bosp', loc))
             ) { this.kill(); }
         }
     }
@@ -3842,12 +3843,6 @@ const sockets = (() => {
                   o.define(Class.wall);
                   o.team = -100;
                   };
-                  if (room.barr)
-                  for (let loc of room.barr) {
-                  let o = new Entity(loc);
-                  o.team = -100;
-                  o.color = 32;
-                  };
                   var sancount = 4;
                   if (room.sanc)
                   for (let loc of room.sanc) {
@@ -5088,16 +5083,19 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
-                let elites = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship];
-                let strange = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest];
-                let celestials = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir];
+                let elites1 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
+                    elites2 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
+                    elites3 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
+                    elites4 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
+                    strange = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
+                    celestials = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir];
                 switch (wave) {
                     case 1: 
-                        choice = [[ran.choose(elites)], 1, 'a', 'nest'];
+                        choice = [[ran.choose(elites1)], 1, 'a', 'nest'];
                         sockets.broadcast('Wave Contenders: 1 Elite Crasher');
                         break;
                     case 2: 
-                        choice = [[ran.choose(elites)], 2, 'a', 'nest']; 
+                        choice = [[ran.choose(elites1), ran.choose(elites2)], 2, 'a', 'nest']; 
                         sockets.broadcast('Wave Contenders: 2 Elite Crashers');
                         break;
                     case 3: 
