@@ -5099,52 +5099,53 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: ? Strange Boss(es) and ? EK2(s)');
                         break;
                     case 11: 
-                        choice = [[Class.], 1, 'a', 'nest']; 
-                        sockets.broadcast('Guardian Of Pentagons Is Coming..');
+                        choice = [[Class.sk1, Class.sk2, Class.eq1], 3, 'a', 'nest']; 
+                        sockets.broadcast('Wave Contenders: ? SK1, ? SK2 and ? EQ1');
                         break;
                     case 12:
-                        choice = [[Class.paladin], 1, 'castle', 'norm'];
-                        sockets.broadcast('I have to start the chaos.');
+                        choice = [[Class.ek3], 1, 'castle', 'nest'];
+                        sockets.broadcast('Wave Contenders: 1 EK3');
                         break;
                     case 13:
-                        choice = [[Class.freyja], 1, 'castle', 'norm'];
-                        sockets.broadcast('The King of cruiser is ready to swarm you.');
+                        choice = [[Class.eq1], 2, 'castle', 'nest'];
+                        sockets.broadcast('Wave Contenders: 2 EQ1');
                         break;
                     case 14:
-                        choice = [[Class.zaphkiel], 1, 'castle', 'norm'];
-                        sockets.broadcast('The king of skimmers is coming.');
+                        choice = [[Class.paladin], 1, 'castle', 'nest'];
+                        sockets.broadcast('The world tremors as the celestials are reborn anew!');
+                        sockets.broadcast('Wave Contenders: 1 Paladin');
                         break;
                     case 15:
-                        choice = [[Class.theia], 1, 'castle', 'norm'];
-                        sockets.broadcast('The king of summoner has to enter a game.');
+                        choice = [[Class.freyja], 1, 'castle', 'nest'];
+                        sockets.broadcast('Wave Contenders: 1 Freyja');
                         break;  
                     case 16:
-                        choice = [[Class.alviss], 1, 'castle', 'norm'];
-                        sockets.broadcast('The darkness arrives as the realms are ripped apart!');
+                        choice = [[Class.zaphkiel], 1, 'castle', 'nest'];
+                        sockets.broadcast('Wave Contenders: 1 Zaphkiel');
                         break; 
                     case 17:
-                        choice = [[Class.athena], 1, 'castle', 'norm'];
-                        sockets.broadcast('The woomy celestials are entered the arrasicoi kingdom!');
+                        choice = [[Class.theia], 1, 'castle', 'nest'];
+                        sockets.broadcast('Wave Contenders: 1 Theia');
                         break;
                     case 17:
-                        choice = [[Class.nyx], 1, 'castle', 'norm'];
-                        sockets.broadcast('The new final celestial is entered to the game.');
+                        choice = [[Class.nyx], 1, 'castle', 'nest'];
+                        sockets.broadcast('Wave Contenders: 1 Nyx');
                         break;
                     case 18:
-                        choice = [[Class.ragnarok], 1, 'castle', 'norm'];
-                        sockets.broadcast('The reality comes to an end as ragnarok finally arrives!');
+                        choice = [[Class.athena], 1, 'castle', 'nest'];
+                        sockets.broadcast('Wave Contenders: 1 Athena');
                         break;
                     case 19:
-                        choice = [[Class.kronos], 1, 'castle', 'norm'];
-                        sockets.broadcast('Do you believe in ragnarok?');
+                        choice = [[Class.alviss], 1, 'castle', 'norm'];
+                        sockets.broadcast('Wave Contenders: 1 Alviss');
                         break;
                     case 20:
-                        choice = [[Class.eq1], 1, 'castle', 'norm'];
-                        sockets.broadcast('We Believe in EK-X. Now whats on the other side?');
+                        choice = [[Class.tyr], 1, 'castle', 'norm'];
+                        sockets.broadcast('Wave Contenders: 1 Tyr');
                         break;
                     case 21:
-                        choice = [[Class.eq2], 1, 'castle', 'norm'];
-                        sockets.broadcast('The other side of EK-X is leveling up.');
+                        choice = [[Class.fiolnir], 1, 'castle', 'norm'];
+                        sockets.broadcast('The other side of ');
                         break;
                     case 22:
                         choice = [[Class.sk1], 1, 'castle', 'norm'];
