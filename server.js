@@ -3845,9 +3845,9 @@ const sockets = (() => {
                   let o = new Entity(loc);
                   o.define(Class.sanctuary);
                   o.team = -1;
-                  o.SIZE = 30;
+                  o.SIZE = 60;
                   o.color = 10;
-                  o.ondeath = () => {
+                  /*o.ondeath = () => {
                     let i = new Entity(loc);
                     i.team = -100;
                     i.color = 3;
@@ -3862,7 +3862,7 @@ const sockets = (() => {
                       e.ondeath = o.ondeath;
                       e = o;
                      };
-                    };
+                    };*/
                    };
                    setInterval(() => {
                     let minimaps = all.players = { [1]: [], [2]: [], [3]: [], [4]: [] }
