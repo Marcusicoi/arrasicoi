@@ -5178,7 +5178,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 1 EQ3');
                         break;
                     case 23:
-                        choice = [[ran.choose(celestials), ran.choose(elites)], 1, 'castle', 'norm'];
+                        choice = [[ran.choose(celestials), ran.choose(elites)], 1.1, 'castle', 'norm'];
                         sockets.broadcast('The SK-X is leveling up as the realms are ripping apart!');
                         break;
                     case 24:
