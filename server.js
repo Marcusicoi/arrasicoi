@@ -3848,19 +3848,20 @@ const sockets = (() => {
                   o.SIZE = 30;
                   o.color = 10;
                   o.ondeath = () => {
-                    o.team = -100;
-                    o.color = 3;
-                    o.SIZE = 30;
-                    o.define(Class.desanctuaroyed)
-                    o.ondeath = () => {
-                      o.team = -1;
-                      o.SIZE = 30;
-                      o.color = 10;
-                      o.define(Class.sanctuary);
+                    let i = new Entity(loc);
+                    i.team = -100;
+                    i.color = 3;
+                    i.SIZE = 30;
+                    i.define(Class.desanctuaroyed);
+                    i.ondeath = () => {
+                    let e = new Entity(loc);
+                    e.team = -1;
+                    e.color = 10;
+                    e.SIZE = 30;
+                    e.define(Class.sanctuary);
                     }
                    }
-                  }
-                  setInterval(() => {
+                   setInterval(() => {
                     let minimaps = all.players = { [1]: [], [2]: [], [3]: [], [4]: [] }
                     let minibosses = all.minibosses = []
                     for (let my of entities)
