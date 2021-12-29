@@ -82,7 +82,8 @@ const room = {
     room.findType('roid');
     room.findType('rock');
     room.findType('wall');
-    room.findType('bas5')
+    room.findType('bas5');
+    room.findType('sanc');
     room.nestFoodAmount = 0.1 * Math.sqrt(room.nest.length) / room.xgrid / room.ygrid;
     room.random = () => {
         return {
@@ -3839,25 +3840,25 @@ const sockets = (() => {
                   o.define(Class.wall);
                   o.team = -100;
                   }
-                  if (room.sanctuary)
-                  for (let loc of room.sanctuary) {
+                  if (room.sanc)
+                  for (let loc of room.sanc) {
                   let o = new Entity(loc);
                   o.define(Class.sanctuary);
                   o.team = -1;
-                  o.SIZE = 3;
+                  o.SIZE = 30;
                   o.color = 10;
                   o.ondeath = () => {
                     o.team = -100;
                     o.color = 3;
+                    o.SIZE = 30;
                     o.define(Class.desanctuaroyed)
                     o.ondeath = () => {
                       o.team = -1;
-                      o.SIZE = 3;
+                      o.SIZE = 30;
                       o.color = 10;
                       o.define(Class.sanctuary);
                     }
                    }
-                  }
                   }
                   setInterval(() => {
                     let minimaps = all.players = { [1]: [], [2]: [], [3]: [], [4]: [] }
