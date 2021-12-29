@@ -84,6 +84,7 @@ const room = {
     room.findType('wall');
     room.findType('bas5');
     room.findType('sanc');
+    room.findType('barr');
     room.nestFoodAmount = 0.1 * Math.sqrt(room.nest.length) / room.xgrid / room.ygrid;
     room.random = () => {
         return {
@@ -5253,7 +5254,7 @@ var maintainloop = (() => {
     // The NPC function
     let makenpcs = (() => {
         // Make base protectors if needed.
-            let f = (loc, team) => { 
+           /* let f = (loc, team) => { 
                 let o = new Entity(loc);
                     o.define(Class.baseProtector);
                     o.team = -team;
@@ -5261,7 +5262,7 @@ var maintainloop = (() => {
             };
             for (let i=1; i<5; i++) {
                 room['bas' + i].forEach((loc) => { f(loc, i); }); 
-            }
+            }*/
         // Return the spawning function
         let bots = [];
         return () => {
