@@ -3852,15 +3852,18 @@ const sockets = (() => {
                     i.team = -100;
                     i.color = 3;
                     i.SIZE = 30;
-                    i.define(Class.desanctuaroyed);
+                    o.define(Class.desanctuaroyed);
                     i.ondeath = () => {
-                    let e = new Entity(loc);
-                    e.team = -1;
-                    e.color = 10;
-                    e.SIZE = 30;
-                    e.define(Class.sanctuary);
-                    }
-                   }
+                      let e = new Entity(loc);
+                      e.team = -1;
+                      e.color = 10;
+                      e.SIZE = 30;
+                      o.define(Class.sanctuary);
+                      e.ondeath = o.ondeath;
+                      e = o;
+                     };
+                    };
+                   };
                    setInterval(() => {
                     let minimaps = all.players = { [1]: [], [2]: [], [3]: [], [4]: [] }
                     let minibosses = all.minibosses = []
