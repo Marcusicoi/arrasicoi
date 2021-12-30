@@ -5221,24 +5221,40 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: ? Celestials and ? Elite Crashers');
                         break;
                     case 29:
-                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(strange1), ran.choose(strange2)], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? Strange Bosses');
                         break;
                     case 30:
-                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), Class.eq1, Class.eq1], 3, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
                         break;
                     case 31:
-                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        choice = [[ran.choose(celestials1), ran.choose(celestials3), Class.ek3], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? EK3');
                         break;
                     case 32:
-                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3)], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: 3 Celestials');
                         break;
                     case 33:
-                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3), ran.choose(elites1), ran.choose(elites2), ran.choose(elites3)], 4, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? Elite Crashers');
+                        break;
+                    case 34:
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3), ran.choose(strange1), ran.choose(strange2), ran.choose(strange3)], 4, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? Strange Bosses');
+                        break;
+                    case 35:
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3), ran.choose(elites1), ran.choose(elites2), ran.choose(elites3), ran.choose(strange1), ran.choose(strange2), ran.choose(strange3)], 4, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials, ? Elite Crashers and ? Strange Bosses');
+                        break;
+                    case 36:
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3), ran.choose(elites1), ran.choose(elites2), ran.choose(elites3)], 4, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? Elite Crashers');
+                        break;
+                    case 37:
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3), ran.choose(elites1), ran.choose(elites2), ran.choose(elites3)], 4, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? Elite Crashers');
                         break;
                 }      
                 boss.prepareToSpawn(...choice);
