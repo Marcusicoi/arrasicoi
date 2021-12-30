@@ -5792,12 +5792,10 @@ bot.on('ready', () => {
 });
 bot.on("messageCreate", message => {
  if(message.content === ">help") {
-     message.channel.send("COMMANDS." +
-                          "\nlitterally cant send a embed so" +
-                          "\n>players = Sends the player's name and id" +
-                          "\n>broadcast = broadcasts a message into the game" +
-                          "\n>ping = tells the latency about the game" +
-                          "\n>define =  defines a user into a tank");
+    const embed = new discord()
+    .setTitle("Commands.")
+    .setDescription(">players = Sends Player's Name And ID" +
+                    "\n>broadcast =
   }
   if (message.content.startsWith(">players")) {
       let output = '', outWillFail = true;
@@ -5895,27 +5893,8 @@ bot.on("messageCreate", message => {
     }
    )
   }
-  if(message.content.startsWith(">team")) {
-     let error = false,
-     command = parse(message.content),
-     inputid = command[1], inputvalue = command[2];
-     entities.forEach(o => {
-     if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
-        if(eval(o.team = inputvalue) != undefined) {
-           entities.filter(r => r.id == inputid)[0].team = inputvalue;
-           error = false;
-         //  message.channel.send('Changed the user team to ' + inputvalue);
-        } else {
-        message.channel.send(inputvalue + 'is not a valid tank');
-        }
-        if (error) {
-        message.channel.send("Couldn't Find Any Users by the id: " + inputid);
-        }
-     } else {
-     message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
-     }
-    }
-   )
+  if(message.content.startsWith(">link")) {
+     message.channel.send('https://arrasicoi.neocities.org/');
   }
 });
 bot.login(process.env.BotToken);
