@@ -5094,7 +5094,10 @@ var maintainloop = (() => {
                     elites2 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
                     elites3 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
                     elites4 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
-                    strange = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
+                    strange1 = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
+                    strange2 = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
+                    strange3 = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
+                    strange4 = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
                     celestials = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
                     rooms = ['bosN', 'bosW', 'bosS', 'bosE'];
                 switch (wave) {
@@ -5119,7 +5122,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK1(s)');
                         break;
                     case 6: 
-                        choice = [[ran.choose(elites1), ran.choose(strange)], 4, 'a', ran.choose(rooms)];
+                        choice = [[ran.choose(elites1), ran.choose(strange1)], 4, 'a', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: ? Elite Crashers and ? Strange Boss(es)');
                         break;
                     case 7: 
@@ -5127,81 +5130,113 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK2(s)');
                         break;
                     case 8: 
-                        choice = [[ran.choose(strange)], 3, 'castle', ran.choose(rooms)]; 
+                        choice = [[ran.choose(strange1), ran.choose(strange2), ran.choose(strange3)], 3, 'castle', ran.choose(rooms)]; 
                         sockets.broadcast("Wave Contenders: 3 Strange Bosses");
                         break;
                     case 9: 
-                        choice = [[ran.choose(strange)], 4, 'castle', ran.choose(rooms)]; 
+                        choice = [[ran.choose(strange1), ran.choose(strange2), ran.choose(strange3), ran.choose(strange4)], 4, 'castle', ran.choose(rooms)]; 
                         sockets.broadcast("Wave Contenders: 4 Strange Bosses");
                         break;
                     case 10: 
-                        choice = [[ran.choose(strange), Class.ek2], 3, 'castle', 'nest']; 
+                        choice = [[ran.choose(strange), Class.ek2], 3, 'castle', ran.choose(rooms)]; 
                         sockets.broadcast('Wave Contenders: ? Strange Boss(es) and ? EK2(s)');
                         break;
                     case 11: 
-                        choice = [[Class.sk1, Class.sk2, Class.eq1], 3, 'a', 'nest']; 
+                        choice = [[Class.sk1, Class.sk2, Class.eq1], 3, 'a', ran.choose(rooms)]; 
                         sockets.broadcast('Wave Contenders: ? SK1, ? SK2 and ? EQ1');
                         break;
                     case 12:
-                        choice = [[Class.ek3], 1, 'castle', 'nest'];
+                        choice = [[Class.ek3], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 EK3');
                         break;
                     case 13:
-                        choice = [[Class.eq2], 1, 'castle', 'nest'];
+                        choice = [[Class.eq2], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 EQ2');
                         break;
                     case 14:
-                        choice = [[Class.paladin], 1, 'castle', 'nest'];
+                        choice = [[Class.paladin], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('The world tremors as the celestials are reborn anew!');
                         sockets.broadcast('Wave Contenders: 1 Paladin');
                         break;
                     case 15:
-                        choice = [[Class.freyja], 1, 'castle', 'nest'];
+                        choice = [[Class.freyja], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 Freyja');
                         break;  
                     case 16:
-                        choice = [[Class.zaphkiel], 1, 'castle', 'nest'];
+                        choice = [[Class.zaphkiel], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 Zaphkiel');
                         break; 
                     case 17:
-                        choice = [[Class.theia], 1, 'castle', 'nest'];
+                        choice = [[Class.theia], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 Theia');
                         break;
                     case 17:
-                        choice = [[Class.nyx], 1, 'castle', 'nest'];
+                        choice = [[Class.nyx], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 Nyx');
                         break;
                     case 18:
-                        choice = [[Class.athena], 1, 'castle', 'nest'];
+                        choice = [[Class.athena], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 Athena');
                         break;
                     case 19:
-                        choice = [[Class.alviss], 1, 'castle', 'nest'];
+                        choice = [[Class.alviss], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 Alviss');
                         break;
                     case 20:
-                        choice = [[Class.tyr], 1, 'castle', 'nest'];
+                        choice = [[Class.tyr], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 Tyr');
                         break;
                     case 21:
-                        choice = [[Class.fiolnir], 1, 'castle', 'nest'];
+                        choice = [[Class.fiolnir], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 Fiolnir');
                         break;
                     case 22:
-                        choice = [[Class.eq3], 1, 'castle', 'nest'];
+                        choice = [[Class.eq3], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 EQ3');
                         break;
                     case 23:
-                        choice = [[ran.choose(celestials), ran.choose(elites1)], 1.1, 'castle', 'norm'];
-                        sockets.broadcast('The SK-X is leveling up as the realms are ripping apart!');
+                        choice = [[ran.choose(celestials), ran.choose(elites1)], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? Elite Crashers');
                         break;
                     case 24:
-                        choice = [[Class.tyr], 1, 'castle', 'norm'];
-                        sockets.broadcast('The darkness arrived as the realms are ripped apart!');
+                        choice = [[ran.choose(celestials), ran.choose(strange)], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? Strange Boss(es)');
                         break;
                     case 25:
-                        choice = [[Class.fiolnir], 1, 'castle', 'norm'];
-                        sockets.broadcast('The darkness arrived as the realms are ripped apart!');
+                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        break;
+                    case 26:
+                        choice = [[ran.choose(celestials), ], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        break;
+                    case 25:
+                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        break;
+                    case 25:
+                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        break;
+                    case 25:
+                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        break;
+                    case 25:
+                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        break;
+                    case 25:
+                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        break;
+                    case 25:
+                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        break;
+                    case 25:
+                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
                         break;
                 }      
                 boss.prepareToSpawn(...choice);
