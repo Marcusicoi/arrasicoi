@@ -3557,7 +3557,7 @@ const sockets = (() => {
                     // Decide how to color and team the body
                     switch (room.gameMode) {
                         case "siege": {
-                            body.team = -2;
+                            body.team = -1;
                             body.color = 10;
                         }; break;
                         default: {
@@ -5300,7 +5300,7 @@ var maintainloop = (() => {
     // Spawning functions
     let spawnBosses = (() => {
         let timer = 8;
-        let wave = 37;
+        let wave = 1;
         let boss = (() => {
             let i = 1,
                 names = [],
