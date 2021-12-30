@@ -85,6 +85,10 @@ const room = {
     room.findType('bas5');
     room.findType('sanc');
     room.findType('barr');
+    room.findType('bosN');
+    room.findType('bosW');
+    room.findType('bosS');
+    room.findType('bosE');
     room.nestFoodAmount = 0.1 * Math.sqrt(room.nest.length) / room.xgrid / room.ygrid;
     room.random = () => {
         return {
@@ -2468,7 +2472,10 @@ class Entity {
                 (this.team !== -4 && room.isIn('bas4', loc)) ||
                 (this.team !== -5 && room.isIn('bas5', loc)) ||
                 (this.team !== -100 && room.isIn('barr', loc)) ||
-                (this.team !== -100 && room.isIn('bosp', loc))
+                (this.team !== -100 && room.isIn('bosN', loc)) ||
+                (this.team !== -100 && room.isIn('bosW', loc)) ||
+                (this.team !== -100 && room.isIn('bosS', loc)) ||
+                (this.team !== -100 && room.isIn('bosE', loc))
             ) { this.kill(); }
         }
     }
@@ -5088,10 +5095,14 @@ var maintainloop = (() => {
                     elites3 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
                     elites4 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
                     strange = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
-                    celestials = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir];
+                    celestials = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
+                    room1 = ['bosN', 'bosW', 'bosS', 'bosE'],
+                    room2 = ['bosN', 'bosW', 'bosS', 'bosE'],
+                    room3 = ['bosN', 'bosW', 'bosS', 'bosE'],
+                    room4 = ['bosN', 'bosW', 'bosS', 'bosE'];
                 switch (wave) {
                     case 1: 
-                        choice = [[ran.choose(elites1)], 1, 'a', 'nest'];
+                        choice = [[ran.choose(elites1)], 1, 'a', ran.choose(room1)];
                         sockets.broadcast('Wave Contenders: 1 Elite Crasher');
                         break;
                     case 2: 
