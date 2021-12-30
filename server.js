@@ -5090,14 +5090,14 @@ var maintainloop = (() => {
                 util.log('[SPAWN] Preparing to spawn...');
                 timer = 8;
                 let choice = [];
-                let elites1 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
-                    elites2 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
-                    elites3 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
-                    elites4 = [Class.elite_gunner, Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
-                    strange1 = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
-                    strange2 = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
-                    strange3 = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
-                    strange4 = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
+                let elites1 = [Class.elite_gunner, /*Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
+                    elites2 = [Class.elite_gunner, /*Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
+                    elites3 = [Class.elite_gunner, /*Class.elite_destroyer, Class.elite_sprayer, Class.elite_battleship],
+                    elites4 = [Class.elite_gunner, /*Class.elite_destroyer,*/ Class.elite_sprayer, Class.elite_battleship],
+                    strange1 = [/*Class.palisade,*/ Class.summon, Class.elite_skimmer, Class.nest],
+                    strange2 = [/*Class.palisade,*/ Class.summon, Class.elite_skimmer, Class.nest],
+                    strange3 = [/*Class.palisade,*/ Class.summon, Class.elite_skimmer, Class.nest],
+                    strange4 = [/*Class.palisade,*/ Class.summon, Class.elite_skimmer, Class.nest],
                     celestials1 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
                     celestials2 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
                     celestials3 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
