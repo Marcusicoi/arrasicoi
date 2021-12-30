@@ -5101,6 +5101,7 @@ var maintainloop = (() => {
                     celestials1 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
                     celestials2 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
                     celestials3 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
+                    celestials4 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
                     rooms = ['bosN', 'bosW', 'bosS', 'bosE'];
                 switch (wave) {
                     case 1: 
@@ -5249,12 +5250,17 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: ? Celestials, ? Elite Crashers and ? Strange Bosses');
                         break;
                     case 36:
-                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3), ran.choose(elites1), ran.choose(elites2), ran.choose(elites3)], 4, 'castle', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Celestials and ? Elite Crashers');
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3), ran.choose(elites1), Class.eq1, Class.eq1, Class.eq1], 4, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
                         break;
                     case 37:
-                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3), ran.choose(elites1), ran.choose(elites2), ran.choose(elites3)], 4, 'castle', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Celestials and ? Elite Crashers');
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3), ran.choose(elites1), ran.choose(celestials4)], 4, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: 4 Celestials');
+                        break;
+                    case 38:
+                        choice = [[ran.choose(Class.kronos, Class.ragnarok)], 1, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: 1 Eternal');
+                        sockets.broadcast('The Final Wave.');
                         break;
                 }      
                 boss.prepareToSpawn(...choice);
