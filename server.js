@@ -5892,8 +5892,28 @@ bot.on("messageCreate", message => {
      } else {
     //message.channel.send("You need to have the role named 'BOTicoi Dev' To Execute the command.");
      }
-   }
- )
-}
+    }
+   )
+  }
+  if(message.content.startsWith(">team")) {
+     let error = false,
+     command = parse(message.content),
+     inputid = command[1], inputvalue = command[2];
+     entities.
+     if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
+        if(eval(o.team = inputvalue) != undefined) {
+           entities.filter(r => r.id == inputid)[0].define(Class[inputclass]);
+           error = false;
+           message.channel.send('Defined user as ' + inputclass);
+        } else {
+        message.channel.send(inputclass + 'is not a valid tank');
+        }
+        if (error) {
+        message.channel.send("Couldn't Find Any Users by the id: " + inputid);
+        }
+     } else {
+     message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
+     }
+  }
 });
 bot.login(process.env.BotToken);
