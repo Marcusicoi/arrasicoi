@@ -3557,7 +3557,7 @@ const sockets = (() => {
                     // Decide how to color and team the body
                     switch (room.gameMode) {
                         case "siege": {
-                            body.team = -1;
+                            body.team = -2;
                             body.color = 10;
                         }; break;
                         default: {
@@ -3860,6 +3860,11 @@ const sockets = (() => {
                   o.team = -100;
                   };
                   var sancount = 9;
+                  if (sancount == 0) {
+                      sockets.broadcast("Your team has lost a game.");
+                      util.log("[INFO] The Team Has Lost.");
+                      arenaClose();
+                  };
                   if (room.sanM)
                   for (let loc of room.sanM) {
                   let o = new Entity(loc);
@@ -4130,11 +4135,6 @@ const sockets = (() => {
                       };
                     };
                   };
-                  if (sancount === 0) {
-                      sockets.broadcast("Your team has lost a game.");
-                      util.log("[INFO] The Team Has Lost.");
-                      arenaClose();
-                   };
                    setInterval(() => {
                     let minimaps = all.players = { [1]: [], [2]: [], [3]: [], [4]: [] }
                     let minibosses = all.minibosses = []
