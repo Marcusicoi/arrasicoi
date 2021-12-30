@@ -5626,7 +5626,7 @@ var maintainloop = (() => {
             spawnCrasher(census);
             spawnShinyShapes(census);
                 if (bots.length < c.BOTS) {
-                    let o = new Entity(room.random());
+                    let o = new Entity('sanM');
                     o.define(Class.bot) 
                     o.define(ran.choose([Class.basic, Class.page2, Class.page3]));
                     o.name += ran.chooseBotName();
