@@ -5098,7 +5098,9 @@ var maintainloop = (() => {
                     strange2 = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
                     strange3 = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
                     strange4 = [Class.palisade, Class.summon, Class.elite_skimmer, Class.nest],
-                    celestials = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
+                    celestials1 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
+                    celestials2 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
+                    celestials3 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir],
                     rooms = ['bosN', 'bosW', 'bosS', 'bosE'];
                 switch (wave) {
                     case 1: 
@@ -5119,15 +5121,15 @@ var maintainloop = (() => {
                         break;
                     case 5: 
                         choice = [[ran.choose(elites1), Class.ek1], 4, 'a', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK1(s)');
+                        sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK1');
                         break;
                     case 6: 
                         choice = [[ran.choose(elites1), ran.choose(strange1)], 4, 'a', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Elite Crashers and ? Strange Boss(es)');
+                        sockets.broadcast('Wave Contenders: ? Elite Crashers and ? Strange Bosses');
                         break;
                     case 7: 
                         choice = [[ran.choose(elites1), Class.ek2], 3, 'castle', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK2(s)');
+                        sockets.broadcast('Wave Contenders: ? Elite Crashers and ? EK2');
                         break;
                     case 8: 
                         choice = [[ran.choose(strange1), ran.choose(strange2), ran.choose(strange3)], 3, 'castle', ran.choose(rooms)]; 
@@ -5138,8 +5140,8 @@ var maintainloop = (() => {
                         sockets.broadcast("Wave Contenders: 4 Strange Bosses");
                         break;
                     case 10: 
-                        choice = [[ran.choose(strange), Class.ek2], 3, 'castle', ran.choose(rooms)]; 
-                        sockets.broadcast('Wave Contenders: ? Strange Boss(es) and ? EK2(s)');
+                        choice = [[ran.choose(strange1), Class.ek2], 3, 'castle', ran.choose(rooms)]; 
+                        sockets.broadcast('Wave Contenders: ? Strange Bosses and ? EK2');
                         break;
                     case 11: 
                         choice = [[Class.sk1, Class.sk2, Class.eq1], 3, 'a', ran.choose(rooms)]; 
@@ -5195,46 +5197,46 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 1 EQ3');
                         break;
                     case 23:
-                        choice = [[ran.choose(celestials), ran.choose(elites1)], 3, 'castle', ran.choose(rooms)];
+                        choice = [[ran.choose(celestials1), ran.choose(elites1)], 3, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: ? Celestials and ? Elite Crashers');
                         break;
                     case 24:
-                        choice = [[ran.choose(celestials), ran.choose(strange)], 3, 'castle', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Celestials and ? Strange Boss(es)');
+                        choice = [[ran.choose(celestials1), ran.choose(strange1)], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? Strange Bosses');
                         break;
                     case 25:
-                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
+                        choice = [[ran.choose(celestials1), Class.eq1], 3, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
                         break;
                     case 26:
-                        choice = [[ran.choose(celestials), ], 3, 'castle', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
+                        choice = [[ran.choose(celestials1), ran.choose(elites1), ran.choose(strange1)], 4, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials, ? Elite Crashers and ? Strange Bosses');
                         break;
-                    case 25:
+                    case 27:
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2)], 2, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: 2 Celestials');
+                        break;
+                    case 28:
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(elites1), ran.choose(elites2)], 3, 'castle', ran.choose(rooms)];
+                        sockets.broadcast('Wave Contenders: ? Celestials and ? Elite Crashers');
+                        break;
+                    case 29:
                         choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
                         break;
-                    case 25:
+                    case 30:
                         choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
                         break;
-                    case 25:
+                    case 31:
                         choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
                         break;
-                    case 25:
+                    case 32:
                         choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
                         break;
-                    case 25:
-                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
-                        break;
-                    case 25:
-                        choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
-                        sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
-                        break;
-                    case 25:
+                    case 33:
                         choice = [[ran.choose(celestials), Class.eq1], 3, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
                         break;
