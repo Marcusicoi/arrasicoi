@@ -5792,10 +5792,18 @@ bot.on('ready', () => {
 });
 bot.on("messageCreate", message => {
  if(message.content === ">help") {
-    const embed = new discord()
-    .setTitle("Commands.")
-    .setDescription(">players = Sends Player's Name And ID" +
-                    "\n>broadcast =
+    const embed = {
+    title: "Commands.",
+    description: ">players = Sends Player's Name And ID" +
+                    "\n>broadcast = Broadcasts a message into the game" +
+                    "\n>define = Defines a user into a tank" +
+                    "\n>ping = Tells the latency of the game" +
+                    "\n>restore all = Restores every entity into a score" +
+                    "\n>link = Sends a link to the game",
+    footer: "conq",
+    color: 0x0077ff
+    }
+    message.channel.send({ embeds: [embed] });
   }
   if (message.content.startsWith(">players")) {
       let output = '', outWillFail = true;
