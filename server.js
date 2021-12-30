@@ -5300,7 +5300,7 @@ var maintainloop = (() => {
     // Spawning functions
     let spawnBosses = (() => {
         let timer = 8;
-        let wave = 1;
+        let wave = 37;
         let boss = (() => {
             let i = 1,
                 names = [],
@@ -5363,6 +5363,7 @@ var maintainloop = (() => {
                     celestials2 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir, Class.blaze],
                     celestials3 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir, Class.blaze],
                     celestials4 = [Class.paladin, Class.freyja, Class.zaphkiel, Class.theia, Class.nyx, Class.athena, Class.alviss, Class.tyr, Class.fiolnir, Class.blaze],
+                    finalboss = [Class.kronos, Class.ragnarok],
                     rooms = ['bosN', 'bosW', 'bosS', 'bosE'];
                 switch (wave) {
                     case 1: 
@@ -5523,7 +5524,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 4 Celestials');
                         break;
                     case 39:
-                        choice = [[ran.choose(Class.kronos, Class.ragnarok)], 1, 'castle', ran.choose(rooms)];
+                        choice = [[ran.choose(finalboss)], 1, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 1 Eternal');
                         sockets.broadcast('The Final Wave.');
                         break;
