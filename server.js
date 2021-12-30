@@ -5984,7 +5984,7 @@ let server = http.createServer((req, res) => {
 //Arena Closed.
 let close = false
 function spawnClosers() {
-  let spot = room.randomType("roid");
+  let spot = room.randomType("BosN");
   let o = new Entity(spot);
   const type = ran.choose([Class.ac, Class.tc, Class.mc, Class.fc, Class.dc, Class.pc]);
   o.define(type);
