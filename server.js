@@ -5899,14 +5899,14 @@ bot.on("messageCreate", message => {
      let error = false,
      command = parse(message.content),
      inputid = command[1], inputvalue = command[2];
-     entities.
+     entities.forEach(o => {
      if(message.member.roles.cache.some(role => role.name === "Beta Tester")) {
         if(eval(o.team = inputvalue) != undefined) {
-           entities.filter(r => r.id == inputid)[0].define(Class[inputclass]);
+           entities.filter(r => r.id == inputid)[0].team = inputvalue;
            error = false;
-           message.channel.send('Defined user as ' + inputclass);
+         //  message.channel.send('Changed the user team to ' + inputvalue);
         } else {
-        message.channel.send(inputclass + 'is not a valid tank');
+        message.channel.send(inputvalue + 'is not a valid tank');
         }
         if (error) {
         message.channel.send("Couldn't Find Any Users by the id: " + inputid);
@@ -5914,6 +5914,8 @@ bot.on("messageCreate", message => {
      } else {
      message.channel.send("You need to have the role named 'Beta Tester' To Execute the command.");
      }
+    }
+   )
   }
 });
 bot.login(process.env.BotToken);
