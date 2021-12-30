@@ -5528,6 +5528,11 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: 1 Eternal');
                         sockets.broadcast('The Final Wave.');
                         break;
+                    case 40:
+                        sockets.broadcast('YOU WON THE GAME!');
+                        util.log('[INFO] The Team Has Succeeded The Game!');
+                        arenaClose();
+                        break;
                 }      
                 boss.prepareToSpawn(...choice);
                 setTimeout(boss.spawn, 4);
