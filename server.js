@@ -3850,7 +3850,7 @@ const sockets = (() => {
                   o.define(Class.wall);
                   o.team = -100;
                   };
-                  var sancount = 8;
+                  var sancount = 4;
                   if (room.sanc)
                   for (let loc of room.sanc) {
                   let o = new Entity(loc);
@@ -3870,7 +3870,7 @@ const sockets = (() => {
                     };
                   if (sancount === 0) {
                     sockets.broadcast("Your team has lost a game.");
-                    util.log("[INFO] The team has lost game. Closing");
+                    util.log("[INFO] The Team Has Lost.");
                     arenaClose();
                     };
                    };
