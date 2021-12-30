@@ -3885,6 +3885,11 @@ const sockets = (() => {
                       sancount += 1;
                       sockets.broadcast("The middle sanctuary has been revived! " + sancount + " Sanctuaries Left.");
                       util.log("[INFO] The Team Has Revived The Middle Sanctuary. " + sancount + " Sanctuaries Left.");
+                      if (sancount === 0) {
+                      sockets.broadcast("Your team has lost a game.");
+                      util.log("[INFO] The Team Has Lost.");
+                      arenaClose();
+                      };
                       e.ondeath = o.ondeath
                       o = e;
                       };
@@ -4130,11 +4135,6 @@ const sockets = (() => {
                       };
                     };
                   };
-                  if (sancount === 0) {
-                    sockets.broadcast("Your team has lost a game.");
-                    util.log("[INFO] The Team Has Lost.");
-                    arenaClose();
-                    };
                    setInterval(() => {
                     let minimaps = all.players = { [1]: [], [2]: [], [3]: [], [4]: [] }
                     let minibosses = all.minibosses = []
