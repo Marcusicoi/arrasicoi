@@ -3859,8 +3859,8 @@ const sockets = (() => {
                   o.define(Class.wall);
                   o.team = -100;
                   };
-                  var sancount = 9;
-                  if (sancount === 0) {
+                  let sancount = 9;
+                  if (sancount === 8) {
                       sockets.broadcast("Your team has lost a game.");
                       util.log("[INFO] The Team Has Lost.");
                       arenaClose();
