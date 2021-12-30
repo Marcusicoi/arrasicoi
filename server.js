@@ -2677,6 +2677,7 @@ class Entity {
         // Remove from the collision grid
         this.removeFromGrid();
         this.isGhost = true;
+        if(this.ondeath) this.ondeath();
     }    
     
     isDead() {
@@ -3532,7 +3533,7 @@ const sockets = (() => {
                             // Choose from one of the least ones
                             if (player.team == null) { player.team = ran.choose(possiblities) + 1; }
                             // Make sure you're in a sanctuary
-                            if (room['sanc'].length) do { loc = room.randomType('sanc'); } while (dirtyCheck(loc, 50));
+                            if (room['sanM'].length) do { loc = room.randomType('sanM'); } while (dirtyCheck(loc, 50));
                             else do { loc = room.gaussInverse(5); } while (dirtyCheck(loc, 50));
                         } break;
                         default: do { loc = room.gaussInverse(5); } while (dirtyCheck(loc, 50));
@@ -3556,7 +3557,7 @@ const sockets = (() => {
                     // Decide how to color and team the body
                     switch (room.gameMode) {
                         case "siege": {
-                            body.team = -1;
+                            body.team = -2;
                             body.color = 10;
                         }; break;
                         default: {
