@@ -5043,7 +5043,7 @@ var maintainloop = (() => {
         let boss = (() => {
             let i = 1,
                 names = [],
-                bois = [Class.egg],
+                bois = [Class.elite],
                 n = 0,
                 begin = 'yo some shit is about to move to a lower position',
                 arrival = 'Something happened lol u should probably let Neph know this broke',
