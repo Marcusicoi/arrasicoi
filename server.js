@@ -3850,30 +3850,35 @@ const sockets = (() => {
                   o.define(Class.wall);
                   o.team = -100;
                   };
-                  var sancount = 4;
-                  if (room.sanc)
-                  for (let loc of room.sanc) {
+                  var sancount = 9;
+                  if (room.sanM)
+                  for (let loc of room.sanM) {
                   let o = new Entity(loc);
                   o.define(Class.sanctuary);
                   o.team = -1;
                   o.SIZE = 60;
                   o.color = 10;
                   o.ondeath = () => {
-                    let i = new Entity(loc);
-                    i.team = -1 || -100;
-                    i.color = 3;
-                    i.SIZE = 60;
-                    i.define(Class.desanctuaroyed);
-                    i.ondeath = o.ondeath;
                     sancount -= 1;
-                    o = i;
+                    sockets.broadcast("The middle sanctuary has been destroyed! + 
                     };
+                  };
+                  if (room.san2)
+                  for (let loc of room.san2) {
+                  let o = new Entity(loc);
+                  o.define(Class.sanctuary);
+                  o.team = -1;
+                  o.SIZE = 60;
+                  o.color = 10;
+                  o.ondeath = () => {
+                    sancount -= 1;
+                    };
+                  };
                   if (sancount === 0) {
                     sockets.broadcast("Your team has lost a game.");
                     util.log("[INFO] The Team Has Lost.");
                     arenaClose();
                     };
-                   };
                    setInterval(() => {
                     let minimaps = all.players = { [1]: [], [2]: [], [3]: [], [4]: [] }
                     let minibosses = all.minibosses = []
