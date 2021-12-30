@@ -3868,9 +3868,26 @@ const sockets = (() => {
                   o.SIZE = 60;
                   o.color = 10;
                   o.ondeath = () => {
+                    let i = new Entity(loc);
+                    i.define(Class.desanctuaroyed);
+                    i.team = -100;
+                    i.SIZE = 60;
+                    i.color = 3;
                     sancount -= 1;
                     sockets.broadcast("The middle sanctuary has been destroyed! " + sancount + " Sanctuaries Left.");
                     util.log("[INFO] The Team Has Lost The Middle Sanctuary. " + sancount + " Sanctuaries Left.");
+                    i.ondeath = () => {
+                      let e = new Entity(loc);
+                      e.define(Class.sanctuary);
+                      e.team = -1;
+                      e.SIZE = 60;
+                      e.color = 10;
+                      sancount += 1;
+                      sockets.broadcast("The middle sanctuary has been revived! " + sancount + " Sanctuaries Left.");
+                      util.log("[INFO] The Team Has Revived The Middle Sanctuary. " + sancount + " Sanctuaries Left.");
+                      e.ondeath = i.ondeath
+                      i = e;
+                      };
                     };
                   };
                   if (room.saUL)
