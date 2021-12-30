@@ -3860,11 +3860,12 @@ const sockets = (() => {
                   o.color = 10;
                   o.ondeath = () => {
                     sancount -= 1;
-                    sockets.broadcast("The middle sanctuary has been destroyed! + 
+                    sockets.broadcast("The middle sanctuary has been destroyed! " + sancount + " Sanctuaries Left.");
+                    util.log("[INFO] The Team Has Lost The Middle Sanctuary. " + sancount + " Sanctuaries Left.");
                     };
                   };
-                  if (room.san2)
-                  for (let loc of room.san2) {
+                  if (room.saUL)
+                  for (let loc of room.saUL) {
                   let o = new Entity(loc);
                   o.define(Class.sanctuary);
                   o.team = -1;
@@ -3872,6 +3873,47 @@ const sockets = (() => {
                   o.color = 10;
                   o.ondeath = () => {
                     sancount -= 1;
+                    sockets.broadcast("The top left sanctuary has been destroyed! " + sancount + " Sanctuaries Left.");
+                    util.log("[INFO] The Team Has Lost The Top Left Sanctuary. " + sancount + " Sanctuaries Left.");
+                    };
+                  };
+                  if (room.sULD)
+                  for (let loc of room.sULD) {
+                  let o = new Entity(loc);
+                  o.define(Class.sanctuary);
+                  o.team = -1;
+                  o.SIZE = 60;
+                  o.color = 10;
+                  o.ondeath = () => {
+                    sancount -= 1;
+                    sockets.broadcast("The top left down sanctuary has been destroyed! " + sancount + " Sanctuaries Left.");
+                    util.log("[INFO] The Team Has Lost The Top Left Down Sanctuary. " + sancount + " Sanctuaries Left.");
+                    };
+                  };
+                  if (room.saUR)
+                  for (let loc of room.saUR) {
+                  let o = new Entity(loc);
+                  o.define(Class.sanctuary);
+                  o.team = -1;
+                  o.SIZE = 60;
+                  o.color = 10;
+                  o.ondeath = () => {
+                    sancount -= 1;
+                    sockets.broadcast("The top right sanctuary has been destroyed! " + sancount + " Sanctuaries Left.");
+                    util.log("[INFO] The Team Has Lost The Top Right Sanctuary. " + sancount + " Sanctuaries Left.");
+                    };
+                  };
+                  if (room.sURD)
+                  for (let loc of room.sURD) {
+                  let o = new Entity(loc);
+                  o.define(Class.sanctuary);
+                  o.team = -1;
+                  o.SIZE = 60;
+                  o.color = 10;
+                  o.ondeath = () => {
+                    sancount -= 1;
+                    sockets.broadcast("The top right down sanctuary has been destroyed! " + sancount + " Sanctuaries Left.");
+                    util.log("[INFO] The Team Has Lost The Top Right Down Sanctuary. " + sancount + " Sanctuaries Left.");
                     };
                   };
                   if (sancount === 0) {
