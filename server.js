@@ -5787,7 +5787,7 @@ function parse(input) {
 }; 
 bot.on('ready', () => {                             
     util.log('Bot ready!');  
-    bot.user.setActivity("arrasicoi!", { type: "PLAYING", url: "https://arrasicoi2.glitch.me/"});
+    bot.user.setActivity("arrasicoi!", { type: "PLAYING", url: "https://arrasicoi.neocities.org"})
     bot.user.setStatus("idle"); 
 });
 bot.on("messageCreate", message => {
