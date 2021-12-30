@@ -3856,7 +3856,7 @@ const sockets = (() => {
                   let o = new Entity(loc);
                   o.define(Class.sanctuary);
                   o.team = -1;
-                  o.SIZE = 90;
+                  o.SIZE = 60;
                   o.color = 10;
                   o.ondeath = () => {
                     let i = new Entity(loc);
