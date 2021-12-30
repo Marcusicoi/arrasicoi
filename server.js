@@ -83,7 +83,15 @@ const room = {
     room.findType('rock');
     room.findType('wall');
     room.findType('bas5');
-    room.findType('sanc');
+    room.findType('sanM');
+    room.findType('saUL');
+    room.findType('sULD');
+    room.findType('saUR');
+    room.findType('sURD');
+    room.findType('saDL');
+    room.findType('sDLU');
+    room.findType('saDR');
+    room.findType('sDRU');
     room.findType('barr');
     room.findType('bosN');
     room.findType('bosW');
@@ -3914,6 +3922,58 @@ const sockets = (() => {
                     sancount -= 1;
                     sockets.broadcast("The top right down sanctuary has been destroyed! " + sancount + " Sanctuaries Left.");
                     util.log("[INFO] The Team Has Lost The Top Right Down Sanctuary. " + sancount + " Sanctuaries Left.");
+                    };
+                  };
+                  if (room.saDL)
+                  for (let loc of room.saDL) {
+                  let o = new Entity(loc);
+                  o.define(Class.sanctuary);
+                  o.team = -1;
+                  o.SIZE = 60;
+                  o.color = 10;
+                  o.ondeath = () => {
+                    sancount -= 1;
+                    sockets.broadcast("The down left sanctuary has been destroyed! " + sancount + " Sanctuaries Left.");
+                    util.log("[INFO] The Team Has Lost The Down Left Sanctuary. " + sancount + " Sanctuaries Left.");
+                    };
+                  };
+                  if (room.sDLU)
+                  for (let loc of room.sDLU) {
+                  let o = new Entity(loc);
+                  o.define(Class.sanctuary);
+                  o.team = -1;
+                  o.SIZE = 60;
+                  o.color = 10;
+                  o.ondeath = () => {
+                    sancount -= 1;
+                    sockets.broadcast("The down left up sanctuary has been destroyed! " + sancount + " Sanctuaries Left.");
+                    util.log("[INFO] The Team Has Lost The Down Left Up Sanctuary. " + sancount + " Sanctuaries Left.");
+                    };
+                  };
+                  if (room.saDR)
+                  for (let loc of room.saDR) {
+                  let o = new Entity(loc);
+                  o.define(Class.sanctuary);
+                  o.team = -1;
+                  o.SIZE = 60;
+                  o.color = 10;
+                  o.ondeath = () => {
+                    sancount -= 1;
+                    sockets.broadcast("The down right sanctuary has been destroyed! " + sancount + " Sanctuaries Left.");
+                    util.log("[INFO] The Team Has Lost The Down Right Sanctuary. " + sancount + " Sanctuaries Left.");
+                    };
+                  };
+                  if (room.sDRU)
+                  for (let loc of room.sDRU) {
+                  let o = new Entity(loc);
+                  o.define(Class.sanctuary);
+                  o.team = -1;
+                  o.SIZE = 60;
+                  o.color = 10;
+                  o.ondeath = () => {
+                    sancount -= 1;
+                    sockets.broadcast("The down right up sanctuary has been destroyed! " + sancount + " Sanctuaries Left.");
+                    util.log("[INFO] The Team Has Lost The Down Right Up Sanctuary. " + sancount + " Sanctuaries Left.");
                     };
                   };
                   if (sancount === 0) {
