@@ -5520,7 +5520,7 @@ var maintainloop = (() => {
                         sockets.broadcast('Wave Contenders: ? Celestials and ? EQ1');
                         break;
                     case 38:
-                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3), ran.choose(elites1), ran.choose(celestials4)], 4, 'castle', ran.choose(rooms)];
+                        choice = [[ran.choose(celestials1), ran.choose(celestials2), ran.choose(celestials3), ran.choose(celestials4)], 4, 'castle', ran.choose(rooms)];
                         sockets.broadcast('Wave Contenders: 4 Celestials');
                         break;
                     case 39:
