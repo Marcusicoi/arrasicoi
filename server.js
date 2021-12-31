@@ -5562,7 +5562,7 @@ var maintainloop = (() => {
                         const type = ran.choose(([config.crashers, config.sentries][+(Math.random() > config.sentryChance)]));
                         let o = new Entity(spot);
                         o.define(type);
-                        o.team = -100;
+                        o.team = -1;
                     }
                 }
             }
