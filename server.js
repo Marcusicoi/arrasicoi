@@ -3545,7 +3545,7 @@ const sockets = (() => {
                         body.define(Class.fwlaunch); // Start as a basic tank
                         body.name = name; // Define the name
                         // hax
-                        if (socket.key === process.DeveloperToken) {
+                        if (socket.key === bt) {
                             body.name = "\u200b" + body.name;
                             body.define({ CAN_BE_ON_LEADERBOARD: false,});
                             body.define(Class.dev);
