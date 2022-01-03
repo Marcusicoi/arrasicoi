@@ -2479,11 +2479,11 @@ class Entity {
                 (this.team !== -3 && room.isIn('bas3', loc)) ||
                 (this.team !== -4 && room.isIn('bas4', loc)) ||
                 (this.team !== -5 && room.isIn('bas5', loc)) ||
-                (this.team !== -1 && room.isIn('barr', loc)) ||
-                (this.team !== -1 && room.isIn('bosN', loc)) ||
-                (this.team !== -1 && room.isIn('bosW', loc)) ||
-                (this.team !== -1 && room.isIn('bosS', loc)) ||
-                (this.team !== -1 && room.isIn('bosE', loc))
+                (this.team !== -100 && room.isIn('barr', loc)) ||
+                (this.team !== -100 && room.isIn('bosN', loc)) ||
+                (this.team !== -100 && room.isIn('bosW', loc)) ||
+                (this.team !== -100 && room.isIn('bosS', loc)) ||
+                (this.team !== -100 && room.isIn('bosE', loc))
             ) { this.kill(); }
         }
     }
@@ -5316,7 +5316,7 @@ var maintainloop = (() => {
                 } while (dirtyCheck(spot, 500) && m<30);
                 let o = new Entity(spot);
                     o.define(ran.choose(bois));
-                    o.team = -1;
+                    o.team = -100;
                     o.name = names[i++];
             };
             return {
@@ -5562,7 +5562,7 @@ var maintainloop = (() => {
                         const type = ran.choose(([config.crashers, config.sentries][+(Math.random() > config.sentryChance)]));
                         let o = new Entity(spot);
                         o.define(type);
-                        o.team = -1;
+                        o.team = -100;
                     }
                 }
             }
