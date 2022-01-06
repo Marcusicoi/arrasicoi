@@ -7887,5 +7887,11 @@ bot.on("messageCreate", (message) => {
   if (message.content.startsWith(">link")) {
     message.channel.send("https://arrasicoi.neocities.org/");
   }
+  if (message.content.startsWith(">2048Tile")) {
+      let ran = Math.floor(Math.random * 3);
+      let ones = ran.choose("", "U", "D", "T", "q", "Q", "s", "S", "O", "N");
+      let tens = ran.choose("", "D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No");
+      let hundreds = ran.choose("", "Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne");
+      let millions/*?*/ = ran.choose("",
 });
 bot.login(process.env.BotToken);
