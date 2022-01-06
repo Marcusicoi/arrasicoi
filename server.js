@@ -7888,13 +7888,15 @@ bot.on("messageCreate", (message) => {
     message.channel.send("https://arrasicoi.neocities.org/");
   }
   if (message.content.startsWith(">tile")) {
-      let ran = Math.floor(1 * 3);
-      let num = Math.floor(1 * 999);
-      let ones = ran.choose("U", "D", "T", "q", "Q", "s", "S", "O", "N");
-      let tens = ran.choose("", "D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No");
-      let hundreds = ran.choose("", "Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne");
-      let thousands = ran.choose("", "Mi", "Mc", "Na", "Pc", "Fm", "At", "Zp", "Yc", "Xn", "Vc");
-      let millions/*?*/ = ran.choose("", "Mec", "Duc", "Trc", "Tec", "Pec", "Hxc", "Hpc", "Occ",  "Enc", "Ic");
+      let random = Math.floor(Math.random() * 3);
+      let num = Math.floor(Math.random() * 999);
+      let ones = ran.choose(["U", "D", "T", "q", "Q", "s", "S", "O", "N"]);
+      let tens = ran.choose(["", "D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"]);
+      let hundreds = ran.choose(["", "Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne"]);
+      let thousands = ran.choose(["", "Mi", "Mc", "Na", "Pc", "Fm", "At", "Zp", "Yc", "Xn", "Vc"]);
+      let millions/*?*/ = ran.choose(["", "Mec", "Duc", "Trc", "Tec", "Pec", "Hxc", "Hpc", "Occ",  "Enc", "Ic"]);
+      if (random === 1) {
+          message.
       message.channel.send("Tile: " + num + ones + tens + hundreds + thousands + millions);
   }
 });
