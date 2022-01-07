@@ -7912,5 +7912,8 @@ bot.on("messageCreate", (message) => {
       }
       message.channel.send(arg);
   }
+  if (message.content.startsWith(">2048Tile level=")) {
+      let arg = message.content.substring(16);
+      }
 });
 bot.login(process.env.BotToken);
