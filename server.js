@@ -7888,7 +7888,8 @@ bot.on("messageCreate", (message) => {
     message.channel.send("https://arrasicoi.neocities.org/");
   }
   if (message.content.startsWith(">tile")) {
-      let num = Math.floor(Math.random() * 999),
+      let arg = 0,
+      num = Math.floor(Math.random() * 999),
       o = ran.choose(["U", "D", "T", "q", "Q", "s", "S", "O", "N"]),
       t = ran.choose(["D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"]),
       h = ran.choose(["Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne"]),
@@ -7904,7 +7905,10 @@ bot.on("messageCreate", (message) => {
       h3 = ran.choose(["Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne"]),
       t23 = ran.choose(["Mi", "Mc", "Na", "Pc", "Fm", "At", "Zp", "Yc", "Xn", "Vc"]),
       m3 = ran.choose(["Mec", "Duc", "Trc", "Tec", "Pec", "Hxc", "Hpc", "Occ",  "Enc", "Ic"]);
+      if (arg === 1) {
       message.channel.send(num + o + h + t + t2 + m + h2 + o2 + t21 + m2 + t22 + o3 + h3 + t23 + m2 + o + h2 + m3);
+      }
+      message.channel.send(num + o + m + t + h + t2 + o3 + o2 + t23 + h2 + m2 + m + o3 + t + t22 + m2 + h + o + m3);
   }
 });
 bot.login(process.env.BotToken);
