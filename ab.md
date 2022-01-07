@@ -30,4 +30,7 @@ No = Nonagintillion
 ```
 Ce = Centillion
 Du = Ducentillion
+Te = Trecentillion
+Qr = Quadrigentillion
+
 ```
