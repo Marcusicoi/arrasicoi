@@ -7889,22 +7889,22 @@ bot.on("messageCreate", (message) => {
   }
   if (message.content.startsWith(">tile")) {
       let num = Math.floor(Math.random() * 999),
-      ones = ran.choose(["U", "D", "T", "q", "Q", "s", "S", "O", "N"]),
-      tens = ran.choose(["", "D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"]),
-      hundreds = ran.choose(["", "Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne"]),
-      thousands = ran.choose(["", "Mi", "Mc", "Na", "Pc", "Fm", "At", "Zp", "Yc", "Xn", "Vc"]),
-      millions = ran.choose(["", "Mec", "Duc", "Trc", "Tec", "Pec", "Hxc", "Hpc", "Occ",  "Enc", "Ic"]),
-      ab1 = ran.choose([ones, tens, hundreds, thousands, millions]),
-      ab2 = ran.choose([ones, tens, hundreds, thousands, millions]),
-      ab3 = ran.choose([ones, tens, hundreds, thousands, millions]),
-      ab4 = ran.choose([ones, tens, hundreds, thousands, millions]),
-      ab5 = ran.choose([ones, tens, hundreds, thousands, millions]),
-      ab6 = ran.choose([ones, tens, hundreds, thousands, millions]),
-      ab7 = ran.choose([ones, tens, hundreds, thousands, millions]),
-      ab8 = ran.choose([ones, tens, hundreds, thousands, millions]),
-      ab9 = ran.choose([ones, tens, hundreds, thousands, millions]),
-      ab10 = ran.choose([ones, tens, hundreds, thousands, millions]);
-      message.channel.send("Tile: " + num + ab1 + ab2 + ab3 + ab4 + ab5 + ab6 + ab7 + ab8 + ab9 + ab10);
+      o = ran.choose(["U", "D", "T", "q", "Q", "s", "S", "O", "N"]),
+      t = ran.choose(["D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"]),
+      h = ran.choose(["Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne"]),
+      t2 = ran.choose(["Mi", "Mc", "Na", "Pc", "Fm", "At", "Zp", "Yc", "Xn", "Vc"]),
+      m = ran.choose(["Mec", "Duc", "Trc", "Tec", "Pec", "Hxc", "Hpc", "Occ",  "Enc", "Ic"]),
+      o2 = ran.choose(["U", "D", "T", "q", "Q", "s", "S", "O", "N"]),
+      t21 = ran.choose(["D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"]),
+      h2 = ran.choose(["Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne"]),
+      t22 = ran.choose(["Mi", "Mc", "Na", "Pc", "Fm", "At", "Zp", "Yc", "Xn", "Vc"]),
+      m2 = ran.choose(["Mec", "Duc", "Trc", "Tec", "Pec", "Hxc", "Hpc", "Occ",  "Enc", "Ic"]),
+      o3 = ran.choose(["U", "D", "T", "q", "Q", "s", "S", "O", "N"]),
+      t3 = ran.choose(["D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"]),
+      h3 = ran.choose(["Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne"]),
+      t23 = ran.choose(["Mi", "Mc", "Na", "Pc", "Fm", "At", "Zp", "Yc", "Xn", "Vc"]),
+      m3 = ran.choose(["Mec", "Duc", "Trc", "Tec", "Pec", "Hxc", "Hpc", "Occ",  "Enc", "Ic"]);
+      message.channel.send("Tile: " + num + o + h + t + t2 + m + h2 + o2 + t21 + m2 + t22 + o3 + h3 + t23 + m2 + o + h2 + m3);
   }
 });
 bot.login(process.env.BotToken);
