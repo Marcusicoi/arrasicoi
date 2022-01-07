@@ -32,5 +32,5 @@ Ce = Centillion
 Du = Ducentillion
 Te = Trecentillion
 Qr = Quadrigentillion
-
+Qn = Quingentillion
 ```
