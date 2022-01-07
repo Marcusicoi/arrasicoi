@@ -7913,7 +7913,9 @@ bot.on("messageCreate", (message) => {
       message.channel.send(arg);
   }
   if (message.content.startsWith(">2048Tile level=")) {
-      let arg = message.content.substring(16);
+      let arg = mecontent === ">2048Tile level=test"ontent.substring(16);
+      if (message.xo
+    ) {message.channel.send("gg")};
       }
 });
 bot.login(process.env.BotToken);
