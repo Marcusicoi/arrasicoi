@@ -7904,7 +7904,7 @@ bot.on("messageCreate", (message) => {
       h3 = ran.choose(["Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne"]),
       t23 = ran.choose(["Mi", "Mc", "Na", "Pc", "Fm", "At", "Zp", "Yc", "Xn", "Vc"]),
       m3 = ran.choose(["Mec", "Duc", "Trc", "Tec", "Pec", "Hxc", "Hpc", "Occ",  "Enc", "Ic"]);
-      message.channel.send("Tile: " + num + o + h + t + t2 + m + h2 + o2 + t21 + m2 + t22 + o3 + h3 + t23 + m2 + o + h2 + m3);
+      message.channel.send(num + o + h + t + t2 + m + h2 + o2 + t21 + m2 + t22 + o3 + h3 + t23 + m2 + o + h2 + m3);
   }
 });
 bot.login(process.env.BotToken);
