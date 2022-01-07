@@ -7888,15 +7888,23 @@ bot.on("messageCreate", (message) => {
     message.channel.send("https://arrasicoi.neocities.org/");
   }
   if (message.content.startsWith(">tile")) {
-      let arg = message.content.substring(6)
-      let num = Math.floor(Math.random() * 999)
-      let ones = ran.choose(["U", "D", "T", "q", "Q", "s", "S", "O", "N"]);
-      let tens = ran.choose(["", "D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"]);
-      let hundreds = ran.choose(["", "Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne"]);
-      let thousands = ran.choose(["", "Mi", "Mc", "Na", "Pc", "Fm", "At", "Zp", "Yc", "Xn", "Vc"]);
-      let millions/*?*/ = ran.choose(["", "Mec", "Duc", "Trc", "Tec", "Pec", "Hxc", "Hpc", "Occ",  "Enc", "Ic"]);
-      if (arg === num)
-      message.channel.send("Tile: " + arg);
+      let num = Math.floor(Math.random() * 999),
+      ones = ran.choose(["U", "D", "T", "q", "Q", "s", "S", "O", "N"]),
+      tens = ran.choose(["", "D", "V", "TR", "QU", "QI", "Sx", "Sp", "Oc", "No"]),
+      hundreds = ran.choose(["", "Ce", "Du", "TR", "Qa", "Qi", "Se", "Si", "Ot", "Ne"]),
+      thousands = ran.choose(["", "Mi", "Mc", "Na", "Pc", "Fm", "At", "Zp", "Yc", "Xn", "Vc"]),
+      millions = ran.choose(["", "Mec", "Duc", "Trc", "Tec", "Pec", "Hxc", "Hpc", "Occ",  "Enc", "Ic"]),
+      ab1 = ran.choose([ones, tens, hundreds, thousands, millions]),
+      ab2 = ran.choose([ones, tens, hundreds, thousands, millions]),
+      ab3 = ran.choose([ones, tens, hundreds, thousands, millions]),
+      ab4 = ran.choose([ones, tens, hundreds, thousands, millions]),
+      ab5 = ran.choose([ones, tens, hundreds, thousands, millions]),
+      ab6 = ran.choose([ones, tens, hundreds, thousands, millions]),
+      ab7 = ran.choose([ones, tens, hundreds, thousands, millions]),
+      ab8 = ran.choose([ones, tens, hundreds, thousands, millions]),
+      ab9 = ran.choose([ones, tens, hundreds, thousands, millions]),
+      ab10 = ran.choose([ones, tens, hundreds, thousands, millions]);
+      message.channel.send("Tile: " + num + ab1 + ab2 + ab3 + ab4 + ab5 + ab6 + ab7 + ab8 + ab9 + ab10);
   }
 });
 bot.login(process.env.BotToken);
