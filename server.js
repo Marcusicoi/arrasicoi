@@ -7909,7 +7909,8 @@ bot.on("messageCreate", (message) => {
       message.channel.send(num + o + h + t + t2 + m + h2 + o2 + t21 + m2 + t22 + o3 + h3 + t23 + m2 + o + h2 + m3);
       } else if (arg === 2) {
       message.channel.send(num + o + m + t + h + t2 + o3 + o2 + t23 + h2 + m2 + m + o3 + t + t22 + m2 + h + o + m3);
-      
+      }
+      message.channel.send(arg);
   }
 });
 bot.login(process.env.BotToken);
