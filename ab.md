@@ -16,3 +16,18 @@ D = Due(insert tens here)
 ```
 **Tens**
 ```
+D = Decillion
+V = Vigintillion
+TR = Trigintillion
+QU = Quardragintillion
+QI = Quinquagintillion
+Sx = Sexagintillion
+Sp = Septuagintillion
+Oc = Octogintillion
+No = Nonagintillion
+```
+**Hundreds**
+```
+Ce = Centillion
+Du = Ducentillion
+```
