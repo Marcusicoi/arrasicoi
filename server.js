@@ -7725,7 +7725,7 @@ bot.on("ready", () => {
     url: "https://arrasicoi.neocities.org",
   });
   bot.user.setStatus("idle");
-});
+}); 
 bot.on("messageCreate", (message) => {
   if (message.content === ">help") {
     const embed = {
