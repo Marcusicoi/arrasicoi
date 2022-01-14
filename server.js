@@ -1371,10 +1371,7 @@ class Gun {
         info.PROPERTIES.SHOOT_ON_DEATH == null
           ? false
           : info.PROPERTIES.SHOOT_ON_DEATH;
-      this.color =
-        info.PROPERTIES.COLOR == null
-          ? 
-    }
+      
     let position = info.POSITION;
     this.length = position[0] / 10;
     this.width = position[1] / 10;
