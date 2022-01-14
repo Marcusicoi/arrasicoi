@@ -7717,8 +7717,16 @@ function legendShapes() {
     }, 20000);
   };
 }
-switch(ran.chooseChance(0.00002, 0.000001) {
-   case 1:
+switch(ran.chooseChance(0.0002, 0.00001)) {
+   case 1: 
+   greenShapes(),
+   util.log("[INFO] Shiny Entity Spawning (Tier 1)")
+   break;
+   case 2:
+   legendShapes(),
+   util.log("[INFO] Shiny Entity Spawning (Tier 2)")
+   break;
+}
 //Discord Bot
 const discord = require("discord.js");
 const bot = new discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
