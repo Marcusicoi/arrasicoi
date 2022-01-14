@@ -1277,6 +1277,7 @@ const lazyRealSizes = (() => {
 // Define how guns work
 class Gun {
   constructor(body, info) {
+this.color = 16;
     this.lastShot = {
       time: 0,
       power: 0,
@@ -1284,7 +1285,6 @@ class Gun {
     this.body = body;
     this.master = body.source;
     this.label = "";
-    this.color = 16;
     this.controllers = [];
     this.children = [];
     this.control = {
@@ -1294,6 +1294,8 @@ class Gun {
       alt: false,
       fire: false,
     };
+    this.color = 16;
+    this.skin = 0;
     this.canShoot = false;
     if (info.PROPERTIES != null && info.PROPERTIES.TYPE != null) {
       this.canShoot = true;
@@ -1371,8 +1373,11 @@ class Gun {
         info.PROPERTIES.SHOOT_ON_DEATH == null
           ? false
           : info.PROPERTIES.SHOOT_ON_DEATH;
-      
-      }
+      if (info.PROPERTIES.COLOR != null && info.PROPERTIES != null)
+            this.color = info.PROPERTIES.COLOR
+       }
+    if (info.PROPERTIES != null && info.PROPERTIES.COLOR != null) this.color = info.PROPERTIES.COLOR;
+    if (info.PROPERTIES != null && info.PROPERTIES.SKIN != null) this.skin = info.PROPERTIES.SKIN;
     let position = info.POSITION;
     this.length = position[0] / 10;
     this.width = position[1] / 10;
@@ -3221,6 +3226,7 @@ var http = require("http"),
             width: rounder(gun.width),
             aspect: rounder(gun.aspect),
             angle: rounder(gun.angle),
+            color: rounder(gun.color),
           };
         }),
         turrets: e.turrets.map(function (t) {
