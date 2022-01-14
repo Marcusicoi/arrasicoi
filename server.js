@@ -7690,9 +7690,6 @@ setInterval(speedcheckloop, 1000);
 setInterval(poisonLoop, room.cycleSpeed * 7);
 //Shiny Spawner
 function greenShapes() {
-  /* var i = 0.893;
-    if (Math.random() > i) {  */
-  util.log("[INFO] Shiny Entity Spawning (Tier 1)");
   let type = ran.dice(2)
     ? ran.choose([Class.gem, Class.gsqu, Class.gtri, Class.gpenta])
     : Class.gem;
@@ -7705,9 +7702,23 @@ function greenShapes() {
       greenShapes();
     }, 20000);
   };
-  // }
 }
-greenShapes();
+function legendShapes() {
+  let type = ran.dice(2)
+    ? ran.choose([Class.jewel, Class.lsqu, Class.ltri, Class.lpenta])
+    : Class.jewel;
+  let spot = room.randomType("norm", "nest");
+  let o = new Entity(spot);
+  o.define(type);
+  o.team = -100;
+  o.ondeath = () => {
+    setTimeout(() => {
+      legendShapes();
+    }, 20000);
+  };
+}
+switch(ran.chooseChance(0.00002, 0.000001) {
+   case 1:
 //Discord Bot
 const discord = require("discord.js");
 const bot = new discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
