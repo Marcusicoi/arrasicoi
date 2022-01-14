@@ -1284,6 +1284,7 @@ class Gun {
     this.body = body;
     this.master = body.source;
     this.label = "";
+    this.color = 16;
     this.controllers = [];
     this.children = [];
     this.control = {
@@ -1370,6 +1371,9 @@ class Gun {
         info.PROPERTIES.SHOOT_ON_DEATH == null
           ? false
           : info.PROPERTIES.SHOOT_ON_DEATH;
+      this.color =
+        info.PROPERTIES.COLOR == null
+          ? 
     }
     let position = info.POSITION;
     this.length = position[0] / 10;
