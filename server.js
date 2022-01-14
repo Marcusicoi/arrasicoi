@@ -1372,6 +1372,7 @@ class Gun {
           ? false
           : info.PROPERTIES.SHOOT_ON_DEATH;
       
+      }
     let position = info.POSITION;
     this.length = position[0] / 10;
     this.width = position[1] / 10;
