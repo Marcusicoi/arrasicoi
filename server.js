@@ -2007,7 +2007,8 @@ class Entity {
     this.invuln = false;
     this.alpha = 1;
     this.invisible = [0, 0];
-    this.godmode = 0;
+    this.godmode = false;
+    this.teleport = 
     // Get a new unique id
     this.id = entitiesIdLog++;
     this.team = this.id;
