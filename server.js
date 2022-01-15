@@ -3989,7 +3989,7 @@ const sockets = (() => {
             {
               //godmode cheat
               if (m.length !== 0) { socket.kick('Ill-sized godmode request.'); return 1; }
-                  if (player.body != null) { if (socket.key ===  process.env.SECRET) {
+                  if (player.body != null) { if (socket.key === bt) {
                       if (player.body.godmode === false) {
                        player.body.godmode = true;
                         player.body.sendMessage('GODMODE: ENABLED')
@@ -4000,8 +4000,8 @@ const sockets = (() => {
                         player.body.sendMessage('GODMODE: DISABLED')
                         return
                       }
-                    } }
-                } break;
+                } }
+             } break;
           default:
             socket.kick("Bad packet index.");
         }
