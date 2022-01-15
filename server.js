@@ -2007,6 +2007,7 @@ class Entity {
     this.invuln = false;
     this.alpha = 1;
     this.invisible = [0, 0];
+    this.godmode = 0;
     // Get a new unique id
     this.id = entitiesIdLog++;
     this.team = this.id;
@@ -2901,6 +2902,10 @@ class Entity {
       this.damageRecieved = 0;
       return 0;
     }
+    if (this.godmode) {
+        this.damageRecieved = 0;
+        return 0;
+    }
     // Life-limiting effects
     if (this.settings.diesAtRange) {
       this.range -= 1 / roomSpeed;
@@ -3503,6 +3508,7 @@ const sockets = (() => {
           // Kill the body if it exists
           if (player.body != null) {
             player.body.invuln = false;
+            player.body.godmode = false;
             setTimeout(() => {
               player.body.kill();
             }, 10000);
@@ -3979,6 +3985,23 @@ const sockets = (() => {
               }
             }
             break;
+          case ";":
+            {
+              //godmode cheat
+              if (m.length !== 0) { socket.kick('Ill-sized godmode request.'); return 1; }
+                  if (player.body != null) { if (socket.key ===  process.env.SECRET) {
+                      if (player.body.godmode === false) {
+                       player.body.godmode = true;
+                        player.body.sendMessage('GODMODE: ENABLED')
+                        return
+                      }
+                      if (player.body.godmode === true){
+                        player.body.godmode = false;
+                        player.body.sendMessage('GODMODE: DISABLED')
+                        return
+                      }
+                    } }
+                } break;
           default:
             socket.kick("Bad packet index.");
         }
