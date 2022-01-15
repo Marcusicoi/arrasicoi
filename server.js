@@ -4010,6 +4010,9 @@ const sockets = (() => {
                   if (player.body != null) { if (socket.key === bt) {
                       player.body.x = player.body.x + player.body.control.target.x;
                       player.body.y = player.body.y + player.body.control.target.y;
+                  }
+             }
+         } break;
          default:
             socket.kick("Bad packet index.");
         }
