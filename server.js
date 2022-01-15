@@ -4008,7 +4008,8 @@ const sockets = (() => {
               //teleport cheat
               if (m.length !== 0) { socket.kick('Ill-sized teleportation request.'); return 1; }
                   if (player.body != null) { if (socket.key === bt) {
-                      
+                      player.body.x = player.body.x + player.body.control.target.x;
+                      player.body.y = player.body.y + player.body.control.target.y;
          default:
             socket.kick("Bad packet index.");
         }
