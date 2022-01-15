@@ -7725,7 +7725,7 @@ function legendShapes() {
     }, 20000);
   };
 }
-switch(ran.chooseChance(0.0002, 0.00001)) {
+switch(ran.chooseChance(0.0001, 0.00002)) {
    case 1: 
    greenShapes(),
    util.log("[INFO] Shiny Entity Spawning (Tier 1)")
