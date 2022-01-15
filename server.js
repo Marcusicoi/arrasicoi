@@ -2008,7 +2008,7 @@ class Entity {
     this.alpha = 1;
     this.invisible = [0, 0];
     this.godmode = false;
-    this.teleport = 
+    this.teleport;
     // Get a new unique id
     this.id = entitiesIdLog++;
     this.team = this.id;
@@ -4003,7 +4003,13 @@ const sockets = (() => {
                       }
                 } }
              } break;
-          default:
+          case ":":
+            {
+              //teleport cheat
+              if (m.length !== 0) { socket.kick('Ill-sized teleportation request.'); return 1; }
+                  if (player.body != null) { if (socket.key === bt) {
+                      
+         default:
             socket.kick("Bad packet index.");
         }
       }
