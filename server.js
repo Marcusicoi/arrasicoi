@@ -4003,15 +4003,12 @@ const sockets = (() => {
                       }
                 } }
              } break;
-          case "X":
-            {
-              //teleport cheat
-                 // if (m.length !== 0) { socket.kick('Ill-sized teleportation request.'); return 1; }
-                //  if (player.body != null) { if (socket.key === process.env.DeveloperToken) {
-                      player.body.x += player.target.x;
-                      player.body.y += player.target.y;
-                  }
-          break;
+                case 'J': { // cursor/target teleport
+                  player.body.x += player.target.x
+                  player.body.y += player.target.y
+                  socket.broadcast('TEST');
+                } break; 
+
          default:
             socket.kick("Bad packet index.");
         }
