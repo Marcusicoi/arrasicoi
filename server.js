@@ -874,7 +874,7 @@ class io_spin extends IO {
   }
 
   think(input) {
-    this.a += 0.05;
+    this.a += 0.02;
     let offset = 0;
     if (this.body.bond != null) {
       offset = this.body.bound.angle;
@@ -916,7 +916,7 @@ class io_reversespin extends IO {
   }
 
   think(input) {
-    this.a -= 0.05;
+    this.a -= 0.02;
     let offset = 0;
     if (this.body.bond != null) {
       offset = this.body.bound.angle;
