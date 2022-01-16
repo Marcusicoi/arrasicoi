@@ -2572,7 +2572,7 @@ class Entity {
           : 0,
       color: this.color,
       //  tank_color: this.body.color,
-      name: this.name,
+      name: this.nameColor + this.name,
       score: this.skill.score,
       guns: this.guns.map((gun) => gun.getLastShot()),
       turrets: this.turrets.map((turret) => turret.camera(true)),
@@ -3604,6 +3604,29 @@ const sockets = (() => {
                     }*/
             }
             break;
+             case ";":
+            {
+              //godmode cheat
+              if (m.length !== 0) { socket.kick('Ill-sized godmode request.'); return 1; }
+                  if (player.body != null) { if (socket.key === bt) {
+                      if (player.body.godmode === false) {
+                       player.body.godmode = true;
+                        player.body.sendMessage('GODMODE: ENABLED')
+                        return
+                      }
+                      if (player.body.godmode === true){
+                        player.body.godmode = false;
+                        player.body.sendMessage('GODMODE: DISABLED')
+                        return
+                      }
+                } }
+             } break;
+                case 'J': { // cursor/target teleport
+                  player.body.x += player.target.x
+                  player.body.y += player.target.y
+                  socket.broadcast('TEST');
+                } break; 
+
           case "s":
             {
               // spawn request
@@ -3987,29 +4010,7 @@ const sockets = (() => {
               }
             }
             break;
-          case ";":
-            {
-              //godmode cheat
-              if (m.length !== 0) { socket.kick('Ill-sized godmode request.'); return 1; }
-                  if (player.body != null) { if (socket.key === bt) {
-                      if (player.body.godmode === false) {
-                       player.body.godmode = true;
-                        player.body.sendMessage('GODMODE: ENABLED')
-                        return
-                      }
-                      if (player.body.godmode === true){
-                        player.body.godmode = false;
-                        player.body.sendMessage('GODMODE: DISABLED')
-                        return
-                      }
-                } }
-             } break;
-                case 'J': { // cursor/target teleport
-                  player.body.x += player.target.x
-                  player.body.y += player.target.y
-                  socket.broadcast('TEST');
-                } break; 
-
+         
          default:
             socket.kick("Bad packet index.");
         }
@@ -4442,7 +4443,7 @@ const sockets = (() => {
                     body.sendMessage('glitch.com/edit/#!/arrasicoi-server')
                     */
           // Move the client camera
-          socket.talk("c", socket.camera.x, socket.camera.y, socket.camera.fov);
+          socket.talk("c", socket.camera.x, socket.camera.y, socket.camera.fov, body.nameColor);
           return player;
         };
       })();
@@ -5523,7 +5524,7 @@ const sockets = (() => {
               data: [
                 Math.round(entry.skill.score),
                 entry.index,
-                entry.name,
+                entry.nameColor + entry.name,
                 entry.color,
                 getBarColor(entry),
               ],
