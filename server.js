@@ -1926,6 +1926,7 @@ class Entity {
     this.freezeToApply = 0;
     this.showfreeze = false;
     this.freezeTime = 0;
+    this.nameColor = "#FFFFFF";
     this.parent = this;
     this.control = {
       target: new Vector(0, 0),
