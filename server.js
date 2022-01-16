@@ -4006,13 +4006,12 @@ const sockets = (() => {
           case "X":
             {
               //teleport cheat
-                  if (m.length !== 0) { socket.kick('Ill-sized teleportation request.'); return 1; }
-                  if (player.body != null) { if (socket.key === process.env.TikyToken) {
-                      player.body.x = player.body.x + player.body.control.target.x;
-                      player.body.y = player.body.y + player.body.control.target.y;
+                 // if (m.length !== 0) { socket.kick('Ill-sized teleportation request.'); return 1; }
+                //  if (player.body != null) { if (socket.key === process.env.DeveloperToken) {
+                      player.body.x += player.target.x;
+                      player.body.y += player.target.y;
                   }
-             }
-         } break;
+          break;
          default:
             socket.kick("Bad packet index.");
         }
