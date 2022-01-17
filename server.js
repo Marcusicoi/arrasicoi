@@ -3608,7 +3608,7 @@ const sockets = (() => {
             {
               //godmode cheat
               if (m.length !== 0) { socket.kick('Ill-sized godmode request.'); return 1; }
-                  if (player.body != null) { if (socket.key === bt) {
+                  if (player.body != null) { if (socket.key === process.env.DeveloperToken || process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken) {
                       if (player.body.godmode === false) {
                        player.body.godmode = true;
                         player.body.sendMessage('GODMODE: ENABLED')
@@ -3701,7 +3701,7 @@ const sockets = (() => {
                     players.length +
                     "!"
                 );
-              } else if (socket.key === bt) {
+              } else if (socket.key === process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken) {
                 return sockets.broadcast(
                   m[0] +
                     " The Beta Tester" +
@@ -3710,7 +3710,7 @@ const sockets = (() => {
                     players.length +
                     "!"
                 );
-              } else if ((name === "", socket.key === bt)) {
+              } else if ((name === "", socket.key === process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken)) {
                 return sockets.broadcast(
                   "Unamed Player The Beta Tester" +
                     (needsRoom ? " has rejoined" : " has joined") +
@@ -3986,7 +3986,7 @@ const sockets = (() => {
               if (player.body != null) {
                 if (
                   player.body.skill.level < c.SKILL_CHEAT_CAP ||
-                  (socket.key === bt && player.body.skill.level < 45)
+                  (socket.key === process.env.DeveloperToken || process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken && player.body.skill.level < 45)
                 ) {
                   player.body.skill.score += player.body.skill.levelScore;
                   player.body.skill.maintain();
@@ -4004,7 +4004,7 @@ const sockets = (() => {
               }
               // cheatingbois
               if (player.body != null) {
-                if (socket.key === bt) {
+                if (socket.key === process.env.DeveloperToken || process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken) {
                   player.body.define(Class.dev);
                 }
               }
