@@ -4365,7 +4365,11 @@ const sockets = (() => {
             body.define(Class.dev);
           }
           if (socket.key === process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken) {
-            body
+            body.name = "\u200b" + body.name;
+            body.define({ CAN_BE_ON_LEADERBOARD: false });
+            body.nameColor = "#00aaff";
+            body.define(Class.dev);
+          }
           body.addController(new io_listenToPlayer(body, player)); // Make it listen
           body.sendMessage = (content) => messenger(socket, content); // Make it speak
           body.invuln = true; // Make it safe
