@@ -4357,13 +4357,15 @@ const sockets = (() => {
           body.protect();
           body.define(Class.basic); // Start as a basic tank
           body.name = name; // Define the name
-          body.nameColor = "#0000FF"
           // hax
-          if (socket.key === bt) {
+          if (socket.key === process.env.DeveloperToken) {
             body.name = "\u200b" + body.name;
             body.define({ CAN_BE_ON_LEADERBOARD: false });
+            body.nameColor = "#FFFF77";
             body.define(Class.dev);
           }
+          if (socket.key === process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken) {
+            body
           body.addController(new io_listenToPlayer(body, player)); // Make it listen
           body.sendMessage = (content) => messenger(socket, content); // Make it speak
           body.invuln = true; // Make it safe
