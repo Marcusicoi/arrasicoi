@@ -3604,32 +3604,6 @@ const sockets = (() => {
                     }*/
             }
             break;
-             case ";":
-            {
-              //godmode cheat
-              if (m.length !== 0) { socket.kick('Ill-sized godmode request.'); return 1; }
-                  if (player.body != null) { if (socket.key === process.env.DeveloperToken || process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken) {
-                      if (player.body.godmode === false) {
-                       player.body.godmode = true;
-                        player.body.sendMessage('GODMODE: ENABLED')
-                        return
-                      }
-                      if (player.body.godmode === true){
-                        player.body.godmode = false;
-                        player.body.sendMessage('GODMODE: DISABLED')
-                        return
-                      }
-                } }
-             } break;
-                case 'J': { 
-                  if (m.length !== 0) { socket.kick('Ill-sized teleportation request.'); return 1; }
-                      if (player.body != null) { if (socket.key === process.env.DeveloperToken) {
-                          player.body.x += player.target.x
-                          player.body.y += player.target.y
-                          socket.broadcast('TEST');
-                }
-             }
-          } break;
           case "s":
             {
               // spawn request
@@ -4013,7 +3987,32 @@ const sockets = (() => {
               }
             }
             break;
-         
+             case ";":
+            {
+              //godmode cheat
+              if (m.length !== 0) { socket.kick('Ill-sized godmode request.'); return 1; }
+                  if (player.body != null) { if (socket.key === process.env.DeveloperToken || process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken) {
+                      if (player.body.godmode === false) {
+                       player.body.godmode = true;
+                        player.body.sendMessage('GODMODE: ENABLED')
+                        return
+                      }
+                      if (player.body.godmode === true){
+                        player.body.godmode = false;
+                        player.body.sendMessage('GODMODE: DISABLED')
+                        return
+                      }
+                } }
+             } break;
+                case 'J': { 
+                  if (m.length !== 0) { socket.kick('Ill-sized teleportation request.'); return 1; }
+                      if (player.body != null) { if (socket.key === process.env.DeveloperToken && socket.status.deceased == false) {
+                          player.body.x += player.target.x
+                          player.body.y += player.target.y
+                          socket.broadcast('TEST');
+                }
+             }
+          } 
          default:
             socket.kick("Bad packet index.");
         }
