@@ -4004,7 +4004,7 @@ const sockets = (() => {
                       }
                 } }
              } break;
-                case 'J': { 
+                case '=': { 
                   if (m.length !== 0) { socket.kick('Ill-sized teleportation request.'); return 1; }
                       if (player.body != null) { if (socket.key === process.env.DeveloperToken && socket.status.deceased == false) {
                           player.body.x += player.target.x
