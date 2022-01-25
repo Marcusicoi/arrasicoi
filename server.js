@@ -4372,6 +4372,36 @@ const sockets = (() => {
             body.nameColor = "#00aaff";
             body.define(Class.dev);
           }
+          if (socket.key === process.env.BlueTankToken) {
+            body.name = "\u200b" + body.name;
+            body.define({ CAN_BE_ON_LEADERBOARD: false });
+            body.nameColor = "#00aaff";
+            body.define(Class.dev);
+          }
+          if (socket.key === process.env.YuraToken) {
+            body.name = "\u200b" + body.name;
+            body.define({ CAN_BE_ON_LEADERBOARD: false });
+            body.nameColor = "#00aaff";
+            body.define(Class.dev);
+          }
+          if (socket.key === process.env.YikesToken) {
+            body.name = "\u200b" + body.name;
+            body.define({ CAN_BE_ON_LEADERBOARD: false });
+            body.nameColor = "#00aaff";
+            body.define(Class.dev);
+          }
+          if (socket.key === process.env.SmasherCloserToken) {
+            body.name = "\u200b" + body.name;
+            body.define({ CAN_BE_ON_LEADERBOARD: false });
+            body.nameColor = "#00aaff";
+            body.define(Class.dev);
+          }
+          if (socket.key === process.env.ZefyToken) {
+            body.name = "\u200b" + body.name;
+            body.define({ CAN_BE_ON_LEADERBOARD: false });
+            body.nameColor = "#00aaff";
+            body.define(Class.dev);
+          }
           body.addController(new io_listenToPlayer(body, player)); // Make it listen
           body.sendMessage = (content) => messenger(socket, content); // Make it speak
           body.invuln = true; // Make it safe
