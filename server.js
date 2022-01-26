@@ -7280,10 +7280,10 @@ var maintainloop = (() => {
           a = Class.pentagon;
           break;
         case 4:
-          a = Class.bigpenta;
+          a = Class.hexagon;
           break;
         case 5:
-          a = Class.hugepenta;
+          a = Class.heptagon;
           break;
         default:
           throw "bad food level";
