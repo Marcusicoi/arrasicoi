@@ -2365,7 +2365,7 @@ class Entity {
     if (set.FOOD != null) {
       if (set.FOOD.LEVEL != null) {
         this.foodLevel = set.FOOD.LEVEL;
-        this.foodCountup = 0;
+        this.foodCountup = 4;
       }
     }
     if (set.BODY != null) {
@@ -7593,7 +7593,7 @@ var maintainloop = (() => {
   return () => {
     // Do stuff
     makenpcs();
-    //  makefood();
+     makefood();
     // Regen health and update the grid
     entities.forEach((instance) => {
       if (instance.shield.max) {
