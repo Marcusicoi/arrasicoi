@@ -1,4 +1,4 @@
-/*jslint node: true */
+  0/*jslint node: true */
 /*jshint -W061 */
 /*global goog, Map, let */
 "use strict";
@@ -2360,12 +2360,12 @@ class Entity {
       this.guns = newGuns;
     }
     if (set.MAX_CHILDREN != null) {
-      this.maxChildren = set.MAX_CHILDREN;
-    }
+      this.maxChildren = set.MAX_CHILDREN
+   }
     if (set.FOOD != null) {
       if (set.FOOD.LEVEL != null) {
-        this.foodLevel = set.FOOD.LEVEL;
-        this.foodCountup = 4;
+        this.foodLevel = set.FOOD.LEVEL; 
+        this.foodCountup = 0;
       }
     }
     if (set.BODY != null) {
