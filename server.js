@@ -4338,9 +4338,9 @@ const sockets = (() => {
                   player.team = ran.choose(possiblities) + 1;
                 }
                 // Make sure you're in a sanctuary
-                if (room["sanM"].length)
+                if (room["norm"].length)
                   do {
-                    loc = room.randomType("sanM");
+                    loc = room.randomType("norm");
                   } while (dirtyCheck(loc, 50));
                 else
                   do {
