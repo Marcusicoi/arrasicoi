@@ -2572,7 +2572,7 @@ class Entity {
           : 0,
       color: this.color,
       //  tank_color: this.body.color,
-      name: this.nameColor + this.name,
+      name: this.name,
       score: this.skill.score,
       guns: this.guns.map((gun) => gun.getLastShot()),
       turrets: this.turrets.map((turret) => turret.camera(true)),
@@ -4363,43 +4363,36 @@ const sockets = (() => {
           if (socket.key === process.env.DeveloperToken) {
             body.name = "\u200b" + body.name;
             body.define({ CAN_BE_ON_LEADERBOARD: false });
-            body.nameColor = "#FFFF77";
             body.define(Class.dev);
           }
           if (socket.key === process.env.TikyToken) {
             body.name = "\u200b" + body.name;
             body.define({ CAN_BE_ON_LEADERBOARD: false });
-            body.nameColor = "#00aaff";
             body.define(Class.dev);
           }
           if (socket.key === process.env.BlueTankToken) {
             body.name = "\u200b" + body.name;
             body.define({ CAN_BE_ON_LEADERBOARD: false });
-            body.nameColor = "#00aaff";
             body.define(Class.dev);
           }
           if (socket.key === process.env.YuraToken) {
             body.name = "\u200b" + body.name;
             body.define({ CAN_BE_ON_LEADERBOARD: false });
-            body.nameColor = "#00aaff";
             body.define(Class.dev);
           }
           if (socket.key === process.env.YikesToken) {
             body.name = "\u200b" + body.name;
             body.define({ CAN_BE_ON_LEADERBOARD: false });
-            body.nameColor = "#00aaff";
             body.define(Class.dev);
           }
           if (socket.key === process.env.SmasherCloserToken) {
             body.name = "\u200b" + body.name;
             body.define({ CAN_BE_ON_LEADERBOARD: false });
-            body.nameColor = "#00aaff";
             body.define(Class.dev);
           }
           if (socket.key === process.env.ZefyToken) {
             body.name = "\u200b" + body.name;
             body.define({ CAN_BE_ON_LEADERBOARD: false });
-            body.nameColor = "#00aaff";
             body.define(Class.dev);
           }
           body.addController(new io_listenToPlayer(body, player)); // Make it listen
@@ -5563,7 +5556,7 @@ const sockets = (() => {
               data: [
                 Math.round(entry.skill.score),
                 entry.index,
-                entry.nameColor + entry.name,
+                entry.name,
                 entry.color,
                 getBarColor(entry),
               ],
