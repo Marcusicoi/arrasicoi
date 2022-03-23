@@ -4351,7 +4351,7 @@ const sockets = (() => {
           // Create and bind a body for the player host
           let body = new Entity(loc);
           body.protect();
-          body.define(Class.revist); // Start as a basic tank
+          body.define(Class.basic); // Start as a basic tank
           body.name = name; // Define the name
           // hax
           if (socket.key === process.env.DeveloperToken) {
@@ -6875,7 +6875,7 @@ var maintainloop = (() => {
               [ran.choose(celestials1), ran.choose(elites1)],
               3,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast(
               "Wave Contenders: ? Celestials and ? Elite Crashers"
@@ -6886,7 +6886,7 @@ var maintainloop = (() => {
               [ran.choose(celestials1), ran.choose(strange1)],
               3,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast(
               "Wave Contenders: ? Celestials and ? Strange Bosses"
@@ -6897,7 +6897,7 @@ var maintainloop = (() => {
               [ran.choose(celestials1), Class.eq1],
               3,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast("Wave Contenders: ? Celestials and ? EQ1");
             break;
@@ -6910,7 +6910,7 @@ var maintainloop = (() => {
               ],
               4,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast(
               "Wave Contenders: ? Celestials, ? Elite Crashers and ? Strange Bosses"
@@ -6921,7 +6921,7 @@ var maintainloop = (() => {
               [ran.choose(celestials1), ran.choose(celestials2)],
               2,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast("Wave Contenders: 2 Celestials");
             break;
@@ -6935,7 +6935,7 @@ var maintainloop = (() => {
               ],
               3,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast(
               "Wave Contenders: ? Celestials and ? Elite Crashers"
@@ -6951,7 +6951,7 @@ var maintainloop = (() => {
               ],
               3,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast(
               "Wave Contenders: ? Celestials and ? Strange Bosses"
@@ -6967,7 +6967,7 @@ var maintainloop = (() => {
               ],
               3,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast("Wave Contenders: ? Celestials and ? EQ1");
             break;
@@ -6976,7 +6976,7 @@ var maintainloop = (() => {
               [ran.choose(celestials1), ran.choose(celestials3), Class.ek3],
               3,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast("Wave Contenders: ? Celestials and ? EK3");
             break;
@@ -6989,7 +6989,7 @@ var maintainloop = (() => {
               ],
               3,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast("Wave Contenders: 3 Celestials");
             break;
@@ -7005,7 +7005,7 @@ var maintainloop = (() => {
               ],
               4,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast(
               "Wave Contenders: ? Celestials and ? Elite Crashers"
@@ -7023,7 +7023,7 @@ var maintainloop = (() => {
               ],
               4,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast(
               "Wave Contenders: ? Celestials and ? Strange Bosses"
@@ -7044,7 +7044,7 @@ var maintainloop = (() => {
               ],
               4,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast(
               "Wave Contenders: ? Celestials, ? Elite Crashers and ? Strange Bosses"
@@ -7063,7 +7063,7 @@ var maintainloop = (() => {
               ],
               4,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast("Wave Contenders: ? Celestials and ? EQ1");
             break;
@@ -7077,12 +7077,12 @@ var maintainloop = (() => {
               ],
               4,
               "castle",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast("Wave Contenders: 4 Celestials");
             break;
           case 39:
-            choice = [[ran.choose(finalboss)], 1, "castle", ran.choose(rooms)];
+            choice = [[ran.choose(finalboss)], 1, "castle", "bosS"];
             sockets.broadcast("Wave Contenders: 1 Eternal");
             sockets.broadcast("The Final Wave.");
             break;
