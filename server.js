@@ -102,10 +102,7 @@ room.findType("sDLU");
 room.findType("saDR");
 room.findType("sDRU");
 room.findType("barr");
-room.findType("bosN");
-room.findType("bosW");
 room.findType("bosS");
-room.findType("bosE");
 room.nestFoodAmount =
   (0.1 * Math.sqrt(room.nest.length)) / room.xgrid / room.ygrid;
 room.random = () => {
@@ -2889,10 +2886,7 @@ class Entity {
         (this.team !== -4 && room.isIn("bas4", loc)) ||
         (this.team !== -5 && room.isIn("bas5", loc)) ||
         (this.team !== -100 && room.isIn("barr", loc)) ||
-        (this.team !== -100 && room.isIn("bosN", loc)) ||
-        (this.team !== -100 && room.isIn("bosW", loc)) ||
-        (this.team !== -100 && room.isIn("bosS", loc)) ||
-        (this.team !== -100 && room.isIn("bosE", loc))
+        (this.team !== -100 && room.isIn("bosS", loc)) 
       ) {
         this.kill();
       }
@@ -6714,11 +6708,10 @@ var maintainloop = (() => {
             Class.fiolnir,
             Class.blaze,
           ],
-          finalboss = [Class.kronos, Class.ragnarok],
-          rooms = ["bosN", "bosW", "bosS", "bosE"];
+          finalboss = [Class.kronos, Class.ragnarok];
         switch (wave) {
           case 1:
-            choice = [[ran.choose(elites1)], 1, "a", ran.choose(rooms)];
+            choice = [[ran.choose(elites1)], 1, "a", 'bosS'];
             sockets.broadcast("Wave Contenders: 1 Elite Crasher");
             break;
           case 2:
@@ -6726,7 +6719,7 @@ var maintainloop = (() => {
               [ran.choose(elites1), ran.choose(elites2)],
               2,
               "a",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast("Wave Contenders: 2 Elite Crashers");
             break;
@@ -6735,7 +6728,7 @@ var maintainloop = (() => {
               [ran.choose(elites1), ran.choose(elites2), ran.choose(elites3)],
               3,
               "a",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast("Wave Contenders: 3 Elite Crashers");
             break;
@@ -6749,7 +6742,7 @@ var maintainloop = (() => {
               ],
               4,
               "a",
-              ran.choose(rooms),
+              "bosS"
             ];
             sockets.broadcast("Wave Contenders: 4 Elite Crashers");
             break;
