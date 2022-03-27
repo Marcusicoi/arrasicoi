@@ -5860,17 +5860,6 @@ var gameloop = (() => {
         dist = util.getDistance(item1, item2);
       }
     }
-    function reflectcollide(wall, bounce) {
-      let delt = new Vector(wall.x - bounce.x, wall.y - bounce.y);
-      let dist = delt.length;
-      let diff = wall.size + bounce.size - dist;
-      if (diff > 0) {
-        bounce.accel.x -= (diff * delt.x) / dist;
-        bounce.accel.y -= (diff * delt.y) / dist;
-        return 1;
-      }
-      return 0;
-    }
     function advancedcollide(
       my,
       n,
