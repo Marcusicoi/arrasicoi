@@ -6682,118 +6682,23 @@ var maintainloop = (() => {
       if (timer > 1000 && ran.dice(2000 - timer)) {
         util.log("[SPAWN] Preparing to spawn...");
         timer = 8;
-        let choice = [];elite_destroyer,*/ Class.elite_sprayer,
-            Class.elite_battleship,
-          ],
-          strange1 = [
-            /*Class.palisade,*/ Class.summon,
-            Class.elite_skimmer,
-            Class.nest,
-          ],
-          strange2 = [
-            /*Class.palisade,*/ Class.summon,
-            Class.elite_skimmer,
-            Class.nest,
-          ],
-          strange3 = [
-            /*Class.palisade,*/ Class.summon,
-            Class.elite_skimmer,
-            Class.nest,
-          ],
-          strange4 = [
-            /*Class.palisade,*/ Class.summon,
-            Class.elite_skimmer,
-            Class.nest,
-          ],
-          celestials1 = [
-            Class.paladin,
-            Class.freyja,
-            Class.zaphkiel,
-            Class.theia,
-            Class.nyx,
-            Class.athena,
-            Class.alviss,
-            Class.tyr,
-            Class.ruga,
-            Class.fiolnir,
-            Class.blaze,
-          ],
-          celestials2 = [
-            Class.paladin,
-            Class.freyja,
-            Class.zaphkiel,
-            Class.theia,
-            Class.nyx,
-            Class.athena,
-            Class.alviss,
-            Class.tyr,
-            Class.ruga,
-            Class.fiolnir,
-            Class.blaze,
-          ],
-          celestials3 = [
-            Class.paladin,
-            Class.freyja,
-            Class.zaphkiel,
-            Class.theia,
-            Class.nyx,
-            Class.athena,
-            Class.alviss,
-            Class.tyr,
-            Class.ruga,
-            Class.fiolnir,
-            Class.blaze,
-          ],
-          celestials4 = [
-            Class.paladin,
-            Class.freyja,
-            Class.zaphkiel,
-            Class.theia,
-            Class.nyx,
-            Class.athena,
-            Class.alviss,
-            Class.tyr,
-            Class.ruga,
-            Class.fiolnir,
-            Class.blaze,
-          ],
-          finalboss = [Class.kronos, Class.ragnarok];
-        switch (wave) {
+        let choice = [];
+        switch (ran.chooseChance(1)) {
           case 1:
-            choice = [[ran.choose(elites1)], 1, "a", 'bosS'];
-            sockets.broadcast("Wave Contenders: 1 Elite Crasher");
+            choice = [[Class.elite_destroyer], 1, "a", 'nest'];
+            sockets.broadcast("A big bullet will launch in your face.");
             break;
           case 2:
-            choice = [
-              [ran.choose(elites1), ran.choose(elites2)],
-              2,
-              "a",
-              "bosS"
-            ];
-            sockets.broadcast("Wave Contenders: 2 Elite Crashers");
+            choice = [[Class.elite_gunner], 1, "a", 'nest'];
+            sockets.broadcast("Gunner trapper but cancer.");
             break;
           case 3:
-            choice = [
-              [ran.choose(elites1), ran.choose(elites2), ran.choose(elites3)],
-              3,
-              "a",
-              "bosS"
-            ];
-            sockets.broadcast("Wave Contenders: 3 Elite Crashers");
+            choice = [[Class.elite_battleship], 1, "a", 'nest']
+            sockets.broadcast("100 Swarms will go to you in 0.1 second.");
             break;
           case 4:
-            choice = [
-              [
-                ran.choose(elites1),
-                ran.choose(elites2),
-                ran.choose(elites3),
-                ran.choose(elites4),
-              ],
-              4,
-              "a",
-              "bosS"
-            ];
-            sockets.broadcast("Wave Contenders: 4 Elite Crashers");
+            choice = [[Class.elite_skimmer], 1, "a", 'nest'];
+            sockets.broadcast("Nonpink boss, you guessed it.");
             break;
           case 5:
             choice = [
