@@ -2877,16 +2877,14 @@ class Entity {
           c.ROOM_BOUND_FORCE) /
         roomSpeed;
     }
-    if (room.gameMode === "siege" && this.type !== "food") {
+    if (room.gameMode === "tdm" && this.type !== "food") {
       let loc = { x: this.x, y: this.y };
       if (
         (this.team !== -1 && room.isIn("bas1", loc)) ||
         (this.team !== -2 && room.isIn("bas2", loc)) ||
         (this.team !== -3 && room.isIn("bas3", loc)) ||
         (this.team !== -4 && room.isIn("bas4", loc)) ||
-        (this.team !== -5 && room.isIn("bas5", loc)) ||
-        (this.team !== -100 && room.isIn("barr", loc)) ||
-        (this.team !== -100 && room.isIn("bosS", loc)) 
+        (this.team !== -5 && room.isIn("bas5", loc))
       ) {
         this.kill();
       }
@@ -4301,7 +4299,7 @@ const sockets = (() => {
           // Find the desired team (if any) and from that, where you ought to spawn
           player.team = socket.rememberedTeam;
           switch (room.gameMode) {
-            case "siege":
+            case "tdm":
               {
                 // Count how many others there are
                 let census = [1, 1, 1, 1],
@@ -4332,9 +4330,9 @@ const sockets = (() => {
                   player.team = ran.choose(possiblities) + 1;
                 }
                 // Make sure you're in a sanctuary
-                if (room["sanM"].length)
+                if (room["bas" + player.team].length)
                   do {
-                    loc = room.randomType("sanM");
+                    loc = room.randomType("bas" + player.team);
                   } while (dirtyCheck(loc, 50));
                 else
                   do {
@@ -4395,10 +4393,10 @@ const sockets = (() => {
           player.body = body;
           // Decide how to color and team the body
           switch (room.gameMode) {
-            case "siege":
+            case "tdm":
               {
-                body.team = -1;
-                body.color = 10;
+                body.team = -player.team
+                body.color = [10, 11, 12, 15][player.team - 1];
               }
               break;
             default: {
@@ -6626,7 +6624,6 @@ var maintainloop = (() => {
   // Spawning functions
   let spawnBosses = (() => {
     let timer = 8;
-    let wave = 1;
     let boss = (() => {
       let i = 1,
         names = [],
@@ -6664,11 +6661,11 @@ var maintainloop = (() => {
             begin = "Something is coming ...";
             arrival = names[0] + " has arrived.";
           } else {
-            begin = "The Wave Is Started!";
+            begin = "Visitors are coming.";
             arrival = "";
-            arrival += "Wave " + wave + " Has Started!";
+            for (let i=0; i<n-2; i++) arrival += names[i] + ', ';
+            arrival += names[n-2] + ' and ' + names[n-1] + ' have arrived.';
           }
-          wave += 1;
         },
         spawn: () => {
           sockets.broadcast(begin);
@@ -6682,28 +6679,10 @@ var maintainloop = (() => {
       };
     })();
     return (census) => {
-      if (timer > 10 && ran.dice(20 - timer)) {
+      if (timer > 1000 && ran.dice(2000 - timer)) {
         util.log("[SPAWN] Preparing to spawn...");
         timer = 8;
-        let choice = [];
-        let elites1 = [
-            Class.elite_gunner,
-            /*Class.elite_destroyer,*/ Class.elite_sprayer,
-            Class.elite_battleship,
-          ],
-          elites2 = [
-            Class.elite_gunner,
-            /*Class.elite_destroyer,*/ Class.elite_sprayer,
-            Class.elite_battleship,
-          ],
-          elites3 = [
-            Class.elite_gunner,
-            /*Class.elite_destroyer,*/ Class.elite_sprayer,
-            Class.elite_battleship,
-          ],
-          elites4 = [
-            Class.elite_gunner,
-            /*Class.elite_destroyer,*/ Class.elite_sprayer,
+        let choice = [];elite_destroyer,*/ Class.elite_sprayer,
             Class.elite_battleship,
           ],
           strange1 = [
