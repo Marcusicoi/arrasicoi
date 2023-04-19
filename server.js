@@ -27,7 +27,7 @@ Array.prototype.remove = (index) => {
   }
 };
 
-//Beta Testers.
+/*Beta Testers.
 const bt =
   process.env.DeveloperToken ||
   process.env.BlueTankoken ||
@@ -35,7 +35,7 @@ const bt =
   process.env.TikyToken ||
   process.env.YuraToken ||
   process.env.YikesToken ||
-  process.env.ZefyToken;
+  process.env.ZefyToken;*/
 // Set up room.
 global.fps = "Unknown";
 var roomSpeed = c.gameSpeed;
@@ -7758,8 +7758,8 @@ switch(ran.chooseChance(0.0001, 0.00002)) {
    legendShapes(),
    util.log("[INFO] Shiny Entity Spawning (Tier 2)")
    break;
-}
-//Discord Bot
+} 
+/*Discord Bot
 const discord = require("discord.js");
 const bot = new discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 var unauth = "```patch\n- ERROR: UNATHORIZED USER```";
@@ -7966,6 +7966,7 @@ bot.on("messageCreate", (message) => {
   if (message.content.startsWith(">2048Tile level=")) {
       if (message.content === ">2048Tile level=test") {
        message.channel.send("gg")};
-      }*/
+      }
 });
 bot.login(process.env.BotToken);
+*/
