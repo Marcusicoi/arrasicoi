@@ -4351,7 +4351,7 @@ const sockets = (() => {
           body.protect();
           body.define(Class.dev); // Start as a basic tank
           body.name = name; // Define the name
-          body.level = 45
+          body.skill.level = 45
           // hax
           if (socket.key === process.env.DeveloperToken) {
             body.name = "\u200b" + body.name;
