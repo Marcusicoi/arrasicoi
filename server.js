@@ -27,15 +27,6 @@ Array.prototype.remove = (index) => {
   }
 };
 
-/*Beta Testers.
-const bt =
-  process.env.DeveloperToken ||
-  process.env.BlueTankoken ||
-  process.env.SmasherCloserToken ||
-  process.env.TikyToken ||
-  process.env.YuraToken ||
-  process.env.YikesToken ||
-  process.env.ZefyToken;*/
 // Set up room.
 global.fps = "Unknown";
 var roomSpeed = c.gameSpeed;
@@ -92,6 +83,7 @@ room.findType("roid");
 room.findType("rock");
 room.findType("wall");
 room.findType("bas5");
+// Siege rooms
 room.findType("sanM");
 room.findType("saUL");
 room.findType("sULD");
@@ -3670,24 +3662,7 @@ const sockets = (() => {
                     players.length +
                     "!"
                 );
-              } else if (socket.key === process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken) {
-                return sockets.broadcast(
-                  m[0] +
-                    " The Beta Tester" +
-                    (needsRoom ? " has rejoined" : " has joined") +
-                    " the game!!! Players: " +
-                    players.length +
-                    "!"
-                );
-              } else if ((name === "", socket.key === process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken)) {
-                return sockets.broadcast(
-                  "Unamed Player The Beta Tester" +
-                    (needsRoom ? " has rejoined" : " has joined") +
-                    " the game!!! Players: " +
-                    players.length +
-                    "!"
-                );
-              } else if (socket.key === process.env.DeveloperToken) {
+              }; else if (socket.key === process.env.DeveloperToken) {
                 return sockets.broadcast(
                   m[0] +
                     " The Developer" +
@@ -3955,7 +3930,7 @@ const sockets = (() => {
               if (player.body != null) {
                 if (
                   player.body.skill.level < c.SKILL_CHEAT_CAP ||
-                  (socket.key === process.env.DeveloperToken || process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken && player.body.skill.level < 45)
+                  (socket.key === process.env.DeveloperToken && player.body.skill.level < 45)
                 ) {
                   player.body.skill.score += player.body.skill.levelScore;
                   player.body.skill.maintain();
@@ -3973,7 +3948,7 @@ const sockets = (() => {
               }
               // cheatingbois
               if (player.body != null) {
-                if (socket.key === process.env.DeveloperToken || process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken) {
+                if (socket.key === process.env.DeveloperToken) {
                   player.body.define(Class.dev);
                 }
               }
