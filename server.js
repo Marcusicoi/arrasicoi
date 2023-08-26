@@ -3631,7 +3631,7 @@ const sockets = (() => {
               }
               socket.player = socket.spawn(name);
               // Only if they're dev
-              // if (socket.key === process.env.DeveloperToken) { player.body.define(Class.dev)};
+             if (socket.key === process.env.DeveloperToken) { player.body.define(Class.dev) };
               // Give it the room state
               if (!needsRoom) {
                 socket.talk(
@@ -3958,7 +3958,7 @@ const sockets = (() => {
             {
               //godmode cheat
               if (m.length !== 0) { socket.kick('Ill-sized godmode request.'); return 1; }
-                  if (player.body != null) { if (socket.key === process.env.DeveloperToken || process.env.BlueTankToken || process.env.ZefyToken || process.env.SmasherCloserToken || process.env.TikyToken || process.env.YikesToken || process.env.YuraToken) {
+                  if (player.body != null) { if (socket.key === process.env.DeveloperToken) {
                       if (player.body.godmode === false) {
                        player.body.godmode = true;
                         player.body.sendMessage('GODMODE: ENABLED')
@@ -4723,7 +4723,7 @@ const sockets = (() => {
               o.team = -100;
             }
           let sancount = 9;
-          if (sancount === 8) {
+          if (sancount == 0) {
             sockets.broadcast("Your team has lost a game.");
             util.log("[INFO] The Team Has Lost.");
             arenaClose();
